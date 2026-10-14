@@ -6,7 +6,7 @@
 
 ## 1. Purpose
 
-A personal early-warning dashboard for a beginner investor in US stocks and bonds. It tracks the macro, market, credit, and policy factors that historically moved US stocks and bonds, combines them into an explained risk score, shows how those factors behaved around past crises and rallies, lets the user look up the score on any past day or range, and emails the user when conditions change. Alongside the score it shows upcoming market-moving events (Fed meetings, data releases, elections) and recent news headlines as context, and every event — past or upcoming — comes with a plain-English explanation of *why* it moves markets, so the user learns as they go.
+A personal early-warning dashboard for a beginner investor in US stocks and bonds. It tracks the macro, market, credit, and policy factors that historically moved US stocks and bonds, combines them into an explained risk score, shows how those factors behaved around past crises and rallies, lets the user look up the score on any past day or range, and emails the user when conditions change. Alongside the score it shows upcoming market-moving events (Fed meetings, data releases, elections) and recent news headlines as context, and every event — past or upcoming — comes with a plain-English explanation of *why* it moves markets, so the user learns as they go. A model report card backtests the score and shows how far it can be trusted.
 
 It is a learning and monitoring tool, not a trading system and not financial advice. It never recommends trades.
 
@@ -19,15 +19,16 @@ It is a learning and monitoring tool, not a trading system and not financial adv
 5. The user can pick any past day or date range and see the scores as they stood then.
 6. Total running cost: $0.
 7. Every event the site mentions — historical events, calendar events, elections, and news topics — has a plain-English explanation of why it affects stocks and bonds.
+8. The site reports how well the model has worked historically, with honest confidence ranges, and compares it with simple alternatives.
 
 ### Non-goals (v1)
 
-- Trade recommendations, portfolio tracking, brokerage integration.
+- Trade recommendations, portfolio tracking, brokerage integration. (The §9.6 simulation is an educational illustration of past signals, not a recommendation.)
 - Individual stock analysis.
 - Intraday data or real-time updates.
 - Interactive weight tuning (weights are edited in config).
 - Indicators without a reliable free source (see §4.3).
-- News headlines influencing the score (they are context only, §9.3).
+- News headlines influencing the score (they are context only, §10.3).
 - AI-written news summaries (would add a running cost).
 
 ## 2. Architecture
@@ -42,10 +43,11 @@ GitHub Actions — daily.yml (cron 11:00 UTC ≈ 7am US Eastern)
   4. regime     growth/inflation direction → data/scores/regime.csv
   5. rationale  score explanations, outcome-by-band table → data/scores/rationale.json
   6. history    event analysis, similarity, base rates → data/scores/history.json
-  7. context    upcoming calendar + news headlines → data/context/*.json
-  8. alerts     diff vs data/state.json → send email (or write preview with --dry-run)
-  9. site       render templates + export time-machine JSON → site/ → deploy to Pages
- 10. commit     data/ (raw, scores, context, state.json) committed back to main
+  7. backtest   report card + simulation → data/scores/backtest.json
+  8. context    upcoming calendar + news headlines → data/context/*.json
+  9. alerts     diff vs data/state.json → send email (or write preview with --dry-run)
+ 10. site       render templates + export time-machine JSON → site/ → deploy to Pages
+ 11. commit     data/ (raw, scores, context, state.json) committed back to main
 ```
 
 Each step is a module in `dashboard/` with a `main()` callable as `python -m dashboard.<step>`. Each step reads only files written by earlier steps, so any step can be re-run alone. `python -m dashboard.run` runs all steps in order.
@@ -59,13 +61,14 @@ config/
   indicators.yaml   indicator catalog (§4)
   events.yaml       historical event library (§7)
   weights.yaml      category weights (§5.3)
+  simulation.yaml   allocation per band for the simulation (§9.6)
   untracked.yaml    "Not tracked yet" indicators with explanations (§4.3)
-  calendar.yaml     calendar event types + manually maintained dates (§9.1)
-  news_topics.yaml  news topic rules and explanations (§9.3)
-  glossary.yaml     plain-English definitions of terms (§9.4)
+  calendar.yaml     calendar event types + manually maintained dates (§10.1)
+  news_topics.yaml  news topic rules and explanations (§10.3)
+  glossary.yaml     plain-English definitions of terms (§10.4)
 dashboard/
   fetch/            fred.py, yahoo.py, shiller.py, gpr.py, treasury.py, news.py, base.py (retry, staleness)
-  signals.py  composite.py  regime.py  rationale.py  history.py  context.py  alerts.py
+  signals.py  composite.py  regime.py  rationale.py  history.py  backtest.py  simulate.py  context.py  alerts.py
   site/             build.py, templates/*.html.j2, static/ (css, js)
   run.py            orchestrates all steps
   config.py         loads + validates YAML
@@ -243,10 +246,11 @@ Weighted mean of available category scores using `config/weights.yaml` (default:
 - Four regimes: Growth ↑ Inflation ↓ ("Goldilocks"), Growth ↑ Inflation ↑ ("Reflation"), Growth ↓ Inflation ↓ ("Slowdown"), Growth ↓ Inflation ↑ ("Stagflation").
 - For each regime, the site shows median annualized S&P 500 and bond returns across all historical days in that regime.
 
-### 5.5 Bond return series
+### 5.5 Return series
 
-- From 2002: total return of `AGG` and `TLT` (Yahoo adjusted close).
-- Before 2002: estimated 10-year Treasury total return from `DGS10`: monthly return ≈ y(t−1)/12 − D × Δy, with D = 8. Labelled "estimated" wherever shown.
+- Stocks: S&P 500 price (`^GSPC`) for charts and outcome statistics; S&P 500 total return (`^SP500TR`, from 1988) for the simulation (§9.6).
+- Bonds from 2002: total return of `AGG` and `TLT` (Yahoo adjusted close).
+- Bonds before 2002: estimated 10-year Treasury total return from `DGS10`: monthly return ≈ y(t−1)/12 − D × Δy, with D = 8. Labelled "estimated" wherever shown.
 
 ## 6. Score rationale ("Why this score?")
 
@@ -328,7 +332,7 @@ Explains §5–§6 in plain English: how percentiles work, why bands are 40/60/7
     lesson: >
       Credit markets warned well before the stock market's worst months. When lenders get
       scared, pay attention.
-    terms: [credit_spread, leverage, yield_curve]   # links to glossary (§9.4)
+    terms: [credit_spread, leverage, yield_curve]   # links to glossary (§10.4)
 ```
 
 `anchor` dates are approximate. `history.py` finds the exact peak and trough in the relevant asset (S&P 500 for stock events, the bond return series for bond events) within ±30 days of each anchor. All text fields are hand-written, aimed at a reader with no finance background, and every term that needs it links to the glossary. Every number shown is computed. `config.py` rejects an event missing `summary` or any `explain` field.
@@ -427,11 +431,71 @@ Scores are rounded to integers and values to 3 significant figures; `null` for n
 
 Event pages link to the range view for their window; the Overview's score history chart links clicked points to the day view.
 
-## 9. Context: calendar, elections, and news
+## 9. Model report card (backtest)
+
+A page and a module (`backtest.py`, `simulate.py`) that answer "how much should I trust this model?" Recomputed every daily run from the stored point-in-time scores, so it never uses information the model wouldn't have had.
+
+### 9.1 Definitions
+
+- **Bad stock outcome** for day *t*: S&P 500 max drawdown ≥ 15% within the next 252 trading days.
+- **Bad bond outcome** for day *t*: bond series (§5.5) max drawdown ≥ 5% within the next 252 trading days.
+- Days whose 252-day forward window extends past today are excluded.
+- **Warning:** the overall score is Elevated or High for ≥ 10 consecutive trading days.
+
+### 9.2 Metrics
+
+1. **Discrimination (AUC):** how well the overall score separates days followed by a bad outcome from days that weren't, computed separately for stocks and bonds. Shown with a plain-English grade: < 0.6 weak, 0.6–0.7 modest, 0.7–0.8 useful, ≥ 0.8 strong; and the explanation "0.5 = coin flip".
+2. **Band check:** % of days followed by a bad outcome, per band. Passes if the % rises from Calm → Normal → Elevated → High; the page shows pass/fail.
+3. **Event hit rate:** share of crash events (§7.1, `kind: crash`) with a warning that began within the 12 months before the event's computed start; median lead time in trading days.
+4. **False alarms:** High-band episodes (≥ 20 consecutive trading days) not followed by a bad stock outcome within 12 months of the episode's start; reported as a count and per decade.
+
+### 9.3 Confidence ranges
+
+- Day-based metrics (AUC, band percentages): 90% intervals from a **block bootstrap** (block length 252 trading days, 1,000 resamples), because consecutive days are not independent.
+- Event-based metrics (hit rate): 90% Wilson interval on the event count.
+- Every metric is shown with its range, and the page states the number of crash events in the sample with the warning: "With only N crashes in the data, every figure here is uncertain."
+
+### 9.4 Robustness checks
+
+- **Two periods:** all metrics for 1990–2007 and 2008–today separately.
+- **Leave one category out:** AUC and hit rate with each category removed in turn (indicator scores are reused; only the composite is recomputed).
+- **Threshold sensitivity:** metrics with all band cutoffs shifted −5 and +5.
+- **Hindsight note:** the indicators were chosen knowing past crises; this bias cannot be removed and is stated on the page.
+
+### 9.5 Baselines
+
+The same metrics for three single-indicator models, using each indicator's own score as the "overall" score: `curve_10y3m`, `vix`, `hy_spread`. The page states plainly whether the composite beats each baseline (AUC difference with its bootstrap interval).
+
+### 9.6 "What if" investment simulation (educational)
+
+Shows whether acting on the signals would have helped, and what it would have cost.
+
+- **Portfolios:**
+  - **Hold 60/40:** 60% stocks / 40% bonds, rebalanced monthly.
+  - **Signal-based:** allocation set by the overall band (hysteresis-adjusted) at each month-end, from `config/simulation.yaml` (default: Calm/Normal 60/40, Elevated 50/50, High 40/60).
+  - **Hold 100% stocks:** reference line.
+- **Mechanics:** the month-end band decides the allocation, applied at the next trading day's close (no same-day look-ahead). Trading cost 0.1% of the amount traded. Taxes ignored.
+- **Returns:** stocks = S&P 500 total return (`^SP500TR`); bonds = §5.5. The simulation starts at the later of 1990-01-01 and the first month with an overall score.
+- **Outputs:** growth of $10,000 chart; drawdown chart; allocation over time; table of annualized return, volatility, max drawdown, longest time to recover, number of switches; per-crash-event table (drawdown of each portfolio during the event); per-decade returns; held-out period (2015–today) shown separately; 90% block-bootstrap interval on the annualized return difference vs Hold 60/40.
+- **Labelling:** a banner on the simulation and on every chart: "Educational. Built with hindsight, ignores taxes, not a recommendation. Past results do not predict future results." The text summary describes misses and lagging periods as prominently as successes.
+
+### 9.7 Confidence on today's score
+
+One line on the Overview and in alert emails, computed from §9.2–§9.3, e.g. "When the model said Elevated in the past, a 15%+ stock drop followed within 12 months 28% of the time (likely range 18–40%). Model accuracy 0.72: useful, not reliable."
+
+### 9.8 Comparing alternative setups (CLI)
+
+```
+python -m dashboard.backtest --weights alt_weights.yaml [--indicators alt_indicators.yaml] [--bands 40,60,75] [--simulation alt_sim.yaml]
+```
+
+Writes `out/compare.html`: every §9.2 metric, the simulation table, and the robustness checks for the current and alternative setups side by side. The headline comparison uses the **held-out period 2015–today**; full-history numbers are shown but labelled "includes the period the change may have been tuned on". The CLI prints an over-tuning warning when more than 3 comparisons have been run in the same day (tracked in `out/compare-log.json`).
+
+## 10. Context: calendar, elections, and news
 
 None of this section affects the risk score. It gives the user the "what's going on and what's coming" context around the numbers, and teaches why each kind of event matters.
 
-### 9.1 Upcoming-events calendar (`config/calendar.yaml`)
+### 10.1 Upcoming-events calendar (`config/calendar.yaml`)
 
 Each event **type** carries a beginner explanation:
 
@@ -460,14 +524,14 @@ Types and date sources:
 
 If manually maintained types have fewer than 60 days of future dates, the Monday email includes a "calendar needs updating" reminder.
 
-### 9.2 Elections
+### 10.2 Elections
 
 - Election dates appear in the calendar with their explanation (why elections matter: tax, trade, regulation, and spending policy can change; uncertainty tends to rise beforehand).
 - Past elections are full event pages in the history playbook (§7.1).
 - The Learn page includes a **presidential cycle** section: median S&P 500 and bond returns by year of the 4-year cycle, computed from the data since 1950, with the sample size (~19 cycles) and a plain warning that the pattern is weak and inconsistent.
 - Pre-election uncertainty is captured in the score through the policy-uncertainty indicators, not through the election date itself.
 
-### 9.3 News context
+### 10.3 News context
 
 - **Sources (free, no paid keys):** official RSS feeds (Federal Reserve press releases, US Treasury press releases, BLS releases) and the GDELT DOC API for market-relevant headlines from major outlets.
 - Only headline, source, date, and link are stored and shown — no article text.
@@ -475,13 +539,13 @@ If manually maintained types have fewer than 60 days of future dates, the Monday
 - Up to 5 headlines per topic per day, deduplicated by URL and normalized title. Kept for 90 days in `data/context/news/<date>.json`.
 - **Context only:** headlines never feed the score.
 
-### 9.4 Glossary (`config/glossary.yaml`)
+### 10.4 Glossary (`config/glossary.yaml`)
 
 Every finance term used on the site, in events, or in emails (e.g. yield curve, credit spread, basis point, duration, inflation breakeven, leverage, recession) has a one-paragraph plain-English definition. Terms are tap-to-define links everywhere they appear. A test fails if an event's `terms` references a missing glossary entry.
 
-## 10. Alerts
+## 11. Alerts
 
-### 10.1 State and triggers
+### 11.1 State and triggers
 
 `data/state.json` stores, as of the last run: overall band and score, each category light, each indicator light, regime, and for curves/Sahm the rule-label set.
 
@@ -493,21 +557,21 @@ Triggers (compared with stored state):
 5. Regime change
 6. Overall score up ≥ 10 points vs 5 trading days ago, without a band change
 
-### 10.2 Hysteresis
+### 11.2 Hysteresis
 
 Moving up through a threshold uses the threshold; moving back down requires falling 5 points below it. Applies to indicator/category lights (60, 85) and overall bands (40, 60, 75). The stored state holds the hysteresis-adjusted light/band, which is what pages display as "current".
 
-### 10.3 Emails
+### 11.3 Emails
 
 - At most one alert email per run, a digest of all triggers, ordered by the trigger list above.
 - Subject: `[Market Watch] <most important change>`; e.g. `[Market Watch] Risk score Normal → Elevated (63)`.
-- Body (HTML with plain-text fallback): what changed (with each indicator's `explain` text); the 3-line rationale (outcome stats for the current band, top 3 drivers, nearest threshold); top "Today looks like" match with its base rate; dashboard link; data health footer.
+- Body (HTML with plain-text fallback): what changed (with each indicator's `explain` text); the 4-line rationale (outcome stats for the current band, top 3 drivers, nearest threshold, model confidence line from §9.7); top "Today looks like" match with its base rate; dashboard link; data health footer.
 - **Headlines this week:** up to 5 headlines from topics whose `related_indicators` moved, each with its topic's one-line `why_it_matters`.
 - **Weekly summary** every Monday run regardless of triggers: overall score and 7-day change, category lights, regime, top drivers, data health, plus **"This week"** — the calendar events in the next 7 days, each with its `why_it_matters`.
 - `--dry-run` writes the email to `out/email-preview.html` instead of sending.
 - Disclaimer footer: "Informational only, not financial advice."
 
-## 11. Reliability and error handling
+## 12. Reliability and error handling
 
 - **Fetch:** each source call retries 3 times with exponential backoff (2s, 4s, 8s). On final failure, the indicator keeps its last raw data and is marked stale; the run continues.
 - **Staleness:** an indicator is stale if its last observation is older than 2× its normal interval plus its release lag. Stale indicators are excluded from category and overall scores and show a "stale since <date>" badge.
@@ -518,18 +582,19 @@ Moving up through a threshold uses the threshold; moving back down requires fall
 - **Partial-run rule:** alerts send only after the scores and state are computed successfully; the commit step runs after the deploy.
 - **Repo activity:** the daily data commit prevents GitHub from disabling the schedule after 60 days of inactivity.
 
-## 12. Site pages
+## 13. Site pages
 
 All pages share a header with navigation and a footer with the last update time, data health, and the disclaimer.
 
-1. **Overview** (`index.html`): overall score gauge with band and short rationale; regime quadrant; 9 category lights with trends (linking to category pages); "What changed" (7 and 30 days); "Today looks like…"; **Coming up** (next 14 days of calendar events, each expandable to its explanation); **In the news** (recent headlines by topic, each topic expandable to why it matters); overall score history (5 years, events shaded); data health; "Not tracked yet" panel.
+1. **Overview** (`index.html`): overall score gauge with band, short rationale, and the model confidence line (§9.7); regime quadrant; 9 category lights with trends (linking to category pages); "What changed" (7 and 30 days); "Today looks like…"; **Coming up** (next 14 days of calendar events, each expandable to its explanation); **In the news** (recent headlines by topic, each topic expandable to why it matters); overall score history (5 years, events shaded); data health; "Not tracked yet" panel.
 2. **Category pages** (`category/<id>.html`): indicator cards (value, score, light, trend, spectrum bar, 10-year chart with events shaded, explanation, badges).
 3. **Why this score?** (`why.html`): full rationale (§6.2–§6.5) and full-history score chart.
 4. **History** (`history/index.html` with filters by kind and tag, `history/<event_id>.html`, `history/which-factors-warned.html`).
 5. **Time machine** (`time-machine.html`).
-6. **Learn** (`learn.html`): methodology (§6.7), "what moves markets" (every calendar event type and news topic with its explanation), presidential cycle (§9.2), glossary, limitations, disclaimer.
+6. **Model report card** (`report-card.html`): §9.2–§9.6, with a plain-English summary at the top ("what this model is good at, and where it fails").
+7. **Learn** (`learn.html`): methodology (§6.7), "what moves markets" (every calendar event type and news topic with its explanation), presidential cycle (§10.2), glossary, limitations, disclaimer.
 
-## 13. Testing
+## 14. Testing
 
 All unit tests run offline on fixtures.
 
@@ -539,6 +604,8 @@ All unit tests run offline on fixtures.
 - **Composite:** weighted means, missing categories, ≥ 5-of-9-category requirement, contributions summing to overall − 50.
 - **Rationale:** outcome table excludes incomplete forward windows; change attribution sums to Δoverall; nearest-threshold logic.
 - **History:** anchor-to-exact-date search, lead-time calculation, hit/false-alarm rates on a synthetic event set, similarity with partial dimensions, base rate.
+- **Backtest:** outcome labels exclude incomplete windows; AUC on a synthetic score with known separation; Wilson and block-bootstrap intervals (seeded, deterministic); hit/false-alarm counting; leave-one-out and threshold shifts; baselines.
+- **Simulation:** allocations change only at month-end and apply next day; trading cost; hand-computed 3-month example matches; a perfect-foresight signal is impossible (shuffled future data doesn't change past allocations).
 - **Alerts:** each trigger type, hysteresis (no flip-flop around a threshold), Monday summary, dry-run output.
 - **Reliability:** retry/backoff, stale marking, implausible-value dropping, exclusion from composite.
 - **Config:** every entry in `indicators.yaml`, `events.yaml`, `weights.yaml`, `untracked.yaml`, `calendar.yaml`, `news_topics.yaml`, `glossary.yaml` validates; every event has `summary` and all `explain` fields; every event `terms` entry and every calendar type exists; every `related_indicators` id exists.
@@ -549,10 +616,11 @@ All unit tests run offline on fixtures.
 
 `ci.yml` runs the offline tests on every push and PR. `daily.yml` runs them before the pipeline and aborts on failure.
 
-## 14. Build milestones
+## 15. Build milestones
 
 1. **Skeleton:** repo layout, config loading/validation, FRED + Yahoo fetchers, signals for 5 indicators (hy_spread, curve_10y3m, vix, cpi_yoy, sahm_rule), basic Overview, daily workflow deploying to Pages.
 2. **Full scoring:** all 44 indicators, Shiller / GPR / TreasuryDirect sources, composite, regime, rationale, category pages, "Why this score?", Learn page.
 3. **History and time machine:** event library with full beginner explanations, glossary, event pages, which-factors-warned, "Today looks like", time machine.
-4. **Context:** calendar (with event-type explanations), elections and presidential-cycle section, news headlines with topic explanations.
-5. **Alerts:** state, triggers, hysteresis, digest and Monday emails (including headlines and "This week"), secrets.
+4. **Report card:** backtest metrics, confidence ranges, robustness checks, baselines, simulation, today's confidence line, comparison CLI.
+5. **Context:** calendar (with event-type explanations), elections and presidential-cycle section, news headlines with topic explanations.
+6. **Alerts:** state, triggers, hysteresis, digest and Monday emails (including headlines and "This week"), secrets.
