@@ -1,0 +1,28 @@
+[project]
+name = "market-risk-dashboard"
+version = "0.1.0"
+description = "Early-warning dashboard for US stocks and bonds"
+requires-python = ">=3.12"
+dependencies = [
+    "pandas>=2.2",
+    "requests>=2.32",
+    "yfinance>=0.2.50",
+    "pyyaml>=6.0",
+    "jinja2>=3.1",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.3"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+markers = ["live: hits real data sources (not run in CI)"]
+addopts = "-m 'not live'"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["dashboard"]

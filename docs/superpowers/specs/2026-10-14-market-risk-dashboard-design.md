@@ -47,7 +47,8 @@ GitHub Actions — daily.yml (cron 11:00 UTC ≈ 7am US Eastern)
   8. context    upcoming calendar + news headlines → data/context/*.json
   9. alerts     diff vs data/state.json → send email (or write preview with --dry-run)
  10. site       render templates + export time-machine JSON → site/ → deploy to Pages
- 11. commit     data/ (raw, scores, context, state.json) committed back to main
+ 11. commit     data/raw, data/context, data/state.json committed back to main
+                (data/scores is rebuilt every run, so it is not committed)
 ```
 
 Each step is a module in `dashboard/` with a `main()` callable as `python -m dashboard.<step>`. Each step reads only files written by earlier steps, so any step can be re-run alone. `python -m dashboard.run` runs all steps in order.
@@ -73,7 +74,7 @@ dashboard/
   run.py            orchestrates all steps
   config.py         loads + validates YAML
 data/
-  raw/  scores/  context/  state.json
+  raw/  context/  state.json   (scores/ is git-ignored build output)
 tests/
   fixtures/         small sample series, recorded API responses
 .github/workflows/
@@ -92,7 +93,7 @@ Python 3.12, `uv` for dependencies, `pandas`, `requests`, `yfinance`, `pyyaml`, 
 
 | Secret | Use |
 |---|---|
-| `FRED_API_KEY` | FRED API |
+| `FRED_API_KEY` | FRED API (optional: without it, FRED's public CSV download is used, e.g. for local runs) |
 | `GMAIL_USER`, `GMAIL_APP_PASSWORD` | SMTP sending via smtp.gmail.com:587 |
 | `ALERT_TO` | Recipient address |
 
@@ -115,19 +116,20 @@ Python 3.12, `uv` for dependencies, `pandas`, `requests`, `yfinance`, `pyyaml`, 
 ### 4.1 Schema (`config/indicators.yaml`)
 
 ```yaml
-- id: hy_spread
-  name: High-yield credit spread
+- id: baa_spread
+  name: Corporate credit spread (Baa minus 10-year Treasury)
   category: credit
   source: fred              # fred | yahoo | shiller | gpr | treasury | derived
-  series: BAMLH0A0HYM2      # source-specific id; derived uses `inputs` + `formula`
+  series: BAA10Y            # source-specific id; derived uses `inputs` + `formula`
   frequency: daily          # daily | weekly | monthly
   release_lag_days: 1       # shift applied before scoring (point-in-time)
   transform: level          # one name, or a list applied in order (see transforms below)
   risk_when: high           # high | low | extreme (far from normal in either direction)
   revised: false            # true = historical values are revised figures
-  plausible: [0, 30]        # sanity range for the raw value
+  unit: "pp"                # display unit: "%", "pp" (percentage points), or ""
+  plausible: [0, 10]        # sanity range for the raw value
   rules:                    # optional hard overrides (§5.1)
-    - {when: "value > 8", min_score: 86, label: "Spread above 8%: crisis-level stress"}
+    - {when: "value > 4", min_score: 86, label: "Spread above 4 points: crisis-level stress"}
   explain: >
     Extra yield investors demand to lend to riskier companies. Widening spreads
     mean lenders fear defaults and often lead stock declines.
@@ -165,8 +167,8 @@ R = `revised: true`.
 | labour | unemployment | FRED `UNRATE` | change_12m | high | R |
 | labour | sahm_rule | FRED `SAHMREALTIME` | level | high | |
 | labour | payrolls_3m | FRED `PAYEMS` | change_3m | low | R |
-| credit | hy_spread | FRED `BAMLH0A0HYM2` | level | high | |
-| credit | ig_spread | FRED `BAMLC0A0CM` | level | high | |
+| credit | baa_spread | FRED `BAA10Y` | level | high | |
+| credit | baa_aaa_spread | derived: `BAA10Y` − `AAA10Y` | level | high | |
 | credit | stlfsi | FRED `STLFSI4` | level | high | |
 | credit | nfci | FRED `NFCI` | level | high | R |
 | credit | sloos_tightening | FRED `DRTSCILM` | level | high | |
@@ -197,18 +199,18 @@ Rule overrides in v1:
 | curve_10y2y, curve_10y3m | value < 0 | min_score 86, "Curve inverted" |
 | curve_10y2y, curve_10y3m | crossed from < 0 to > 0 within last 6 months | min_score 86, "Curve un-inverting: recession often begins here" |
 | sahm_rule | value ≥ 0.5 | min_score 90, "Sahm Rule triggered" |
-| hy_spread | value > 8 | min_score 86 |
+| baa_spread | value > 4 | min_score 86 |
 | vix | value > 40 | min_score 90 |
 
 Exact `release_lag_days` per series are set during implementation from each series' release schedule (daily market data: 1; weekly claims/STLFSI/NFCI: 5–7; monthly CPI/PCE/payrolls/etc.: 14–45; quarterly SLOOS: ~35 after quarter end; Shiller: 30).
 
 ### 4.3 Not tracked yet (`config/untracked.yaml`)
 
-Shown on the Overview in a "Not tracked yet" panel with a one-paragraph explanation each and why it isn't tracked: forward P/E, earnings revisions, AAII sentiment, put/call ratio, margin debt, Treasury auction tails (needs when-issued yields, which aren't freely available).
+Shown on the Overview in a "Not tracked yet" panel with a one-paragraph explanation each and why it isn't tracked: forward P/E, earnings revisions, AAII sentiment, put/call ratio, margin debt, high-yield and investment-grade (ICE BofA) spreads (FRED is licensed to publish only the last 3 years, too short to score; the Moody's Baa spread back to 1986 is used instead), Treasury auction tails (needs when-issued yields, which aren't freely available).
 
 ### 4.4 Data history coverage
 
-Coverage varies by series (e.g. S&P 500 and yields to the 1950s+, EPU and GPR 1985, VIX 1990, HY spread 1997, VIX3M 2007, RSP 2003; auction data starts at the earliest auction the TreasuryDirect API returns). Where data doesn't exist, the site shows "no data" — never backfilled or imputed.
+Coverage varies by series (e.g. S&P 500 and yields to the 1950s+, EPU and GPR 1985, VIX 1990, Baa spread 1986, VIX3M 2007, RSP 2003; auction data starts at the earliest auction the TreasuryDirect API returns). Where data doesn't exist, the site shows "no data" — never backfilled or imputed.
 
 ## 5. Scoring
 
@@ -406,7 +408,7 @@ A page for looking up scores on any past day or range.
   "dates": ["2008-01-02", ...],
   "overall": [58, ...],
   "categories": {"rates": [...], ...},
-  "indicators": {"hy_spread": {"value": [...], "score": [...]}, ...},
+  "indicators": {"baa_spread": {"value": [...], "score": [...]}, ...},
   "regime": ["slowdown", ...],
   "spx": [...], "bond": [...]
 }
@@ -464,7 +466,7 @@ A page and a module (`backtest.py`, `simulate.py`) that answer "how much should 
 
 ### 9.5 Baselines
 
-The same metrics for three single-indicator models, using each indicator's own score as the "overall" score: `curve_10y3m`, `vix`, `hy_spread`. The page states plainly whether the composite beats each baseline (AUC difference with its bootstrap interval).
+The same metrics for three single-indicator models, using each indicator's own score as the "overall" score: `curve_10y3m`, `vix`, `baa_spread`. The page states plainly whether the composite beats each baseline (AUC difference with its bootstrap interval).
 
 ### 9.6 "What if" investment simulation (educational)
 
@@ -618,7 +620,7 @@ All unit tests run offline on fixtures.
 
 ## 15. Build milestones
 
-1. **Skeleton:** repo layout, config loading/validation, FRED + Yahoo fetchers, signals for 5 indicators (hy_spread, curve_10y3m, vix, cpi_yoy, sahm_rule), basic Overview, daily workflow deploying to Pages.
+1. **Skeleton:** repo layout, config loading/validation, FRED + Yahoo fetchers, signals for 5 indicators (baa_spread, curve_10y3m, vix, cpi_yoy, sahm_rule), basic Overview, daily workflow deploying to Pages.
 2. **Full scoring:** all 44 indicators, Shiller / GPR / TreasuryDirect sources, composite, regime, rationale, category pages, "Why this score?", Learn page.
 3. **History and time machine:** event library with full beginner explanations, glossary, event pages, which-factors-warned, "Today looks like", time machine.
 4. **Report card:** backtest metrics, confidence ranges, robustness checks, baselines, simulation, today's confidence line, comparison CLI.

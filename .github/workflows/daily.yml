@@ -1,0 +1,67 @@
+name: Daily update
+
+on:
+  schedule:
+    - cron: "0 11 * * *"  # 11:00 UTC ≈ 7am US Eastern
+  workflow_dispatch:
+
+concurrency:
+  group: daily
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+      - run: uv sync --locked
+      - name: Tests
+        run: uv run pytest
+      - name: Fetch, score, build site
+        run: uv run python -m dashboard.run
+        env:
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - uses: actions/upload-artifact@v4
+        with:
+          name: raw-data
+          path: data/raw
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  commit-data:
+    needs: deploy
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: raw-data
+          path: data/raw
+      - name: Commit updated data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/raw
+          if git diff --cached --quiet; then
+            echo "No data changes"
+          else
+            git commit -m "Daily data update $(date -u +%Y-%m-%d)"
+            git push
+          fi

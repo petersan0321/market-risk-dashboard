@@ -1,0 +1,95 @@
+# Indicator catalog. Schema: docs/superpowers/specs/2026-10-14-market-risk-dashboard-design.md §4.1
+# release_lag_days is measured from the date the source labels the observation with
+# (for monthly FRED series that is the first day of the month).
+
+- id: baa_spread
+  name: Corporate credit spread (Baa minus 10-year Treasury)
+  category: credit
+  source: fred
+  series: BAA10Y
+  frequency: daily
+  release_lag_days: 1
+  transform: level
+  risk_when: high
+  revised: false
+  unit: "pp"
+  plausible: [0, 10]
+  rules:
+    - {when: "value > 4", min_score: 86, label: "Spread above 4 points: crisis-level stress"}
+  explain: >
+    The extra interest investors demand to lend to medium-quality companies instead of
+    the US government. When it widens, lenders are worried about defaults, and this has
+    often happened before stocks fall. It was about 6 points at the worst of 2008.
+
+- id: curve_10y3m
+  name: Yield curve (10-year minus 3-month)
+  category: rates
+  source: fred
+  series: T10Y3M
+  frequency: daily
+  release_lag_days: 1
+  transform: level
+  risk_when: low
+  revised: false
+  unit: "pp"
+  plausible: [-6, 6]
+  rules:
+    - {when: "value < 0", min_score: 86, label: "Curve inverted: short-term rates above long-term rates"}
+    - {crossed_above_zero_within_days: 182, min_score: 86, label: "Curve un-inverting: recession often begins here"}
+  explain: >
+    Normally, lending for 10 years pays more than lending for 3 months. When short-term
+    rates rise above long-term rates (an "inverted" curve), markets expect the Fed to cut
+    because the economy will weaken. It has inverted before most US recessions since 1970.
+
+- id: vix
+  name: VIX (stock market fear gauge)
+  category: volatility
+  source: yahoo
+  series: "^VIX"
+  frequency: daily
+  release_lag_days: 1
+  transform: level
+  risk_when: high
+  revised: false
+  unit: ""
+  plausible: [5, 100]
+  rules:
+    - {when: "value > 40", min_score: 90, label: "VIX above 40: market panic"}
+  explain: >
+    How much movement options traders expect in the S&P 500 over the next month.
+    Around 12-20 is calm; above 30 means fear; above 40 has only happened in real crises.
+
+- id: cpi_yoy
+  name: Inflation (CPI, year over year)
+  category: inflation
+  source: fred
+  series: CPIAUCSL
+  frequency: monthly
+  release_lag_days: 45
+  transform: yoy_pct
+  risk_when: high
+  revised: true
+  unit: "%"
+  plausible: [10, 1000]
+  explain: >
+    How much consumer prices rose over the last 12 months. High inflation pushes the Fed
+    to keep rates high, which lowers bond prices and makes stocks less attractive.
+    The Fed targets about 2%.
+
+- id: sahm_rule
+  name: Sahm Rule recession indicator
+  category: labour
+  source: fred
+  series: SAHMREALTIME
+  frequency: monthly
+  release_lag_days: 37
+  transform: level
+  risk_when: high
+  revised: false
+  unit: "pp"
+  plausible: [-2, 15]
+  rules:
+    - {when: "value >= 0.5", min_score: 90, label: "Sahm Rule triggered: recession signal"}
+  explain: >
+    How far the unemployment rate (3-month average) has risen above its low of the past
+    year. A rise of 0.5 points or more has marked the start of every US recession since 1970.
