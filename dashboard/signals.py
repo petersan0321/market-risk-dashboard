@@ -13,8 +13,8 @@ from pathlib import Path
 
 import pandas as pd
 
-from dashboard.config import COMPARISON, Indicator, load_indicators
-from dashboard.fetch.base import is_stale, read_raw
+from dashboard.config import COMPARISON, FREQUENCY_INTERVAL_DAYS, Indicator, load_indicators
+from dashboard.fetch.base import read_raw
 from dashboard.paths import RAW_DIR, SCORES_DIR
 
 log = logging.getLogger(__name__)
@@ -60,17 +60,25 @@ def apply_transform(s: pd.Series, name: str) -> pd.Series:
 
 # --- scoring ------------------------------------------------------------------------
 
-def known_daily(ind: Indicator, raw: pd.Series, today: date) -> pd.Series:
-    """Transformed values as they were known on each business day (release lag applied)."""
+def _transformed(ind: Indicator, raw: pd.Series) -> pd.Series:
     value = raw.sort_index()
     for name in ind.transform:
         value = apply_transform(value, name)
-    value = value.dropna()
-    if value.empty:
-        return value
-    value.index = value.index + pd.Timedelta(days=ind.release_lag_days)
-    days = pd.bdate_range(value.index[0], pd.Timestamp(today))
-    return value.reindex(value.index.union(days)).ffill().reindex(days)
+    return value.dropna()
+
+
+def _to_known_days(observed: pd.Series, ind: Indicator, today: date) -> pd.Series:
+    """Re-index observations to the business days on which they were known (release lag applied)."""
+    known = observed.copy()
+    known.index = known.index + pd.Timedelta(days=ind.release_lag_days)
+    days = pd.bdate_range(known.index[0], pd.Timestamp(today))
+    return known.reindex(known.index.union(days)).ffill().reindex(days)
+
+
+def known_daily(ind: Indicator, raw: pd.Series, today: date) -> pd.Series:
+    """Transformed values as they were known on each business day."""
+    value = _transformed(ind, raw)
+    return value if value.empty else _to_known_days(value, ind, today)
 
 
 def _rule_mask(rule, value: pd.Series) -> pd.Series:
@@ -82,10 +90,15 @@ def _rule_mask(rule, value: pd.Series) -> pd.Series:
 
 
 def score_indicator(ind: Indicator, raw: pd.Series, today: date) -> pd.DataFrame:
-    """Columns: value, score (0-100, NaN before 5 years of history), rule_label."""
-    value = known_daily(ind, raw, today)
-    if value.empty:
-        return pd.DataFrame(columns=["value", "score", "rule_label"])
+    """Columns: value, score (0-100, NaN before 5 years of history), rule_label, and stale
+    (True on days when the latest known observation was older than expected)."""
+    transformed = _transformed(ind, raw)
+    if transformed.empty:
+        return pd.DataFrame(columns=["value", "score", "rule_label", "stale"])
+    value = _to_known_days(transformed, ind, today)
+    observed_on = _to_known_days(pd.Series(transformed.index, index=transformed.index), ind, today)
+    allowed = pd.Timedelta(days=2 * FREQUENCY_INTERVAL_DAYS[ind.frequency] + ind.release_lag_days)
+    stale = (value.index - pd.DatetimeIndex(observed_on)) > allowed
     pct = value.expanding().rank(pct=True) * 100
     pct[value.index < value.index[0] + MIN_HISTORY] = float("nan")
     if ind.risk_when == "high":
@@ -100,7 +113,7 @@ def score_indicator(ind: Indicator, raw: pd.Series, today: date) -> pd.DataFrame
         hit = _rule_mask(rule, value) & score.notna()
         score = score.where(~hit, score.clip(lower=rule.min_score))
         labels = labels.where(~hit, labels.where(labels == "", labels + "; ") + rule.label)
-    return pd.DataFrame({"value": value, "score": score.round(1), "rule_label": labels})
+    return pd.DataFrame({"value": value, "score": score.round(1), "rule_label": labels, "stale": stale})
 
 
 def light(score: float) -> str:
@@ -135,7 +148,7 @@ def summarize(ind: Indicator, raw: pd.Series, scored: pd.DataFrame, today: date)
         return Latest(ind.id, None, None, "none", "flat", "", None, None, True)
     last = scored.iloc[-1]
     last_obs = raw.index.max().date()
-    stale = is_stale(ind, last_obs, today)
+    stale = bool(last["stale"])
     score = None if pd.isna(last["score"]) else float(last["score"])
     return Latest(
         id=ind.id,
@@ -150,9 +163,15 @@ def summarize(ind: Indicator, raw: pd.Series, scored: pd.DataFrame, today: date)
     )
 
 
-def run(indicators: list[Indicator], raw_dir: Path, scores_dir: Path, today: date) -> list[Latest]:
+TABLES = ("value", "score", "stale", "rule_label")
+
+
+def run(indicators: list[Indicator], raw_dir: Path, scores_dir: Path, today: date) -> dict[str, pd.DataFrame]:
+    """Score every indicator. Writes one wide table per column in TABLES (date x indicator)
+    plus latest.json, and returns the tables."""
     scores_dir.mkdir(parents=True, exist_ok=True)
-    frames, latest = [], []
+    columns = {t: {} for t in TABLES}
+    latest = []
     for ind in indicators:
         path = raw_dir / f"{ind.id}.csv"
         if not path.exists():
@@ -162,17 +181,30 @@ def run(indicators: list[Indicator], raw_dir: Path, scores_dir: Path, today: dat
         raw = read_raw(path)
         scored = score_indicator(ind, raw, today)
         latest.append(summarize(ind, raw, scored, today))
-        frames.append(scored.rename_axis("date").reset_index().assign(indicator=ind.id))
-    if frames:
-        pd.concat(frames).to_csv(scores_dir / "indicators.csv", index=False, date_format="%Y-%m-%d")
+        for t in TABLES:
+            columns[t][ind.id] = scored[t]
+    tables = {t: pd.DataFrame(columns[t]).rename_axis("date") for t in TABLES}
+    tables["stale"] = tables["stale"].astype("boolean").fillna(True).astype(bool)
+    tables["rule_label"] = tables["rule_label"].fillna("")
+    for t, df in tables.items():
+        df.to_csv(scores_dir / f"indicator_{t}.csv", date_format="%Y-%m-%d")
     (scores_dir / "latest.json").write_text(json.dumps(
         {"as_of": today.isoformat(), "indicators": [vars(l) for l in latest]}, indent=2))
-    return latest
+    return tables
+
+
+def read_tables(scores_dir: Path) -> dict[str, pd.DataFrame]:
+    dtypes = {"value": float, "score": float, "stale": bool, "rule_label": str}
+    return {t: pd.read_csv(scores_dir / f"indicator_{t}.csv", index_col="date", parse_dates=["date"],
+                           dtype={c: dtypes[t] for c in pd.read_csv(scores_dir / f"indicator_{t}.csv", nrows=0).columns
+                                  if c != "date"}, keep_default_na=t != "rule_label")
+            for t in TABLES}
 
 
 def main() -> None:
-    for l in run(load_indicators(), RAW_DIR, SCORES_DIR, date.today()):
-        print(f"{l.id}: value={l.value} score={l.score} {l.light} {l.trend} {l.rule_label}")
+    run(load_indicators(), RAW_DIR, SCORES_DIR, date.today())
+    for row in json.loads((SCORES_DIR / "latest.json").read_text())["indicators"]:
+        print(f"{row['id']}: value={row['value']} score={row['score']} {row['light']} {row['trend']} {row['rule_label']}")
 
 
 if __name__ == "__main__":

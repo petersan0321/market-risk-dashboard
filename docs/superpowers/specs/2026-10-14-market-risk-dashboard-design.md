@@ -201,6 +201,7 @@ Rule overrides in v1:
 | sahm_rule | value ≥ 0.5 | min_score 90, "Sahm Rule triggered" |
 | baa_spread | value > 4 | min_score 86 |
 | vix | value > 40 | min_score 90 |
+| vix_term | value > 1 | min_score 86, "Near-term fear above longer-term fear" |
 
 Exact `release_lag_days` per series are set during implementation from each series' release schedule (daily market data: 1; weekly claims/STLFSI/NFCI: 5–7; monthly CPI/PCE/payrolls/etc.: 14–45; quarterly SLOOS: ~35 after quarter end; Shiller: 30).
 
@@ -224,7 +225,7 @@ For each indicator on each date *t*:
 4. If `risk_when: low`, score = 100 − percentile; else score = percentile.
 5. Apply `rules`: if a rule matches, score = max(score, `min_score`) and record the rule label.
 
-Output per indicator per day: `value`, `score`, `rule_label` (nullable), `stale` flag.
+Output per indicator per day: `value`, `score`, `rule_label` (nullable), `stale` flag. Staleness is computed for every past day, not just today, so historical composites exclude data that was out of date at the time. Stored as wide tables (date × indicator), one per column.
 
 **Light:** green < 60, amber 60–85, red > 85.
 **Trend arrow:** score(t) − score(t − 63 trading days): ↑ if ≥ +10, ↓ if ≤ −10, → otherwise.
@@ -246,7 +247,8 @@ Weighted mean of available category scores using `config/weights.yaml` (default:
 - **Growth direction:** mean of z-scores (point-in-time) of `cfnai_ma3`, −`claims_4w`, `permits_yoy`; "rising" if its 6-month change > 0.
 - **Inflation direction:** core PCE 6-month annualized minus core PCE 12-month YoY; "rising" if > 0.
 - Four regimes: Growth ↑ Inflation ↓ ("Goldilocks"), Growth ↑ Inflation ↑ ("Reflation"), Growth ↓ Inflation ↓ ("Slowdown"), Growth ↓ Inflation ↑ ("Stagflation").
-- For each regime, the site shows median annualized S&P 500 and bond returns across all historical days in that regime.
+- **Confirmation:** the daily signal is noisy (it flipped 465 times in 60 years), so the dashboard switches regime only after a new one has been signalled for 42 consecutive trading days (about 2 months; ~105 switches in 60 years). The page also shows the latest unconfirmed signal.
+- For each regime, the site shows the average annualized S&P 500 and bond return (mean daily log return × 252) while that regime was in place, using the previous day's regime to avoid look-ahead.
 
 ### 5.5 Return series
 

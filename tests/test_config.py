@@ -18,7 +18,7 @@ def write(tmp_path, entries):
 
 def test_real_config_is_valid():
     indicators = load_indicators()
-    assert {i.id for i in indicators} == {"baa_spread", "curve_10y3m", "vix", "cpi_yoy", "sahm_rule"}
+    assert {"baa_spread", "curve_10y3m", "vix", "cpi_yoy", "sahm_rule"} <= {i.id for i in indicators}
 
 
 def test_valid_entry_loads(tmp_path):

@@ -1,0 +1,76 @@
+{% extends "base.html.j2" %}
+{% from "macros.html.j2" import chip, meter, chart, plotly_scripts %}
+{% block title %}{{ CATEGORIES[cat] }} · Market Risk Dashboard{% endblock %}
+{% block content %}
+{% set c = r.categories[cat] %}
+<nav class="cat-nav" aria-label="Categories">
+  {% for cid, name in CATEGORIES.items() %}
+  <a href="{{ cid }}.html" {% if cid == cat %}aria-current="page"{% endif %}>{{ name }}</a>
+  {% endfor %}
+</nav>
+
+<section class="cat-header">
+  <div>
+    <p class="eyebrow">Category</p>
+    <h1>{{ c.name }}</h1>
+    <p class="muted">The category score is the average of its indicators' scores (stale indicators excluded).</p>
+  </div>
+  <div class="cat-score">
+    <p class="big-number">{{ c.score|round|int if c.score is not none else "—" }}<span class="of">/100</span></p>
+    {{ chip(c.light) }}
+    <p class="small">{{ TREND_LABELS[c.trend] }}</p>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Category score, last 10 years</h2>
+  {% if chart_data.x %}{{ chart("cat-chart", chart_data) }}{% else %}<p class="muted">No scores yet for this category.</p>{% endif %}
+</section>
+
+<section class="grid grid-indicators" aria-label="Indicators">
+  {% for card in cards %}
+  {% set ind = card.ind %}{% set d = card.detail %}
+  <article class="card indicator" id="{{ ind.id }}">
+    <header>
+      <h3>{{ ind.name }}</h3>
+    </header>
+    {% if d.available %}
+    <div class="row">
+      <div>
+        <p class="mid-number">{{ d.score|round|int if d.score is not none else "—" }}<span class="of">/100</span></p>
+        <p class="small">Reading: <strong>{{ d.value|fmt(ind.unit) }}</strong></p>
+      </div>
+      {{ chip(d.light) }}
+    </div>
+    {{ meter(d.score) }}
+    <p class="small">{{ d.sentence }} {{ TREND_LABELS[d.trend] }}{% if d.score_3m_ago is not none %} <span class="muted">(was {{ d.score_3m_ago|round|int }} three months ago)</span>{% endif %}.</p>
+    {% if d.rule_label %}<p class="rule small"><span aria-hidden="true">⚠</span> {{ d.rule_label }}</p>{% endif %}
+
+    <div class="spectrum" aria-label="Where today's reading sits in its history">
+      <div class="spectrum-track">
+        <div class="zones">{% for z in card.zones %}<span class="zone zone-{{ z.light }}" style="left: {{ z.left }}%; width: {{ z.width }}%"></span>{% endfor %}</div>
+        <span class="today align-{{ 'left' if card.today_pos < 15 else 'right' if card.today_pos > 85 else 'center' }}" style="left: {{ card.today_pos }}%"><span class="today-label">Today {{ d.value|fmt(ind.unit) }}</span></span>
+      </div>
+      <div class="spectrum-ends small muted">
+        <span>Low {{ d.spectrum.min|fmt(ind.unit) }}</span>
+        <span>Median {{ d.spectrum.median|fmt(ind.unit) }}</span>
+        <span>High {{ d.spectrum.max|fmt(ind.unit) }}</span>
+      </div>
+      <p class="small muted">Turns amber at {{ d.spectrum.amber|map("fmt", ind.unit)|join(" / ") }} and red at {{ d.spectrum.red|map("fmt", ind.unit)|join(" / ") }} (history since {{ d.spectrum.since[:4] }}).</p>
+    </div>
+
+    {{ chart("chart-" ~ ind.id, card.chart) }}
+    {% else %}
+    <p class="muted">No data yet.</p>
+    {% endif %}
+    <p class="explain small">{{ ind.explain }}</p>
+    <footer class="meta small">
+      {% if d.stale %}<span class="badge badge-warn" title="No new data for longer than expected; excluded from scores.">Stale</span>{% endif %}
+      {% if ind.revised %}<span class="badge" title="Historical values are today's revised figures. What investors saw at the time may have differed, so treat past readings as approximate.">Revised data</span>{% endif %}
+      <span class="muted">Source: {{ {"fred": "FRED", "yahoo": "Yahoo Finance", "shiller": "Shiller", "gpr": "GPR index", "treasury": "TreasuryDirect", "derived": "calculated from several series"}[ind.source] }}</span>
+    </footer>
+  </article>
+  {% endfor %}
+</section>
+{% endblock %}
+{% block scripts %}{{ plotly_scripts(root) }}{% endblock %}

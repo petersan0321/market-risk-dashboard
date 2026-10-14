@@ -119,7 +119,7 @@ def test_fetch_all_keeps_old_data_on_failure_and_drops_implausible(make_indicato
             raise ConnectionError("down")
         return series
 
-    status = fetch_all([good, bad], tmp_path, fetchers={"fred": fetcher}, sleep=lambda _: None)
+    status = fetch_all([good, bad], tmp_path, fetchers={"fred": fetcher}, sleep=lambda _: None, markets={})
 
     assert status["good"] == "ok" and status["bad"].startswith("failed")
     assert read_raw(tmp_path / "good.csv").tolist() == [1.0]  # 999 dropped as implausible

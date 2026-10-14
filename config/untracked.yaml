@@ -1,0 +1,48 @@
+# Indicators worth knowing about that the dashboard does not score yet (spec §4.3).
+
+- name: Forward P/E ratio
+  why_it_matters: >
+    Price divided by the earnings analysts expect over the next 12 months. Like CAPE, it shows
+    how expensive stocks are, but it reacts faster because it uses forecasts.
+  why_not_tracked: >
+    Analyst forecast data is sold by commercial providers; there is no reliable free history.
+
+- name: Earnings revisions
+  why_it_matters: >
+    Whether analysts are raising or cutting their profit forecasts. A wave of cuts often comes
+    before or during stock market declines.
+  why_not_tracked: No free source with a long history.
+
+- name: AAII investor sentiment survey
+  why_it_matters: >
+    A weekly poll of individual investors (bullish vs bearish). Extreme readings tend to be
+    contrarian: when nearly everyone is bullish, there are few buyers left.
+  why_not_tracked: >
+    The data is published as a spreadsheet behind a membership site, with no stable free download.
+
+- name: Put/call ratio
+  why_it_matters: >
+    How many protective "put" options traders buy compared with "call" options. A spike means
+    fear; very low readings mean complacency.
+  why_not_tracked: The exchange stopped publishing free historical data.
+
+- name: Margin debt
+  why_it_matters: >
+    Money investors borrow to buy stocks. Fast growth means speculation; a sharp fall can force
+    selling and deepen a decline.
+  why_not_tracked: Published monthly as a spreadsheet without a stable download link.
+
+- name: High-yield and investment-grade spreads (ICE BofA)
+  why_it_matters: >
+    The best-known measures of corporate credit stress, especially for riskier ("junk") companies.
+  why_not_tracked: >
+    FRED is licensed to publish only the last 3 years, too short to score against history.
+    The Moody's Baa spread, back to 1986, is used instead.
+
+- name: Treasury auction tails
+  why_it_matters: >
+    Whether the government had to pay a higher interest rate than expected to sell its bonds.
+    Big tails mean weak demand and can push all bond yields up.
+  why_not_tracked: >
+    Measuring the tail needs pre-auction ("when-issued") yields, which aren't freely available.
+    The dashboard uses the bid-to-cover ratio for auction demand instead.

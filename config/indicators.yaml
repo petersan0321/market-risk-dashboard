@@ -1,25 +1,62 @@
 # Indicator catalog. Schema: docs/superpowers/specs/2026-10-14-market-risk-dashboard-design.md §4.1
 # release_lag_days is measured from the date the source labels the observation with
 # (for monthly FRED series that is the first day of the month).
+# The value shown and scored is the value after `transform`; `unit` describes that value.
 
-- id: baa_spread
-  name: Corporate credit spread (Baa minus 10-year Treasury)
-  category: credit
+# --- Rates & Fed -------------------------------------------------------------------
+
+- id: fed_funds_chg
+  name: Fed rate change over 12 months
+  category: rates
   source: fred
-  series: BAA10Y
+  series: DFF
   frequency: daily
   release_lag_days: 1
-  transform: level
+  transform: change_12m
   risk_when: high
   revised: false
   unit: "pp"
-  plausible: [0, 10]
-  rules:
-    - {when: "value > 4", min_score: 86, label: "Spread above 4 points: crisis-level stress"}
+  plausible: [-1, 25]
   explain: >
-    The extra interest investors demand to lend to medium-quality companies instead of
-    the US government. When it widens, lenders are worried about defaults, and this has
-    often happened before stocks fall. It was about 6 points at the worst of 2008.
+    How much the Federal Reserve's short-term interest rate has moved in the past year.
+    Fast hikes make borrowing more expensive for everyone and have preceded many slowdowns
+    and market declines.
+
+- id: ust10y_chg
+  name: 10-year Treasury yield change over 6 months
+  category: rates
+  source: fred
+  series: DGS10
+  frequency: daily
+  release_lag_days: 1
+  transform: change_6m
+  risk_when: high
+  revised: false
+  unit: "pp"
+  plausible: [-1, 20]
+  explain: >
+    How fast long-term interest rates are rising. When yields jump, existing bonds lose value
+    and stocks get less attractive, as in 1994 and 2022.
+
+- id: curve_10y2y
+  name: Yield curve (10-year minus 2-year)
+  category: rates
+  source: fred
+  series: T10Y2Y
+  frequency: daily
+  release_lag_days: 1
+  transform: level
+  risk_when: low
+  revised: false
+  unit: "pp"
+  plausible: [-4, 5]
+  rules:
+    - {when: "value < 0", min_score: 86, label: "Curve inverted: short-term rates above long-term rates"}
+    - {crossed_above_zero_within_days: 182, min_score: 86, label: "Curve un-inverting: recession often begins here"}
+  explain: >
+    The gap between 10-year and 2-year government bond yields. When it turns negative
+    ("inverted"), markets expect the Fed to cut rates because the economy will weaken.
+    It inverted before most US recessions since the 1970s.
 
 - id: curve_10y3m
   name: Yield curve (10-year minus 3-month)
@@ -41,23 +78,75 @@
     rates rise above long-term rates (an "inverted" curve), markets expect the Fed to cut
     because the economy will weaken. It has inverted before most US recessions since 1970.
 
-- id: vix
-  name: VIX (stock market fear gauge)
-  category: volatility
+- id: real_yield_10y
+  name: Real 10-year yield (after inflation)
+  category: rates
+  source: fred
+  series: DFII10
+  frequency: daily
+  release_lag_days: 1
+  transform: level
+  risk_when: high
+  revised: false
+  unit: "%"
+  plausible: [-3, 6]
+  explain: >
+    The interest rate on inflation-protected government bonds: the "true" cost of money after
+    inflation. High real yields make safe bonds a strong competitor to stocks and weigh on
+    stock valuations, especially for growth companies.
+
+- id: term_premium
+  name: Term premium (10-year)
+  category: rates
+  source: fred
+  series: THREEFYTP10
+  frequency: daily
+  release_lag_days: 1
+  transform: level
+  risk_when: high
+  revised: true
+  unit: "pp"
+  plausible: [-3, 6]
+  explain: >
+    The extra yield investors demand for locking money up for 10 years instead of rolling
+    short-term loans. A rising term premium means investors are nervous about inflation,
+    government debt, or policy, and it pushes long-term bond prices down. This is a model
+    estimate (Federal Reserve), so past values can be revised.
+
+- id: fed_balance_sheet
+  name: Fed balance sheet growth
+  category: rates
+  source: fred
+  series: WALCL
+  frequency: weekly
+  release_lag_days: 1
+  transform: yoy_pct
+  risk_when: low
+  revised: false
+  unit: "%"
+  plausible: [100000, 20000000]
+  explain: >
+    How fast the Fed's holdings of bonds are growing. When the Fed buys bonds ("QE") it adds
+    money to the financial system; when it shrinks its holdings ("QT") it drains money,
+    which tends to tighten financial conditions.
+
+- id: move_index
+  name: MOVE index (bond market fear gauge)
+  category: rates
   source: yahoo
-  series: "^VIX"
+  series: "^MOVE"
   frequency: daily
   release_lag_days: 1
   transform: level
   risk_when: high
   revised: false
   unit: ""
-  plausible: [5, 100]
-  rules:
-    - {when: "value > 40", min_score: 90, label: "VIX above 40: market panic"}
+  plausible: [20, 300]
   explain: >
-    How much movement options traders expect in the S&P 500 over the next month.
-    Around 12-20 is calm; above 30 means fear; above 40 has only happened in real crises.
+    The bond market's version of the VIX: how much traders expect Treasury yields to swing.
+    High readings mean uncertainty about interest rates, which often spills into stocks.
+
+# --- Inflation ---------------------------------------------------------------------
 
 - id: cpi_yoy
   name: Inflation (CPI, year over year)
@@ -76,6 +165,188 @@
     to keep rates high, which lowers bond prices and makes stocks less attractive.
     The Fed targets about 2%.
 
+- id: core_pce_6m
+  name: Core PCE inflation (6-month, annualized)
+  category: inflation
+  source: fred
+  series: PCEPILFE
+  frequency: monthly
+  release_lag_days: 58
+  transform: ann_6m
+  risk_when: high
+  revised: true
+  unit: "%"
+  plausible: [10, 1000]
+  explain: >
+    The Fed's preferred inflation measure, excluding volatile food and energy, over the
+    last 6 months (scaled to a yearly rate). It shows the recent trend faster than the
+    12-month figure.
+
+- id: breakeven_10y
+  name: Expected inflation (10-year breakeven)
+  category: inflation
+  source: fred
+  series: T10YIE
+  frequency: daily
+  release_lag_days: 1
+  transform: level
+  risk_when: high
+  revised: false
+  unit: "%"
+  plausible: [-2, 6]
+  explain: >
+    The average inflation rate bond investors expect over the next 10 years, read from the
+    gap between normal and inflation-protected bonds. If it climbs well above 2%, investors
+    fear inflation is getting out of control.
+
+- id: wages_yoy
+  name: Wage growth (year over year)
+  category: inflation
+  source: fred
+  series: AHETPI
+  frequency: monthly
+  release_lag_days: 37
+  transform: yoy_pct
+  risk_when: high
+  revised: true
+  unit: "%"
+  plausible: [1, 200]
+  explain: >
+    How fast hourly pay is rising for production and non-supervisory workers. Fast wage growth
+    supports spending but can keep inflation high, which keeps the Fed from cutting rates.
+
+- id: oil_yoy
+  name: Oil price change (year over year)
+  category: inflation
+  source: fred
+  series: DCOILWTICO
+  frequency: daily
+  release_lag_days: 7
+  transform: yoy_pct
+  risk_when: high
+  revised: false
+  unit: "%"
+  plausible: [-50, 300]
+  explain: >
+    How much the price of crude oil has changed in a year. Oil spikes raise costs for
+    businesses and consumers and have preceded several recessions (1973, 1990, 2008).
+
+# --- Growth ------------------------------------------------------------------------
+
+- id: cfnai_ma3
+  name: Chicago Fed National Activity Index (3-month avg)
+  category: growth
+  source: fred
+  series: CFNAIMA3
+  frequency: monthly
+  release_lag_days: 52
+  transform: level
+  risk_when: low
+  revised: true
+  unit: ""
+  plausible: [-25, 10]
+  explain: >
+    One number summarizing 85 measures of US economic activity. Zero means the economy is
+    growing at its normal pace; below -0.7 has historically signalled a recession.
+
+- id: permits_yoy
+  name: Building permits (year over year)
+  category: growth
+  source: fred
+  series: PERMIT
+  frequency: monthly
+  release_lag_days: 48
+  transform: yoy_pct
+  risk_when: low
+  revised: true
+  unit: "%"
+  plausible: [100, 5000]
+  explain: >
+    New home building approvals. Housing is very sensitive to interest rates and usually
+    turns down early, so falling permits are a classic early warning of a slowdown.
+
+- id: retail_sales_yoy
+  name: Retail sales (year over year)
+  category: growth
+  source: fred
+  series: RSAFS
+  frequency: monthly
+  release_lag_days: 45
+  transform: yoy_pct
+  risk_when: low
+  revised: true
+  unit: "%"
+  plausible: [100000, 3000000]
+  explain: >
+    How much more (or less) people are spending in shops and online than a year ago.
+    Consumer spending is about two-thirds of the US economy.
+
+- id: indpro_yoy
+  name: Industrial production (year over year)
+  category: growth
+  source: fred
+  series: INDPRO
+  frequency: monthly
+  release_lag_days: 46
+  transform: yoy_pct
+  risk_when: low
+  revised: true
+  unit: "%"
+  plausible: [1, 300]
+  explain: >
+    Output of US factories, mines, and utilities compared with a year ago. Shrinking output
+    often goes with falling company profits.
+
+- id: consumer_sentiment
+  name: Consumer sentiment (University of Michigan)
+  category: growth
+  source: fred
+  series: UMCSENT
+  frequency: monthly
+  release_lag_days: 30
+  transform: level
+  risk_when: low
+  revised: false
+  unit: ""
+  plausible: [20, 150]
+  explain: >
+    A monthly survey of how households feel about their finances and the economy. Gloomy
+    consumers tend to spend less, which slows growth.
+
+# --- Labour market -----------------------------------------------------------------
+
+- id: claims_4w
+  name: Jobless claims (4-week avg, 6-month change)
+  category: labour
+  source: fred
+  series: ICSA
+  frequency: weekly
+  release_lag_days: 5
+  transform: [ma_4w, pct_change_6m]
+  risk_when: high
+  revised: true
+  unit: "%"
+  plausible: [10000, 10000000]
+  explain: >
+    How many people filed for unemployment benefits, averaged over 4 weeks, compared with 6
+    months earlier. It is weekly, so it is one of the earliest signs that layoffs are rising.
+
+- id: unemployment
+  name: Unemployment rate change over 12 months
+  category: labour
+  source: fred
+  series: UNRATE
+  frequency: monthly
+  release_lag_days: 37
+  transform: change_12m
+  risk_when: high
+  revised: true
+  unit: "pp"
+  plausible: [0, 30]
+  explain: >
+    How much the unemployment rate has risen or fallen in a year. Unemployment tends to rise
+    slowly at first and then quickly once a recession starts.
+
 - id: sahm_rule
   name: Sahm Rule recession indicator
   category: labour
@@ -93,3 +364,414 @@
   explain: >
     How far the unemployment rate (3-month average) has risen above its low of the past
     year. A rise of 0.5 points or more has marked the start of every US recession since 1970.
+
+- id: payrolls_3m
+  name: Jobs added over 3 months
+  category: labour
+  source: fred
+  series: PAYEMS
+  frequency: monthly
+  release_lag_days: 37
+  transform: change_3m
+  risk_when: low
+  revised: true
+  unit: "k"
+  plausible: [10000, 1000000]
+  explain: >
+    How many jobs the economy added (in thousands) over the last 3 months. Job losses mean
+    less income and spending, and usually come with recessions.
+
+# --- Credit & financial stress -------------------------------------------------------
+
+- id: baa_spread
+  name: Corporate credit spread (Baa minus 10-year Treasury)
+  category: credit
+  source: fred
+  series: BAA10Y
+  frequency: daily
+  release_lag_days: 1
+  transform: level
+  risk_when: high
+  revised: false
+  unit: "pp"
+  plausible: [0, 10]
+  rules:
+    - {when: "value > 4", min_score: 86, label: "Spread above 4 points: crisis-level stress"}
+  explain: >
+    The extra interest investors demand to lend to medium-quality companies instead of
+    the US government. When it widens, lenders are worried about defaults, and this has
+    often happened before stocks fall. It was about 6 points at the worst of 2008.
+
+- id: baa_aaa_spread
+  name: Default risk spread (Baa minus Aaa)
+  category: credit
+  source: derived
+  inputs:
+    baa: {source: fred, series: BAA10Y}
+    aaa: {source: fred, series: AAA10Y}
+  formula: "baa - aaa"
+  frequency: daily
+  release_lag_days: 1
+  transform: level
+  risk_when: high
+  revised: false
+  unit: "pp"
+  plausible: [0, 5]
+  explain: >
+    The gap between borrowing costs for medium-quality and top-quality companies. Because both
+    are corporate bonds, this isolates fear of default from general interest-rate moves.
+
+- id: stlfsi
+  name: St. Louis Fed Financial Stress Index
+  category: credit
+  source: fred
+  series: STLFSI4
+  frequency: weekly
+  release_lag_days: 6
+  transform: level
+  risk_when: high
+  revised: false
+  unit: ""
+  plausible: [-5, 30]
+  explain: >
+    Combines 18 market measures (interest rates, spreads, volatility) into one stress reading.
+    Zero is normal; above zero means more stress than usual.
+
+- id: nfci
+  name: Chicago Fed Financial Conditions Index
+  category: credit
+  source: fred
+  series: NFCI
+  frequency: weekly
+  release_lag_days: 5
+  transform: level
+  risk_when: high
+  revised: true
+  unit: ""
+  plausible: [-3, 10]
+  explain: >
+    How easy or hard it is to borrow and raise money across US markets and banks.
+    Positive means tighter than average; tight conditions slow the economy.
+
+- id: sloos_tightening
+  name: Banks tightening business loan standards
+  category: credit
+  source: fred
+  series: DRTSCILM
+  frequency: quarterly
+  release_lag_days: 35
+  transform: level
+  risk_when: high
+  revised: false
+  unit: "%"
+  plausible: [-50, 100]
+  explain: >
+    The share of banks making it harder for companies to borrow (from the Fed's quarterly
+    survey of loan officers). When most banks tighten, businesses invest and hire less.
+
+# --- Valuation ---------------------------------------------------------------------
+
+- id: cape
+  name: Shiller CAPE ratio
+  category: valuation
+  source: shiller
+  series: cape
+  frequency: monthly
+  release_lag_days: 30
+  transform: level
+  risk_when: high
+  revised: false
+  unit: "x"
+  plausible: [3, 80]
+  explain: >
+    The S&P 500 price divided by the average of 10 years of inflation-adjusted earnings.
+    High readings mean stocks are expensive, which has meant lower returns over the
+    following decade. It says little about next month.
+
+- id: equity_risk_premium
+  name: Equity risk premium (earnings yield minus 10-year yield)
+  category: valuation
+  source: derived
+  inputs:
+    ey: {source: shiller, series: earnings_yield}
+    y: {source: fred, series: DGS10}
+  formula: "ey - y"
+  frequency: monthly
+  release_lag_days: 120
+  transform: level
+  risk_when: low
+  revised: false
+  unit: "pp"
+  plausible: [-15, 25]
+  explain: >
+    How much more stocks "earn" for their price than a safe government bond pays. When the
+    gap is small or negative, investors are paid little extra for taking stock market risk.
+
+# --- Volatility, sentiment & breadth ---------------------------------------------------
+
+- id: vix
+  name: VIX (stock market fear gauge)
+  category: volatility
+  source: yahoo
+  series: "^VIX"
+  frequency: daily
+  release_lag_days: 1
+  transform: level
+  risk_when: high
+  revised: false
+  unit: ""
+  plausible: [5, 100]
+  rules:
+    - {when: "value > 40", min_score: 90, label: "VIX above 40: market panic"}
+  explain: >
+    How much movement options traders expect in the S&P 500 over the next month.
+    Around 12-20 is calm; above 30 means fear; above 40 has only happened in real crises.
+
+- id: vix_term
+  name: VIX term structure (1-month vs 3-month)
+  category: volatility
+  source: derived
+  inputs:
+    vix: {source: yahoo, series: "^VIX"}
+    vix3m: {source: yahoo, series: "^VIX3M"}
+  formula: "vix / vix3m"
+  frequency: daily
+  release_lag_days: 1
+  transform: level
+  risk_when: high
+  revised: false
+  unit: "x"
+  plausible: [0.4, 2]
+  rules:
+    - {when: "value > 1", min_score: 86, label: "Near-term fear above longer-term fear"}
+  explain: >
+    Normally traders expect more uncertainty further out, so this ratio sits below 1.
+    When it rises above 1, fear about the next few weeks is acute, a typical sign of a sell-off.
+
+- id: breadth_rsp_spy
+  name: Market breadth (equal-weight vs S&P 500, 6-month change)
+  category: volatility
+  source: derived
+  inputs:
+    rsp: {source: yahoo, series: RSP}
+    spy: {source: yahoo, series: SPY}
+  formula: "rsp / spy"
+  frequency: daily
+  release_lag_days: 1
+  transform: pct_change_6m
+  risk_when: low
+  revised: false
+  unit: "%"
+  plausible: [0.05, 1]
+  explain: >
+    Compares the average stock (equal-weight index) with the big-company-dominated S&P 500.
+    If the S&P rises while the average stock lags, the rally rests on a few giants and is fragile.
+
+- id: spx_vs_200dma
+  name: S&P 500 vs its 200-day average
+  category: volatility
+  source: yahoo
+  series: "^GSPC"
+  frequency: daily
+  release_lag_days: 1
+  transform: pct_from_ma200
+  risk_when: low
+  revised: false
+  unit: "%"
+  plausible: [1, 100000]
+  explain: >
+    How far the S&P 500 is above or below its average price over roughly the last 10 months.
+    Below the average is a common definition of a market in a downtrend.
+
+- id: spx_drawdown
+  name: S&P 500 drop from its 1-year high
+  category: volatility
+  source: yahoo
+  series: "^GSPC"
+  frequency: daily
+  release_lag_days: 1
+  transform: drawdown_252d
+  risk_when: high
+  revised: false
+  unit: "%"
+  plausible: [1, 100000]
+  explain: >
+    How far the S&P 500 is below its highest point of the past year. 10% is a "correction";
+    20% is a "bear market".
+
+# --- Dollar, commodities & global ----------------------------------------------------
+
+- id: dollar_yoy
+  name: US dollar index (year over year)
+  category: global
+  source: yahoo
+  series: "DX-Y.NYB"
+  frequency: daily
+  release_lag_days: 1
+  transform: yoy_pct
+  risk_when: high
+  revised: false
+  unit: "%"
+  plausible: [50, 200]
+  explain: >
+    How much the dollar has strengthened against major currencies in a year. A fast-rising
+    dollar cuts US companies' overseas profits and squeezes countries that borrowed in dollars.
+
+- id: copper_gold
+  name: Copper/gold ratio (6-month change)
+  category: global
+  source: derived
+  inputs:
+    copper: {source: yahoo, series: "HG=F"}
+    gold: {source: yahoo, series: "GC=F"}
+  formula: "copper / gold"
+  frequency: daily
+  release_lag_days: 1
+  transform: pct_change_6m
+  risk_when: low
+  revised: false
+  unit: "%"
+  plausible: [0.00001, 0.1]
+  explain: >
+    Copper is used in industry, so it rises when the world economy grows; gold is bought for
+    safety. A falling copper/gold ratio means investors expect weaker global growth.
+
+- id: gold_yoy
+  name: Gold price (year over year)
+  category: global
+  source: yahoo
+  series: "GC=F"
+  frequency: daily
+  release_lag_days: 1
+  transform: yoy_pct
+  risk_when: high
+  revised: false
+  unit: "%"
+  plausible: [100, 20000]
+  explain: >
+    Gold is a traditional "fear" asset. A sharp rise can mean investors are worried about
+    inflation, currencies, or a crisis.
+
+# --- Policy & geopolitics ------------------------------------------------------------
+
+- id: epu_daily
+  name: Economic policy uncertainty (30-day avg)
+  category: policy
+  source: fred
+  series: USEPUINDXD
+  frequency: daily
+  release_lag_days: 1
+  transform: ma_30d
+  risk_when: high
+  revised: false
+  unit: ""
+  plausible: [0, 2000]
+  explain: >
+    Counts newspaper articles that mention the economy, policy, and uncertainty together.
+    It spikes around elections, government shutdowns, tariff fights, and crises. Uncertain
+    businesses delay hiring and investment.
+
+- id: epu_trade
+  name: Trade policy uncertainty
+  category: policy
+  source: fred
+  series: EPUTRADE
+  frequency: monthly
+  release_lag_days: 45
+  transform: level
+  risk_when: high
+  revised: false
+  unit: ""
+  plausible: [0, 20000]
+  explain: >
+    The same newspaper-based method, focused on tariffs and trade. It spiked in 2018-19 and
+    2025. Tariffs raise costs and invite retaliation, which can slow growth and push up prices.
+
+- id: epu_monetary
+  name: Monetary policy uncertainty
+  category: policy
+  source: fred
+  series: EPUMONETARY
+  frequency: monthly
+  release_lag_days: 45
+  transform: level
+  risk_when: high
+  revised: false
+  unit: ""
+  plausible: [0, 2000]
+  explain: >
+    How uncertain the news is about what the Fed will do next. When nobody knows where rates
+    are heading, both stock and bond prices swing more.
+
+- id: geopolitical_risk
+  name: Geopolitical risk (30-day avg)
+  category: policy
+  source: gpr
+  series: GPRD
+  frequency: daily
+  release_lag_days: 2
+  transform: ma_30d
+  risk_when: high
+  revised: false
+  unit: ""
+  plausible: [0, 5000]
+  explain: >
+    A newspaper-based measure of wars, terrorism, and international tensions (built by Federal
+    Reserve economists). Spikes often hit stocks briefly and push money into safe assets.
+
+- id: deficit_gdp
+  name: Federal budget deficit (12 months, % of GDP)
+  category: policy
+  source: derived
+  inputs:
+    m: {source: fred, series: MTSDS133FMS, transform: sum_12m}
+    gdp: {source: fred, series: GDP}
+  formula: "-m / 1000 / gdp * 100"
+  frequency: monthly
+  release_lag_days: 40
+  transform: level
+  risk_when: high
+  revised: true
+  unit: "% of GDP"
+  plausible: [-10, 40]
+  explain: >
+    How much more the government spent than it collected over the past year, relative to the
+    size of the economy. Big deficits mean more government bonds to sell, which can push
+    interest rates up. Deficits also jump during recessions, so this often stays high after a crisis.
+
+- id: auction_demand
+  name: Treasury auction demand (bid-to-cover)
+  category: policy
+  source: treasury
+  series: bid_to_cover_10y_30y
+  frequency: monthly
+  release_lag_days: 1
+  transform: level
+  risk_when: low
+  revised: false
+  unit: "x"
+  plausible: [0.5, 10]
+  explain: >
+    How many dollars of bids arrived for every dollar of 10- and 30-year bonds the government
+    sold, averaged over the last 6 auctions. Weak demand means the government must offer higher
+    rates to borrow, which pushes all bond yields up.
+
+- id: fed_path
+  name: Market-implied Fed path (2-year yield minus Fed rate)
+  category: policy
+  source: derived
+  inputs:
+    two: {source: fred, series: DGS2}
+    ff: {source: fred, series: DFF}
+  formula: "two - ff"
+  frequency: daily
+  release_lag_days: 1
+  transform: level
+  risk_when: extreme
+  revised: false
+  unit: "pp"
+  plausible: [-10, 10]
+  explain: >
+    Positive means markets expect the Fed to raise rates over the next two years; negative
+    means they expect cuts. Either extreme signals a big policy shift: big expected cuts
+    usually mean markets fear a recession, big expected hikes mean an inflation fight.

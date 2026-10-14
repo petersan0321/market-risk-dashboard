@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Market Risk Dashboard{% endblock %}</title>
+  <link rel="stylesheet" href="{{ root }}static/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="{{ root }}index.html">Market Risk Dashboard</a>
+      <nav aria-label="Main">
+        <a href="{{ root }}index.html" {% if page == "index.html" %}aria-current="page"{% endif %}>Overview</a>
+        <a href="{{ root }}why.html" {% if page == "why.html" %}aria-current="page"{% endif %}>Why this score?</a>
+        <a href="{{ root }}learn.html" {% if page == "learn.html" %}aria-current="page"{% endif %}>Learn</a>
+      </nav>
+    </div>
+  </header>
+  <main class="wrap">
+    {% block content %}{% endblock %}
+  </main>
+  <footer class="site-footer wrap">
+    <p>Updated {{ updated }} · data as of {{ r.as_of }} · {{ r.confidence.fresh }}/{{ r.confidence.total }} indicators fresh.
+       Sources: FRED (Federal Reserve Bank of St. Louis), Yahoo Finance, Robert Shiller, Caldara &amp; Iacoviello (GPR), TreasuryDirect.</p>
+    <p><strong>Informational only, not financial advice.</strong> Scores describe conditions; they do not predict prices.</p>
+  </footer>
+  {% block scripts %}{% endblock %}
+</body>
+</html>

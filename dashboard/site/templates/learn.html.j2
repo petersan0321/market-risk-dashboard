@@ -1,0 +1,63 @@
+{% extends "base.html.j2" %}
+{% block title %}Learn · Market Risk Dashboard{% endblock %}
+{% block content %}
+<article class="prose">
+  <p class="eyebrow">Learn</p>
+  <h1>How this dashboard works</h1>
+  <p>The dashboard watches {{ r.confidence.total }} indicators that have historically moved US stocks and bonds,
+    scores each one, and combines them into one overall risk score. Every number can be traced back to its data.</p>
+
+  <h2>1. Scoring one indicator</h2>
+  <p>Each indicator is compared with <strong>its own history</strong>. If today's credit spread is wider than on 90% of
+    past days, its risk score is 90. For indicators where a <em>low</em> reading is the danger (like the yield curve),
+    the score is flipped so that a high score always means more risk.</p>
+  <p>A few indicators have well-known danger lines that matter more than the percentile, such as an inverted yield curve
+    or the Sahm Rule. When one of these is crossed, the score is raised to at least red, and the card says why.</p>
+  <ul>
+    <li><span class="chip chip-green"><span class="icon icon-green" aria-hidden="true">●</span> Green</span> score below {{ AMBER }}: normal.</li>
+    <li><span class="chip chip-amber"><span class="icon icon-amber" aria-hidden="true">▲</span> Amber</span> {{ AMBER }} to {{ RED }}: worth watching.</li>
+    <li><span class="chip chip-red"><span class="icon icon-red" aria-hidden="true">■</span> Red</span> above {{ RED }}: riskier than almost all of history.</li>
+  </ul>
+
+  <h2>2. Combining them</h2>
+  <p>Indicators are grouped into 9 categories. A category's score is the average of its indicators. The overall score
+    is the average of the categories, each weighted equally, so a category with 8 indicators doesn't outvote one with 2.
+    The overall score needs at least 5 categories with data.</p>
+  <ul>
+    {% for floor, name in BANDS|reverse %}<li><strong>{{ name }}</strong>: {{ floor }}{{ "+" if loop.last else "–" ~ (BANDS|reverse|list)[loop.index][0] }}</li>{% endfor %}
+  </ul>
+  <h3>Why the bands are 40 / 60 / 75</h3>
+  <p>They started as round numbers. The evidence for them is the table on <a href="why.html">Why this score?</a>, which
+    shows what happened after past days in each band. If the bands work, big stock drops should become more common from
+    Calm to High. If they stop doing that, the bands should change, and the table will show it.</p>
+
+  <h2>3. No peeking at the future</h2>
+  <p>A past day's score uses <strong>only data that had been published by that day</strong>. Inflation for March, for example,
+    only counts from its release in mid-April. Without this, history would look far more predictable than it really was.
+    An automated test checks it: adding newer data must never change an older day's score.</p>
+
+  <h2>4. Revised data</h2>
+  <p>Some government statistics (jobs, inflation, GDP) are revised months or years later. FRED gives today's revised
+    numbers, not what people saw at the time. Indicators like this carry a <span class="badge">Revised data</span> badge;
+    treat their past readings as approximate. Market prices (yields, spreads, the VIX) are never revised.</p>
+
+  <h2>5. The economic regime</h2>
+  <p>Separately from the risk score, the dashboard classifies the economy by two directions: is <strong>growth</strong>
+    speeding up or slowing (Chicago Fed activity index, jobless claims, building permits), and is <strong>inflation</strong>
+    speeding up or slowing (core PCE over 6 months versus 12 months)? That gives four regimes. To avoid flip-flopping,
+    a new regime must be signalled for about 2 months in a row before the dashboard switches to it. Stocks and bonds
+    have tended to behave differently in each regime, as shown on the overview.</p>
+
+  <h2>6. Known limitations</h2>
+  <ul>
+    <li><strong>History is short in places.</strong> Some series start in the 2000s, so their scores compare against fewer crises.</li>
+    <li><strong>Few crises to learn from.</strong> There have only been a dozen or so major sell-offs in the data, so any statistic about them is uncertain.</li>
+    <li><strong>Hindsight in the design.</strong> The indicators were chosen knowing what happened in 2008, 2020, and other crises.</li>
+    <li><strong>Missing indicators.</strong> Some useful measures have no free data source; they're listed under "Not tracked yet" on the overview.</li>
+    <li><strong>It describes conditions, not timing.</strong> A high score has often come months before a decline, or with no decline at all.</li>
+  </ul>
+
+  <h2>Disclaimer</h2>
+  <p>This dashboard is for learning and monitoring. It is not financial advice and does not recommend buying or selling anything.</p>
+</article>
+{% endblock %}

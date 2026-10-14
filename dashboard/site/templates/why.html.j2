@@ -1,0 +1,107 @@
+{% extends "base.html.j2" %}
+{% from "macros.html.j2" import band_chip, chart, plotly_scripts %}
+{% block title %}Why this score? · Market Risk Dashboard{% endblock %}
+{% block content %}
+{% set o = r.overall %}
+<section class="cat-header">
+  <div>
+    <p class="eyebrow">Why this score?</p>
+    <h1>Overall risk: {{ o.score|round|int }}/100</h1>
+    <p class="muted">Riskier than {{ o.percentile|round|int }}% of days since {{ o.since[:4] }}, from {{ r.confidence.fresh }}/{{ r.confidence.total }} indicators.</p>
+  </div>
+  <div>{{ band_chip(o.band) }}</div>
+</section>
+
+<section class="card">
+  <h2>1. What each score level has meant in the past</h2>
+  <p class="small muted">Every past day is grouped by the score it had at the time. The columns show what happened next. Days less than 12 months ago are left out, because their outcome isn't known yet.</p>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Band</th><th>Days</th><th>Median S&amp;P 500 return, next 3 months</th><th>next 12 months</th><th>Chance of a 15%+ drop within 12 months</th><th>Median bond return, next 12 months</th></tr></thead>
+    <tbody>
+      {% for row in r.outcomes %}
+      <tr {% if row.band == o.band %}class="row-now"{% endif %}>
+        <th scope="row">{{ row.band }}{% if row.band == o.band %} <span class="now-tag">Now</span>{% endif %}</th>
+        <td>{{ "{:,}".format(row.days) }}</td>
+        <td>{{ row.spx_3m|pct(true) }}</td>
+        <td>{{ row.spx_12m|pct(true) }}</td>
+        <td>{{ row.big_drop_rate|pct }}</td>
+        <td>{{ row.bond_12m|pct(true) }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  <p class="small muted">If risk is measured well, the "chance of a 15%+ drop" should rise from Calm to High. Bond returns before 2003 are estimated from the 10-year Treasury yield. Past patterns may not repeat.</p>
+</section>
+
+<section class="two-col">
+  <div class="card">
+    <h2>2. What's driving it</h2>
+    <p class="small muted">Each category pushes the score up or down from a neutral 50. These add up to {{ (o.score - 50)|signed }}.</p>
+    <ul class="bars">
+      {% set maxc = (r.contributions|map(attribute="contribution")|map("abs")|max) or 1 %}
+      {% for c in r.contributions %}
+      <li>
+        <a href="category/{{ c.category }}.html">{{ c.name }}</a>
+        <span class="bar-track"><span class="bar {{ 'bar-up' if c.contribution > 0 else 'bar-down' }}" style="width: {{ (c.contribution|abs) / maxc * 100 }}%"></span></span>
+        <span class="num">{{ c.contribution|signed }}</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="card">
+    <h2>3. What changed</h2>
+    {% for label, ch in [("Last 7 days", r.changes["7d"]), ("Last 30 days", r.changes["30d"])] %}
+    {% if ch %}
+    <p><strong>{{ label }}</strong> (since {{ ch.since }}): {{ ch.from|round(1) }} → {{ ch.to|round(1) }}, {{ ch.change|signed }}</p>
+    <ul class="plain small">
+      {% for p in ch.parts %}<li>{{ p.name }} {{ p.change|signed }}</li>{% else %}<li class="muted">No meaningful change</li>{% endfor %}
+    </ul>
+    {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+<section class="two-col">
+  <div class="card">
+    <h2>4. What would move it</h2>
+    {% set t = r.thresholds %}
+    {% if t.band_up %}
+    <p>{% if t.band_up.indicators %}<strong>{{ t.band_up.indicators|length }}</strong> more indicator{{ "s" if t.band_up.indicators|length > 1 }} turning red would move the score to <strong>{{ t.band_up.band }}</strong>:
+      {% for i in t.band_up.indicators[:5] %}{{ names[i] }}{{ ", " if not loop.last }}{% endfor %}{% if t.band_up.indicators|length > 5 %}, and {{ t.band_up.indicators|length - 5 }} more{% endif %}.
+      {% else %}Even with every indicator red, the score would not reach {{ t.band_up.band }}.{% endif %}</p>
+    {% endif %}
+    {% if t.band_down %}
+    <p>{% if t.band_down.indicators %}<strong>{{ t.band_down.indicators|length }}</strong> indicator{{ "s" if t.band_down.indicators|length > 1 }} turning green would move it down to <strong>{{ t.band_down.band }}</strong>:
+      {% for i in t.band_down.indicators %}{{ names[i] }}{{ ", " if not loop.last }}{% endfor %}.
+      {% else %}Even with every amber and red indicator back to green, the score would stay above {{ t.band_down.band }}.{% endif %}</p>
+    {% endif %}
+    <h3 class="small-h">Closest to turning worse</h3>
+    <ul class="plain small">
+      {% for x in t.closest_up %}<li>{{ names[x.id] }}: turns {{ x.to }} at {{ x.at_value|map("fmt", units[x.id])|join(" / ") }} (now {{ r.indicators[x.id].value|fmt(units[x.id]) }})</li>{% endfor %}
+    </ul>
+    <h3 class="small-h">Closest to improving</h3>
+    <ul class="plain small">
+      {% for x in t.closest_down %}<li>{{ names[x.id] }}: turns {{ x.to }} past {{ x.at_value|map("fmt", units[x.id])|join(" / ") }} (now {{ r.indicators[x.id].value|fmt(units[x.id]) }})</li>{% endfor %}
+    </ul>
+  </div>
+  <div class="card">
+    <h2>5. How much to trust it right now</h2>
+    {% set cf = r.confidence %}
+    <ul class="plain">
+      <li><strong>Coverage:</strong> {{ cf.fresh }} of {{ cf.total }} indicators have fresh data.</li>
+      <li><strong>Agreement:</strong> {{ cf.agreement }} (highest: {{ CATEGORIES[cf.highest] }}, lowest: {{ CATEGORIES[cf.lowest] }}).</li>
+      <li><strong>Revised data:</strong> {{ cf.revised_share|pct }} of the score comes from indicators whose history gets revised.</li>
+    </ul>
+    <p class="small muted">A full backtest of how well this score has worked (the "model report card") is coming in a later update.</p>
+  </div>
+</section>
+
+<section class="card">
+  <h2>Overall score since {{ o.since[:4] }}</h2>
+  <p class="small muted">Weekly. Hover to see the score on any date.</p>
+  {{ chart("why-chart", chart_data) }}
+</section>
+{% endblock %}
+{% block scripts %}{{ plotly_scripts(root) }}{% endblock %}

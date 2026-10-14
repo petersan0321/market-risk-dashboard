@@ -1,0 +1,28 @@
+{% macro chip(light) -%}
+<span class="chip chip-{{ light }}"><span class="icon icon-{{ light }}" aria-hidden="true">{{ LIGHT_ICONS[light] }}</span> {{ LIGHT_LABELS[light] }}</span>
+{%- endmacro %}
+
+{% macro band_chip(band) -%}
+{% set light = {"Calm": "green", "Normal": "none", "Elevated": "amber", "High": "red"}[band] %}
+<span class="chip chip-{{ light }}"><span class="icon icon-{{ light }}" aria-hidden="true">{{ {"Calm": "●", "Normal": "◆", "Elevated": "▲", "High": "■"}[band] }}</span> {{ band }}</span>
+{%- endmacro %}
+
+{% macro meter(score) -%}
+{% if score is not none %}
+<div class="meter" role="img" aria-label="Risk score {{ score|round|int }} out of 100">
+  <div class="meter-fill fill-{{ 'red' if score > RED else 'amber' if score >= AMBER else 'green' }}" style="width: {{ score }}%"></div>
+  <span class="tick" style="left: {{ AMBER }}%"></span>
+  <span class="tick" style="left: {{ RED }}%"></span>
+</div>
+{% endif %}
+{%- endmacro %}
+
+{% macro chart(id, data) -%}
+<div class="chart" id="{{ id }}" data-chart="{{ data.kind if data.kind else ('value' if data.lines is defined else 'score') }}" data-source="{{ id }}-data"></div>
+<script type="application/json" id="{{ id }}-data">{{ data|tojson }}</script>
+{%- endmacro %}
+
+{% macro plotly_scripts(root) -%}
+<script src="{{ PLOTLY_URL }}"></script>
+<script src="{{ root }}static/charts.js"></script>
+{%- endmacro %}

@@ -1,69 +1,101 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Market Risk Dashboard</title>
-  <link rel="stylesheet" href="static/style.css">
-</head>
-<body>
-  <header class="page-header">
-    <h1>Market Risk Dashboard</h1>
-    <p class="subtitle">Early-warning signals for US stocks and bonds · updated {{ updated }}</p>
-  </header>
+{% extends "base.html.j2" %}
+{% from "macros.html.j2" import chip, band_chip, meter, chart, plotly_scripts %}
+{% block content %}
+{% set o = r.overall %}
+{% set band_row = (r.outcomes|selectattr("band", "equalto", o.band)|list)[0] %}
 
-  <main>
-    <section class="notice" aria-label="Preview notice">
-      <strong>Preview:</strong> {{ total }} of the planned 44 indicators. The overall risk score,
-      history playbook, and alerts arrive in later milestones.
-    </section>
+<section class="hero" aria-label="Overall risk score">
+  <div class="hero-score">
+    <p class="eyebrow">Overall market risk</p>
+    <p class="big-number">{{ o.score|round|int }}<span class="of">/100</span></p>
+    {{ band_chip(o.band) }}
+    {{ meter(o.score) }}
+    <p class="muted small">Based on {{ r.confidence.fresh }}/{{ r.confidence.total }} indicators in {{ o.n_categories }} of 9 categories.</p>
+  </div>
+  <div class="hero-why">
+    <h2>What this means</h2>
+    <ul class="plain">
+      <li>Riskier than <strong>{{ o.percentile|round|int }}%</strong> of days since {{ o.since[:4] }}.</li>
+      {% if band_row.days %}
+      <li>In past <strong>{{ o.band }}</strong> periods, the S&amp;P 500 fell 15% or more within the next 12 months
+        <strong>{{ band_row.big_drop_rate|pct }}</strong> of the time (median 12-month return {{ band_row.spx_12m|pct(true) }}).</li>
+      {% endif %}
+      <li>Biggest drivers:
+        {% for c in r.contributions[:3] %}<a href="category/{{ c.category }}.html">{{ c.name }}</a> {{ c.contribution|signed }}{{ ", " if not loop.last }}{% endfor %}.</li>
+      {% set up = r.thresholds.band_up %}
+      {% if up and up.indicators %}
+      <li>Watch: {{ up.indicators|length }} more indicator{{ "s" if up.indicators|length > 1 }} turning red would move the score to <strong>{{ up.band }}</strong>
+        ({% for i in up.indicators[:3] %}{{ names[i] }}{{ ", " if not loop.last }}{% endfor %}{{ "…" if up.indicators|length > 3 }}).</li>
+      {% endif %}
+      <li class="muted">Categories: {{ r.confidence.agreement }}. <a href="why.html">Full explanation →</a></li>
+    </ul>
+  </div>
+</section>
 
-    <section class="how-to-read" aria-label="How to read this page">
-      <h2>How to read a card</h2>
-      <p>Each indicator gets a <strong>risk score from 0 to 100</strong>: the share of its own history
-        that was <em>less</em> risky than today. 90 means riskier than 90% of past days.
-        <span class="chip light-green">● Green</span> below {{ amber }},
-        <span class="chip light-amber">▲ Amber</span> {{ amber }}–{{ red }},
-        <span class="chip light-red">■ Red</span> above {{ red }}.</p>
-    </section>
+<section aria-labelledby="cats-h">
+  <h2 id="cats-h">The 9 categories</h2>
+  <div class="grid grid-cats">
+    {% for cid, c in r.categories.items() %}
+    <a class="card card-link" href="category/{{ cid }}.html">
+      <p class="eyebrow">{{ c.members|length }} indicators</p>
+      <h3>{{ c.name }}</h3>
+      <div class="row">
+        <p class="mid-number">{{ c.score|round|int if c.score is not none else "—" }}</p>
+        {{ chip(c.light) }}
+      </div>
+      {{ meter(c.score) }}
+      <p class="small">{{ TREND_LABELS[c.trend] }} <span class="muted">vs 3 months ago</span></p>
+    </a>
+    {% endfor %}
+  </div>
+</section>
 
-    <section class="cards" aria-label="Indicators">
-      {% for c in cards %}
-      <article class="card">
-        <header>
-          <p class="category">{{ c.category }}</p>
-          <h3>{{ c.ind.name }}</h3>
-        </header>
-        <div class="reading">
-          <div>
-            <p class="score">{{ c.score|round|int if c.score is not none else "—" }}<span class="of">/100</span></p>
-            <p class="value">Current reading: <strong>{{ c.value }}</strong></p>
-          </div>
-          <span class="chip light-{{ c.light }}">{{ {"green": "●", "amber": "▲", "red": "■"}.get(c.light, "○") }} {{ c.light_label }}</span>
-        </div>
-        {% if c.score is not none %}
-        <div class="meter" role="img" aria-label="Risk score {{ c.score|round|int }} out of 100">
-          <div class="meter-fill light-{{ c.light }}-bg" style="width: {{ c.score }}%"></div>
-          <span class="tick" style="left: {{ amber }}%"></span>
-          <span class="tick" style="left: {{ red }}%"></span>
-        </div>
-        {% endif %}
-        <p class="trend">{{ c.trend }} <span class="muted">(vs 3 months ago)</span></p>
-        {% if c.rule_label %}<p class="rule">⚠ {{ c.rule_label }}</p>{% endif %}
-        <p class="explain">{{ c.ind.explain }}</p>
-        <footer class="meta">
-          {% if c.stale %}<span class="badge badge-warn" title="No new data for longer than expected; excluded from scores.">Stale</span>{% endif %}
-          {% if c.ind.revised %}<span class="badge" title="Historical values are today's revised figures. What investors saw at the time may have differed, so treat past readings as approximate.">Revised data</span>{% endif %}
-          <span class="muted">Data as of {{ c.last_observation or "—" }} · history since {{ c.history_since or "—" }}</span>
-        </footer>
-      </article>
+<section class="two-col">
+  <div class="card">
+    <h2>Economic regime</h2>
+    {% set reg = r.regime %}
+    <div class="quadrant" role="table" aria-label="Growth and inflation regimes">
+      {% for key in ["reflation", "stagflation", "goldilocks", "slowdown"] %}
+      {% set ret = reg.returns[key] %}
+      <div class="quad {{ 'quad-now' if key == reg.now }}" role="cell">
+        <p class="quad-name">{{ regimes[key].label }}{% if key == reg.now %} <span class="now-tag">Now</span>{% endif %}</p>
+        <p class="small muted">{{ regimes[key].description }}</p>
+        {% if ret.days %}<p class="small">Stocks {{ ret.stocks|pct(true) }}/yr · Bonds {{ ret.bonds|pct(true) }}/yr</p>{% endif %}
+      </div>
       {% endfor %}
-    </section>
-  </main>
+    </div>
+    <p class="small">In <strong>{{ regimes[reg.now].label }}</strong> since {{ reg.current_since }}.
+      {% if reg.signalled != reg.now %}Latest data points to <strong>{{ regimes[reg.signalled].label }}</strong>; the dashboard switches if that holds for about 2 months.{% endif %}</p>
+    <p class="small muted">Returns are averages per year while each regime was in place, since {{ reg.since[:4] }}.</p>
+  </div>
+  <div class="card">
+    <h2>What changed</h2>
+    {% for label, ch in [("Last 7 days", r.changes["7d"]), ("Last 30 days", r.changes["30d"])] %}
+    {% if ch %}
+    <p><strong>{{ label }}:</strong> {{ ch.from|round|int }} → {{ ch.to|round|int }} ({{ ch.change|signed }})</p>
+    <ul class="plain small">
+      {% for p in ch.parts[:3] %}<li>{{ p.name }} {{ p.change|signed }}</li>{% else %}<li class="muted">No meaningful change</li>{% endfor %}
+    </ul>
+    {% endif %}
+    {% endfor %}
+  </div>
+</section>
 
-  <footer class="page-footer">
-    <p>Data health: {{ fresh }}/{{ total }} indicators fresh. Sources: FRED (Federal Reserve Bank of St. Louis), Yahoo Finance.</p>
-    <p>Informational only, not financial advice.</p>
-  </footer>
-</body>
-</html>
+<section class="card" aria-labelledby="hist-h">
+  <h2 id="hist-h">Overall score, last {{ 5 }} years</h2>
+  {{ chart("overall-chart", chart_data) }}
+</section>
+
+<section class="card" aria-labelledby="untracked-h">
+  <h2 id="untracked-h">Not tracked yet</h2>
+  <p class="small muted">Worth knowing about, but without a reliable free data source.</p>
+  {% for u in untracked %}
+  <details>
+    <summary>{{ u.name }}</summary>
+    <p class="small">{{ u.why_it_matters }}</p>
+    <p class="small muted">Why not tracked: {{ u.why_not_tracked }}</p>
+  </details>
+  {% endfor %}
+</section>
+{% endblock %}
+{% block scripts %}{{ plotly_scripts(root) }}{% endblock %}
