@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Market Risk Dashboard</title>
+  <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+  <header class="page-header">
+    <h1>Market Risk Dashboard</h1>
+    <p class="subtitle">Early-warning signals for US stocks and bonds · updated {{ updated }}</p>
+  </header>
+
+  <main>
+    <section class="notice" aria-label="Preview notice">
+      <strong>Preview:</strong> {{ total }} of the planned 44 indicators. The overall risk score,
+      history playbook, and alerts arrive in later milestones.
+    </section>
+
+    <section class="how-to-read" aria-label="How to read this page">
+      <h2>How to read a card</h2>
+      <p>Each indicator gets a <strong>risk score from 0 to 100</strong>: the share of its own history
+        that was <em>less</em> risky than today. 90 means riskier than 90% of past days.
+        <span class="chip light-green">● Green</span> below {{ amber }},
+        <span class="chip light-amber">▲ Amber</span> {{ amber }}–{{ red }},
+        <span class="chip light-red">■ Red</span> above {{ red }}.</p>
+    </section>
+
+    <section class="cards" aria-label="Indicators">
+      {% for c in cards %}
+      <article class="card">
+        <header>
+          <p class="category">{{ c.category }}</p>
+          <h3>{{ c.ind.name }}</h3>
+        </header>
+        <div class="reading">
+          <div>
+            <p class="score">{{ c.score|round|int if c.score is not none else "—" }}<span class="of">/100</span></p>
+            <p class="value">Current reading: <strong>{{ c.value }}</strong></p>
+          </div>
+          <span class="chip light-{{ c.light }}">{{ {"green": "●", "amber": "▲", "red": "■"}.get(c.light, "○") }} {{ c.light_label }}</span>
+        </div>
+        {% if c.score is not none %}
+        <div class="meter" role="img" aria-label="Risk score {{ c.score|round|int }} out of 100">
+          <div class="meter-fill light-{{ c.light }}-bg" style="width: {{ c.score }}%"></div>
+          <span class="tick" style="left: {{ amber }}%"></span>
+          <span class="tick" style="left: {{ red }}%"></span>
+        </div>
+        {% endif %}
+        <p class="trend">{{ c.trend }} <span class="muted">(vs 3 months ago)</span></p>
+        {% if c.rule_label %}<p class="rule">⚠ {{ c.rule_label }}</p>{% endif %}
+        <p class="explain">{{ c.ind.explain }}</p>
+        <footer class="meta">
+          {% if c.stale %}<span class="badge badge-warn" title="No new data for longer than expected; excluded from scores.">Stale</span>{% endif %}
+          {% if c.ind.revised %}<span class="badge" title="Historical values are today's revised figures. What investors saw at the time may have differed, so treat past readings as approximate.">Revised data</span>{% endif %}
+          <span class="muted">Data as of {{ c.last_observation or "—" }} · history since {{ c.history_since or "—" }}</span>
+        </footer>
+      </article>
+      {% endfor %}
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <p>Data health: {{ fresh }}/{{ total }} indicators fresh. Sources: FRED (Federal Reserve Bank of St. Louis), Yahoo Finance.</p>
+    <p>Informational only, not financial advice.</p>
+  </footer>
+</body>
+</html>
