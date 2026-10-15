@@ -58,3 +58,33 @@ def run(tables: dict[str, pd.DataFrame], indicators: list[Indicator], weights: d
     result["percentile"] = result["overall"].expanding().rank(pct=True) * 100
     result.to_csv(scores_dir / "composite.csv", date_format="%Y-%m-%d")
     return result
+
+
+BAND_NAMES = ("Calm", "Normal", "Elevated", "High")
+FLOORS = (40.0, 60.0, 75.0)  # where Normal, Elevated, High begin
+HYSTERESIS = 5.0
+
+
+def band_for(score: float, floors=FLOORS) -> str | None:
+    if pd.isna(score):
+        return None
+    return BAND_NAMES[sum(score >= f for f in floors)]
+
+
+def with_hysteresis(scores: pd.Series, floors=FLOORS, buffer: float = HYSTERESIS) -> pd.Series:
+    """Bands with a buffer: moving up a band needs the score to reach its floor; moving down
+    needs it to fall `buffer` points below. Stops a score hovering near a line from flip-flopping.
+    Uses only past values."""
+    out, level = [], None
+    for s in scores:
+        if pd.isna(s):
+            out.append(None if level is None else BAND_NAMES[level])
+            continue
+        raw = sum(s >= f for f in floors)
+        if level is None or raw > level:
+            level = raw
+        else:
+            while level > 0 and s < floors[level - 1] - buffer:
+                level -= 1
+        out.append(BAND_NAMES[level])
+    return pd.Series(out, index=scores.index, dtype=object)

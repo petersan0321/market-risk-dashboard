@@ -12,11 +12,11 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from dashboard import composite, history, rationale, regime, signals
+from dashboard import backtest, composite, history, rationale, regime, signals, simulate
 from dashboard.config import load_events, load_glossary, load_indicators, load_untracked, load_weights
 from dashboard.fetch import MARKETS, fetch_all
 from dashboard.fetch.base import read_raw
-from dashboard.paths import RAW_DIR, SCORES_DIR, SITE_DIR
+from dashboard.paths import CONFIG_DIR, RAW_DIR, SCORES_DIR, SITE_DIR
 from dashboard.returns import bond_index, on_days
 from dashboard.site.build import build_site
 
@@ -38,7 +38,8 @@ def to_jsonable(obj):
     return obj
 
 
-def analyze(indicators, weights, tables, raw_dir: Path, scores_dir: Path, today: date, events=()) -> dict:
+def analyze(indicators, weights, tables, raw_dir: Path, scores_dir: Path, today: date, events=(),
+            sim_config_path: Path = CONFIG_DIR / "simulation.yaml") -> dict:
     comp = composite.run(tables, indicators, weights, scores_dir)
     market = {name: read_raw(raw_dir / "market" / f"{name}.csv") for name in MARKETS
               if (raw_dir / "market" / f"{name}.csv").exists()}
@@ -70,8 +71,17 @@ def analyze(indicators, weights, tables, raw_dir: Path, scores_dir: Path, today:
         detail = result["indicators"].get(ind.id, {})
         if detail.get("available"):
             detail["spectrum"]["events"] = history.event_markers(ind, tables["value"][ind.id], located)
-    looks = hist["looks_like"]
-    result["looks_like"] = looks
+    result["looks_like"] = hist["looks_like"]
+
+    labels = backtest.outcome_labels(stocks, bonds)
+    report = backtest.evaluate(comp, tables["score"], labels, located, weights)
+    stocks_tr = on_days(market["spx_tr"], comp.index) if "spx_tr" in market else stocks
+    sim = simulate.simulate(stocks_tr, bonds, composite.with_hysteresis(comp["overall"]),
+                            simulate.load_sim_config(sim_config_path), located)
+    report["simulation"] = sim
+    report["summary"] = backtest.summary(report, sim, {i.id: i.name for i in indicators})
+    (scores_dir / "backtest.json").write_text(json.dumps(to_jsonable(report), indent=1))
+    result["model_confidence"] = backtest.today_confidence(report, result["overall"]["band"])
     (scores_dir / "history.json").write_text(json.dumps(to_jsonable(hist), indent=1))
     result = to_jsonable(result)
     (scores_dir / "rationale.json").write_text(json.dumps(result, indent=1))

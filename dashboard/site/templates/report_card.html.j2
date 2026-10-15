@@ -1,0 +1,157 @@
+{% extends "base.html.j2" %}
+{% from "macros.html.j2" import band_chip, plotly_scripts %}
+{% block title %}Model report card · Market Risk Dashboard{% endblock %}
+{% macro rng(ci, fmt="pct") -%}
+{% if ci %}<span class="range">(likely range {% if fmt == "pct" %}{{ ci[0]|pct }}–{{ ci[1]|pct }}{% else %}{{ ci[0]|num2 }}–{{ ci[1]|num2 }}{% endif %})</span>{% endif %}
+{%- endmacro %}
+{% block content %}
+{% set a = b.all %}
+<section>
+  <p class="eyebrow">Model report card</p>
+  <h1>How much should you trust the overall score?</h1>
+  <p class="muted">Every past day's score is compared with what happened next. "Trouble" means the S&amp;P 500 fell 15% or more
+    (or bonds fell 5% or more) at some point in the following 12 months. Days from the last 12 months are left out because their outcome isn't known yet.</p>
+</section>
+
+<section class="verdicts">
+  <div class="card"><h2>What it's good at</h2><ul>{% for x in b.summary.good %}<li>{{ x }}</li>{% else %}<li class="muted">Nothing stands out.</li>{% endfor %}</ul></div>
+  <div class="card"><h2>Where it falls short</h2><ul>{% for x in b.summary.bad %}<li>{{ x }}</li>{% else %}<li class="muted">No clear weaknesses found.</li>{% endfor %}</ul></div>
+</section>
+
+{% set mc = r.model_confidence %}
+<section class="callout">
+  <strong>Today ({{ r.overall.score|round|int }}, {{ mc.band }}):</strong> in past {{ mc.band }} periods, a 15%+ stock drop followed within 12 months
+  {{ mc.rate|pct }} of the time {{ rng(mc.ci) }}. Overall accuracy {{ mc.auc|num2 }}: {{ mc.grade }}, not reliable on its own.
+</section>
+
+<section class="two-col">
+  <div class="card">
+    <h2>1. Does a higher score mean more risk?</h2>
+    <p><strong>Accuracy (AUC), stocks: {{ a.auc_stocks|num2 }}</strong> {{ rng(a.auc_stocks_ci, "num") }}, {{ a.grade }}.
+      <br><strong>Bonds: {{ a.auc_bonds|num2 }}</strong> {{ rng(a.auc_bonds_ci, "num") }}, {{ a.grade_bonds }}.</p>
+    <p class="small muted">AUC is the chance that a randomly picked day followed by trouble had a higher score than a randomly picked calm day.
+      0.5 is a coin flip, 0.6–0.7 modest, 0.7–0.8 useful, above 0.8 strong. Based on {{ "{:,}".format(a.days) }} days from {{ a.from[:4] }}.</p>
+  </div>
+  <div class="card">
+    <h2>2. Do the bands mean what they say?</h2>
+    <table>
+      <thead><tr><th>Band</th><th>Days</th><th>15%+ stock drop within 12 months</th></tr></thead>
+      <tbody>{% for row in a.bands %}<tr><th scope="row">{{ band_chip(row.band) }}</th><td>{{ "{:,}".format(row.days) }}</td>
+        <td>{{ row.rate|pct }} {{ rng(row.ci) }}</td></tr>{% endfor %}</tbody>
+    </table>
+    <p class="small"><span class="pass">{{ "Passes" if a.band_check else "Fails" }}:</span> drops {{ "became" if a.band_check else "did not become" }} steadily more common from Calm to High.
+      <span class="muted">Ranges are wide because consecutive days aren't independent: a 70-year history behaves more like a few dozen separate episodes.</span></p>
+  </div>
+</section>
+
+<section class="two-col">
+  <div class="card">
+    <h2>3. Did it warn before crashes?</h2>
+    {% set e = b.events %}
+    <p><strong>{{ e.hits }} of {{ e.events }}</strong> crashes {{ rng(e.interval) }} had the score Elevated or higher for 10+ days in the year before.
+      {% if e.median_lead %}Median warning: about {{ (e.median_lead / 21)|round|int }} months ahead.{% endif %}</p>
+    <table class="small">
+      <thead><tr><th>Crash</th><th>Warned?</th></tr></thead>
+      <tbody>{% for row in e.rows %}<tr><th scope="row"><a href="history/{{ row.event }}.html">{{ events_by_id[row.event].ev.name }}</a></th>
+        <td>{% if row.warned %}Yes, {{ (row.lead_days / 21)|round|int }} months ahead{% else %}No{% endif %}</td></tr>{% endfor %}</tbody>
+    </table>
+  </div>
+  <div class="card">
+    <h2>4. False alarms</h2>
+    {% set fa = b.false_alarms %}
+    <p>The score stayed High for 20+ days <strong>{{ fa.episodes }}</strong> time{{ "s" if fa.episodes != 1 }}.
+      <strong>{{ fa.false }}</strong> of those were not followed by a 15%+ stock drop within 12 months.</p>
+    <p class="small muted">Few false alarms at High is good, but it partly reflects how rarely the score reaches High at all; see the crash warnings for the other side.</p>
+    <h2>5. Does it beat simple alternatives?</h2>
+    <table class="small">
+      <thead><tr><th>Single indicator</th><th>Its AUC</th><th>Combined score minus it</th></tr></thead>
+      <tbody>{% for x in a.baselines %}<tr><th scope="row">{{ names[x.id] }}</th><td>{{ x.auc|num2 }}</td>
+        <td>{{ x.diff|num2(true) }} {{ rng(x.diff_ci, "num") }}</td></tr>{% endfor %}</tbody>
+    </table>
+    <p class="small muted">A range that includes zero means there's no clear evidence either way.</p>
+  </div>
+</section>
+
+<section class="card">
+  <h2>6. Is it robust, or did it get lucky?</h2>
+  <div class="two-col">
+    <div>
+      <h3 class="small-h">Different periods</h3>
+      <table class="small">
+        <thead><tr><th>Period</th><th>AUC</th><th>Band check</th></tr></thead>
+        <tbody>
+          {% for name, m in b.periods.items() %}<tr><th scope="row">{{ name }}</th><td>{{ m.auc_stocks|num2 if m.auc_stocks is not none else "—" }}</td><td>{{ "Passes" if m.band_check else "Fails" }}</td></tr>{% endfor %}
+          <tr><th scope="row">2015–today (recent)</th><td>{{ b.held_out.auc_stocks|num2 if b.held_out.auc_stocks is not none else "—" }}</td><td>{{ "Passes" if b.held_out.band_check else "Fails" }}</td></tr>
+        </tbody>
+      </table>
+      <h3 class="small-h">Moving the band lines</h3>
+      <table class="small">
+        <thead><tr><th>Bands shifted</th><th>Band check</th><th>Crashes warned</th><th>False alarms</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">As is (40/60/75)</th><td>{{ "Passes" if a.band_check else "Fails" }}</td><td>{{ b.events.hits }}</td><td>{{ b.false_alarms.false }}</td></tr>
+          {% for x in b.sensitivity %}<tr><th scope="row">{{ "%+d"|format(x.shift) }} points</th><td>{{ "Passes" if x.band_check else "Fails" }}</td><td>{{ x.hits }}</td><td>{{ x.false_alarms }}</td></tr>{% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <h3 class="small-h">Leaving one category out</h3>
+      <table class="small">
+        <thead><tr><th>Without</th><th>AUC</th><th>Crashes warned</th></tr></thead>
+        <tbody>{% for x in b.leave_one_out %}<tr><th scope="row">{{ CATEGORIES[x.category] }}</th><td>{{ x.auc|num2 if x.auc is not none else "—" }}</td><td>{{ x.hits }}</td></tr>{% endfor %}</tbody>
+      </table>
+      <p class="small muted">If removing one category changed the results a lot, the "combined" score would really be just that category.</p>
+    </div>
+  </div>
+  <p class="small muted"><strong>Hindsight warning:</strong> the indicators were chosen knowing what happened in past crises. Nothing was fitted to the data, but that choice itself can't be undone, so the past may flatter the model.</p>
+</section>
+
+{% set s = b.simulation %}
+{% if s %}
+<section class="card">
+  <h2>7. What if you had acted on it? (educational simulation)</h2>
+  <p class="banner">Educational. Built with hindsight, ignores taxes, not a recommendation. Past results do not predict future results.</p>
+  <p class="small">From {{ s.start }}, three portfolios start with $10,000. The <strong>signal-based</strong> one holds
+    {% for band, share in s.config.stocks_share.items() %}{{ (share * 100)|round|int }}% stocks when {{ band }}{{ ", " if not loop.last }}{% endfor %}
+    (the rest in bonds), deciding at each month-end and acting the next trading day, paying {{ "%.1f"|format(s.config.trading_cost * 100) }}% of every trade.
+    The others always hold {{ (s.config.baseline * 100)|round|int }}/{{ (100 - s.config.baseline * 100)|round|int }} or 100% stocks, rebalanced monthly.</p>
+  <div class="chart" data-chart="simgrowth" data-source="sim-data"></div>
+  <h3 class="small-h">Fall from previous peak</h3>
+  <div class="chart chart-short" data-chart="simdrawdown" data-source="sim-data"></div>
+  <h3 class="small-h">Signal-based portfolio: share in stocks</h3>
+  <div class="chart chart-short" data-chart="simweight" data-source="sim-data"></div>
+  <script type="application/json" id="sim-data">{{ s.chart|tojson }}</script>
+
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th></th><th>Annual return</th><th>Ups and downs (volatility)</th><th>Worst fall</th><th>Longest time below a previous high</th><th>Allocation changes</th><th>$10,000 became</th></tr></thead>
+    <tbody>{% for key, label in [("signal", "Signal-based"), ("hold", "Hold 60/40"), ("stocks", "100% stocks")] %}{% set p = s.portfolios[key] %}
+      <tr><th scope="row">{{ label }}</th><td>{{ p.annual_return|pct(true) }}</td><td>{{ p.volatility|pct }}</td><td>{{ p.max_drawdown|pct }}</td>
+        <td>{{ (p.longest_recovery_days / 252)|round(1) }} years</td><td>{{ p.switches }}</td><td>${{ "{:,.0f}".format(p.final_value) }}</td></tr>{% endfor %}</tbody>
+  </table>
+  </div>
+  <p><strong>Signal-based minus hold 60/40:</strong> {{ (s.comparison.difference * 100)|num2(true) }} points a year
+    <span class="range">(likely range {{ (s.comparison.ci[0] * 100)|num2(true) }} to {{ (s.comparison.ci[1] * 100)|num2(true) }})</span>.</p>
+
+  <div class="two-col">
+    <div>
+      <h3 class="small-h">During each crash</h3>
+      <table class="small">
+        <thead><tr><th>Crash</th><th>Signal</th><th>60/40</th><th>Stocks</th></tr></thead>
+        <tbody>{% for x in s.events %}<tr><th scope="row"><a href="history/{{ x.event }}.html">{{ events_by_id[x.event].ev.name }}</a></th>
+          <td>{{ x.signal|pct(true) }}</td><td>{{ x.hold|pct(true) }}</td><td>{{ x.stocks|pct(true) }}</td></tr>{% endfor %}</tbody>
+      </table>
+    </div>
+    <div>
+      <h3 class="small-h">By decade (annual return)</h3>
+      <table class="small">
+        <thead><tr><th>Decade</th><th>Signal</th><th>60/40</th><th>Stocks</th></tr></thead>
+        <tbody>{% for x in s.decades %}<tr><th scope="row">{{ x.decade }}</th><td>{{ x.signal|pct(true) }}</td><td>{{ x.hold|pct(true) }}</td><td>{{ x.stocks|pct(true) }}</td></tr>{% endfor %}</tbody>
+      </table>
+      {% if s.held_out %}<p class="small">Since 2015: signal {{ s.held_out.signal.annual_return|pct(true) }}, 60/40 {{ s.held_out.hold.annual_return|pct(true) }}, stocks {{ s.held_out.stocks.annual_return|pct(true) }} a year.</p>{% endif %}
+    </div>
+  </div>
+  <p class="small muted">Cutting stocks when risk rises can soften crashes, but it also means missing part of the rallies that often follow, and the score is slow to react to sudden shocks. Both show up above.</p>
+</section>
+{% endif %}
+{% endblock %}
+{% block scripts %}{{ plotly_scripts(root) }}{% endblock %}

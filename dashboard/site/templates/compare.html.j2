@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Setup comparison</title><style>{{ css }}</style></head>
+<body><main class="wrap">
+<h1>Current vs alternative setup</h1>
+<p class="muted">Changed: {% for k, v in args.items() %}<strong>{{ k }}</strong> = {{ v }}{{ "; " if not loop.last }}{% else %}nothing (both setups are the same){% endfor %}</p>
+{% if runs_today > limit %}<p class="banner">You have run {{ runs_today }} comparisons today. Trying many variants until one looks good is how models get tuned to the past and then fail. Prefer changes you can justify before seeing results.</p>{% endif %}
+
+<section class="card">
+  <h2>Headline: {{ held_out_start }}–today</h2>
+  <p class="small muted">Judged on recent years, a period you probably didn't have in mind when designing the change. Still not a true out-of-sample test.</p>
+  <table>
+    <thead><tr><th></th>{% for s in setups %}<th>{{ s.name }}</th>{% endfor %}</tr></thead>
+    <tbody>
+      <tr><th scope="row">Accuracy (AUC)</th>{% for s in setups %}<td>{{ "%.2f"|format(s.held_out.auc) if s.held_out.auc is not none else "—" }}</td>{% endfor %}</tr>
+      <tr><th scope="row">Band check</th>{% for s in setups %}<td>{{ "Passes" if s.held_out.band_check else "Fails" }}</td>{% endfor %}</tr>
+      <tr><th scope="row">Crashes warned</th>{% for s in setups %}<td>{{ s.held_out.hits }} of {{ s.held_out.events }}</td>{% endfor %}</tr>
+      <tr><th scope="row">Simulation, signal-based (per year)</th>{% for s in setups %}<td>{{ s.held_out.sim.signal|pct(true) if s.held_out.sim else "—" }}</td>{% endfor %}</tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="card">
+  <h2>Full history <span class="small muted">(includes the period the change may have been tuned on)</span></h2>
+  <table>
+    <thead><tr><th></th>{% for s in setups %}<th>{{ s.name }}</th>{% endfor %}</tr></thead>
+    <tbody>
+      <tr><th scope="row">Indicators / band floors</th>{% for s in setups %}<td>{{ s.n_indicators }} / {{ s.floors|join(", ") }}</td>{% endfor %}</tr>
+      <tr><th scope="row">Accuracy (AUC), stocks</th>{% for s in setups %}{% set a = s.report.all %}<td>{{ "%.2f"|format(a.auc_stocks) }}{% if a.auc_stocks_ci %} <span class="range">({{ "%.2f"|format(a.auc_stocks_ci[0]) }}–{{ "%.2f"|format(a.auc_stocks_ci[1]) }})</span>{% endif %}</td>{% endfor %}</tr>
+      <tr><th scope="row">Band check</th>{% for s in setups %}<td>{{ "Passes" if s.report.all.band_check else "Fails" }}</td>{% endfor %}</tr>
+      {% for i in range(4) %}<tr><th scope="row">15%+ drop rate: {{ setups[0].report.all.bands[i].band }}</th>{% for s in setups %}{% set row = s.report.all.bands[i] %}<td>{{ row.rate|pct }} <span class="range">({{ "{:,}".format(row.days) }} days)</span></td>{% endfor %}</tr>{% endfor %}
+      <tr><th scope="row">Crashes warned</th>{% for s in setups %}<td>{{ s.report.events.hits }} of {{ s.report.events.events }}</td>{% endfor %}</tr>
+      <tr><th scope="row">False alarms at High</th>{% for s in setups %}<td>{{ s.report.false_alarms.false }} of {{ s.report.false_alarms.episodes }}</td>{% endfor %}</tr>
+      {% for key, label in [("signal", "Signal-based"), ("hold", "Hold 60/40")] %}
+      <tr><th scope="row">Simulation: {{ label }} return / worst fall</th>{% for s in setups %}{% set p = s.sim.portfolios[key] if s.sim else none %}<td>{% if p %}{{ p.annual_return|pct(true) }} / {{ p.max_drawdown|pct }}{% else %}—{% endif %}</td>{% endfor %}</tr>
+      {% endfor %}
+      {% for name in setups[0].report.periods %}<tr><th scope="row">AUC {{ name }}</th>{% for s in setups %}<td>{{ "%.2f"|format(s.report.periods[name].auc_stocks) if s.report.periods[name].auc_stocks is not none else "—" }}</td>{% endfor %}</tr>{% endfor %}
+    </tbody>
+  </table>
+</section>
+<p class="small muted">Educational comparison only. Built with hindsight; not financial advice.</p>
+</main></body></html>

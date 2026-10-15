@@ -1,0 +1,10 @@
+# Educational "what if" simulation (spec §9.6). Share of the portfolio in stocks for each
+# overall band; the rest is in bonds. This is an illustration of past signals, not advice.
+stocks_share:
+  Calm: 0.6
+  Normal: 0.6
+  Elevated: 0.5
+  High: 0.4
+baseline_stocks_share: 0.6   # the "hold 60/40" comparison portfolio
+trading_cost: 0.001          # 0.1% of the amount traded
+start: 1990-01-01            # or the first month with an overall score, whichever is later

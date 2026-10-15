@@ -17,8 +17,9 @@
     <ul class="plain">
       <li>Riskier than <strong>{{ o.percentile|round|int }}%</strong> of days since {{ o.since[:4] }}.</li>
       {% if band_row.days %}
+      {% set mc = r.model_confidence %}
       <li>In past <strong>{{ o.band }}</strong> periods, the S&amp;P 500 fell 15% or more within the next 12 months
-        <strong>{{ band_row.big_drop_rate|pct }}</strong> of the time (median 12-month return {{ band_row.spx_12m|pct(true) }}).</li>
+        <strong>{{ band_row.big_drop_rate|pct }}</strong> of the time{% if mc and mc.ci %} (likely range {{ mc.ci[0]|pct }}–{{ mc.ci[1]|pct }}){% endif %}; median 12-month return {{ band_row.spx_12m|pct(true) }}.</li>
       {% endif %}
       <li>Biggest drivers:
         {% for c in r.contributions[:3] %}<a href="category/{{ c.category }}.html">{{ c.name }}</a> {{ c.contribution|signed }}{{ ", " if not loop.last }}{% endfor %}.</li>
@@ -27,6 +28,8 @@
       <li>Watch: {{ up.indicators|length }} more indicator{{ "s" if up.indicators|length > 1 }} turning red would move the score to <strong>{{ up.band }}</strong>
         ({% for i in up.indicators[:3] %}{{ names[i] }}{{ ", " if not loop.last }}{% endfor %}{{ "…" if up.indicators|length > 3 }}).</li>
       {% endif %}
+      {% set mc = r.model_confidence %}
+      {% if mc %}<li>Model accuracy {{ mc.auc|num2 }}: {{ mc.grade }}, not reliable on its own. <a href="report-card.html">Report card →</a></li>{% endif %}
       <li class="muted">Categories: {{ r.confidence.agreement }}. <a href="why.html">Full explanation →</a></li>
     </ul>
   </div>

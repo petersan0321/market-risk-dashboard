@@ -82,7 +82,7 @@ def heatmap(start, end, scores: pd.DataFrame, categories: pd.DataFrame, indicato
             "rows": rows, "categories": cat_rows}
 
 
-def warning(overall: pd.Series, start: pd.Timestamp) -> dict:
+def warning(overall: pd.Series, start: pd.Timestamp, threshold: float = 60) -> dict:
     """When the overall score first entered Elevated or High (and stayed ≥ WARNING_RUN days)
     in the year before the event started."""
     history = overall.dropna()
@@ -90,7 +90,7 @@ def warning(overall: pd.Series, start: pd.Timestamp) -> dict:
     if pos < 0:
         return {"warned": None, "lead_days": None, "first_date": None, "already_elevated": False}
     window = history.iloc[max(0, pos - LOOKBACK): pos + 1]
-    elevated = (window >= 60).to_numpy()
+    elevated = (window >= threshold).to_numpy()
     run = 0
     for i, flag in enumerate(elevated):
         run = run + 1 if flag else 0

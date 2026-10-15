@@ -102,6 +102,7 @@ def _env() -> Environment:
     env.filters["fmt"] = format_value
     env.filters["pct"] = format_pct
     env.filters["signed"] = lambda v: "—" if v is None else f"{v:+.1f}"
+    env.filters["num2"] = lambda v, signed=False: "—" if v is None else (f"{v:+.2f}" if signed else f"{v:.2f}")
     env.globals.update(LIGHT_LABELS=LIGHT_LABELS, LIGHT_ICONS=LIGHT_ICONS, TREND_LABELS=TREND_LABELS,
                        AMBER=AMBER, RED=RED, CATEGORIES=CATEGORIES, PLOTLY_URL=PLOTLY_URL, BANDS=BANDS)
     return env
@@ -189,6 +190,9 @@ def build_site(indicators: list[Indicator], untracked: list[Untracked], scores_d
                          for p in pages],
                         weights or {c: 1.0 for c in CATEGORIES}, tables, composite, regimes, market)
     write("time-machine.html", "time_machine.html.j2")
+    backtest_path = scores_dir / "backtest.json"
+    if backtest_path.exists():
+        write("report-card.html", "report_card.html.j2", b=json.loads(backtest_path.read_text()))
     return site_dir / "index.html"
 
 

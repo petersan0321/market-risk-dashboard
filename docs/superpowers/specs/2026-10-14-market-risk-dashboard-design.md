@@ -446,7 +446,7 @@ A page and a module (`backtest.py`, `simulate.py`) that answer "how much should 
 
 ### 9.2 Metrics
 
-1. **Discrimination (AUC):** how well the overall score separates days followed by a bad outcome from days that weren't, computed separately for stocks and bonds. Shown with a plain-English grade: < 0.6 weak, 0.6–0.7 modest, 0.7–0.8 useful, ≥ 0.8 strong; and the explanation "0.5 = coin flip".
+1. **Discrimination (AUC):** how well the overall score separates days followed by a bad outcome from days that weren't, computed separately for stocks and bonds (ties count half; computed from 0.1-point score bins, which is exact for scores rounded to 0.1). Shown with a plain-English grade: < 0.6 weak, 0.6–0.7 modest, 0.7–0.8 useful, ≥ 0.8 strong; and the explanation "0.5 = coin flip".
 2. **Band check:** % of days followed by a bad outcome, per band. Passes if the % rises from Calm → Normal → Elevated → High; the page shows pass/fail.
 3. **Event hit rate:** share of crash events (§7.1, `kind: crash`) with a warning that began within the 12 months before the event's computed start; median lead time in trading days.
 4. **False alarms:** High-band episodes (≥ 20 consecutive trading days) not followed by a bad stock outcome within 12 months of the episode's start; reported as a count and per decade.
@@ -460,6 +460,7 @@ A page and a module (`backtest.py`, `simulate.py`) that answer "how much should 
 ### 9.4 Robustness checks
 
 - **Two periods:** all metrics for 1990–2007 and 2008–today separately.
+- **Recent period:** all day-based metrics for 2015–today (labelled "recent", not "out-of-sample", because the design was not frozen before 2015).
 - **Leave one category out:** AUC and hit rate with each category removed in turn (indicator scores are reused; only the composite is recomputed).
 - **Threshold sensitivity:** metrics with all band cutoffs shifted −5 and +5.
 - **Hindsight note:** the indicators were chosen knowing past crises; this bias cannot be removed and is stated on the page.
@@ -476,10 +477,14 @@ Shows whether acting on the signals would have helped, and what it would have co
   - **Hold 60/40:** 60% stocks / 40% bonds, rebalanced monthly.
   - **Signal-based:** allocation set by the overall band (hysteresis-adjusted) at each month-end, from `config/simulation.yaml` (default: Calm/Normal 60/40, Elevated 50/50, High 40/60).
   - **Hold 100% stocks:** reference line.
-- **Mechanics:** the month-end band decides the allocation, applied at the next trading day's close (no same-day look-ahead). Trading cost 0.1% of the amount traded. Taxes ignored.
+- **Mechanics:** the month-end band (with the 5-point hysteresis of §11.2, implemented in `composite.with_hysteresis` and shared with alerts) decides the allocation, applied from the next trading day (no same-day look-ahead). Between month-ends holdings drift with prices; every month-end rebalances back to target. Trading cost 0.1% of the amount traded. Taxes ignored.
 - **Returns:** stocks = S&P 500 total return (`^SP500TR`); bonds = §5.5. The simulation starts at the later of 1990-01-01 and the first month with an overall score.
 - **Outputs:** growth of $10,000 chart; drawdown chart; allocation over time; table of annualized return, volatility, max drawdown, longest time to recover, number of switches; per-crash-event table (drawdown of each portfolio during the event); per-decade returns; held-out period (2015–today) shown separately; 90% block-bootstrap interval on the annualized return difference vs Hold 60/40.
 - **Labelling:** a banner on the simulation and on every chart: "Educational. Built with hindsight, ignores taxes, not a recommendation. Past results do not predict future results." The text summary describes misses and lagging periods as prominently as successes.
+
+### 9.6a Generated summary
+
+The report card opens with "What it's good at" / "Where it falls short", generated from the metrics. A comparison is only called a win when its 90% range excludes zero; overlapping ranges are reported as "no clear evidence". Recent-period weakness (AUC < 0.6 since 2015) is always listed.
 
 ### 9.7 Confidence on today's score
 

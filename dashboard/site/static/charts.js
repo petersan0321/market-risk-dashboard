@@ -108,7 +108,41 @@
     });
   }
 
-  const RENDERERS = { score: scoreChart, value: valueChart, eventprices: priceChart, eventscore: eventScoreChart };
+  const SIM_SERIES = [
+    { key: "signal", name: "Signal-based", color: "--series-1" },
+    { key: "hold", name: "Hold 60/40", color: "--series-2" },
+    { key: "stocks", name: "100% stocks", color: "--series-3" },
+  ];
+
+  function simChart(el, d, kind) {
+    const traces = SIM_SERIES.map((s) => ({
+      x: d.x, y: kind === "growth" ? d[s.key] : d.drawdown[s.key].map((v) => -v * 100),
+      type: "scatter", mode: "lines", name: s.name, line: { color: css(s.color), width: 2 },
+      hovertemplate: s.name + (kind === "growth" ? " <b>$%{y:,.0f}</b>" : " <b>%{y:.1f}%</b>") + "<extra></extra>",
+    }));
+    Plotly.newPlot(el, traces, layout({
+      yaxis: kind === "growth"
+        ? { type: "log", gridcolor: css("--grid"), tickvals: [1e4, 2e4, 5e4, 1e5, 2e5, 5e5, 1e6],
+            ticktext: ["$10k", "$20k", "$50k", "$100k", "$200k", "$500k", "$1M"] }
+        : { gridcolor: css("--grid"), ticksuffix: "%", zeroline: false },
+      showlegend: true, legend: { orientation: "h", x: 0, y: 1.12, font: { color: css("--text-secondary") } },
+      margin: { l: 64, r: 16, t: 28, b: 32 },
+    }), CONFIG);
+  }
+
+  function weightChart(el, d) {
+    Plotly.newPlot(el, [{
+      x: d.x, y: d.stock_weight.map((v) => v * 100), type: "scatter", mode: "lines", name: "Share in stocks",
+      line: { color: css("--series-1"), width: 2, shape: "hv" },
+      hovertemplate: "Stocks <b>%{y:.0f}%</b><extra></extra>",
+    }], layout({ yaxis: { range: [0, 100], ticksuffix: "%", gridcolor: css("--grid"), zeroline: false } }), CONFIG);
+  }
+
+  const RENDERERS = {
+    score: scoreChart, value: valueChart, eventprices: priceChart, eventscore: eventScoreChart,
+    simgrowth: (el, d) => simChart(el, d, "growth"), simdrawdown: (el, d) => simChart(el, d, "drawdown"),
+    simweight: weightChart,
+  };
 
   function renderAll() {
     if (!window.Plotly) return;
