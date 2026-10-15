@@ -116,6 +116,20 @@
    "topic": "inflation"
   },
   {
+   "title": "Banks with Jeffrey Epstein ties eyed by Democrats Warren and Garcia",
+   "url": "https://www.cnbc.com/2026/10/15/banks-congress-jeffrey-epstein-oversight.html",
+   "source": "CNBC",
+   "date": "2026-10-15",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "Economists: Hot PPI shows Fed's work is not done",
+   "url": "https://www.cnbc.com/2026/10/15/pce-ppi-september-fed-reserve-rate-hike.html",
+   "source": "CNBC Economy",
+   "date": "2026-10-15",
+   "topic": "inflation"
+  },
+  {
    "title": "Bank of America hired 1,000 contractors to patch software flaws exposed by Anthropic's Mythos",
    "url": "https://www.cnbc.com/2026/10/14/anthropic-mythos-bank-of-america-hiring-cost.html",
    "source": "CNBC",
@@ -242,7 +256,7 @@
    "years": 19,
    "stocks_median": 0.09061946902654872,
    "stocks_down_years": 7,
-   "bonds_median": 0.030572135577212278,
+   "bonds_median": 0.030572937244680132,
    "bond_years": 16,
    "current": false
   },
@@ -252,7 +266,7 @@
    "years": 19,
    "stocks_median": 0.010620399579390094,
    "stocks_down_years": 8,
-   "bonds_median": 0.05998698172496031,
+   "bonds_median": 0.059985564970997274,
    "bond_years": 15,
    "current": true
   },
@@ -272,7 +286,7 @@
    "years": 19,
    "stocks_median": 0.11779554059739161,
    "stocks_down_years": 3,
-   "bonds_median": 0.03821340764368275,
+   "bonds_median": 0.03821340764368242,
    "bond_years": 16,
    "current": false
   }

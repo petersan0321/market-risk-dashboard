@@ -75,5 +75,19 @@
   "source": "NPR",
   "date": "2026-10-15",
   "topic": "inflation"
+ },
+ {
+  "title": "Banks with Jeffrey Epstein ties eyed by Democrats Warren and Garcia",
+  "url": "https://www.cnbc.com/2026/10/15/banks-congress-jeffrey-epstein-oversight.html",
+  "source": "CNBC",
+  "date": "2026-10-15",
+  "topic": "banking_credit"
+ },
+ {
+  "title": "Economists: Hot PPI shows Fed's work is not done",
+  "url": "https://www.cnbc.com/2026/10/15/pce-ppi-september-fed-reserve-rate-hike.html",
+  "source": "CNBC Economy",
+  "date": "2026-10-15",
+  "topic": "inflation"
  }
 ]
