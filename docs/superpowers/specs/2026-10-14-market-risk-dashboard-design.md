@@ -575,7 +575,11 @@ Moving up through a threshold uses the threshold; moving back down requires fall
 - Body (HTML with plain-text fallback): what changed (with each indicator's `explain` text); the 4-line rationale (outcome stats for the current band, top 3 drivers, nearest threshold, model confidence line from §9.7); top "Today looks like" match with its base rate; dashboard link; data health footer.
 - **Headlines this week:** up to 5 headlines from topics whose `related_indicators` moved, each with its topic's one-line `why_it_matters`.
 - **Weekly summary** every Monday run regardless of triggers: overall score and 7-day change, category lights, regime, top drivers, data health, plus **"This week"** — the calendar events in the next 7 days, each with its `why_it_matters`.
-- `--dry-run` writes the email to `out/email-preview.html` instead of sending.
+- `--dry-run` writes the email to `out/email-preview.html` (and `.txt`) instead of sending. The same preview is written, and the run continues, when the email secrets are not set.
+- On Mondays the weekly summary and any triggers go out as **one** email.
+- The dashboard link uses `DASHBOARD_URL` if set, otherwise the GitHub Pages URL derived from `GITHUB_REPOSITORY`.
+- On the first run there is no previous state, so nothing is sent; the state is just saved.
+- Stale or newly added indicators never trigger a light-change alert.
 - Disclaimer footer: "Informational only, not financial advice."
 
 ## 12. Reliability and error handling

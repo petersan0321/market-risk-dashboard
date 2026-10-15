@@ -71,14 +71,18 @@ def band_for(score: float, floors=FLOORS) -> str | None:
     return BAND_NAMES[sum(score >= f for f in floors)]
 
 
-def with_hysteresis(scores: pd.Series, floors=FLOORS, buffer: float = HYSTERESIS) -> pd.Series:
+LIGHT_NAMES = ("green", "amber", "red")
+LIGHT_FLOORS = (60.0, 85.1)  # amber from 60; red above 85 (scores are rounded to 0.1)
+
+
+def with_hysteresis(scores: pd.Series, floors=FLOORS, buffer: float = HYSTERESIS, names=BAND_NAMES) -> pd.Series:
     """Bands with a buffer: moving up a band needs the score to reach its floor; moving down
     needs it to fall `buffer` points below. Stops a score hovering near a line from flip-flopping.
     Uses only past values."""
     out, level = [], None
     for s in scores:
         if pd.isna(s):
-            out.append(None if level is None else BAND_NAMES[level])
+            out.append(None if level is None else names[level])
             continue
         raw = sum(s >= f for f in floors)
         if level is None or raw > level:
@@ -86,5 +90,10 @@ def with_hysteresis(scores: pd.Series, floors=FLOORS, buffer: float = HYSTERESIS
         else:
             while level > 0 and s < floors[level - 1] - buffer:
                 level -= 1
-        out.append(BAND_NAMES[level])
+        out.append(names[level])
     return pd.Series(out, index=scores.index, dtype=object)
+
+
+def lights_with_hysteresis(scores: pd.Series) -> pd.Series:
+    """Green/amber/red with the same buffer: red clears below 80, amber below 55."""
+    return with_hysteresis(scores, LIGHT_FLOORS, HYSTERESIS, LIGHT_NAMES)

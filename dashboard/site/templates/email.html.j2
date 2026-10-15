@@ -1,0 +1,61 @@
+{%- set band = state.overall.band -%}
+<!doctype html>
+<html><body style="margin:0;padding:0;background:#f4f4f1;">
+<div style="max-width:620px;margin:0 auto;padding:20px 16px;font-family:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#0b0b0b;font-size:15px;line-height:1.5;">
+  <p style="margin:0;font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:#6d6c67;">Market Watch · {{ today }}</p>
+  <h1 style="margin:4px 0 12px;font-size:22px;">Overall risk {{ "%.0f"|format(state.overall.score) }}/100 · {{ band }}</h1>
+
+  {% if trigs %}
+  <div style="background:#fcfcfb;border:1px solid #e2e1dc;border-radius:8px;padding:14px 16px;margin-bottom:14px;">
+    <h2 style="margin:0 0 8px;font-size:16px;">What changed</h2>
+    {% for t in trigs %}
+    <p style="margin:0 0 8px;"><strong>{{ "▲" if t.up else ("▼" if t.up is sameas false else "◆") }} {{ t.text }}</strong>
+      {% if t.kind in ("indicator", "rule") and t.id in by_id %}<br><span style="color:#52514e;font-size:14px;">{{ by_id[t.id].explain }}</span>{% endif %}</p>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div style="background:#fcfcfb;border:1px solid #e2e1dc;border-radius:8px;padding:14px 16px;margin-bottom:14px;">
+    <h2 style="margin:0 0 8px;font-size:16px;">What the score means</h2>
+    {% if band_row and band_row.days %}<p style="margin:0 0 6px;">In past <strong>{{ band }}</strong> periods, the S&amp;P 500 fell 15% or more within 12 months
+      <strong>{{ band_row.big_drop_rate|pct }}</strong> of the time{% if r.model_confidence and r.model_confidence.ci %} (likely range {{ r.model_confidence.ci[0]|pct }}–{{ r.model_confidence.ci[1]|pct }}){% endif %}.</p>{% endif %}
+    <p style="margin:0 0 6px;">Biggest drivers: {% for c in r.contributions[:3] %}{{ c.name }} {{ "%+.1f"|format(c.contribution) }}{{ ", " if not loop.last }}{% endfor %}.</p>
+    {% if up and up.indicators %}<p style="margin:0 0 6px;">Watch: {{ up.indicators|length }} more indicator{{ "s" if up.indicators|length > 1 }} turning red would move it to {{ up.band }} ({{ by_id[up.indicators[0]].name }}{% if up.indicators|length > 1 %}, …{% endif %}).</p>{% endif %}
+    {% if r.model_confidence %}<p style="margin:0;color:#52514e;font-size:14px;">Model accuracy {{ "%.2f"|format(r.model_confidence.auc) }} ({{ r.model_confidence.grade }}): useful context, not a forecast.</p>{% endif %}
+  </div>
+
+  {% if looks.matches %}
+  {% set m = looks.matches[0] %}
+  <p style="margin:0 0 14px;font-size:14px;">Today most resembles the run-up to <strong>{{ m.name or m.event }}</strong> ({{ m.offset }}), but
+    {{ looks.no_crash_rate|pct }} of similar past days were not followed by a crash within 12 months.</p>
+  {% endif %}
+
+  {% if weekly %}
+  <div style="background:#fcfcfb;border:1px solid #e2e1dc;border-radius:8px;padding:14px 16px;margin-bottom:14px;">
+    <h2 style="margin:0 0 8px;font-size:16px;">Weekly summary</h2>
+    {% if week %}<p style="margin:0 0 6px;">Last 7 days: {{ "%.0f"|format(week.from) }} → {{ "%.0f"|format(week.to) }} ({{ "%+.1f"|format(week.change) }}).</p>{% endif %}
+    <p style="margin:0 0 6px;">Regime: <strong>{{ (state.regime or "unknown")|capitalize }}</strong>.</p>
+    <table style="border-collapse:collapse;font-size:14px;width:100%;">
+      {% for c, light in state.categories.items() %}<tr><td style="padding:3px 0;border-bottom:1px solid #eee;">{{ categories[c] }}</td>
+        <td style="padding:3px 0;border-bottom:1px solid #eee;text-align:right;">{{ {"green": "● Green", "amber": "▲ Amber", "red": "■ Red"}.get(light, "○ No score") }}</td></tr>{% endfor %}
+    </table>
+    {% if this_week %}
+    <h3 style="margin:12px 0 6px;font-size:15px;">This week</h3>
+    {% for e in this_week %}<p style="margin:0 0 8px;font-size:14px;"><strong>{{ e.date[5:] }} {{ e.name }}</strong>{% if e.note %} · {{ e.note }}{% endif %}<br><span style="color:#52514e;">{{ e.why }}</span></p>{% endfor %}
+    {% endif %}
+    {% for w in calendar_warnings %}<p style="margin:6px 0 0;font-size:14px;color:#8a5a00;">Calendar needs updating: {{ w }}</p>{% endfor %}
+  </div>
+  {% endif %}
+
+  {% if headlines %}
+  <div style="margin-bottom:14px;">
+    <h2 style="margin:0 0 8px;font-size:16px;">Related headlines this week</h2>
+    {% for h in headlines %}<p style="margin:0 0 6px;font-size:14px;"><a href="{{ h.url }}" style="color:#1f63b8;">{{ h.title }}</a> <span style="color:#6d6c67;">· {{ h.source }}</span></p>{% endfor %}
+  </div>
+  {% endif %}
+
+  <p style="margin:16px 0;"><a href="{{ url }}" style="display:inline-block;background:#0b0b0b;color:#fcfcfb;text-decoration:none;padding:9px 16px;border-radius:6px;font-weight:600;">Open the dashboard</a></p>
+  <p style="margin:0;color:#6d6c67;font-size:12px;">Data health: {{ r.confidence.fresh }}/{{ r.confidence.total }} indicators fresh. Bands and lights use a 5-point buffer, so a score hovering near a line doesn't trigger repeat alerts.<br>
+    Informational only, not financial advice.</p>
+</div>
+</body></html>

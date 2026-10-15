@@ -22,6 +22,10 @@ jobs:
         run: uv run python -m dashboard.run
         env:
           FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
+          # Email alerts; without these the email is written as a preview artifact instead.
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          ALERT_TO: ${{ secrets.ALERT_TO }}
       - uses: actions/upload-pages-artifact@v5
         with:
           path: site
@@ -31,6 +35,7 @@ jobs:
           path: |
             data/raw
             data/context
+            data/state.json
 
   deploy:
     needs: build
@@ -60,7 +65,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/raw data/context
+          git add data/raw data/context data/state.json
           if git diff --cached --quiet; then
             echo "No data changes"
           else

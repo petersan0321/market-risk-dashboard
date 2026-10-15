@@ -1,0 +1,26 @@
+{%- set band = state.overall.band -%}
+MARKET WATCH · {{ today }}
+Overall risk {{ "%.0f"|format(state.overall.score) }}/100 · {{ band }}
+{% if trigs %}
+WHAT CHANGED
+{% for t in trigs %}- {{ t.text }}
+{% endfor %}{% endif %}
+WHAT THE SCORE MEANS
+{% if band_row and band_row.days %}- In past {{ band }} periods, the S&P 500 fell 15%+ within 12 months {{ band_row.big_drop_rate|pct }} of the time.
+{% endif %}- Biggest drivers: {% for c in r.contributions[:3] %}{{ c.name }} {{ "%+.1f"|format(c.contribution) }}{{ ", " if not loop.last }}{% endfor %}
+{% if r.model_confidence %}- Model accuracy {{ "%.2f"|format(r.model_confidence.auc) }} ({{ r.model_confidence.grade }}): context, not a forecast.
+{% endif %}{% if weekly %}
+WEEKLY SUMMARY
+{% if week %}- Last 7 days: {{ "%.0f"|format(week.from) }} -> {{ "%.0f"|format(week.to) }} ({{ "%+.1f"|format(week.change) }})
+{% endif %}- Regime: {{ (state.regime or "unknown")|capitalize }}
+{% for c, light in state.categories.items() %}- {{ categories[c] }}: {{ light or "no score" }}
+{% endfor %}{% if this_week %}
+THIS WEEK
+{% for e in this_week %}- {{ e.date }} {{ e.name }}{% if e.note %} ({{ e.note }}){% endif %}
+{% endfor %}{% endif %}{% for w in calendar_warnings %}Calendar needs updating: {{ w }}
+{% endfor %}{% endif %}{% if headlines %}
+RELATED HEADLINES
+{% for h in headlines %}- {{ h.title }} ({{ h.source }}) {{ h.url }}
+{% endfor %}{% endif %}
+Dashboard: {{ url }}
+Informational only, not financial advice.

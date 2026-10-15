@@ -12,16 +12,17 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from dashboard import backtest, composite, context, history, rationale, regime, signals, simulate
+from dashboard import alerts, backtest, composite, context, history, rationale, regime, signals, simulate
 from dashboard.config import (load_calendar, load_events, load_glossary, load_indicators, load_news_topics,
                               load_untracked, load_weights)
 from dashboard.fetch import MARKETS, fetch_all
 from dashboard.fetch.base import read_raw
-from dashboard.paths import CONFIG_DIR, CONTEXT_DIR, RAW_DIR, SCORES_DIR, SITE_DIR
+from dashboard.paths import CONFIG_DIR, CONTEXT_DIR, RAW_DIR, ROOT, SCORES_DIR, SITE_DIR
 from dashboard.returns import bond_index, on_days
 from dashboard.site.build import build_site
 
 log = logging.getLogger("dashboard")
+STATE_PATH = ROOT / "data" / "state.json"
 
 
 def to_jsonable(obj):
@@ -37,6 +38,17 @@ def to_jsonable(obj):
     if isinstance(obj, np.bool_):
         return bool(obj)
     return obj
+
+
+def apply_state(result: dict, state: dict) -> None:
+    result["overall"]["band"] = state["overall"]["band"]
+    for c, light in state["categories"].items():
+        if light:
+            result["categories"][c]["light"] = light
+    for i_id, light in state["indicators"].items():
+        detail = result["indicators"].get(i_id, {})
+        if detail.get("available"):
+            detail["light"] = light or "none"
 
 
 def analyze(indicators, weights, tables, raw_dir: Path, scores_dir: Path, today: date, events=(),
@@ -72,7 +84,15 @@ def analyze(indicators, weights, tables, raw_dir: Path, scores_dir: Path, today:
         detail = result["indicators"].get(ind.id, {})
         if detail.get("available"):
             detail["spectrum"]["events"] = history.event_markers(ind, tables["value"][ind.id], located)
+    names = {e.id: e.name for e in events}
+    for m in hist["looks_like"]["matches"]:
+        m["name"] = names.get(m["event"], m["event"])
     result["looks_like"] = hist["looks_like"]
+
+    # Pages and emails show the buffered (hysteresis) band and lights as "current" (spec §11.2).
+    state = alerts.current_state(comp, tables, regimes["regime"], indicators)
+    apply_state(result, state)
+    result["state"] = state
 
     labels = backtest.outcome_labels(stocks, bonds)
     report = backtest.evaluate(comp, tables["score"], labels, located, weights)
@@ -92,6 +112,7 @@ def analyze(indicators, weights, tables, raw_dir: Path, scores_dir: Path, today:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--no-fetch", action="store_true", help="skip downloading; use data/raw as is")
+    parser.add_argument("--dry-run", action="store_true", help="write the alert email to out/ instead of sending it")
     args = parser.parse_args()
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
 
@@ -114,6 +135,10 @@ def main() -> None:
     long_bonds = bond_index(read_raw(RAW_DIR / "market" / "ust10y.csv"), read_raw(agg_path) if agg_path.exists() else None)
     ctx = context.run(types, manual, feeds, topics, CONTEXT_DIR, today, spx, long_bonds, fetch=not args.no_fetch)
     log.info("context: %d calendar items, %d recent headlines", len(ctx["calendar"]["items"]), len(ctx["news"]))
+    comp = pd.read_csv(SCORES_DIR / "composite.csv", index_col="date", parse_dates=["date"])
+    alert = alerts.run(result["state"], alerts.load_state(STATE_PATH), result, ctx, comp["overall"], indicators,
+                       types, topics, today, STATE_PATH, ROOT / "out", dry_run=args.dry_run)
+    log.info("alerts: %d changes, email %s", len(alert["triggers"]), alert["status"])
     o = result["overall"]
     log.info("overall %.1f (%s), regime %s", o["score"], o["band"], result["regime"]["now"])
     build_site(indicators, untracked, SCORES_DIR, SITE_DIR, datetime.now(timezone.utc), events, glossary, weights)
