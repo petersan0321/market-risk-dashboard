@@ -1,0 +1,213 @@
+# Plain-English definitions of every finance term used on the site (spec §10.4).
+# Event `terms` entries must refer to ids here; a test checks this.
+
+bank_run:
+  term: Bank run
+  definition: >
+    When many depositors try to withdraw their money from a bank at the same time because they
+    fear it will fail. Banks lend out most deposits, so even a healthy bank can collapse if
+    everyone asks for cash at once.
+
+bear_market:
+  term: Bear market
+  definition: >
+    A fall of 20% or more in stock prices from their peak. A smaller fall of 10-20% is usually
+    called a "correction".
+
+bond_prices_and_yields:
+  term: Bond prices and yields
+  definition: >
+    A bond pays fixed interest. If interest rates in the market rise, older bonds paying less
+    become less attractive, so their prices fall. That is why bond prices move in the opposite
+    direction to yields (interest rates).
+
+circuit_breaker:
+  term: Circuit breaker
+  definition: >
+    A rule that pauses trading on the stock exchange when prices fall a set amount in one day,
+    giving investors time to calm down. US circuit breakers were introduced after the 1987 crash.
+
+contagion:
+  term: Contagion
+  definition: >
+    When trouble in one market, company, or country spreads to others, often because investors
+    sell everything risky at once or because the same lenders are exposed to all of them.
+
+correction:
+  term: Correction
+  definition: A fall of 10-20% in stock prices from their recent peak.
+
+credit_rating:
+  term: Credit rating
+  definition: >
+    A grade (like AAA or BBB) given by agencies such as S&P and Moody's to show how likely a
+    borrower is to repay. A downgrade means the agency thinks repayment has become less certain.
+
+credit_spread:
+  term: Credit spread
+  definition: >
+    The extra interest a company has to pay compared with the US government for borrowing over the
+    same period. A wider spread means lenders see more risk of not being repaid.
+
+currency_devaluation:
+  term: Currency devaluation
+  definition: >
+    When a country deliberately lowers the value of its currency. It makes the country's exports
+    cheaper but can signal economic trouble and unsettle global markets.
+
+debt_ceiling:
+  term: Debt ceiling
+  definition: >
+    A legal limit on how much the US government can borrow, set by Congress. If it isn't raised in
+    time, the government could miss payments, which would be unprecedented.
+
+default:
+  term: Default
+  definition: When a borrower fails to make a promised interest or principal payment.
+
+deficit:
+  term: Budget deficit
+  definition: >
+    When the government spends more than it collects in taxes in a year. It covers the gap by
+    selling bonds, adding to government debt.
+
+derivatives:
+  term: Derivatives
+  definition: >
+    Financial contracts whose value depends on something else, such as a stock index, interest
+    rate, or loan. They can be used to reduce risk or to take very large bets with little money.
+
+duration:
+  term: Duration
+  definition: >
+    A measure of how sensitive a bond's price is to interest rates. A duration of 8 means the price
+    falls about 8% if rates rise by 1 percentage point. Longer-term bonds have higher duration.
+
+earnings:
+  term: Earnings
+  definition: A company's profit. Stock prices in the long run follow what companies earn.
+
+fed_funds_rate:
+  term: Fed funds rate
+  definition: >
+    The short-term interest rate the Federal Reserve sets. It influences almost every other
+    borrowing cost, from mortgages to business loans.
+
+flight_to_safety:
+  term: Flight to safety
+  definition: >
+    When frightened investors sell risky assets like stocks and buy safe ones like US Treasury
+    bonds or gold, pushing safe-asset prices up.
+
+inflation:
+  term: Inflation
+  definition: >
+    The rate at which prices rise. Moderate inflation (around 2% a year) is normal; high inflation
+    erodes the value of money and of fixed payments like bond interest.
+
+leverage:
+  term: Leverage
+  definition: >
+    Using borrowed money to invest. It magnifies gains and losses: with 10x leverage, a 10% fall in
+    the investment wipes out all of your own money.
+
+liquidity:
+  term: Liquidity
+  definition: >
+    How easily something can be sold quickly without dropping its price. In a crisis liquidity can
+    vanish: buyers disappear, so sellers must accept much lower prices.
+
+margin_call:
+  term: Margin call
+  definition: >
+    A demand from a lender for more cash when an investment bought with borrowed money falls in
+    value. Investors who can't pay are forced to sell, which can push prices down further.
+
+mortgage_backed_security:
+  term: Mortgage-backed security
+  definition: >
+    A bond made by bundling many home loans together; investors receive the homeowners' payments.
+    If many homeowners stop paying, these bonds lose value.
+
+portfolio_insurance:
+  term: Portfolio insurance
+  definition: >
+    A 1980s strategy that automatically sold stock futures as the market fell, to limit losses.
+    When many investors used it at once, the selling fed on itself.
+
+quantitative_easing:
+  term: Quantitative easing (QE)
+  definition: >
+    When the central bank creates money to buy government and mortgage bonds. This pushes long-term
+    interest rates down and adds cash to the financial system.
+
+quantitative_tightening:
+  term: Quantitative tightening (QT)
+  definition: >
+    The reverse of QE: the central bank lets its bonds mature without replacing them, slowly
+    draining cash from the financial system.
+
+real_yield:
+  term: Real yield
+  definition: >
+    The interest rate after subtracting inflation. If a bond pays 5% and inflation is 3%, the real
+    yield is about 2%.
+
+recession:
+  term: Recession
+  definition: >
+    A significant, broad fall in economic activity lasting more than a few months: output, jobs,
+    income, and spending all decline. Company profits usually fall with it.
+
+safe_haven:
+  term: Safe haven
+  definition: >
+    An asset investors expect to hold its value in a crisis, such as US Treasury bonds, the US
+    dollar, or gold.
+
+stagflation:
+  term: Stagflation
+  definition: >
+    Slow or shrinking growth combined with high inflation. It is hard for central banks to fight,
+    because cutting rates helps growth but worsens inflation.
+
+taper:
+  term: Taper
+  definition: Slowing down the pace of quantitative easing (bond buying) before ending it.
+
+tariff:
+  term: Tariff
+  definition: >
+    A tax on imported goods. It raises costs for companies and consumers who buy imports and can
+    lead other countries to retaliate with their own tariffs.
+
+term_premium:
+  term: Term premium
+  definition: >
+    The extra yield investors demand for holding a long-term bond instead of rolling over
+    short-term ones, as compensation for the uncertainty of tying money up for years.
+
+unrealized_loss:
+  term: Unrealized loss
+  definition: >
+    A fall in the value of something you still own. It only becomes a real (realized) loss if you
+    have to sell. Banks holding bonds bought at low rates had large unrealized losses when rates rose.
+
+valuation:
+  term: Valuation
+  definition: >
+    How expensive an asset is compared with what it earns, for example the price-to-earnings (P/E)
+    ratio. High valuations leave less room for disappointment.
+
+volatility:
+  term: Volatility
+  definition: >
+    How much and how quickly prices swing. The VIX index measures the volatility traders expect in
+    the S&P 500 over the next month.
+
+yield_curve:
+  term: Yield curve
+  definition: >
+    A line comparing interest rates on government bonds of different lengths. Normally longer bonds
+    pay more. When short-term rates are higher than long-term rates the curve is "inverted", which
+    has happened before most US recessions.

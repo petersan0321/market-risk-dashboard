@@ -57,6 +57,14 @@
     <li><strong>It describes conditions, not timing.</strong> A high score has often come months before a decline, or with no decline at all.</li>
   </ul>
 
+  <h2 id="glossary">Glossary</h2>
+  <dl class="glossary">
+    {% for g in glossary.values()|sort(attribute="term") %}
+    <dt id="term-{{ g.id }}">{{ g.term }}</dt>
+    <dd>{{ g.definition }}</dd>
+    {% endfor %}
+  </dl>
+
   <h2>Disclaimer</h2>
   <p>This dashboard is for learning and monitoring. It is not financial advice and does not recommend buying or selling anything.</p>
 </article>

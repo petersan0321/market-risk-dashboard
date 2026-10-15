@@ -312,7 +312,8 @@ Explains §5–§6 in plain English: how percentiles work, why bands are 40/60/7
   kind: crash               # crash | rally
   assets: [stocks, bonds]
   anchor: {start: 2007-10-09, end: 2009-03-09}
-  tags: [credit, banking]    # filters: fed, inflation, credit, banking, policy, election, geopolitics, valuation, global
+  tags: [credit, banking]    # filters: fed, rates, inflation, credit, banking, policy, election, geopolitics, valuation, global
+  search_days: 30            # optional: window around each anchor for the exact peak/trough (short shocks use less)
   summary: >                 # one line, used in lists, time machine, emails
     US housing loans went bad, big banks nearly failed, and lending froze worldwide.
   explain:
@@ -330,16 +331,13 @@ Explains §5–§6 in plain English: how percentiles work, why bands are 40/60/7
     why_bonds: >
       Investors fled to safety: US Treasuries rallied as the Fed cut rates to zero, while
       corporate bonds fell because investors feared companies would default.
-    signals: >               # how the dashboard's factors showed it, for learning
-      Credit spreads and the financial stress index rose through 2007, the yield curve
-      had inverted in 2006, and jobless claims climbed from early 2008.
     lesson: >
       Credit markets warned well before the stock market's worst months. When lenders get
       scared, pay attention.
     terms: [credit_spread, leverage, yield_curve]   # links to glossary (§10.4)
 ```
 
-`anchor` dates are approximate. `history.py` finds the exact peak and trough in the relevant asset (S&P 500 for stock events, the bond return series for bond events) within ±30 days of each anchor. All text fields are hand-written, aimed at a reader with no finance background, and every term that needs it links to the glossary. Every number shown is computed. `config.py` rejects an event missing `summary` or any `explain` field.
+`anchor` dates are approximate. `history.py` finds the exact peak and trough in the relevant asset (S&P 500 for stock events, the bond return series for bond events) within ±`search_days` (default 30) of each anchor. "What the dashboard showed" is **generated from the data** (red and amber indicators 6 and 3 months before the start), not hand-written, so it can't misstate what the indicators did. All text fields are hand-written, aimed at a reader with no finance background, and every term that needs it links to the glossary. Every number shown is computed. `config.py` rejects an event missing `summary` or any `explain` field.
 
 `kind: event` is used for events that matter for learning but are not a crash or rally (e.g. elections); they get full event pages but are excluded from the crash statistics in §7.3–§7.4.
 
@@ -387,14 +385,14 @@ Policy-driven events already in the list are tagged `policy` or `fed` (e.g. Volc
 
 For each indicator, across crash events where it had data:
 - **Hit rate:** % of events where its light was amber or red at −3 or −6 months.
-- **False-alarm rate:** % of red episodes (≥ 20 consecutive trading days at red) not followed by a crash event start within 12 months.
+- **False-alarm rate:** % of red episodes (≥ 20 consecutive trading days at red) not followed by a crash event start within 12 months and not occurring during a crash. Episodes from the last 12 months are excluded (outcome unknown).
 - Sorted by hit rate, with event counts shown so small samples are obvious.
 
 ### 7.4 "Today looks like…"
 
 - **Fingerprint:** vector of the 9 category scores plus their 63-day changes.
-- Compared with each crash and rally event's fingerprint at −6 and −3 months, using Euclidean distance over the dimensions available in both, divided by the number of dimensions compared.
-- Show the top 3 closest (event, offset, distance, categories compared).
+- Compared with each crash and rally event's fingerprint at −6 and −3 months, using root-mean-square distance over the dimensions available in both (at least 6).
+- Show the 3 closest **distinct** events (each event's closer offset), with date and summary.
 - **Base rate:** among all historical days whose distance to today's fingerprint is ≤ the 3rd-closest match's distance, the % not followed by any crash event start within 12 months. Shown with every match ("similar readings were followed by no crisis N% of the time").
 
 ## 8. Time machine
@@ -428,7 +426,7 @@ Scores are rounded to integers and values to 3 significant figures; `null` for n
 ### 8.3 Range view
 
 - From/to pickers, plus `?from=YYYY-MM-DD&to=YYYY-MM-DD`.
-- Chart: overall score with band shading; toggle to overlay category scores; S&P 500 and bond series on a second panel; events in the range shaded and labelled.
+- Chart: overall score with band shading; a selector overlays **one** category at a time (nine overlaid lines would be unreadable); S&P 500 and bond series on a second panel; events in the range shaded and labelled.
 - Summary: start/end/min/max/average score (with dates for min/max), days spent in each band, list of band changes with dates, S&P 500 and bond return over the range.
 
 ### 8.4 Links in

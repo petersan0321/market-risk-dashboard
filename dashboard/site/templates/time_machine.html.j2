@@ -1,0 +1,41 @@
+{% extends "base.html.j2" %}
+{% from "macros.html.j2" import plotly_scripts %}
+{% block title %}Time machine · Market Risk Dashboard{% endblock %}
+{% block content %}
+<section>
+  <p class="eyebrow">Time machine</p>
+  <h1>Look up any day or period</h1>
+  <p class="muted">See the scores exactly as they stood at the time, using only data that had been published by then.</p>
+</section>
+
+<section class="card tm-controls">
+  <div class="filter-row" role="group" aria-label="View">
+    <button type="button" class="filter" id="mode-day" aria-pressed="true">One day</button>
+    <button type="button" class="filter" id="mode-range" aria-pressed="false">A period</button>
+  </div>
+  <form id="day-form">
+    <label>Date <input type="date" id="day-input" required></label>
+    <button type="submit" class="btn">Show</button>
+  </form>
+  <form id="range-form" hidden>
+    <label>From <input type="date" id="from-input" required></label>
+    <label>To <input type="date" id="to-input" required></label>
+    <button type="submit" class="btn">Show</button>
+  </form>
+  <div class="quick small">
+    <span class="muted">Try:</span>
+    <a href="?date=2008-09-15">Lehman collapse</a>
+    <a href="?date=2020-03-23">COVID low</a>
+    <a href="?date=2000-03-24">Dot-com peak</a>
+    <a href="?from=2021-07-01&amp;to=2023-06-30">2022 rate shock</a>
+    <a href="?from=2006-01-01&amp;to=2009-12-31">Financial crisis</a>
+  </div>
+</section>
+
+<div id="tm-output" class="tm-output" aria-live="polite"><p class="muted">Loading…</p></div>
+{% endblock %}
+{% block scripts %}
+{{ plotly_scripts(root) }}
+<script>window.TM_ROOT = "{{ root }}";</script>
+<script src="{{ root }}static/time-machine.js"></script>
+{% endblock %}

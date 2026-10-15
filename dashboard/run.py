@@ -12,8 +12,8 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from dashboard import composite, rationale, regime, signals
-from dashboard.config import load_indicators, load_untracked, load_weights
+from dashboard import composite, history, rationale, regime, signals
+from dashboard.config import load_events, load_glossary, load_indicators, load_untracked, load_weights
 from dashboard.fetch import MARKETS, fetch_all
 from dashboard.fetch.base import read_raw
 from dashboard.paths import RAW_DIR, SCORES_DIR, SITE_DIR
@@ -38,12 +38,13 @@ def to_jsonable(obj):
     return obj
 
 
-def analyze(indicators, weights, tables, raw_dir: Path, scores_dir: Path, today: date) -> dict:
+def analyze(indicators, weights, tables, raw_dir: Path, scores_dir: Path, today: date, events=()) -> dict:
     comp = composite.run(tables, indicators, weights, scores_dir)
     market = {name: read_raw(raw_dir / "market" / f"{name}.csv") for name in MARKETS
               if (raw_dir / "market" / f"{name}.csv").exists()}
     stocks = on_days(market["spx"], comp.index)
     bonds = on_days(bond_index(market["ust10y"], market.get("agg")), comp.index)
+    pd.DataFrame({"stocks": stocks, "bonds": bonds}).to_csv(scores_dir / "market.csv", date_format="%Y-%m-%d")
 
     core_pce = next(i for i in indicators if i.id == "core_pce_6m")
     regimes = regime.classify(regime.growth_index(tables["value"]),
@@ -64,6 +65,14 @@ def analyze(indicators, weights, tables, raw_dir: Path, scores_dir: Path, today:
         "inflation_gap": float(regimes["inflation_gap"].dropna().iloc[-1]),
         "returns": regime.regime_returns(regimes["regime"], stocks, bonds),
     }
+    hist, located = history.build(list(events), indicators, tables["score"], comp, stocks, bonds)
+    for ind in indicators:
+        detail = result["indicators"].get(ind.id, {})
+        if detail.get("available"):
+            detail["spectrum"]["events"] = history.event_markers(ind, tables["value"][ind.id], located)
+    looks = hist["looks_like"]
+    result["looks_like"] = looks
+    (scores_dir / "history.json").write_text(json.dumps(to_jsonable(hist), indent=1))
     result = to_jsonable(result)
     (scores_dir / "rationale.json").write_text(json.dumps(result, indent=1))
     return result
@@ -76,6 +85,8 @@ def main() -> None:
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(name)s: %(message)s")
 
     indicators, weights, untracked = load_indicators(), load_weights(), load_untracked()
+    glossary = load_glossary()
+    events = load_events(glossary=glossary)
     today = date.today()
     if not args.no_fetch:
         status = fetch_all(indicators, RAW_DIR)
@@ -83,10 +94,10 @@ def main() -> None:
         if failed:
             log.warning("fetch failed for %s; continuing with previous data", failed)
     tables = signals.run(indicators, RAW_DIR, SCORES_DIR, today)
-    result = analyze(indicators, weights, tables, RAW_DIR, SCORES_DIR, today)
+    result = analyze(indicators, weights, tables, RAW_DIR, SCORES_DIR, today, events)
     o = result["overall"]
     log.info("overall %.1f (%s), regime %s", o["score"], o["band"], result["regime"]["now"])
-    build_site(indicators, untracked, SCORES_DIR, SITE_DIR, datetime.now(timezone.utc))
+    build_site(indicators, untracked, SCORES_DIR, SITE_DIR, datetime.now(timezone.utc), events, glossary, weights)
 
 
 if __name__ == "__main__":

@@ -81,8 +81,28 @@
   </div>
 </section>
 
+{% set ll = r.looks_like %}
+{% if ll and ll.matches %}
+<section class="card" aria-labelledby="looks-h">
+  <h2 id="looks-h">Today looks like…</h2>
+  <p class="small muted">The past moments whose category scores (and their 3-month changes) were closest to today's.</p>
+  <ol class="matches">
+    {% for m in ll.matches %}
+    {% set ev = events_by_id[m.event] %}
+    <li><a href="history/{{ m.event }}.html">{{ ev.ev.name }}</a>, {{ m.offset }} it started <span class="muted small">({{ m.date }})</span>
+      <br><span class="small muted">{{ ev.ev.summary }}</span></li>
+    {% endfor %}
+  </ol>
+  {% if ll.no_crash_rate is not none %}
+  <p class="callout small"><strong>Keep this in perspective:</strong> across history, {{ "{:,}".format(ll.similar_days) }} days looked at least this similar to today,
+    and <strong>{{ ll.no_crash_rate|pct }}</strong> of them were <em>not</em> followed by a crash within 12 months. Similar readings are a prompt to look closer, not a forecast.</p>
+  {% endif %}
+</section>
+{% endif %}
+
 <section class="card" aria-labelledby="hist-h">
-  <h2 id="hist-h">Overall score, last {{ 5 }} years</h2>
+  <h2 id="hist-h">Overall score, last 5 years</h2>
+  <p class="small muted">Grey shading marks crashes from the <a href="history/index.html">history playbook</a>. Hover for the score on any date, or use the <a href="time-machine.html">time machine</a>.</p>
   {{ chart("overall-chart", chart_data) }}
 </section>
 

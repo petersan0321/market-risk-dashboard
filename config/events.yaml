@@ -1,0 +1,670 @@
+# Historical event library (spec §7.1). Story text is hand-written for readers with no
+# finance background. Every number on the site (dates, moves, scores) is computed from data;
+# anchor dates are approximate and the exact peak/trough is found within ±30 days.
+# "What the dashboard showed" is generated from the data, not written here.
+
+- id: oil_shock_1973
+  name: 1973-74 oil shock and stagflation
+  kind: crash
+  assets: [stocks]
+  anchor: {start: 1973-01-11, end: 1974-10-03}
+  tags: [inflation, geopolitics, fed]
+  summary: An oil embargo quadrupled oil prices on top of already-high inflation, and stocks lost almost half their value.
+  explain:
+    background: >
+      In the early 1970s US inflation was already climbing after years of loose money and
+      government spending. Big "Nifty Fifty" stocks traded at very high prices because investors
+      believed they could only go up.
+    chain:
+      - "In October 1973, Arab oil producers stopped selling oil to the US over its support for Israel in the Yom Kippur War."
+      - "Oil prices roughly quadrupled within months, raising costs for almost every business and household."
+      - "Inflation shot into double digits, so the Fed kept interest rates high instead of supporting the economy."
+      - "The economy fell into a deep recession while prices kept rising: stagflation."
+      - "Political turmoil from the Watergate scandal added to the uncertainty."
+    why_stocks: >
+      Profits were squeezed by higher costs and a weaker economy, and high interest rates made
+      the very expensive stocks of the time look unattractive. The S&P 500 lost close to half its value.
+    why_bonds: >
+      Rising inflation and interest rates pushed bond prices down, and inflation ate away the
+      value of the interest they paid. Bonds offered little protection.
+    lesson: >
+      When inflation is high, the Fed can't come to the rescue, so stocks and bonds can fall together.
+      Expensive stocks have further to fall.
+  terms: [inflation, stagflation, recession, valuation, bear_market]
+
+- id: volcker_1979
+  name: Volcker rate shock
+  kind: crash
+  assets: [bonds]
+  anchor: {start: 1979-10-01, end: 1981-09-30}
+  tags: [fed, inflation]
+  summary: The Fed pushed interest rates toward 20% to crush double-digit inflation, and long-term bond prices collapsed.
+  explain:
+    background: >
+      By 1979 inflation was above 10% and people expected it to keep rising. Paul Volcker became
+      Fed chair in August 1979 determined to stop it, whatever the cost.
+    chain:
+      - "In October 1979 the Fed changed its approach and let interest rates rise as high as needed to slow the growth of money."
+      - "Short-term rates soared, at times near 20%, and long-term Treasury yields climbed to around 15% by 1981."
+      - "Every rise in yields meant existing bonds, paying less, lost value."
+      - "The tight money caused two recessions (1980 and 1981-82), but inflation finally started to fall."
+    why_stocks: >
+      Stocks struggled and swung sharply: with safe bonds and savings accounts paying double-digit
+      rates, few investors wanted the risk of stocks, and the recessions hurt profits.
+    why_bonds: >
+      This was one of the worst periods ever for bond holders. Yields rising by several
+      percentage points cut long-term bond prices sharply, and inflation eroded what was left.
+    lesson: >
+      Bond prices fall when the Fed fights inflation aggressively. But the pain created the
+      conditions for a 40-year bond rally once inflation was beaten.
+  terms: [fed_funds_rate, inflation, bond_prices_and_yields, recession]
+
+- id: bull_1982
+  name: 1982 bull market begins
+  kind: rally
+  assets: [stocks]
+  anchor: {start: 1982-08-12, end: 1983-10-10}
+  tags: [fed]
+  summary: Once inflation was beaten and the Fed began cutting rates, very cheap stocks started an 18-year bull market.
+  explain:
+    background: >
+      After a decade of inflation and two recessions, stocks were very cheap: investors paid only
+      around 7-8 times earnings. Many had given up on stocks entirely.
+    chain:
+      - "Inflation fell sharply thanks to the Volcker Fed's high rates."
+      - "In mid-1982 a Mexican debt crisis threatened US banks, and the Fed started cutting rates to ease the strain."
+      - "Falling interest rates made stocks look attractive again compared with bonds and savings."
+      - "Investors rushed back in, and the economy recovered strongly in 1983."
+    why_stocks: >
+      Cheap stocks plus falling interest rates is a powerful combination. Prices rose fast as
+      investors who had been out of the market came back.
+    why_bonds: >
+      Bonds rallied too: as inflation and yields fell, the high-interest bonds bought earlier became
+      very valuable.
+    lesson: >
+      The best buying opportunities often come when stocks are cheap, pessimism is widespread, and
+      the Fed turns from tightening to easing.
+  terms: [valuation, fed_funds_rate, bond_prices_and_yields]
+
+- id: black_monday_1987
+  name: Black Monday
+  kind: crash
+  assets: [stocks]
+  anchor: {start: 1987-08-25, end: 1987-12-04}
+  tags: [valuation, rates]
+  summary: After a fast rally and rising interest rates, the stock market fell more than 20% in a single day on October 19, 1987.
+  explain:
+    background: >
+      Stocks had risen strongly through 1987 and were expensive. At the same time interest rates
+      were rising, and worries about the dollar and the US trade deficit were growing.
+    chain:
+      - "Long-term Treasury yields rose sharply during 1987, making bonds an attractive alternative to pricey stocks."
+      - "Bad trade-deficit news and talk of a weaker dollar unsettled investors in the week before."
+      - "On Monday, October 19, selling snowballed. Computer-driven 'portfolio insurance' sold more as prices fell, which pushed prices down further."
+      - "The S&P 500 fell about 20% in one day, still the largest one-day percentage drop in its history."
+      - "The next morning the Fed promised to supply cash to the financial system, which stopped the panic."
+    why_stocks: >
+      The crash was mostly about market mechanics and expensive prices, not about the economy.
+      There was no recession afterwards, and stocks recovered their losses within about two years.
+    why_bonds: >
+      Treasury bonds rallied during the crash as frightened investors moved into safe assets and
+      expected the Fed to ease.
+    lesson: >
+      Crashes can come from market structure and crowd behaviour, not just economic trouble.
+      Fast, automatic selling can turn a decline into a panic. This led to trading "circuit breakers".
+  terms: [portfolio_insurance, valuation, liquidity, circuit_breaker, flight_to_safety]
+
+- id: bond_massacre_1994
+  name: 1994 bond massacre
+  kind: crash
+  assets: [bonds]
+  anchor: {start: 1993-10-15, end: 1994-11-07}
+  tags: [fed]
+  summary: The Fed surprised markets by doubling interest rates in a year, and bond prices suffered one of their worst years.
+  explain:
+    background: >
+      In 1993 interest rates were low and many investors, including hedge funds and mortgage
+      investors, had borrowed heavily to buy bonds, betting rates would stay low.
+    chain:
+      - "In February 1994 the Fed started raising rates to stay ahead of inflation, and kept going, from 3% to 6% within a year."
+      - "Markets hadn't expected it, so long-term yields jumped too."
+      - "Investors who had borrowed to buy bonds were forced to sell, pushing prices down further."
+      - "Losses hit hedge funds, banks, and even Orange County, California, which went bankrupt in December 1994."
+    why_stocks: >
+      Stocks had a flat, choppy year rather than a crash. The economy kept growing, which
+      supported profits.
+    why_bonds: >
+      Long-term bond prices fell sharply as yields rose by more than two percentage points. Leverage
+      turned price falls into forced selling.
+    lesson: >
+      Bonds are not risk-free: a surprise in the speed of rate hikes can cause big losses, especially
+      for anyone who borrowed to buy them.
+  terms: [fed_funds_rate, bond_prices_and_yields, leverage, duration]
+
+- id: ltcm_1998
+  name: LTCM and the Russia default
+  kind: crash
+  assets: [stocks]
+  anchor: {start: 1998-07-17, end: 1998-10-08}
+  tags: [credit, global]
+  summary: Russia defaulted on its debt and a giant, highly leveraged hedge fund nearly failed, freezing credit markets.
+  explain:
+    background: >
+      A financial crisis had swept through Asia in 1997. Long-Term Capital Management (LTCM), a
+      famous hedge fund run by star traders and Nobel-winning economists, had borrowed enormous
+      sums to make bets that small price differences between bonds would shrink.
+    chain:
+      - "In August 1998 Russia defaulted on its government debt and devalued its currency."
+      - "Panicked investors fled anything risky and piled into the safest US Treasuries, so the price gaps LTCM bet on widened instead of shrinking."
+      - "With huge leverage, LTCM's losses quickly threatened to wipe it out, and its lenders across Wall Street were exposed."
+      - "In September the New York Fed organized a rescue funded by major banks to prevent a disorderly collapse."
+      - "The Fed cut interest rates three times that autumn, and markets recovered."
+    why_stocks: >
+      Stocks fell sharply on fears that losses would spread through the banking system. Once the
+      rescue and rate cuts arrived, stocks rebounded and went on to new highs.
+    why_bonds: >
+      Treasuries rallied strongly (flight to safety) while corporate and emerging-market bonds fell,
+      so credit spreads widened sharply.
+    lesson: >
+      Leverage plus crowded bets can turn a distant problem into a US market scare. Credit spreads
+      flagged the stress as it happened.
+  terms: [leverage, default, currency_devaluation, credit_spread, flight_to_safety, contagion]
+
+- id: dotcom_2000
+  name: Dot-com bust
+  kind: crash
+  assets: [stocks]
+  anchor: {start: 2000-03-24, end: 2002-10-09}
+  tags: [valuation]
+  summary: An internet stock bubble burst, and the S&P 500 lost about half its value over two and a half years.
+  explain:
+    background: >
+      In the late 1990s, excitement about the internet sent technology stocks soaring. Many
+      companies with no profits were valued in the billions, and the market's CAPE valuation
+      reached its highest level ever.
+    chain:
+      - "The Fed raised interest rates through 1999 and 2000, making it more expensive to fund unprofitable companies."
+      - "Investors began to doubt that internet companies would ever earn enough to justify their prices; many ran out of cash and failed."
+      - "Tech companies cut spending, the economy slipped into recession in 2001, and the September 11 attacks deepened the fear."
+      - "Accounting scandals at Enron and WorldCom destroyed trust in company reports."
+    why_stocks: >
+      Prices had been far above what profits could support. As hopes faded and profits fell, the
+      S&P 500 dropped by about half and the tech-heavy Nasdaq by almost 80%.
+    why_bonds: >
+      Bonds did well: the Fed cut rates aggressively from 2001, so yields fell and bond prices rose,
+      cushioning investors who owned both.
+    lesson: >
+      Extreme valuation doesn't tell you when a fall will start, but it tells you how far prices can
+      fall. In this crash, bonds were an effective cushion.
+  terms: [valuation, earnings, recession, bear_market, fed_funds_rate]
+
+- id: gfc_2008
+  name: Global Financial Crisis
+  kind: crash
+  assets: [stocks]
+  anchor: {start: 2007-10-09, end: 2009-03-09}
+  tags: [credit, banking]
+  summary: US housing loans went bad, big banks nearly failed, and lending froze worldwide.
+  explain:
+    background: >
+      Banks had lent heavily to home buyers with weak credit, then packaged those loans into
+      securities sold around the world, often borrowing 30 times their own capital to do it.
+    chain:
+      - "House prices stopped rising, so weak borrowers could no longer refinance and began to default."
+      - "Securities built from those loans lost value; nobody knew which banks held the worst ones."
+      - "Banks stopped lending to each other; Lehman Brothers failed in September 2008."
+      - "Businesses couldn't borrow, cut jobs and spending, and the economy fell into a deep recession."
+    why_stocks: >
+      Company profits collapsed in the recession, and bank shares were hit hardest because their
+      losses could wipe out their capital. The S&P 500 fell by more than half.
+    why_bonds: >
+      Investors fled to safety: US Treasuries rallied as the Fed cut rates to zero, while corporate
+      bonds fell because investors feared companies would default.
+    lesson: >
+      Credit markets warned well before the stock market's worst months. When lenders get scared,
+      pay attention.
+  terms: [mortgage_backed_security, leverage, default, credit_spread, recession, bank_run]
+
+- id: flight_to_safety_2008
+  name: 2008 flight to safety
+  kind: rally
+  assets: [bonds]
+  anchor: {start: 2008-06-13, end: 2008-12-30}
+  tags: [credit, fed]
+  summary: As the financial crisis peaked, investors piled into US Treasuries and the Fed cut rates to zero.
+  explain:
+    background: >
+      By mid-2008 the housing crisis had spread to the whole financial system, and oil prices had
+      spiked, raising fears of both recession and inflation.
+    chain:
+      - "Lehman Brothers collapsed in September 2008 and panic spread."
+      - "Investors sold almost anything risky and bought the safest asset available: US government bonds."
+      - "The Fed cut its rate to near zero in December and began buying mortgage bonds (the first round of QE)."
+      - "Long-term Treasury yields fell to record lows, so Treasury prices rose sharply."
+    why_stocks: >
+      Stocks were in free fall during this period as the recession deepened.
+    why_bonds: >
+      Treasuries are the world's main safe haven. In a panic their prices rise, and Fed rate cuts
+      and bond buying pushed them higher still.
+    lesson: >
+      High-quality government bonds tend to rise when stocks crash in a recession. That is why many
+      investors hold both.
+  terms: [flight_to_safety, safe_haven, quantitative_easing, fed_funds_rate]
+
+- id: recovery_2009
+  name: 2009 bottom and recovery
+  kind: rally
+  assets: [stocks]
+  anchor: {start: 2009-03-09, end: 2010-04-23}
+  tags: [fed, policy]
+  summary: Huge Fed and government support stopped the crisis, and stocks rose quickly from their March 2009 low.
+  explain:
+    background: >
+      By March 2009 stocks had lost more than half their value, unemployment was climbing fast,
+      and many feared another Great Depression.
+    chain:
+      - "Congress passed a large stimulus package in February 2009."
+      - "In March the Fed greatly expanded its bond buying (QE), pushing borrowing costs down."
+      - "Government 'stress tests' in May showed which banks needed more capital, restoring trust in the banks."
+      - "Credit markets thawed, and investors realized the worst had been avoided."
+    why_stocks: >
+      Stocks had been priced for disaster. When disaster didn't arrive, prices rebounded sharply,
+      long before unemployment peaked in late 2009.
+    why_bonds: >
+      Treasury yields rose from their crisis lows as fear eased, while corporate bonds rallied
+      strongly as default fears faded.
+    lesson: >
+      Markets usually bottom while economic news is still terrible. Stocks look ahead; the economy
+      catches up later.
+  terms: [quantitative_easing, recession, credit_spread]
+
+- id: downgrade_2011
+  name: US downgrade and euro crisis
+  kind: crash
+  assets: [stocks]
+  anchor: {start: 2011-04-29, end: 2011-10-03}
+  tags: [policy, global]
+  summary: A US debt-ceiling standoff led to the first-ever downgrade of US government debt, while Europe's debt crisis worsened.
+  explain:
+    background: >
+      Several eurozone countries, led by Greece, were struggling to pay their debts, putting
+      European banks at risk. In the US, Congress fought over raising the debt ceiling.
+    chain:
+      - "The US debt-ceiling deal came at the last minute in early August 2011."
+      - "On August 5, S&P downgraded the US government's credit rating from AAA to AA+ for the first time."
+      - "At the same time fears grew that Italy and Spain would be dragged into the euro crisis."
+      - "Stocks fell sharply and swung wildly for weeks, until European leaders took stronger steps."
+    why_stocks: >
+      Political dysfunction and the risk of a European banking crisis raised the chance of a new
+      recession. The S&P 500 fell by nearly 20%.
+    why_bonds: >
+      Surprisingly, US Treasuries rallied even though they were the ones downgraded: in a scare,
+      investors still saw them as the safest place for money.
+    lesson: >
+      Political standoffs can shake markets, and Treasuries can act as a safe haven even when the
+      US itself is the source of worry.
+  terms: [debt_ceiling, credit_rating, contagion, safe_haven]
+
+- id: taper_tantrum_2013
+  name: Taper tantrum
+  kind: crash
+  assets: [bonds]
+  anchor: {start: 2013-05-02, end: 2013-09-05}
+  tags: [fed]
+  summary: A hint that the Fed would slow its bond buying sent long-term yields sharply higher.
+  explain:
+    background: >
+      Since the financial crisis the Fed had been buying billions of dollars of bonds every month
+      (QE), keeping long-term rates very low.
+    chain:
+      - "In May 2013, Fed chair Ben Bernanke said the Fed could start to slow ('taper') its bond buying."
+      - "Investors who had counted on the Fed's support rushed to sell bonds."
+      - "The 10-year Treasury yield rose by over one percentage point in a few months."
+      - "Money flowed out of emerging markets, whose currencies and bonds fell."
+    why_stocks: >
+      US stocks dipped only briefly; the economy was improving and profits were growing.
+    why_bonds: >
+      Bond prices fell because the biggest buyer, the Fed, signalled it would buy less, and
+      investors demanded higher yields to hold long-term bonds.
+    lesson: >
+      Even talk about Fed policy can move bond markets sharply. Markets react to changes in
+      expectations, not just actions.
+  terms: [taper, quantitative_easing, bond_prices_and_yields, term_premium]
+
+- id: china_oil_2015
+  name: China devaluation and oil crash
+  kind: crash
+  assets: [stocks]
+  anchor: {start: 2015-05-21, end: 2016-02-11}
+  tags: [global]
+  summary: China's surprise currency devaluation and an oil price collapse triggered two sharp sell-offs.
+  explain:
+    background: >
+      China's economy was slowing and its stock market bubble burst in mid-2015. Oil prices had
+      already fallen from over $100 a barrel in 2014.
+    chain:
+      - "In August 2015 China unexpectedly devalued its currency, raising fears its economy was weaker than reported."
+      - "Global stocks fell sharply in late August."
+      - "Oil kept falling, below $30 a barrel by early 2016, and many US energy companies struggled to repay debt."
+      - "The Fed raised rates for the first time in nearly a decade in December 2015, adding pressure."
+      - "Markets recovered from February 2016 as oil stabilized and the Fed slowed its plans."
+    why_stocks: >
+      Fears of a global slowdown and energy-company defaults hit profits and confidence; the S&P 500
+      fell twice, by around 12-15%.
+    why_bonds: >
+      Treasuries held up as a safe haven, but bonds of energy companies fell sharply, widening
+      credit spreads.
+    lesson: >
+      Problems abroad and in one sector (energy) can ripple into US markets. A scare doesn't always
+      become a recession.
+  terms: [currency_devaluation, credit_spread, default, correction]
+
+- id: q4_2018
+  name: Q4 2018 Fed tightening sell-off
+  kind: crash
+  assets: [stocks]
+  anchor: {start: 2018-09-20, end: 2018-12-24}
+  tags: [fed, policy]
+  summary: Rising rates, the Fed shrinking its balance sheet, and a US-China trade war pushed stocks down nearly 20%.
+  explain:
+    background: >
+      The Fed had been raising rates since 2015 and was shrinking its bond holdings (QT). The US and
+      China were escalating tariffs on each other's goods.
+    chain:
+      - "In October 2018 Fed chair Powell said rates were still 'a long way' from neutral, suggesting more hikes."
+      - "Trade-war fears grew and investors worried about slowing global growth."
+      - "The Fed raised rates again in December and signalled QT would continue on 'autopilot'."
+      - "Stocks fell nearly 20% by Christmas Eve."
+    why_stocks: >
+      Investors feared the Fed would tighten too much while trade tensions slowed growth, which
+      would hurt profits.
+    why_bonds: >
+      Treasury yields fell in late 2018 as investors moved to safety and began to expect the Fed to stop hiking.
+    lesson: >
+      Markets can fall hard when they think the Fed is ignoring warning signs. What the Fed says
+      matters as much as what it does.
+  terms: [fed_funds_rate, quantitative_tightening, tariff, bear_market]
+
+- id: fed_pivot_2019
+  name: 2019 Fed pivot
+  kind: rally
+  assets: [stocks]
+  anchor: {start: 2018-12-24, end: 2019-07-26}
+  tags: [fed]
+  summary: The Fed stopped raising rates and later cut them, and stocks quickly recovered to new highs.
+  explain:
+    background: >
+      After the late-2018 sell-off, investors feared the Fed would keep tightening into a slowdown.
+    chain:
+      - "In early January 2019 Powell said the Fed would be 'patient' about further hikes."
+      - "The Fed paused rate hikes and later ended its balance-sheet shrinking."
+      - "In mid-2019 it cut rates as trade tensions and slowing global growth weighed on the outlook."
+      - "Stocks regained all their late-2018 losses within months."
+    why_stocks: >
+      Lower expected interest rates make future profits worth more today, and reduced the risk of a
+      Fed-induced recession.
+    why_bonds: >
+      Bonds rallied too: yields fell through 2019 as the Fed turned to cutting.
+    lesson: >
+      A change in Fed direction (a "pivot") can turn markets around quickly.
+  terms: [fed_funds_rate, quantitative_tightening]
+
+- id: covid_crash_2020
+  name: COVID crash
+  kind: crash
+  assets: [stocks]
+  anchor: {start: 2020-02-19, end: 2020-03-23}
+  tags: [geopolitics, fed, policy]
+  summary: A global pandemic shut down economies, and stocks fell about a third in just over a month, the fastest bear market on record.
+  explain:
+    background: >
+      In early 2020 the US economy looked solid and stocks were at record highs. A new virus was
+      spreading in China.
+    chain:
+      - "In late February the virus spread to Europe and the US, and countries began shutting down businesses and travel."
+      - "Investors sold almost everything at once; in mid-March even Treasury markets struggled as everyone wanted cash."
+      - "Millions of people lost their jobs within weeks."
+      - "The Fed cut rates to zero, launched unlimited bond buying, and lent directly to markets; Congress passed a huge relief package."
+    why_stocks: >
+      Profits were expected to collapse during lockdowns and nobody knew how long they would last.
+      The S&P 500 fell about 34% in 23 trading days.
+    why_bonds: >
+      Treasury yields fell to record lows as investors fled to safety and the Fed cut rates, but for
+      a few days in March even Treasuries were sold as investors scrambled for cash.
+    lesson: >
+      Some shocks come from outside the economy and give little warning in economic data. Market
+      stress gauges (VIX, credit spreads) react fast; monthly data reacts late.
+  terms: [bear_market, liquidity, quantitative_easing, flight_to_safety, volatility]
+
+- id: flight_to_safety_2020
+  name: 2020 flight to safety
+  kind: rally
+  assets: [bonds]
+  anchor: {start: 2020-01-17, end: 2020-03-09}
+  search_days: 7
+  tags: [geopolitics]
+  summary: Fear about the spreading virus drove the 10-year Treasury yield to record lows.
+  explain:
+    background: >
+      In January 2020 news of the virus in China began to worry global investors.
+    chain:
+      - "As cases spread beyond China, investors moved money from stocks into Treasuries."
+      - "Markets began to expect the Fed to cut rates, and it made an emergency cut on March 3."
+      - "On March 9, the 10-year Treasury yield fell to a record low, below 0.6%."
+    why_stocks: >
+      Stocks peaked in mid-February and then began their fastest-ever fall.
+    why_bonds: >
+      Treasury prices rose as fearful investors bought them and expected lower rates.
+    lesson: >
+      In a sudden scare, high-quality bonds usually rise while stocks fall.
+  terms: [flight_to_safety, safe_haven, bond_prices_and_yields]
+
+- id: recovery_2020
+  name: 2020 recovery
+  kind: rally
+  assets: [stocks]
+  anchor: {start: 2020-03-23, end: 2021-01-08}
+  tags: [fed, policy]
+  summary: Massive Fed and government support, then vaccine news, powered a rapid stock market recovery.
+  explain:
+    background: >
+      In late March 2020 the economy was in its sharpest downturn since the 1930s.
+    chain:
+      - "The Fed's unlimited bond buying and emergency lending calmed markets almost immediately."
+      - "Government relief payments supported household incomes."
+      - "Technology companies thrived as people worked and shopped from home."
+      - "In November 2020, news of effective vaccines boosted the companies hit hardest."
+    why_stocks: >
+      Very low interest rates and huge support made investors willing to look past the crisis. The
+      S&P 500 regained its losses by August 2020.
+    why_bonds: >
+      Treasury yields stayed very low through 2020, then began to rise as recovery and inflation
+      expectations grew.
+    lesson: >
+      Overwhelming policy support can end a crash quickly, even before the real economy recovers.
+  terms: [quantitative_easing, fed_funds_rate]
+
+- id: inflation_shock_2022
+  name: 2022 inflation and rate shock
+  kind: crash
+  assets: [stocks, bonds]
+  anchor: {start: 2022-01-03, end: 2022-10-12}
+  tags: [fed, inflation, geopolitics]
+  summary: Inflation hit a 40-year high, the Fed raised rates at the fastest pace in decades, and stocks and bonds fell together.
+  explain:
+    background: >
+      After the pandemic, strong demand, supply shortages, and huge stimulus pushed inflation up
+      fast. Interest rates were still near zero and stocks were expensive.
+    chain:
+      - "Inflation kept rising through 2021 and the Fed admitted it was not 'transitory'."
+      - "Russia invaded Ukraine in February 2022, sending energy and food prices higher."
+      - "The Fed raised rates from near zero to over 4% within the year, including several 0.75-point hikes."
+      - "Higher rates made both bonds and expensive growth stocks worth less."
+    why_stocks: >
+      Higher interest rates reduce what future profits are worth today, hitting expensive tech
+      stocks hardest. The S&P 500 fell about 25%.
+    why_bonds: >
+      Bonds had their worst year in decades: yields rose by several percentage points from very
+      low levels, so prices fell sharply. Unusually, they gave no protection while stocks fell.
+    lesson: >
+      When inflation is the problem, stocks and bonds can fall at the same time. Diversification
+      between them works best when inflation is low.
+  terms: [inflation, fed_funds_rate, bond_prices_and_yields, real_yield, valuation, bear_market]
+
+- id: bottom_2022
+  name: October 2022 bottom
+  kind: rally
+  assets: [stocks]
+  anchor: {start: 2022-10-12, end: 2023-07-31}
+  tags: [inflation, fed]
+  summary: Inflation started to cool, the economy avoided recession, and excitement about AI lifted stocks.
+  explain:
+    background: >
+      In October 2022, many expected a recession because the Fed was raising rates so fast.
+    chain:
+      - "Inflation data from late 2022 showed prices rising more slowly than feared."
+      - "Investors began to expect the Fed to stop hiking soon."
+      - "The job market stayed strong and a recession didn't arrive."
+      - "In 2023 enthusiasm about artificial intelligence lifted large technology companies."
+    why_stocks: >
+      Easing inflation fears and resilient profits brought buyers back. The rally was led by a
+      handful of very large technology companies.
+    why_bonds: >
+      Bonds were volatile: yields kept drifting higher in 2023 as the Fed held rates high.
+    lesson: >
+      Recessions widely expected don't always happen. Markets can recover while the forecasts are
+      still gloomy.
+  terms: [inflation, recession, fed_funds_rate]
+
+- id: svb_2023
+  name: Regional bank crisis (SVB)
+  kind: crash
+  assets: [stocks]
+  anchor: {start: 2023-03-08, end: 2023-03-13}
+  search_days: 3  # a short shock: don't pick up the unrelated February dip
+  tags: [banking, credit]
+  summary: Silicon Valley Bank collapsed in a fast bank run, sparking fears about other regional banks.
+  explain:
+    background: >
+      Silicon Valley Bank had invested its customers' deposits in long-term bonds when rates were low.
+      As rates rose in 2022 those bonds lost value, creating large unrealized losses.
+    chain:
+      - "On March 8 SVB announced it had sold bonds at a loss and needed to raise money."
+      - "Its depositors, many of them connected tech start-ups, moved their money out in a single day."
+      - "Regulators closed SVB on March 10 and another bank, Signature, two days later."
+      - "On March 12 the government guaranteed all deposits at the failed banks and offered loans to other banks."
+    why_stocks: >
+      Bank stocks, especially regional banks, fell sharply. The broad market dipped less, because
+      the government acted quickly.
+    why_bonds: >
+      Treasury yields fell sharply as investors bought safe assets and expected the Fed to slow its
+      rate hikes.
+    lesson: >
+      Fast rate hikes can expose hidden weaknesses in banks. Bank runs can happen in hours in the
+      smartphone era.
+  terms: [bank_run, unrealized_loss, bond_prices_and_yields, contagion]
+
+- id: tariff_shock_2025
+  name: April 2025 tariff shock
+  kind: crash
+  assets: [stocks]
+  anchor: {start: 2025-02-19, end: 2025-04-08}
+  tags: [policy]
+  summary: Sweeping new US tariffs triggered one of the sharpest stock falls since 2020, until a 90-day pause was announced.
+  explain:
+    background: >
+      In early 2025 the new US administration announced tariffs on imports from Canada, Mexico, and
+      China, and promised more. Trade policy uncertainty hit record levels.
+    chain:
+      - "Stocks drifted down from February as tariff threats grew."
+      - "On April 2 the administration announced large tariffs on imports from almost every country."
+      - "Investors feared higher prices, retaliation, and a recession; stocks fell sharply over several days."
+      - "On April 9 a 90-day pause on most of the new tariffs was announced, and stocks jumped."
+    why_stocks: >
+      Tariffs raise costs for companies and consumers and invite retaliation, which threatened profits
+      and growth.
+    why_bonds: >
+      Unusually, long-term Treasury yields rose during the sell-off instead of falling, as some
+      investors sold US assets and worried about inflation and the deficit.
+    lesson: >
+      Government policy shocks can move markets quickly, and policy reversals can move them back
+      just as fast. Policy uncertainty indexes show these risks building.
+  terms: [tariff, recession, safe_haven, bear_market]
+
+- id: election_2016
+  name: 2016 presidential election
+  kind: event
+  assets: [stocks, bonds]
+  anchor: {start: 2016-10-01, end: 2016-12-31}
+  tags: [election, policy]
+  summary: A surprise election result first rattled markets, then sparked a rally in stocks and a jump in bond yields.
+  explain:
+    background: >
+      Polls suggested Hillary Clinton would win the November 8 election. Donald Trump's campaign
+      promised tax cuts, deregulation, infrastructure spending, and tougher trade policy.
+    chain:
+      - "On election night, as results favoured Trump, stock futures fell sharply."
+      - "By the next day investors focused on expected tax cuts and spending, and stocks rose."
+      - "More government spending and growth meant more inflation and borrowing were expected, so bond yields jumped."
+      - "The Fed raised rates in December 2016."
+    why_stocks: >
+      Banks and industrial companies rallied on hopes of lower taxes, less regulation, and faster growth.
+    why_bonds: >
+      Bond prices fell as yields rose sharply in the weeks after the election on expectations of
+      bigger deficits and higher inflation.
+    lesson: >
+      Markets react to the policies they expect from an election, not to the winner as such. The
+      first reaction can reverse within hours.
+  terms: [deficit, bond_prices_and_yields, inflation]
+
+- id: election_2020
+  name: 2020 presidential election
+  kind: event
+  assets: [stocks, bonds]
+  anchor: {start: 2020-09-01, end: 2020-11-30}
+  tags: [election, policy]
+  summary: Stocks were choppy before a pandemic-era election, then rallied once the result was clear and vaccine news arrived.
+  explain:
+    background: >
+      The election took place during the pandemic, with record mail-in voting and worries that the
+      result might be contested or take weeks to settle.
+    chain:
+      - "Stocks fell in September and late October as uncertainty and virus cases rose."
+      - "The November 3 vote count took several days; Joe Biden was projected the winner on November 7."
+      - "On November 9 Pfizer announced its vaccine was highly effective."
+      - "With the uncertainty lifted and a path out of the pandemic, stocks rallied strongly in November."
+    why_stocks: >
+      Clearing uncertainty plus vaccine news made investors more confident about the recovery.
+    why_bonds: >
+      Treasury yields rose modestly as the outlook brightened and expectations of more government
+      spending grew.
+    lesson: >
+      Uncertainty itself weighs on markets; once it clears, prices often move quickly. Elections can
+      coincide with other big news that matters more.
+  terms: [volatility, bond_prices_and_yields]
+
+- id: election_2024
+  name: 2024 presidential election
+  kind: event
+  assets: [stocks, bonds]
+  anchor: {start: 2024-09-01, end: 2024-12-31}
+  tags: [election, policy]
+  summary: Stocks rallied after the election on expectations of tax cuts and deregulation, while bond yields rose on deficit and inflation worries.
+  explain:
+    background: >
+      The Fed started cutting rates in September 2024. Donald Trump's campaign promised tax cuts,
+      deregulation, and higher tariffs.
+    chain:
+      - "Trump won the November 5 election."
+      - "Stocks rose on hopes of lower taxes and lighter regulation, especially smaller companies and banks."
+      - "Investors worried that tariffs and bigger deficits would keep inflation up, so long-term yields kept rising even though the Fed was cutting."
+      - "The dollar strengthened."
+    why_stocks: >
+      Expected business-friendly policies boosted profit forecasts.
+    why_bonds: >
+      Bond prices fell as yields rose on expectations of more government borrowing and stickier
+      inflation, a reminder that long-term rates don't always follow the Fed.
+    lesson: >
+      Election-driven moves reflect expected policy. Long-term bond yields can rise even while the
+      Fed cuts short-term rates, if investors worry about deficits and inflation.
+  terms: [deficit, tariff, term_premium, bond_prices_and_yields]

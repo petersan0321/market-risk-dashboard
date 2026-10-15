@@ -1,0 +1,58 @@
+{% extends "base.html.j2" %}
+{% block title %}History playbook · Market Risk Dashboard{% endblock %}
+{% block content %}
+<section>
+  <p class="eyebrow">History playbook</p>
+  <h1>What moved US stocks and bonds, and why</h1>
+  <p class="muted">{{ pages|length }} events, each explained step by step for someone new to markets, with what the dashboard's indicators showed before and after.
+    Also see <a href="which-factors-warned.html">which factors warned most reliably</a>.</p>
+</section>
+
+<section class="filters" aria-label="Filter events">
+  <div class="filter-row" role="group" aria-label="Kind">
+    <button type="button" class="filter" data-filter-kind="all" aria-pressed="true">All</button>
+    <button type="button" class="filter" data-filter-kind="crash" aria-pressed="false">Crashes</button>
+    <button type="button" class="filter" data-filter-kind="rally" aria-pressed="false">Rallies</button>
+    <button type="button" class="filter" data-filter-kind="event" aria-pressed="false">Elections</button>
+  </div>
+  <div class="filter-row" role="group" aria-label="Cause">
+    <button type="button" class="filter" data-filter-tag="all" aria-pressed="true">Any cause</button>
+    {% for t in tags %}<button type="button" class="filter" data-filter-tag="{{ t }}" aria-pressed="false">{{ t|capitalize }}</button>{% endfor %}
+  </div>
+</section>
+
+<section class="grid grid-events">
+  {% for p in pages|sort(attribute="start") %}
+  <a class="card card-link event-card" href="{{ p.id }}.html" data-kind="{{ p.ev.kind }}" data-tags="{{ p.ev.tags|join(' ') }}">
+    <p class="eyebrow">{{ {"crash": "Crash", "rally": "Rally", "event": "Election"}[p.ev.kind] }} · {{ p.start[:4] }}{% if p.end[:4] != p.start[:4] %}–{{ p.end[2:4] }}{% endif %} · {{ p.ev.assets|join(" & ")|capitalize }}</p>
+    <h3>{{ p.ev.name }}</h3>
+    <p class="small">{{ p.ev.summary }}</p>
+    <p class="small moves">
+      {% if p.stocks_move is not none %}<span>S&amp;P 500 <strong>{{ p.stocks_move|pct(true) }}</strong></span>{% endif %}
+      {% if p.bonds_move is not none %}<span>Bonds <strong>{{ p.bonds_move|pct(true) }}</strong></span>{% endif %}
+    </p>
+  </a>
+  {% endfor %}
+</section>
+<p class="small muted">Moves are from the computed start to end of each event. Bond moves before late 2003 are estimated from the 10-year Treasury yield.</p>
+{% endblock %}
+{% block scripts %}
+<script>
+(function () {
+  const state = { kind: "all", tag: "all" };
+  function apply() {
+    document.querySelectorAll(".event-card").forEach((card) => {
+      const kindOk = state.kind === "all" || card.dataset.kind === state.kind;
+      const tagOk = state.tag === "all" || card.dataset.tags.split(" ").includes(state.tag);
+      card.hidden = !(kindOk && tagOk);
+    });
+  }
+  document.querySelectorAll(".filter").forEach((btn) => btn.addEventListener("click", () => {
+    const key = btn.dataset.filterKind !== undefined ? "kind" : "tag";
+    state[key] = btn.dataset.filterKind ?? btn.dataset.filterTag;
+    btn.parentElement.querySelectorAll(".filter").forEach((b) => b.setAttribute("aria-pressed", String(b === btn)));
+    apply();
+  }));
+})();
+</script>
+{% endblock %}

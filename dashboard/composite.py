@@ -54,5 +54,7 @@ def run(tables: dict[str, pd.DataFrame], indicators: list[Indicator], weights: d
         scores_dir) -> pd.DataFrame:
     cats = category_scores(tables["score"], tables["stale"], indicators)
     result = cats.add_prefix("cat_").join(overall_scores(cats, weights))
+    # How unusual each day's score was versus all earlier days (point-in-time).
+    result["percentile"] = result["overall"].expanding().rank(pct=True) * 100
     result.to_csv(scores_dir / "composite.csv", date_format="%Y-%m-%d")
     return result

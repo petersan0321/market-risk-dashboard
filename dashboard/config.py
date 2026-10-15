@@ -3,6 +3,7 @@
 import ast
 import re
 from dataclasses import dataclass
+from datetime import date
 from pathlib import Path
 
 import yaml
@@ -217,3 +218,91 @@ def load_untracked(path: Path = CONFIG_DIR / "untracked.yaml") -> list[Untracked
             raise ConfigError(f"untracked entry {e.get('name')!r} missing {missing}")
         out.append(Untracked(**{k: " ".join(str(e[k]).split()) for k in ("name", "why_it_matters", "why_not_tracked")}))
     return out
+
+
+# --- events and glossary (spec §7.1, §10.4) --------------------------------------------
+
+EVENT_KINDS = {"crash", "rally", "event"}
+EVENT_ASSETS = {"stocks", "bonds"}
+EVENT_TAGS = {"fed", "rates", "inflation", "credit", "banking", "policy", "election", "geopolitics",
+              "valuation", "global"}
+EXPLAIN_FIELDS = ("background", "chain", "why_stocks", "why_bonds", "lesson")
+
+
+@dataclass(frozen=True)
+class GlossaryTerm:
+    id: str
+    term: str
+    definition: str
+
+
+@dataclass(frozen=True)
+class Event:
+    id: str
+    name: str
+    kind: str
+    assets: tuple[str, ...]
+    start: date
+    end: date
+    tags: tuple[str, ...]
+    summary: str
+    background: str
+    chain: tuple[str, ...]
+    why_stocks: str
+    why_bonds: str
+    lesson: str
+    terms: tuple[str, ...]
+    search_days: int = 30  # how far from the anchors to look for the exact peak/trough
+
+
+def _text(value) -> str:
+    return " ".join(str(value).split())
+
+
+def load_glossary(path: Path = CONFIG_DIR / "glossary.yaml") -> dict[str, GlossaryTerm]:
+    entries = yaml.safe_load(path.read_text()) or {}
+    out = {}
+    for term_id, e in entries.items():
+        if not str(e.get("term", "")).strip() or not str(e.get("definition", "")).strip():
+            raise ConfigError(f"glossary {term_id!r} needs 'term' and 'definition'")
+        out[term_id] = GlossaryTerm(term_id, _text(e["term"]), _text(e["definition"]))
+    return out
+
+
+def load_events(path: Path = CONFIG_DIR / "events.yaml",
+                glossary: dict[str, GlossaryTerm] | None = None) -> list[Event]:
+    glossary = load_glossary() if glossary is None else glossary
+    events, seen = [], set()
+    for e in yaml.safe_load(path.read_text()) or []:
+        ev_id = e.get("id", "<missing id>")
+        if ev_id in seen:
+            raise ConfigError(f"duplicate event id {ev_id!r}")
+        seen.add(ev_id)
+        missing = [k for k in ("id", "name", "kind", "assets", "anchor", "tags", "summary", "explain", "terms")
+                   if not e.get(k)]
+        if missing:
+            raise ConfigError(f"event {ev_id}: missing {missing}")
+        explain = e["explain"]
+        missing = [k for k in EXPLAIN_FIELDS if not explain.get(k)]
+        if missing:
+            raise ConfigError(f"event {ev_id}: explain is missing {missing}")
+        if e["kind"] not in EVENT_KINDS:
+            raise ConfigError(f"event {ev_id}: unknown kind {e['kind']!r}")
+        if not set(e["assets"]) <= EVENT_ASSETS:
+            raise ConfigError(f"event {ev_id}: unknown assets {e['assets']}")
+        if not set(e["tags"]) <= EVENT_TAGS:
+            raise ConfigError(f"event {ev_id}: unknown tags {sorted(set(e['tags']) - EVENT_TAGS)}")
+        unknown_terms = [t for t in e["terms"] if t not in glossary]
+        if unknown_terms:
+            raise ConfigError(f"event {ev_id}: terms not in glossary {unknown_terms}")
+        start, end = e["anchor"]["start"], e["anchor"]["end"]
+        if not (isinstance(start, date) and isinstance(end, date) and start < end):
+            raise ConfigError(f"event {ev_id}: anchor needs start < end dates")
+        events.append(Event(
+            id=ev_id, name=e["name"], kind=e["kind"], assets=tuple(e["assets"]), start=start, end=end,
+            tags=tuple(e["tags"]), summary=_text(e["summary"]), background=_text(explain["background"]),
+            chain=tuple(_text(c) for c in explain["chain"]), why_stocks=_text(explain["why_stocks"]),
+            why_bonds=_text(explain["why_bonds"]), lesson=_text(explain["lesson"]), terms=tuple(e["terms"]),
+            search_days=int(e.get("search_days", 30)),
+        ))
+    return events

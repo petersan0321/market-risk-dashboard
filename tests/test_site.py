@@ -9,7 +9,7 @@ import pandas as pd
 import pytest
 
 from dashboard import signals
-from dashboard.config import CATEGORIES, Untracked
+from dashboard.config import CATEGORIES, Untracked, load_events, load_glossary
 from dashboard.fetch.base import write_raw
 from dashboard.run import analyze
 from dashboard.site.build import build_site, format_value, spectrum_zones
@@ -77,7 +77,7 @@ def run_pipeline(indicators, tmp_path, today):
     scores_dir = tmp_path / "scores"
     tables = signals.run(indicators, raw_dir, scores_dir, today)
     weights = {c: 1.0 for c in CATEGORIES}
-    return analyze(indicators, weights, tables, raw_dir, scores_dir, today)
+    return analyze(indicators, weights, tables, raw_dir, scores_dir, today, load_events())
 
 
 @pytest.fixture
@@ -87,7 +87,8 @@ def pipeline(make_indicator, tmp_path):
     result = run_pipeline(indicators, tmp_path, TODAY)
     scores_dir = tmp_path / "scores"
     untracked = [Untracked("Margin debt", "Borrowed money.", "No source.")]
-    index = build_site(indicators, untracked, scores_dir, tmp_path / "site", datetime(2024, 6, 28, tzinfo=timezone.utc))
+    index = build_site(indicators, untracked, scores_dir, tmp_path / "site", datetime(2024, 6, 28, tzinfo=timezone.utc),
+                       load_events(), load_glossary())
     return result, index.parent
 
 
@@ -103,7 +104,8 @@ def test_analysis_outputs(pipeline):
 
 def test_all_pages_built(pipeline):
     _, site = pipeline
-    pages = {"index.html", "why.html", "learn.html"} | {f"category/{c}.html" for c in CATEGORIES}
+    pages = {"index.html", "why.html", "learn.html", "time-machine.html", "history/index.html",
+             "history/which-factors-warned.html", "history/gfc_2008.html"} | {f"category/{c}.html" for c in CATEGORIES}
     assert pages <= {str(p.relative_to(site)) for p in site.rglob("*.html")}
     index = (site / "index.html").read_text()
     assert "Overall market risk" in index and "Margin debt" in index
@@ -117,9 +119,10 @@ def test_internal_links_resolve(pipeline):
     _, site = pipeline
     for page in site.rglob("*.html"):
         for href in re.findall(r'(?:href|src)="([^"#]+)"', page.read_text()):
-            if href.startswith(("http://", "https://")):
-                continue
-            assert (page.parent / href).resolve().exists(), f"{page.name} links to missing {href}"
+            path = href.split("?")[0]
+            if href.startswith(("http://", "https://")) or not path:
+                continue  # external, or a query on the same page
+            assert (page.parent / path).resolve().exists(), f"{page.name} links to missing {href}"
 
 
 def test_composite_and_regime_have_no_look_ahead(make_indicator, tmp_path):
@@ -139,3 +142,25 @@ def test_composite_and_regime_have_no_look_ahead(make_indicator, tmp_path):
     pd.testing.assert_frame_equal(past, full.loc[past.index])
     past_regime, full_regime = read("regime.csv", "past"), read("regime.csv", "full")
     pd.testing.assert_frame_equal(past_regime, full_regime.loc[past_regime.index])
+
+
+def test_event_page_has_story_and_heatmap(pipeline):
+    _, site = pipeline
+    page = (site / "history" / "gfc_2008.html").read_text()
+    assert "What happened, step by step" in page and "Lehman Brothers" in page
+    assert "Every indicator's risk score around the event" in page and "Mortgage-backed security" in page
+    assert "time-machine.html?from=" in page
+
+
+def test_time_machine_export(pipeline):
+    _, site = pipeline
+    tm = site / "data" / "tm"
+    index = json.loads((tm / "index.json").read_text())
+    assert set(index["categories"]) == set(CATEGORIES) and index["events"]
+    assert index["first_date"] <= index["last_date"]
+    for year in index["years"]:
+        data = json.loads((tm / f"{year}.json").read_text())
+        n = len(data["dates"])
+        assert n and all(len(data[k]) == n for k in ("overall", "pct", "regime", "spx", "bond"))
+        assert all(len(v["s"]) == n and len(v["v"]) == n for v in data["indicators"].values())
+        assert all(len(v) == n for v in data["categories"].values())

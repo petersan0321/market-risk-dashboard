@@ -1,0 +1,35 @@
+{% extends "base.html.j2" %}
+{% block title %}Which factors warned? · Market Risk Dashboard{% endblock %}
+{% block content %}
+<nav class="crumbs small"><a href="index.html">History playbook</a> /</nav>
+<section>
+  <p class="eyebrow">History playbook</p>
+  <h1>Which factors warned?</h1>
+  <p class="muted">For each indicator: how often it was amber or red 3–6 months before the {{ n_crashes }} crashes in the playbook, and how often it went red without a crash following.
+    A useful warning sign needs <strong>both</strong> a high hit rate and few false alarms.</p>
+</section>
+<section class="card">
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>Indicator</th><th>Category</th><th>Warned before</th><th>Hit rate</th><th>Red episodes</th><th>False alarms</th></tr></thead>
+    <tbody>
+      {% for f in factors %}
+      <tr>
+        <th scope="row"><a href="../category/{{ cat_of[f.id] }}.html#{{ f.id }}">{{ names[f.id] }}</a></th>
+        <td>{{ CATEGORIES[cat_of[f.id]] }}</td>
+        <td>{{ f.hits }} of {{ f.events }}</td>
+        <td>{{ f.hit_rate|pct if f.hit_rate is not none else "—" }}</td>
+        <td>{{ f.red_episodes }}</td>
+        <td>{% if f.false_alarm_rate is not none %}{{ f.false_alarms }} ({{ f.false_alarm_rate|pct }}){% else %}—{% endif %}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  <ul class="small muted">
+    <li><strong>Warned before:</strong> crashes where the indicator was amber or red 3 or 6 months before the start, out of crashes where it had data. Indicators with short histories have fewer crashes to judge, so their rates are less reliable.</li>
+    <li><strong>Red episodes:</strong> times it stayed red for 20+ trading days in a row. <strong>False alarms:</strong> red episodes not followed by (or during) a crash within 12 months. Episodes from the last 12 months are left out because their outcome isn't known yet.</li>
+    <li>With only about {{ n_crashes }} crashes, every number here is rough. Valuation measures, for example, can be red for years before a fall.</li>
+  </ul>
+</section>
+{% endblock %}

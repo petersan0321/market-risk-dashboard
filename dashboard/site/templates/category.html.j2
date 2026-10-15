@@ -49,6 +49,7 @@
     <div class="spectrum" aria-label="Where today's reading sits in its history">
       <div class="spectrum-track">
         <div class="zones">{% for z in card.zones %}<span class="zone zone-{{ z.light }}" style="left: {{ z.left }}%; width: {{ z.width }}%"></span>{% endfor %}</div>
+        {% for m in card.markers %}<span class="event-mark" style="left: {{ m.pos }}%" title="{{ m.name }}: {{ m.value|fmt(ind.unit) }}"><span class="event-mark-label">{{ m.year }}</span></span>{% endfor %}
         <span class="today align-{{ 'left' if card.today_pos < 15 else 'right' if card.today_pos > 85 else 'center' }}" style="left: {{ card.today_pos }}%"><span class="today-label">Today {{ d.value|fmt(ind.unit) }}</span></span>
       </div>
       <div class="spectrum-ends small muted">
@@ -56,6 +57,7 @@
         <span>Median {{ d.spectrum.median|fmt(ind.unit) }}</span>
         <span>High {{ d.spectrum.max|fmt(ind.unit) }}</span>
       </div>
+      {% if card.markers %}<p class="small muted">Marked years: worst reading during {% for m in card.markers %}{{ m.name }} ({{ m.value|fmt(ind.unit) }}){{ ", " if not loop.last }}{% endfor %}.</p>{% endif %}
       <p class="small muted">Turns amber at {{ d.spectrum.amber|map("fmt", ind.unit)|join(" / ") }} and red at {{ d.spectrum.red|map("fmt", ind.unit)|join(" / ") }} (history since {{ d.spectrum.since[:4] }}).</p>
     </div>
 

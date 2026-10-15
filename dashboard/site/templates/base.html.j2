@@ -13,6 +13,8 @@
       <nav aria-label="Main">
         <a href="{{ root }}index.html" {% if page == "index.html" %}aria-current="page"{% endif %}>Overview</a>
         <a href="{{ root }}why.html" {% if page == "why.html" %}aria-current="page"{% endif %}>Why this score?</a>
+        <a href="{{ root }}history/index.html" {% if page.startswith("history/") %}aria-current="page"{% endif %}>History</a>
+        <a href="{{ root }}time-machine.html" {% if page == "time-machine.html" %}aria-current="page"{% endif %}>Time machine</a>
         <a href="{{ root }}learn.html" {% if page == "learn.html" %}aria-current="page"{% endif %}>Learn</a>
       </nav>
     </div>

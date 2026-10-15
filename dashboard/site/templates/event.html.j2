@@ -1,0 +1,95 @@
+{% extends "base.html.j2" %}
+{% from "macros.html.j2" import plotly_scripts %}
+{% block title %}{{ p.ev.name }} · Market Risk Dashboard{% endblock %}
+{% block content %}
+{% set ev = p.ev %}
+<nav class="crumbs small"><a href="index.html">History playbook</a> /</nav>
+<section class="cat-header">
+  <div>
+    <p class="eyebrow">{{ {"crash": "Crash", "rally": "Rally", "event": "Election"}[ev.kind] }} · {{ p.start }} to {{ p.end }}</p>
+    <h1>{{ ev.name }}</h1>
+    <p class="lead">{{ ev.summary }}</p>
+  </div>
+  <div class="moves-box">
+    {% if p.stocks_move is not none %}<p>S&amp;P 500 <strong class="mid-number">{{ p.stocks_move|pct(true) }}</strong></p>{% endif %}
+    {% if p.bonds_move is not none %}<p>Bonds <strong class="mid-number">{{ p.bonds_move|pct(true) }}</strong></p>{% endif %}
+  </div>
+</section>
+
+<section class="two-col">
+  <article class="card story">
+    <h2>What was going on</h2>
+    <p>{{ ev.background }}</p>
+    <h2>What happened, step by step</h2>
+    <ol class="chain">
+      {% for step in ev.chain %}<li>{{ step }}</li>{% endfor %}
+    </ol>
+  </article>
+  <article class="card story">
+    <h2>Why stocks moved</h2>
+    <p>{{ ev.why_stocks }}</p>
+    <h2>Why bonds moved</h2>
+    <p>{{ ev.why_bonds }}</p>
+    <h2>The lesson</h2>
+    <p class="lesson">{{ ev.lesson }}</p>
+    <h2>Key terms</h2>
+    {% for t in ev.terms %}{% set g = glossary[t] %}
+    <details class="term"><summary>{{ g.term }}</summary><p class="small">{{ g.definition }}</p></details>
+    {% endfor %}
+  </article>
+</section>
+
+<section class="card">
+  <h2>Prices around the event</h2>
+  <p class="small muted">Both start at 100 two years before the event; the shaded band is the event itself. {% if p.start < "2003-09-29" %}Bond values before late 2003 are estimated from the 10-year Treasury yield.{% endif %}</p>
+  <div class="chart" id="event-prices" data-chart="eventprices" data-source="event-data"></div>
+  <h3 class="small-h">Overall risk score over the same period</h3>
+  <div class="chart chart-short" id="event-score" data-chart="eventscore" data-source="event-data"></div>
+  <script type="application/json" id="event-data">{{ chart_data|tojson }}</script>
+  {% if p.warning %}
+  <p class="callout">
+    {% if p.warning.warned %}
+      <strong>Did the overall score warn?</strong> Yes: it was Elevated or higher from {{ p.warning.first_date }},
+      {% if p.warning.already_elevated %}already 12 months or more before the start{% else %}{{ p.warning.lead_days }} trading days (about {{ (p.warning.lead_days / 21)|round|int }} months) before the start{% endif %}.
+    {% elif p.warning.warned is sameas false %}
+      <strong>Did the overall score warn?</strong> No. It did not stay Elevated or higher for 10+ days in the year before this crash. Individual indicators may still have flashed, as shown below.
+    {% else %}<strong>Did the overall score warn?</strong> There is no overall score for this period yet.{% endif %}
+  </p>
+  {% endif %}
+  <p><a href="../{{ p.tm_link }}">Explore this period in the time machine →</a></p>
+</section>
+
+<section class="card">
+  <h2>What the dashboard showed</h2>
+  {% set s = p.showed %}
+  {% for label in ["6 months before", "3 months before"] %}
+  {% set x = s[label] %}
+  <p><strong>{{ label|capitalize }}</strong> ({{ x.scored }} indicators had data):
+    {% if x.red %}<span class="chip chip-red"><span class="icon icon-red" aria-hidden="true">■</span> Red</span> {% for i in x.red %}{{ names[i] }}{{ ", " if not loop.last }}{% endfor %}.{% endif %}
+    {% if x.amber %}<span class="chip chip-amber"><span class="icon icon-amber" aria-hidden="true">▲</span> Amber</span> {% for i in x.amber %}{{ names[i] }}{{ ", " if not loop.last }}{% endfor %}.{% endif %}
+    {% if not x.red and not x.amber %}nothing was amber or red.{% endif %}
+  </p>
+  {% endfor %}
+  {% if s.revised_share is not none %}<p class="small muted">{{ s.revised_share|pct }} of the amber/red indicators 3 months before use revised data, so they may look clearer now than they did at the time.</p>{% endif %}
+
+  <h3 class="small-h">Every indicator's risk score around the event</h3>
+  <div class="table-wrap">
+  <table class="heatmap">
+    <thead><tr><th>Indicator</th>{% for c in p.heatmap.columns %}<th>{{ c }}</th>{% endfor %}</tr></thead>
+    <tbody>
+      {% for cat, cname in CATEGORIES.items() %}
+      {% set crow = (p.heatmap.categories|selectattr("id", "equalto", cat)|list)[0] %}
+      <tr class="heat-cat"><th scope="row">{{ cname }}</th>
+        {% for v in crow.cells %}<td class="{{ 'h-none' if v is none else 'h-red' if v > RED else 'h-amber' if v >= AMBER else 'h-green' }}">{{ v|round|int if v is not none else "–" }}</td>{% endfor %}</tr>
+      {% for row in p.heatmap.rows if row.category == cat %}
+      <tr><th scope="row" class="heat-ind">{{ names[row.id] }}{% if revised[row.id] %} <abbr title="Revised data" class="rev">R</abbr>{% endif %}</th>
+        {% for v in row.cells %}<td class="{{ 'h-none' if v is none else 'h-red' if v > RED else 'h-amber' if v >= AMBER else 'h-green' }}">{{ v|round|int if v is not none else "–" }}</td>{% endfor %}</tr>
+      {% endfor %}
+      {% endfor %}
+    </tbody>
+  </table>
+  </div>
+  <p class="small muted">Scores 0–100 (higher = riskier). Red above {{ RED }}, amber {{ AMBER }}–{{ RED }}; "–" means no data then. <abbr title="Revised data" class="rev">R</abbr> = revised data. Bold rows are category averages.</p>
+</section>
+{% endblock %}
+{% block scripts %}{{ plotly_scripts(root) }}{% endblock %}
