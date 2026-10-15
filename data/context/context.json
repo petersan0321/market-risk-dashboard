@@ -256,7 +256,7 @@
    "years": 19,
    "stocks_median": 0.09061946902654872,
    "stocks_down_years": 7,
-   "bonds_median": 0.030572937244680132,
+   "bonds_median": 0.030572937244680576,
    "bond_years": 16,
    "current": false
   },
@@ -266,7 +266,7 @@
    "years": 19,
    "stocks_median": 0.010620399579390094,
    "stocks_down_years": 8,
-   "bonds_median": 0.059985564970997274,
+   "bonds_median": 0.05998556497099572,
    "bond_years": 15,
    "current": true
   },
@@ -286,7 +286,7 @@
    "years": 19,
    "stocks_median": 0.11779554059739161,
    "stocks_down_years": 3,
-   "bonds_median": 0.03821340764368242,
+   "bonds_median": 0.03821340764368275,
    "bond_years": 16,
    "current": false
   }
