@@ -12,11 +12,12 @@ from pathlib import Path
 import numpy as np
 import pandas as pd
 
-from dashboard import backtest, composite, history, rationale, regime, signals, simulate
-from dashboard.config import load_events, load_glossary, load_indicators, load_untracked, load_weights
+from dashboard import backtest, composite, context, history, rationale, regime, signals, simulate
+from dashboard.config import (load_calendar, load_events, load_glossary, load_indicators, load_news_topics,
+                              load_untracked, load_weights)
 from dashboard.fetch import MARKETS, fetch_all
 from dashboard.fetch.base import read_raw
-from dashboard.paths import CONFIG_DIR, RAW_DIR, SCORES_DIR, SITE_DIR
+from dashboard.paths import CONFIG_DIR, CONTEXT_DIR, RAW_DIR, SCORES_DIR, SITE_DIR
 from dashboard.returns import bond_index, on_days
 from dashboard.site.build import build_site
 
@@ -105,6 +106,14 @@ def main() -> None:
             log.warning("fetch failed for %s; continuing with previous data", failed)
     tables = signals.run(indicators, RAW_DIR, SCORES_DIR, today)
     result = analyze(indicators, weights, tables, RAW_DIR, SCORES_DIR, today, events)
+    ids = {i.id for i in indicators}
+    types, manual = load_calendar(indicator_ids=ids)
+    feeds, topics = load_news_topics(indicator_ids=ids)
+    spx = read_raw(RAW_DIR / "market" / "spx.csv")
+    agg_path = RAW_DIR / "market" / "agg.csv"
+    long_bonds = bond_index(read_raw(RAW_DIR / "market" / "ust10y.csv"), read_raw(agg_path) if agg_path.exists() else None)
+    ctx = context.run(types, manual, feeds, topics, CONTEXT_DIR, today, spx, long_bonds, fetch=not args.no_fetch)
+    log.info("context: %d calendar items, %d recent headlines", len(ctx["calendar"]["items"]), len(ctx["news"]))
     o = result["overall"]
     log.info("overall %.1f (%s), regime %s", o["score"], o["band"], result["regime"]["now"])
     build_site(indicators, untracked, SCORES_DIR, SITE_DIR, datetime.now(timezone.utc), events, glossary, weights)

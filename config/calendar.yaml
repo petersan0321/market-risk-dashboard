@@ -1,0 +1,162 @@
+# Upcoming-events calendar (spec §10.1). Context only: nothing here affects the risk score.
+#
+# source: manual    -> dates listed under `dates` below (keep them up to date)
+#         fred      -> release dates from the FRED API (needs the FRED_API_KEY secret)
+#         treasury  -> upcoming 10- and 30-year auctions from TreasuryDirect
+# recurring: true   -> the site warns when fewer than 60 days of future dates are listed
+
+types:
+  - type: fomc
+    name: Fed interest-rate decision (FOMC)
+    source: manual
+    recurring: true
+    why_it_matters: >
+      The Fed sets the short-term interest rate that every other borrowing cost builds on. Higher rates
+      make borrowing costlier for companies and households and make bonds you already own worth less;
+      cuts do the opposite.
+    what_to_watch: The rate decision, the "dot plot" of future rate expectations (at some meetings), and the press conference tone.
+    typical_reaction: The biggest moves come from surprises versus what markets expected, not from the decision itself.
+    related_indicators: [fed_funds_chg, fed_path, ust10y_chg, epu_monetary]
+
+  - type: jackson_hole
+    name: Jackson Hole symposium
+    source: manual
+    why_it_matters: >
+      An annual late-August conference where the Fed chair often signals big shifts in policy thinking.
+    what_to_watch: The Fed chair's speech.
+    typical_reaction: Markets can move sharply if the speech changes expectations for rates.
+    related_indicators: [fed_path, ust10y_chg]
+
+  - type: cpi
+    name: Consumer price inflation (CPI) report
+    source: fred
+    fred_release_id: 10
+    why_it_matters: >
+      The most-watched inflation number. Higher-than-expected inflation makes the Fed more likely to keep
+      rates high, which tends to push bond prices down and weigh on stocks.
+    what_to_watch: The monthly change in "core" CPI (excluding food and energy) versus forecasts.
+    typical_reaction: A surprise of even 0.1 percentage points can move bond yields noticeably on the day.
+    related_indicators: [cpi_yoy, breakeven_10y, ust10y_chg]
+
+  - type: jobs
+    name: Jobs report (employment situation)
+    source: fred
+    fred_release_id: 50
+    why_it_matters: >
+      Shows how many jobs were added and the unemployment rate. Strong hiring supports spending but can
+      keep the Fed cautious; weak hiring raises recession worries.
+    what_to_watch: Jobs added, the unemployment rate, wage growth, and revisions to earlier months.
+    typical_reaction: Big misses in either direction move both stocks and bonds.
+    related_indicators: [payrolls_3m, unemployment, sahm_rule, wages_yoy]
+
+  - type: pce
+    name: PCE inflation report
+    source: fred
+    fred_release_id: 54
+    why_it_matters: >
+      The Fed's preferred inflation measure, released with data on income and spending.
+    what_to_watch: Core PCE inflation versus the Fed's 2% target.
+    typical_reaction: Usually smaller moves than CPI, because much of it can be estimated from CPI in advance.
+    related_indicators: [core_pce_6m]
+
+  - type: gdp
+    name: GDP report
+    source: fred
+    fred_release_id: 53
+    why_it_matters: >
+      The broadest measure of how fast the economy is growing. Two quarters of shrinking GDP is a
+      common (though not official) recession signal.
+    what_to_watch: The growth rate and how consumer spending is holding up.
+    typical_reaction: Often modest, because markets already see most of the underlying data.
+    related_indicators: [cfnai_ma3, indpro_yoy]
+
+  - type: retail_sales
+    name: Retail sales report
+    source: fred
+    fred_release_id: 9
+    why_it_matters: >
+      Shows whether consumers, about two-thirds of the economy, are spending more or less.
+    what_to_watch: Sales excluding cars and gas ("control group") versus forecasts.
+    typical_reaction: Weak spending raises growth worries; strong spending can push yields up.
+    related_indicators: [retail_sales_yoy, consumer_sentiment]
+
+  - type: treasury_auction
+    name: Treasury auction (10- or 30-year)
+    source: treasury
+    why_it_matters: >
+      The government sells new long-term bonds to fund itself. Weak demand means it must offer higher
+      interest rates, which can push all bond yields up.
+    what_to_watch: The bid-to-cover ratio and whether the yield came in above expectations (a "tail").
+    typical_reaction: A weak auction can lift long-term yields and weigh on stocks the same afternoon.
+    related_indicators: [auction_demand, term_premium, ust10y_chg]
+
+  - type: election_midterm
+    name: US midterm elections
+    source: manual
+    why_it_matters: >
+      All House seats and about a third of Senate seats are decided. Which party controls Congress shapes
+      taxes, spending, regulation, and how easily the president's agenda passes.
+    what_to_watch: Control of the House and Senate; a divided government usually means fewer big policy changes.
+    typical_reaction: Uncertainty often rises beforehand and fades once results are clear.
+    related_indicators: [epu_daily, vix]
+
+  - type: election_presidential
+    name: US presidential election
+    source: manual
+    why_it_matters: >
+      Tax, trade, regulation, and spending policy can change with a new president. Markets react to the
+      policies they expect, not to the winner as such.
+    what_to_watch: The result and, just as important, which party controls Congress.
+    typical_reaction: Uncertainty tends to rise before the vote; see the 2016, 2020, and 2024 election pages in the history playbook.
+    related_indicators: [epu_daily, epu_trade, vix]
+
+  - type: debt_ceiling
+    name: Debt-ceiling deadline
+    source: manual
+    why_it_matters: >
+      If Congress doesn't raise the borrowing limit in time, the government could miss payments, which
+      would shake trust in US Treasuries, the bedrock of global finance.
+    what_to_watch: Whether a deal is reached before the Treasury runs out of room ("X-date").
+    typical_reaction: Short-term Treasury bills near the deadline can sell off; in 2011 stocks fell sharply.
+    related_indicators: [epu_daily, deficit_gdp]
+
+  - type: government_funding
+    name: Government funding deadline
+    source: manual
+    why_it_matters: >
+      If Congress doesn't pass funding, parts of the government shut down. Shutdowns delay economic data
+      and weigh a little on growth.
+    what_to_watch: Whether a funding bill or short-term extension passes.
+    typical_reaction: Usually small and short-lived market effects.
+    related_indicators: [epu_daily]
+
+  - type: earnings_season
+    name: Earnings season begins
+    source: manual
+    recurring: true
+    why_it_matters: >
+      Over a few weeks most large US companies report their profits for the last quarter and their
+      outlook. Stock prices in the long run follow profits.
+    what_to_watch: Whether profits beat forecasts, and what companies say about the coming months.
+    typical_reaction: Big companies' results can move the whole market; guidance often matters more than the past quarter.
+    related_indicators: [spx_drawdown, breadth_rsp_spy]
+
+# Manually maintained dates. FOMC dates from federalreserve.gov (checked 2026-10-15);
+# 2027 dates are tentative until confirmed at the preceding meeting. Debt-ceiling and
+# funding deadlines: add them when they are set.
+dates:
+  - {type: fomc, date: 2026-10-28, note: "Decision day (meeting October 27-28)"}
+  - {type: fomc, date: 2026-12-09, note: "Decision day with new projections (meeting December 8-9)"}
+  - {type: fomc, date: 2027-01-27, note: "Decision day (meeting January 26-27, tentative)"}
+  - {type: fomc, date: 2027-03-17, note: "Decision day with new projections (meeting March 16-17, tentative)"}
+  - {type: fomc, date: 2027-04-28, note: "Decision day (meeting April 27-28, tentative)"}
+  - {type: fomc, date: 2027-06-09, note: "Decision day with new projections (meeting June 8-9, tentative)"}
+  - {type: fomc, date: 2027-07-28, note: "Decision day (meeting July 27-28, tentative)"}
+  - {type: fomc, date: 2027-09-15, note: "Decision day with new projections (meeting September 14-15, tentative)"}
+  - {type: fomc, date: 2027-10-27, note: "Decision day (meeting October 26-27, tentative)"}
+  - {type: fomc, date: 2027-12-08, note: "Decision day with new projections (meeting December 7-8, tentative)"}
+  - {type: election_midterm, date: 2026-11-03, note: "House and a third of the Senate"}
+  - {type: election_presidential, date: 2028-11-07}
+  - {type: earnings_season, date: 2027-01-14, note: "Approximate: large banks usually report first, mid-January"}
+  - {type: earnings_season, date: 2027-04-14, note: "Approximate"}
+  - {type: earnings_season, date: 2027-07-14, note: "Approximate"}

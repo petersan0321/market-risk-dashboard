@@ -523,7 +523,7 @@ Types and date sources:
 | Type | Dates from |
 |---|---|
 | FOMC meeting, Jackson Hole symposium | `calendar.yaml`, maintained manually (the Fed publishes a year ahead) |
-| CPI, jobs report, PCE, GDP, retail sales | FRED release-dates API |
+| CPI, jobs report, PCE, GDP, retail sales | FRED release-dates API (requires the `FRED_API_KEY` secret; without it the panel lists these as "not shown") |
 | 10Y and 30Y Treasury auctions | TreasuryDirect upcoming-auctions API |
 | Presidential and midterm elections | `calendar.yaml` (fixed dates) |
 | Debt-ceiling deadlines, government-funding deadlines | `calendar.yaml`, maintained manually |
@@ -540,9 +540,9 @@ If manually maintained types have fewer than 60 days of future dates, the Monday
 
 ### 10.3 News context
 
-- **Sources (free, no paid keys):** official RSS feeds (Federal Reserve press releases, US Treasury press releases, BLS releases) and the GDELT DOC API for market-relevant headlines from major outlets.
+- **Sources (free, no keys):** publishers' own RSS feeds, listed in `news_topics.yaml` (Federal Reserve press releases, CNBC, MarketWatch, NPR, New York Times economy). Each feed can list `exclude` phrases (e.g. the Fed's routine supervisory notices). GDELT was tried and dropped: it rate-limits shared IPs such as GitHub's runners. The Treasury and BLS feeds were unavailable (no working feed / blocks automated requests).
 - Only headline, source, date, and link are stored and shown — no article text.
-- **Topics (`config/news_topics.yaml`):** keyword rules tag each headline with a topic: Fed & rates, inflation, jobs & economy, tariffs & trade, fiscal & debt ceiling, elections & politics, geopolitics, banking & credit, energy, earnings. Each topic has a `why_it_matters` explanation and `related_indicators`, e.g. "Tariffs & trade: tariffs raise costs for importers and invite retaliation, which can slow growth and push up prices. Watch: trade policy uncertainty, dollar, copper/gold." Headlines matching no topic are dropped.
+- **Topics (`config/news_topics.yaml`):** keyword rules (whole words, in the headline) tag each headline with the first matching topic: Fed & rates, inflation, jobs & economy, tariffs & trade, fiscal & debt ceiling, elections & politics, geopolitics, banking & credit, energy, earnings. Each topic has a `why_it_matters` explanation and `related_indicators`, e.g. "Tariffs & trade: tariffs raise costs for importers and invite retaliation, which can slow growth and push up prices. Watch: trade policy uncertainty, dollar, copper/gold." Headlines matching no topic are dropped.
 - Up to 5 headlines per topic per day, deduplicated by URL and normalized title. Kept for 90 days in `data/context/news/<date>.json`.
 - **Context only:** headlines never feed the score.
 
@@ -593,7 +593,7 @@ Moving up through a threshold uses the threshold; moving back down requires fall
 
 All pages share a header with navigation and a footer with the last update time, data health, and the disclaimer.
 
-1. **Overview** (`index.html`): overall score gauge with band, short rationale, and the model confidence line (§9.7); regime quadrant; 9 category lights with trends (linking to category pages); "What changed" (7 and 30 days); "Today looks like…"; **Coming up** (next 14 days of calendar events, each expandable to its explanation); **In the news** (recent headlines by topic, each topic expandable to why it matters); overall score history (5 years, events shaded); data health; "Not tracked yet" panel.
+1. **Overview** (`index.html`): overall score gauge with band, short rationale, and the model confidence line (§9.7); regime quadrant; 9 category lights with trends (linking to category pages); "What changed" (7 and 30 days); "Today looks like…"; **Coming up** (next 30 days of calendar events, so major events like elections get a few weeks' notice, each expandable to its explanation); **In the news** (recent headlines by topic, each topic expandable to why it matters); overall score history (5 years, events shaded); data health; "Not tracked yet" panel.
 2. **Category pages** (`category/<id>.html`): indicator cards (value, score, light, trend, spectrum bar, 10-year chart with events shaded, explanation, badges).
 3. **Why this score?** (`why.html`): full rationale (§6.2–§6.5) and full-history score chart.
 4. **History** (`history/index.html` with filters by kind and tag, `history/<event_id>.html`, `history/which-factors-warned.html`).

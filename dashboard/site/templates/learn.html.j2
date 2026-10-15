@@ -57,6 +57,36 @@
     <li><strong>It describes conditions, not timing.</strong> A high score has often come months before a decline, or with no decline at all.</li>
   </ul>
 
+  <h2 id="what-moves-markets">What moves markets</h2>
+  <p>Scheduled events and news topics that regularly move US stocks and bonds. They appear on the overview's
+    "Coming up" and "In the news" panels as context; none of them change the risk score directly.</p>
+  <h3>Scheduled events</h3>
+  {% for t in cal_types.values() %}
+  <details class="term"><summary>{{ t.name }}</summary>
+    <p class="small">{{ t.why_it_matters }}</p>
+    <p class="small"><strong>Watch:</strong> {{ t.what_to_watch }} <strong>Usual reaction:</strong> {{ t.typical_reaction }}</p>
+  </details>
+  {% endfor %}
+  <h3>News topics</h3>
+  {% for t in topics.values() %}
+  <details class="term"><summary>{{ t.name }}</summary><p class="small">{{ t.why_it_matters }}</p></details>
+  {% endfor %}
+
+  <h2 id="presidential-cycle">The presidential cycle</h2>
+  <p>Some investors believe stocks follow the 4-year presidential term: weaker in the midterm year, stronger in the
+    year before an election. Here is what the data shows since 1950 (calendar-year returns, median):</p>
+  {% if cycle %}
+  <div class="table-wrap"><table>
+    <thead><tr><th>Year of the term</th><th>Years</th><th>S&amp;P 500 (median)</th><th>Years stocks fell</th><th>Bonds (median)</th></tr></thead>
+    <tbody>{% for c in cycle %}<tr {% if c.current %}class="row-now"{% endif %}><th scope="row">{{ c.name }}{% if c.current %} <span class="now-tag">Now</span>{% endif %}</th>
+      <td>{{ c.years }}</td><td>{{ c.stocks_median|pct(true) }}</td><td>{{ c.stocks_down_years }} of {{ c.years }}</td><td>{{ c.bonds_median|pct(true) }} <span class="range">({{ c.bond_years }} years)</span></td></tr>{% endfor %}</tbody>
+  </table></div>
+  {% endif %}
+  <p><strong>Treat this pattern with real caution.</strong> Each row has only about 19 years, a single year can swing the
+    median, and the pattern has failed often (stocks rose strongly in some midterm years and fell in some pre-election years).
+    It is not a reason to buy or sell. What does matter around elections is uncertainty about policy, which the dashboard
+    tracks through its policy-uncertainty indicators. Bond returns before late 2003 are estimated.</p>
+
   <h2 id="glossary">Glossary</h2>
   <dl class="glossary">
     {% for g in glossary.values()|sort(attribute="term") %}

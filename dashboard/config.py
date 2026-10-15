@@ -306,3 +306,92 @@ def load_events(path: Path = CONFIG_DIR / "events.yaml",
             search_days=int(e.get("search_days", 30)),
         ))
     return events
+
+
+# --- calendar and news (spec §10) -----------------------------------------------------------
+
+CALENDAR_SOURCES = {"manual", "fred", "treasury"}
+
+
+@dataclass(frozen=True)
+class CalendarType:
+    type: str
+    name: str
+    source: str
+    why_it_matters: str
+    what_to_watch: str
+    typical_reaction: str
+    related_indicators: tuple[str, ...]
+    recurring: bool = False
+    fred_release_id: int | None = None
+
+
+@dataclass(frozen=True)
+class CalendarDate:
+    type: str
+    date: date
+    note: str = ""
+
+
+@dataclass(frozen=True)
+class NewsTopic:
+    id: str
+    name: str
+    keywords: tuple[str, ...]
+    why_it_matters: str
+    related_indicators: tuple[str, ...]
+
+
+def _check_indicators(owner: str, ids, known: set[str]) -> tuple[str, ...]:
+    unknown = [i for i in ids if i not in known]
+    if unknown:
+        raise ConfigError(f"{owner}: related_indicators not in the catalog {unknown}")
+    return tuple(ids)
+
+
+def load_calendar(path: Path = CONFIG_DIR / "calendar.yaml", indicator_ids: set[str] | None = None
+                  ) -> tuple[dict[str, CalendarType], list[CalendarDate]]:
+    raw = yaml.safe_load(path.read_text())
+    known = indicator_ids if indicator_ids is not None else {i.id for i in load_indicators()}
+    types = {}
+    for t in raw.get("types", []):
+        missing = [k for k in ("type", "name", "source", "why_it_matters", "what_to_watch", "typical_reaction")
+                   if not str(t.get(k, "")).strip()]
+        if missing:
+            raise ConfigError(f"calendar type {t.get('type')!r} missing {missing}")
+        if t["source"] not in CALENDAR_SOURCES:
+            raise ConfigError(f"calendar type {t['type']!r}: unknown source {t['source']!r}")
+        if t["source"] == "fred" and not t.get("fred_release_id"):
+            raise ConfigError(f"calendar type {t['type']!r}: fred source needs fred_release_id")
+        types[t["type"]] = CalendarType(
+            type=t["type"], name=t["name"], source=t["source"], why_it_matters=_text(t["why_it_matters"]),
+            what_to_watch=_text(t["what_to_watch"]), typical_reaction=_text(t["typical_reaction"]),
+            related_indicators=_check_indicators(t["type"], t.get("related_indicators", []), known),
+            recurring=bool(t.get("recurring", False)), fred_release_id=t.get("fred_release_id"))
+    dates = []
+    for d in raw.get("dates", []):
+        if d.get("type") not in types or types[d["type"]].source != "manual":
+            raise ConfigError(f"calendar date {d}: type must be a manual calendar type")
+        if not isinstance(d.get("date"), date):
+            raise ConfigError(f"calendar date {d}: needs a date")
+        dates.append(CalendarDate(d["type"], d["date"], str(d.get("note", ""))))
+    return types, sorted(dates, key=lambda d: d.date)
+
+
+def load_news_topics(path: Path = CONFIG_DIR / "news_topics.yaml", indicator_ids: set[str] | None = None
+                     ) -> tuple[list[dict], list[NewsTopic]]:
+    """Returns (feeds [{name, url}], topics)."""
+    raw = yaml.safe_load(path.read_text())
+    known = indicator_ids if indicator_ids is not None else {i.id for i in load_indicators()}
+    topics = []
+    for t in raw.get("topics", []):
+        missing = [k for k in ("id", "name", "keywords", "why_it_matters") if not t.get(k)]
+        if missing:
+            raise ConfigError(f"news topic {t.get('id')!r} missing {missing}")
+        topics.append(NewsTopic(t["id"], t["name"], tuple(k.lower() for k in t["keywords"]),
+                                _text(t["why_it_matters"]),
+                                _check_indicators(t["id"], t.get("related_indicators", []), known)))
+    feeds = raw.get("feeds") or []
+    if not feeds or not all(f.get("name") and str(f.get("url", "")).startswith("https://") for f in feeds):
+        raise ConfigError("news_topics.yaml needs a feeds list of {name, url} with https URLs")
+    return feeds, topics

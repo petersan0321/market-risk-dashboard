@@ -1,0 +1,51 @@
+[
+ {
+  "title": "Labor market faltered in September as jobs increased by just 29,000, unemployment rate rose to 4.2%",
+  "url": "https://www.cnbc.com/2026/10/02/jobs-report-september-2026.html",
+  "source": "CNBC Economy",
+  "date": "2026-10-02",
+  "topic": "jobs_economy"
+ },
+ {
+  "title": "Traders now see little chance of a Fed rate hike in October after weak jobs report",
+  "url": "https://www.cnbc.com/2026/10/02/fed-rate-hike-odds-decline-after-september-jobs-report.html",
+  "source": "CNBC Finance",
+  "date": "2026-10-02",
+  "topic": "fed_rates"
+ },
+ {
+  "title": "'The hottest skill on Wall Street\u2019: Demand for this AI ability jumped 1,721% as banks embrace agents",
+  "url": "https://www.cnbc.com/2026/10/02/ai-skills-most-in-demand-at-jpmorgan-chase-citigroup-capital-one.html",
+  "source": "CNBC Finance",
+  "date": "2026-10-02",
+  "topic": "banking_credit"
+ },
+ {
+  "title": "Black Unemployment Rose Sharply in September, Jobs Report Shows",
+  "url": "https://www.nytimes.com/2026/10/02/business/economy/jobs-report-black-unemployment.html",
+  "source": "New York Times",
+  "date": "2026-10-02",
+  "topic": "jobs_economy"
+ },
+ {
+  "title": "Soft Jobs Report Boosts Market Bets Fed Will Skip October Rate Increase",
+  "url": "https://www.nytimes.com/2026/10/02/business/economy/jobs-report-fed-interest-rates.html",
+  "source": "New York Times",
+  "date": "2026-10-02",
+  "topic": "fed_rates"
+ },
+ {
+  "title": "Hiring Slows as U.S. Jobs Report Shows Labor Market Shifting Into Lower Gear",
+  "url": "https://www.nytimes.com/2026/10/02/business/economy/jobs-report-unemployment.html",
+  "source": "New York Times",
+  "date": "2026-10-02",
+  "topic": "jobs_economy"
+ },
+ {
+  "title": "Tariffs Are Making Instruments So Expensive, School Music Programs Are at Risk",
+  "url": "https://www.nytimes.com/2026/10/02/business/economy/tariffs-instruments-school-music-programs.html",
+  "source": "New York Times",
+  "date": "2026-10-02",
+  "topic": "trade_tariffs"
+ }
+]

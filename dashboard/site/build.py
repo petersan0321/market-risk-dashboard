@@ -10,8 +10,9 @@ import pandas as pd
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from dashboard.composite import BANDS
-from dashboard.config import (CATEGORIES, Event, GlossaryTerm, Indicator, Untracked, load_events, load_glossary,
-                              load_indicators, load_untracked, load_weights)
+from dashboard.config import (CATEGORIES, Event, GlossaryTerm, Indicator, Untracked, load_calendar, load_events,
+                              load_glossary, load_indicators, load_news_topics, load_untracked, load_weights)
+from dashboard.paths import CONTEXT_DIR
 from dashboard.paths import SCORES_DIR, SITE_DIR
 from dashboard.regime import REGIMES
 from dashboard.signals import AMBER, RED, read_tables
@@ -131,7 +132,7 @@ def _time_machine_link(start: str, end: str) -> str:
 
 def build_site(indicators: list[Indicator], untracked: list[Untracked], scores_dir: Path, site_dir: Path,
                now: datetime, events: list[Event] = (), glossary: dict[str, GlossaryTerm] | None = None,
-               weights: dict[str, float] | None = None) -> Path:
+               weights: dict[str, float] | None = None, context_dir: Path = CONTEXT_DIR) -> Path:
     rationale = json.loads((scores_dir / "rationale.json").read_text())
     hist = json.loads((scores_dir / "history.json").read_text())
     composite = pd.read_csv(scores_dir / "composite.csv", index_col="date", parse_dates=["date"])
@@ -157,6 +158,22 @@ def build_site(indicators: list[Indicator], untracked: list[Untracked], scores_d
         "events_by_id": {p["id"]: p for p in pages},
         "glossary": glossary,
     }
+    cal_types, _ = load_calendar()  # validated against the full catalog
+    _, topics = load_news_topics()
+    ctx_path = context_dir / "context.json"
+    ctx = json.loads(ctx_path.read_text()) if ctx_path.exists() else {"calendar": {"items": [], "unavailable": [], "warnings": []}, "news": [], "cycle": []}
+    soon = (pd.Timestamp(now.date()) + pd.Timedelta(days=30)).date().isoformat()
+    by_topic = {}
+    for h in ctx["news"]:
+        by_topic.setdefault(h["topic"], []).append(h)
+    common.update({
+        "cal_types": cal_types,
+        "topics": {t.id: t for t in topics},
+        "coming_up": [i for i in ctx["calendar"]["items"] if i["date"] <= soon],
+        "calendar": ctx["calendar"],
+        "news_by_topic": [(t, by_topic[t.id][:5]) for t in topics if t.id in by_topic],
+        "cycle": ctx["cycle"],
+    })
 
     if site_dir.exists():
         shutil.rmtree(site_dir)

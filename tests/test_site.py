@@ -88,7 +88,7 @@ def pipeline(make_indicator, tmp_path):
     scores_dir = tmp_path / "scores"
     untracked = [Untracked("Margin debt", "Borrowed money.", "No source.")]
     index = build_site(indicators, untracked, scores_dir, tmp_path / "site", datetime(2024, 6, 28, tzinfo=timezone.utc),
-                       load_events(), load_glossary())
+                       load_events(), load_glossary(), context_dir=tmp_path / "context")
     return result, index.parent
 
 

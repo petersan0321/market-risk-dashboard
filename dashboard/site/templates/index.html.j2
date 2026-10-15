@@ -54,6 +54,36 @@
 </section>
 
 <section class="two-col">
+  <div class="card" aria-labelledby="coming-h">
+    <h2 id="coming-h">Coming up</h2>
+    <p class="small muted">Scheduled events in the next 30 days. Tap one to see why it matters.</p>
+    {% for item in coming_up %}{% set t = cal_types[item.type] %}
+    <details class="term">
+      <summary><span class="date-tag">{{ item.date[5:] }}</span> {{ t.name }}{% if item.note %} <span class="small muted">· {{ item.note }}</span>{% endif %}</summary>
+      <p class="small">{{ t.why_it_matters }}</p>
+      <p class="small"><strong>Watch:</strong> {{ t.what_to_watch }}</p>
+      <p class="small"><strong>Usual reaction:</strong> {{ t.typical_reaction }}</p>
+      {% if t.related_indicators %}<p class="small muted">Related indicators: {% for i in t.related_indicators if i in names %}<a href="category/{{ cat_of[i] }}.html#{{ i }}">{{ names[i] }}</a>{{ ", " if not loop.last }}{% endfor %}</p>{% endif %}
+    </details>
+    {% else %}<p class="muted small">Nothing scheduled in the next 30 days.</p>{% endfor %}
+    {% if calendar.unavailable %}<p class="small muted">Not shown: {% for u in calendar.unavailable %}{{ cal_types[u].name }}{{ ", " if not loop.last }}{% endfor %} dates{% if "cpi" in calendar.unavailable %} (add a free FRED API key to show data release dates){% endif %}.</p>{% endif %}
+    {% for w in calendar.warnings %}<p class="small"><span class="badge badge-warn">Calendar needs updating</span> {{ w }}</p>{% endfor %}
+    <p class="small"><a href="learn.html#what-moves-markets">What moves markets →</a></p>
+  </div>
+  <div class="card" aria-labelledby="news-h">
+    <h2 id="news-h">In the news</h2>
+    <p class="small muted">Recent headlines by topic, for context only: they never change the score.</p>
+    {% for t, items in news_by_topic %}
+    <details class="term">
+      <summary>{{ t.name }} <span class="small muted">({{ items|length }})</span></summary>
+      <p class="small muted">{{ t.why_it_matters }}{% if t.related_indicators %} Watch: {% for i in t.related_indicators if i in names %}<a href="category/{{ cat_of[i] }}.html#{{ i }}">{{ names[i] }}</a>{{ ", " if not loop.last }}{% endfor %}.{% endif %}</p>
+      <ul class="plain small">{% for h in items %}<li><a href="{{ h.url }}" rel="noopener" target="_blank">{{ h.title }}</a> <span class="muted">· {{ h.source }}, {{ h.date[5:] }}</span></li>{% endfor %}</ul>
+    </details>
+    {% else %}<p class="muted small">Headlines unavailable today.</p>{% endfor %}
+  </div>
+</section>
+
+<section class="two-col">
   <div class="card">
     <h2>Economic regime</h2>
     {% set reg = r.regime %}

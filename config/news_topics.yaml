@@ -1,0 +1,95 @@
+# News context (spec §10.3). Headlines are shown next to the score but never change it.
+# Headlines come from the publishers' own RSS feeds below. Each headline is tagged with the
+# first topic whose `keywords` appear in it (lower-case, whole words); untagged ones are dropped.
+
+feeds:
+  - name: Federal Reserve
+    url: "https://www.federalreserve.gov/feeds/press_all.xml"
+    # routine supervisory notices, not market news
+    exclude: [application, enforcement, comment, discount rate meetings, survey of, resolution plan, agencies]
+  - {name: CNBC, url: "https://www.cnbc.com/id/100003114/device/rss/rss.html"}
+  - {name: CNBC Economy, url: "https://www.cnbc.com/id/20910258/device/rss/rss.html"}
+  - {name: CNBC Finance, url: "https://www.cnbc.com/id/10000664/device/rss/rss.html"}
+  - {name: MarketWatch, url: "https://feeds.content.dowjones.io/public/rss/mw_topstories"}
+  - {name: NPR, url: "https://feeds.npr.org/1017/rss.xml"}
+  - {name: New York Times, url: "https://rss.nytimes.com/services/xml/rss/nyt/Economy.xml"}
+
+topics:
+  - id: fed_rates
+    name: Fed & interest rates
+    keywords: [federal reserve, fed, fomc, interest rate, interest rates, rate cut, rate cuts, rate hike, rate hikes, treasury yield, treasury yields, bond yields]
+    why_it_matters: >
+      Interest rates set the price of money. Expectations about the Fed move bond yields directly and
+      change how much investors will pay for stocks.
+    related_indicators: [fed_funds_chg, fed_path, ust10y_chg, epu_monetary]
+
+  - id: inflation
+    name: Inflation
+    keywords: [inflation, cpi, ppi, consumer prices, producer prices, prices rise, price index]
+    why_it_matters: >
+      Higher inflation keeps the Fed from cutting rates and erodes what bonds pay. Surprises in inflation
+      data are among the biggest single-day market movers.
+    related_indicators: [cpi_yoy, core_pce_6m, breakeven_10y]
+
+  - id: jobs_economy
+    name: Jobs & economy
+    keywords: [jobs, jobless, unemployment, payrolls, hiring, layoffs, recession, gdp, us economy, the economy, economy grew, economy shrank, economic growth, retail sales, consumer spending]
+    why_it_matters: >
+      A slowing economy means weaker company profits and, eventually, lower interest rates. Job losses
+      are usually the clearest sign a recession has arrived.
+    related_indicators: [payrolls_3m, claims_4w, sahm_rule, cfnai_ma3, retail_sales_yoy]
+
+  - id: trade_tariffs
+    name: Tariffs & trade
+    keywords: [tariff, tariffs, trade war, trade deal, trade talks, import, imports, export controls]
+    why_it_matters: >
+      Tariffs raise costs for importers and invite retaliation, which can slow growth and push up prices.
+    related_indicators: [epu_trade, dollar_yoy, copper_gold]
+
+  - id: fiscal_debt
+    name: Government budget & debt
+    keywords: [debt ceiling, debt limit, shutdown, deficit, national debt, spending bill, budget, treasury auction]
+    why_it_matters: >
+      More government borrowing means more bonds to sell, which can push interest rates up. Standoffs
+      over the debt ceiling can unsettle the Treasury market itself.
+    related_indicators: [deficit_gdp, auction_demand, term_premium]
+
+  - id: elections_politics
+    name: Elections & politics
+    keywords: [election, elections, midterm, midterms, congress, senate, house, white house, campaign]
+    why_it_matters: >
+      Elections and political fights decide tax, trade, spending, and regulation. Markets dislike
+      uncertainty more than any particular outcome.
+    related_indicators: [epu_daily, vix]
+
+  - id: geopolitics
+    name: Geopolitics
+    keywords: [war, sanctions, missile, missiles, military, invasion, conflict, attack, ceasefire]
+    why_it_matters: >
+      Wars and international tensions can disrupt trade and energy supplies and push money into safe
+      assets like Treasuries, gold, and the dollar.
+    related_indicators: [geopolitical_risk, gold_yoy, oil_yoy]
+
+  - id: banking_credit
+    name: Banks & credit
+    keywords: [bank, banks, banking, lender, lenders, credit, default, defaults, bankruptcy, loan, loans]
+    why_it_matters: >
+      When lenders get nervous, companies and households find it harder to borrow. Credit stress has
+      often come before stock market trouble.
+    related_indicators: [baa_spread, stlfsi, nfci, sloos_tightening]
+
+  - id: energy
+    name: Energy
+    keywords: [oil, crude, opec, gasoline, gas prices, natural gas, energy prices]
+    why_it_matters: >
+      Energy costs feed into almost everything. Oil price spikes have come before several recessions and
+      push up inflation quickly.
+    related_indicators: [oil_yoy, cpi_yoy]
+
+  - id: earnings
+    name: Company earnings
+    keywords: [earnings, profit, profits, revenue, quarterly results, guidance, outlook]
+    why_it_matters: >
+      In the long run stock prices follow company profits. What companies say about the months ahead
+      often moves their shares more than the past quarter.
+    related_indicators: [spx_drawdown, breadth_rsp_spy, cape]
