@@ -35,9 +35,37 @@
    "retail_sales"
   ],
   "warnings": [],
-  "as_of": "2026-10-15"
+  "as_of": "2026-10-16"
  },
  "news": [
+  {
+   "title": "Elon Musk cash infusion helps GOP Senate super PAC raise record $273 million",
+   "url": "https://www.cnbc.com/2026/10/15/elon-musk-senate-leadership-fund-fundraising.html",
+   "source": "CNBC",
+   "date": "2026-10-16",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Banking tax raid fears hit London lenders' shares ahead of crucial budget",
+   "url": "https://www.cnbc.com/2026/10/16/banking-tax-london-uk-lenders.html",
+   "source": "CNBC",
+   "date": "2026-10-16",
+   "topic": "fiscal_debt"
+  },
+  {
+   "title": "A stock-market \u2018sell\u2019 signal has been silenced \u2014 but these Bank of America strategists say it\u2019s too early to buy",
+   "url": "https://www.marketwatch.com/story/a-stock-market-sell-signal-has-been-silenced-but-these-bank-of-america-strategists-say-its-too-early-to-buy-8cdf98c8?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-10-16",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "What this bankruptcy says about AI startups",
+   "url": "https://www.npr.org/sections/planet-money/2026/10/16/nx-s1-6001828/what-this-bankruptcy-says-about-ai-startups",
+   "source": "NPR",
+   "date": "2026-10-16",
+   "topic": "banking_credit"
+  },
   {
    "title": "Analysis: Why a $2 trillion deficit and 5% Treasury yields are becoming America's biggest economic challenge",
    "url": "https://www.cnbc.com/2026/10/15/treasury-yields-deficit-national-debt-ai.html",
@@ -130,6 +158,34 @@
    "topic": "inflation"
   },
   {
+   "title": "Nvidia and Cisco confirm multimillion-dollar donations to Trump's White House ballroom",
+   "url": "https://www.cnbc.com/2026/10/15/trump-ballroom-nvidia-cisco-donations.html",
+   "source": "CNBC",
+   "date": "2026-10-15",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Trump says 'if Ken Paxton loses' Texas Senate race, blame Cornyn and Karl Rove",
+   "url": "https://www.cnbc.com/2026/10/15/trump-paxton-texas-talarico.html",
+   "source": "CNBC",
+   "date": "2026-10-15",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Democrat Talarico says he raised record $64 million over summer in Texas Senate race",
+   "url": "https://www.cnbc.com/2026/10/15/james-talarico-texas-senate-fundraising-ken-paxton.html",
+   "source": "CNBC",
+   "date": "2026-10-15",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "CoreWeave credit default swaps hit distress levels as investors sour on AI debt",
+   "url": "https://www.cnbc.com/2026/10/15/coreweave-credit-default-swaps-hit-distress-levels-as-investors-sour-on-ai-debt.html",
+   "source": "CNBC",
+   "date": "2026-10-15",
+   "topic": "banking_credit"
+  },
+  {
    "title": "Bank of America hired 1,000 contractors to patch software flaws exposed by Anthropic's Mythos",
    "url": "https://www.cnbc.com/2026/10/14/anthropic-mythos-bank-of-america-hiring-cost.html",
    "source": "CNBC",
@@ -198,55 +254,6 @@
    "source": "New York Times",
    "date": "2026-10-14",
    "topic": "inflation"
-  },
-  {
-   "title": "The latest inflation data is expected to show price increases are accelerating",
-   "url": "https://www.cnbc.com/2026/10/13/september-consumer-price-index-inflation.html",
-   "source": "CNBC Economy",
-   "date": "2026-10-13",
-   "topic": "inflation"
-  },
-  {
-   "title": "IMF warns bond yields could see a 'disorderly' spike as debt, inflation risks worsen",
-   "url": "https://www.cnbc.com/2026/10/13/treasury-yields-imf-debt-inflation-.html",
-   "source": "CNBC Economy",
-   "date": "2026-10-13",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "World Bank jobs council urges 'crisis-era' employment support measures as IMF warns of AI \u2018tsunami\u2019",
-   "url": "https://www.cnbc.com/2026/10/12/imf-world-bank-ai-jobs-inflation-.html",
-   "source": "CNBC Economy",
-   "date": "2026-10-13",
-   "topic": "jobs_economy"
-  },
-  {
-   "title": "Williams says Fed may not have to hike rates in 2027, at odds with traders",
-   "url": "https://www.cnbc.com/2026/10/13/john-williams-fed-rate-hikes-2027.html",
-   "source": "CNBC Finance",
-   "date": "2026-10-13",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "Visa gets Beijing's green light for bank card business after 40 years of working with China",
-   "url": "https://www.cnbc.com/2026/10/13/visa-china-green-light-bank-card-business-.html",
-   "source": "CNBC Finance",
-   "date": "2026-10-13",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "'Boring is not bad': CEO of Southeast Asia's largest bank pitches Singapore as a haven amid global turmoil",
-   "url": "https://www.cnbc.com/2026/10/13/singapore-war-geopolitics-dbs-bank-ceo.html",
-   "source": "CNBC Finance",
-   "date": "2026-10-13",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "I.M.F. Warns Mideast War Will Widen Gap Between Rich and Poor Countries",
-   "url": "https://www.nytimes.com/2026/10/12/business/economy/imf-global-economic-outlook.html",
-   "source": "New York Times",
-   "date": "2026-10-13",
-   "topic": "geopolitics"
   }
  ],
  "cycle": [
@@ -256,7 +263,7 @@
    "years": 19,
    "stocks_median": 0.09061946902654872,
    "stocks_down_years": 7,
-   "bonds_median": 0.030572937244680576,
+   "bonds_median": 0.030572937244679688,
    "bond_years": 16,
    "current": false
   },
@@ -266,7 +273,7 @@
    "years": 19,
    "stocks_median": 0.010620399579390094,
    "stocks_down_years": 8,
-   "bonds_median": 0.05998556497099572,
+   "bonds_median": 0.059985564970996164,
    "bond_years": 15,
    "current": true
   },
@@ -286,7 +293,7 @@
    "years": 19,
    "stocks_median": 0.11779554059739161,
    "stocks_down_years": 3,
-   "bonds_median": 0.03821340764368275,
+   "bonds_median": 0.038213407643683195,
    "bond_years": 16,
    "current": false
   }

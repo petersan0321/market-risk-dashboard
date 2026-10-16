@@ -1,7 +1,7 @@
 {
- "as_of": "2026-10-15",
+ "as_of": "2026-10-16",
  "overall": {
-  "score": 55.5,
+  "score": 55.0,
   "band": "Normal"
  },
  "categories": {
@@ -47,7 +47,7 @@
   "equity_risk_premium": "green",
   "vix": "green",
   "vix_term": "green",
-  "breadth_rsp_spy": "red",
+  "breadth_rsp_spy": "amber",
   "spx_vs_200dma": "green",
   "spx_drawdown": "green",
   "dollar_yoy": "amber",

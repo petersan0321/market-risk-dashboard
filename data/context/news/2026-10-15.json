@@ -89,5 +89,33 @@
   "source": "CNBC Economy",
   "date": "2026-10-15",
   "topic": "inflation"
+ },
+ {
+  "title": "Nvidia and Cisco confirm multimillion-dollar donations to Trump's White House ballroom",
+  "url": "https://www.cnbc.com/2026/10/15/trump-ballroom-nvidia-cisco-donations.html",
+  "source": "CNBC",
+  "date": "2026-10-15",
+  "topic": "elections_politics"
+ },
+ {
+  "title": "Trump says 'if Ken Paxton loses' Texas Senate race, blame Cornyn and Karl Rove",
+  "url": "https://www.cnbc.com/2026/10/15/trump-paxton-texas-talarico.html",
+  "source": "CNBC",
+  "date": "2026-10-15",
+  "topic": "elections_politics"
+ },
+ {
+  "title": "Democrat Talarico says he raised record $64 million over summer in Texas Senate race",
+  "url": "https://www.cnbc.com/2026/10/15/james-talarico-texas-senate-fundraising-ken-paxton.html",
+  "source": "CNBC",
+  "date": "2026-10-15",
+  "topic": "elections_politics"
+ },
+ {
+  "title": "CoreWeave credit default swaps hit distress levels as investors sour on AI debt",
+  "url": "https://www.cnbc.com/2026/10/15/coreweave-credit-default-swaps-hit-distress-levels-as-investors-sour-on-ai-debt.html",
+  "source": "CNBC",
+  "date": "2026-10-15",
+  "topic": "banking_credit"
  }
 ]
