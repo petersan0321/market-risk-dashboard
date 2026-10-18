@@ -35,9 +35,37 @@
    "retail_sales"
   ],
   "warnings": [],
-  "as_of": "2026-10-17"
+  "as_of": "2026-10-18"
  },
  "news": [
+  {
+   "title": "Trump waives broad new Russia sanctions, Zelenskyy condemns it as 'wrong'",
+   "url": "https://www.cnbc.com/2026/10/17/trump-waives-russia-related-sanctions-tariffs-before-they-take-effect-.html",
+   "source": "CNBC",
+   "date": "2026-10-18",
+   "topic": "geopolitics"
+  },
+  {
+   "title": "These surprising stocks could be some of the biggest drivers of S&P 500 earnings growth",
+   "url": "https://www.marketwatch.com/story/these-surprising-stocks-could-be-some-of-the-biggest-drivers-of-s-p-500-earnings-growth-ea073a07?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-10-18",
+   "topic": "earnings"
+  },
+  {
+   "title": "Stocks are heading for a high-stakes showdown, as strong earnings collide with rising borrowing costs",
+   "url": "https://www.marketwatch.com/story/stocks-are-heading-for-a-high-stakes-showdown-as-strong-earnings-collide-with-rising-borrowing-costs-6f8ea5b8?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-10-18",
+   "topic": "earnings"
+  },
+  {
+   "title": "3 Charts That Explain the Economy as Voters Head to the Polls",
+   "url": "https://www.nytimes.com/2026/10/18/business/economy/economy-midterm-elections.html",
+   "source": "New York Times",
+   "date": "2026-10-18",
+   "topic": "jobs_economy"
+  },
   {
    "title": "Trump waives broad new Russia sanctions and tariffs under Graham Act, citing national interest",
    "url": "https://www.cnbc.com/2026/10/17/trump-waives-russia-related-sanctions-tariffs-before-they-take-effect-.html",
@@ -72,6 +100,13 @@
    "source": "MarketWatch",
    "date": "2026-10-17",
    "topic": "fed_rates"
+  },
+  {
+   "title": "AI stocks plunge. Inflation heats up. Where we're still finding opportunities",
+   "url": "https://www.cnbc.com/investingclub/2026/10/17/ai-stocks-plunge-inflation-heats-up-where-were-still-finding-opportunities.html",
+   "source": "CNBC",
+   "date": "2026-10-17",
+   "topic": "inflation"
   },
   {
    "title": "Elon Musk cash infusion helps GOP Senate super PAC raise record $273 million",
@@ -156,125 +191,6 @@
    "source": "NPR",
    "date": "2026-10-16",
    "topic": "geopolitics"
-  },
-  {
-   "title": "Analysis: Why a $2 trillion deficit and 5% Treasury yields are becoming America's biggest economic challenge",
-   "url": "https://www.cnbc.com/2026/10/15/treasury-yields-deficit-national-debt-ai.html",
-   "source": "CNBC",
-   "date": "2026-10-15",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "Treasury yields slide as investors flee to safety of bonds amid tech rout",
-   "url": "https://www.cnbc.com/2026/10/15/us-treasury-yields-investors-economic-data-.html",
-   "source": "CNBC",
-   "date": "2026-10-15",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "We're trimming a rallying defensive stock and buying other on a muted earnings move",
-   "url": "https://www.cnbc.com/investingclub/2026/10/15/were-trimming-a-rallying-defensive-stock-and-buying-other-on-a-muted-earnings-move.html",
-   "source": "CNBC",
-   "date": "2026-10-15",
-   "topic": "earnings"
-  },
-  {
-   "title": "Ukraine to resume strikes on Russian refineries, shattering hopes of an 'energy ceasefire'",
-   "url": "https://www.cnbc.com/2026/10/15/ukraine-russia-energy-ceasefire-zelenskyy.html",
-   "source": "CNBC",
-   "date": "2026-10-15",
-   "topic": "geopolitics"
-  },
-  {
-   "title": "TSMC posts record profit for a sixth straight quarter, beating estimates on AI boom",
-   "url": "https://www.cnbc.com/2026/10/15/tsmc-third-quarter-profit-global-ai-.html",
-   "source": "CNBC",
-   "date": "2026-10-15",
-   "topic": "earnings"
-  },
-  {
-   "title": "Anthropic's third-quarter revenue is said to hit $16.8 billion ahead of IPO",
-   "url": "https://www.cnbc.com/2026/10/15/anthropics-third-quarter-revenue-hits-16point8-billion-ipo.html",
-   "source": "CNBC",
-   "date": "2026-10-15",
-   "topic": "earnings"
-  },
-  {
-   "title": "China indicates rare earths will keep flowing to EU, regardless of U.S. trade deal expiration",
-   "url": "https://www.cnbc.com/2026/10/15/china-rare-earth-exports-europe.html",
-   "source": "CNBC Economy",
-   "date": "2026-10-15",
-   "topic": "trade_tariffs"
-  },
-  {
-   "title": "UK economy grew 0.1% in August, beating expectations",
-   "url": "https://www.cnbc.com/2026/10/15/uk-gdp-august-2026-economy.html",
-   "source": "CNBC Economy",
-   "date": "2026-10-15",
-   "topic": "jobs_economy"
-  },
-  {
-   "title": "IMF sees milder global slowdown as AI boom offsets war hit \u2014 warns resilience is nearing limits",
-   "url": "https://www.cnbc.com/2026/10/12/imf-world-bank-annual-meetings-october-bangkok-asia-.html",
-   "source": "CNBC Economy",
-   "date": "2026-10-15",
-   "topic": "geopolitics"
-  },
-  {
-   "title": "\u2018Some people did everything right\u2019: I lost my home in the Great Recession. I rent in my 50s. Why is that judged as failure?",
-   "url": "https://www.marketwatch.com/story/i-earn-110-000-a-year-i-lost-my-home-in-the-great-recession-im-renting-in-my-50s-why-is-that-judged-as-failure-d1371d67?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-10-15",
-   "topic": "jobs_economy"
-  },
-  {
-   "title": "Despite bad inflation report, Trump says economy is doing fine",
-   "url": "https://www.npr.org/2026/10/15/nx-s1-6001707/despite-bad-inflation-report-trump-says-economy-is-doing-fine",
-   "source": "NPR",
-   "date": "2026-10-15",
-   "topic": "inflation"
-  },
-  {
-   "title": "Banks with Jeffrey Epstein ties eyed by Democrats Warren and Garcia",
-   "url": "https://www.cnbc.com/2026/10/15/banks-congress-jeffrey-epstein-oversight.html",
-   "source": "CNBC",
-   "date": "2026-10-15",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "Economists: Hot PPI shows Fed's work is not done",
-   "url": "https://www.cnbc.com/2026/10/15/pce-ppi-september-fed-reserve-rate-hike.html",
-   "source": "CNBC Economy",
-   "date": "2026-10-15",
-   "topic": "inflation"
-  },
-  {
-   "title": "Nvidia and Cisco confirm multimillion-dollar donations to Trump's White House ballroom",
-   "url": "https://www.cnbc.com/2026/10/15/trump-ballroom-nvidia-cisco-donations.html",
-   "source": "CNBC",
-   "date": "2026-10-15",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Trump says 'if Ken Paxton loses' Texas Senate race, blame Cornyn and Karl Rove",
-   "url": "https://www.cnbc.com/2026/10/15/trump-paxton-texas-talarico.html",
-   "source": "CNBC",
-   "date": "2026-10-15",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Democrat Talarico says he raised record $64 million over summer in Texas Senate race",
-   "url": "https://www.cnbc.com/2026/10/15/james-talarico-texas-senate-fundraising-ken-paxton.html",
-   "source": "CNBC",
-   "date": "2026-10-15",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "CoreWeave credit default swaps hit distress levels as investors sour on AI debt",
-   "url": "https://www.cnbc.com/2026/10/15/coreweave-credit-default-swaps-hit-distress-levels-as-investors-sour-on-ai-debt.html",
-   "source": "CNBC",
-   "date": "2026-10-15",
-   "topic": "banking_credit"
   }
  ],
  "cycle": [
@@ -284,7 +200,7 @@
    "years": 19,
    "stocks_median": 0.09061946902654872,
    "stocks_down_years": 7,
-   "bonds_median": 0.030572937244680132,
+   "bonds_median": 0.03057376271671086,
    "bond_years": 16,
    "current": false
   },
@@ -294,7 +210,7 @@
    "years": 19,
    "stocks_median": 0.010620399579390094,
    "stocks_down_years": 8,
-   "bonds_median": 0.05998556497099572,
+   "bonds_median": 0.059985564970996164,
    "bond_years": 15,
    "current": true
   },
