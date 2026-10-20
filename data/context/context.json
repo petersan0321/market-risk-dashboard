@@ -35,9 +35,58 @@
    "retail_sales"
   ],
   "warnings": [],
-  "as_of": "2026-10-19"
+  "as_of": "2026-10-20"
  },
  "news": [
+  {
+   "title": "Investors look to earnings to reset the bull market. The key level to watch on the S&P 500",
+   "url": "https://www.cnbc.com/2026/10/20/santoli-key-sp-500-level-to-watch.html",
+   "source": "CNBC",
+   "date": "2026-10-20",
+   "topic": "earnings"
+  },
+  {
+   "title": "What options traders expect from SpaceX earnings after the bell",
+   "url": "https://www.cnbc.com/2026/10/20/spacex-reports-after-the-bell-heres-what-options-traders-expect-.html",
+   "source": "CNBC",
+   "date": "2026-10-20",
+   "topic": "earnings"
+  },
+  {
+   "title": "France to deploy military as it braces for fresh unrest this weekend",
+   "url": "https://www.cnbc.com/2026/10/20/france-protests-curfews-macron-gulf-trip.html",
+   "source": "CNBC",
+   "date": "2026-10-20",
+   "topic": "geopolitics"
+  },
+  {
+   "title": "Oil prices fall as traders hope for diplomatic progress in Middle East",
+   "url": "https://www.cnbc.com/2026/10/20/oil-price-wti-brent-crude.html",
+   "source": "CNBC",
+   "date": "2026-10-20",
+   "topic": "energy"
+  },
+  {
+   "title": "General Motors beats Wall Street's Q3 earnings expectations, narrows full-year guidance",
+   "url": "https://www.cnbc.com/2026/10/20/general-motors-gm-earnings-q3-2026.html",
+   "source": "CNBC",
+   "date": "2026-10-20",
+   "topic": "earnings"
+  },
+  {
+   "title": "\u2018I\u2019m naturally skeptical\u2019: I receive 10 calls a day offering me $15,000 loans at 8% interest. Is this a scam?",
+   "url": "https://www.marketwatch.com/story/im-naturally-skeptical-i-receive-10-calls-a-day-offering-me-15-000-loans-at-8-interest-is-this-a-scam-825c3431?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-10-20",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "Iran, Taunting Trump Over Gas Prices, Braces for Aftermath of Midterm Elections",
+   "url": "https://www.nytimes.com/2026/10/20/us/politics/iran-trump-midterm-elections.html",
+   "source": "New York Times",
+   "date": "2026-10-20",
+   "topic": "elections_politics"
+  },
   {
    "title": "Robot factories and hypersonic missiles: JPMorgan Chase's first $5 billion of defense investments",
    "url": "https://www.cnbc.com/2026/10/19/jpmorgan-security-defense-investments.html",
@@ -107,48 +156,6 @@
    "source": "New York Times",
    "date": "2026-10-18",
    "topic": "jobs_economy"
-  },
-  {
-   "title": "Trump waives broad new Russia sanctions and tariffs under Graham Act, citing national interest",
-   "url": "https://www.cnbc.com/2026/10/17/trump-waives-russia-related-sanctions-tariffs-before-they-take-effect-.html",
-   "source": "CNBC",
-   "date": "2026-10-17",
-   "topic": "trade_tariffs"
-  },
-  {
-   "title": "Trump's student loan overhaul could lead to more bankruptcy filings, former judge says",
-   "url": "https://www.cnbc.com/2026/10/17/trump-student-loans-bankruptcy.html",
-   "source": "CNBC",
-   "date": "2026-10-17",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "\u2018Some people did everything right\u2019: I lost my home in the Great Recession. I rent in my 50s. Why is that judged as failure?",
-   "url": "https://www.marketwatch.com/story/i-earn-110-000-a-year-i-lost-my-home-in-the-great-recession-im-renting-in-my-50s-why-is-that-judged-as-failure-d1371d67?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-10-17",
-   "topic": "jobs_economy"
-  },
-  {
-   "title": "Microsoft, Shopify and 3 more AI stocks that are favorite Wall Street earnings plays",
-   "url": "https://www.marketwatch.com/story/microsoft-shopify-and-3-more-ai-stocks-that-are-favorite-wall-street-earnings-plays-0bb61e81?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-10-17",
-   "topic": "earnings"
-  },
-  {
-   "title": "Fed interest-rate decision this month is a closer call than markets think",
-   "url": "https://www.marketwatch.com/story/fed-interest-rate-decision-this-month-is-a-closer-call-than-markets-think-f96ccf95?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-10-17",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "AI stocks plunge. Inflation heats up. Where we're still finding opportunities",
-   "url": "https://www.cnbc.com/investingclub/2026/10/17/ai-stocks-plunge-inflation-heats-up-where-were-still-finding-opportunities.html",
-   "source": "CNBC",
-   "date": "2026-10-17",
-   "topic": "inflation"
   }
  ],
  "cycle": [
@@ -158,7 +165,7 @@
    "years": 19,
    "stocks_median": 0.09061946902654872,
    "stocks_down_years": 7,
-   "bonds_median": 0.030572937244679466,
+   "bonds_median": 0.030572937244680354,
    "bond_years": 16,
    "current": false
   },
@@ -188,7 +195,7 @@
    "years": 19,
    "stocks_median": 0.11779554059739161,
    "stocks_down_years": 3,
-   "bonds_median": 0.038213407643683195,
+   "bonds_median": 0.03821340764368253,
    "bond_years": 16,
    "current": false
   }

@@ -1,7 +1,7 @@
 {
- "as_of": "2026-10-19",
+ "as_of": "2026-10-20",
  "overall": {
-  "score": 56.4,
+  "score": 56.5,
   "band": "Normal"
  },
  "categories": {
@@ -30,7 +30,7 @@
   "wages_yoy": "green",
   "oil_yoy": "red",
   "cfnai_ma3": "green",
-  "permits_yoy": "green",
+  "permits_yoy": "amber",
   "retail_sales_yoy": "green",
   "indpro_yoy": "amber",
   "consumer_sentiment": "red",
@@ -45,7 +45,7 @@
   "sloos_tightening": "green",
   "cape": "red",
   "equity_risk_premium": "green",
-  "vix": "amber",
+  "vix": "green",
   "vix_term": "amber",
   "breadth_rsp_spy": "amber",
   "spx_vs_200dma": "green",
@@ -59,7 +59,7 @@
   "geopolitical_risk": "red",
   "deficit_gdp": "amber",
   "auction_demand": "green",
-  "fed_path": "amber"
+  "fed_path": "green"
  },
  "rules": {
   "curve_10y2y": [],
