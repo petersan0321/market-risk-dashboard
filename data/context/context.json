@@ -35,9 +35,58 @@
    "retail_sales"
   ],
   "warnings": [],
-  "as_of": "2026-10-20"
+  "as_of": "2026-10-21"
  },
  "news": [
+  {
+   "title": "SpaceX stock jumps 8% after earnings beat and Musk hints at Tesla tie-up",
+   "url": "https://www.cnbc.com/2026/10/21/spacex-spcx-stock-musk-merger-tesla.html",
+   "source": "CNBC",
+   "date": "2026-10-21",
+   "topic": "earnings"
+  },
+  {
+   "title": "Housing is flashing warning signs just as the Fed weighs more interest rate hikes",
+   "url": "https://www.cnbc.com/2026/10/20/housing-mortgage-rates-real-estate-federal-reserve.html",
+   "source": "CNBC",
+   "date": "2026-10-21",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "House committee says Webull messages point to China access to U.S. customer data",
+   "url": "https://www.cnbc.com/2026/10/21/webull-us-customer-data-china-access.html",
+   "source": "CNBC",
+   "date": "2026-10-21",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Oil prices little changed as traders assess Middle East developments",
+   "url": "https://www.cnbc.com/2026/10/21/oil-price-today-wti-brent-rise-on-middle-east-worries.html",
+   "source": "CNBC",
+   "date": "2026-10-21",
+   "topic": "energy"
+  },
+  {
+   "title": "UK inflation jumps to 3.5% \u2014 cementing rate hike expectations",
+   "url": "https://www.cnbc.com/2026/10/21/inflation-uk-cpi-interest-rates.html",
+   "source": "CNBC",
+   "date": "2026-10-21",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "Australian data center operator NextDC's shares plunge 40% after it slashes earnings forecast",
+   "url": "https://www.cnbc.com/2026/10/21/australia-data-center-operator-nexdc-datacenter.html",
+   "source": "CNBC",
+   "date": "2026-10-21",
+   "topic": "earnings"
+  },
+  {
+   "title": "I receive 10 calls a day promising me $15,000 loans at 8% interest. Are these legitimate offers?",
+   "url": "https://www.marketwatch.com/story/im-naturally-skeptical-i-receive-10-calls-a-day-offering-me-15-000-loans-at-8-interest-is-this-a-scam-825c3431?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-10-21",
+   "topic": "banking_credit"
+  },
   {
    "title": "Investors look to earnings to reset the bull market. The key level to watch on the S&P 500",
    "url": "https://www.cnbc.com/2026/10/20/santoli-key-sp-500-level-to-watch.html",
@@ -88,6 +137,20 @@
    "topic": "elections_politics"
   },
   {
+   "title": "Netflix posts third-quarter earnings beat, but shares fall on advertising and revenue guidance",
+   "url": "https://www.cnbc.com/2026/10/20/netflix-nflx-earnings-q3-2026.html",
+   "source": "CNBC",
+   "date": "2026-10-20",
+   "topic": "earnings"
+  },
+  {
+   "title": "Mike Bloomberg spent $80M to boost Democrats in midterms: NYT",
+   "url": "https://www.cnbc.com/2026/10/20/mike-bloomberg-democrats-house-trump.html",
+   "source": "CNBC",
+   "date": "2026-10-20",
+   "topic": "elections_politics"
+  },
+  {
    "title": "Robot factories and hypersonic missiles: JPMorgan Chase's first $5 billion of defense investments",
    "url": "https://www.cnbc.com/2026/10/19/jpmorgan-security-defense-investments.html",
    "source": "CNBC",
@@ -128,34 +191,6 @@
    "source": "MarketWatch",
    "date": "2026-10-19",
    "topic": "banking_credit"
-  },
-  {
-   "title": "Trump waives broad new Russia sanctions, Zelenskyy condemns it as 'wrong'",
-   "url": "https://www.cnbc.com/2026/10/17/trump-waives-russia-related-sanctions-tariffs-before-they-take-effect-.html",
-   "source": "CNBC",
-   "date": "2026-10-18",
-   "topic": "geopolitics"
-  },
-  {
-   "title": "These surprising stocks could be some of the biggest drivers of S&P 500 earnings growth",
-   "url": "https://www.marketwatch.com/story/these-surprising-stocks-could-be-some-of-the-biggest-drivers-of-s-p-500-earnings-growth-ea073a07?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-10-18",
-   "topic": "earnings"
-  },
-  {
-   "title": "Stocks are heading for a high-stakes showdown, as strong earnings collide with rising borrowing costs",
-   "url": "https://www.marketwatch.com/story/stocks-are-heading-for-a-high-stakes-showdown-as-strong-earnings-collide-with-rising-borrowing-costs-6f8ea5b8?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-10-18",
-   "topic": "earnings"
-  },
-  {
-   "title": "3 Charts That Explain the Economy as Voters Head to the Polls",
-   "url": "https://www.nytimes.com/2026/10/18/business/economy/economy-midterm-elections.html",
-   "source": "New York Times",
-   "date": "2026-10-18",
-   "topic": "jobs_economy"
   }
  ],
  "cycle": [
@@ -165,7 +200,7 @@
    "years": 19,
    "stocks_median": 0.09061946902654872,
    "stocks_down_years": 7,
-   "bonds_median": 0.030572937244680354,
+   "bonds_median": 0.030572135577211834,
    "bond_years": 16,
    "current": false
   },
@@ -175,7 +210,7 @@
    "years": 19,
    "stocks_median": 0.010620399579390094,
    "stocks_down_years": 8,
-   "bonds_median": 0.05998698172496186,
+   "bonds_median": 0.05998556497099594,
    "bond_years": 15,
    "current": true
   },
@@ -195,7 +230,7 @@
    "years": 19,
    "stocks_median": 0.11779554059739161,
    "stocks_down_years": 3,
-   "bonds_median": 0.03821340764368253,
+   "bonds_median": 0.038213407643683084,
    "bond_years": 16,
    "current": false
   }
