@@ -1,7 +1,7 @@
 {
- "as_of": "2026-10-22",
+ "as_of": "2026-10-23",
  "overall": {
-  "score": 55.7,
+  "score": 56.2,
   "band": "Normal"
  },
  "categories": {
@@ -46,8 +46,8 @@
   "cape": "red",
   "equity_risk_premium": "green",
   "vix": "green",
-  "vix_term": "green",
-  "breadth_rsp_spy": "amber",
+  "vix_term": "amber",
+  "breadth_rsp_spy": "green",
   "spx_vs_200dma": "green",
   "spx_drawdown": "green",
   "dollar_yoy": "amber",
@@ -59,7 +59,7 @@
   "geopolitical_risk": "red",
   "deficit_gdp": "amber",
   "auction_demand": "green",
-  "fed_path": "green"
+  "fed_path": "amber"
  },
  "rules": {
   "curve_10y2y": [],

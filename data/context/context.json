@@ -35,9 +35,86 @@
    "retail_sales"
   ],
   "warnings": [],
-  "as_of": "2026-10-22"
+  "as_of": "2026-10-23"
  },
  "news": [
+  {
+   "title": "DOJ sues to block Alaska from certifying Senate race winner if Republican narrowly loses",
+   "url": "https://www.cnbc.com/2026/10/23/alaska-senate-election-doj-lawsuit-sullivan.html",
+   "source": "CNBC",
+   "date": "2026-10-23",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Texas Senate race: New Talarico ad rips Elon Musk 'dark money' push",
+   "url": "https://www.cnbc.com/2026/10/23/james-talarico-campaign-ad-elon-musk-texas-senate-election.html",
+   "source": "CNBC",
+   "date": "2026-10-23",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Corruption is voters' top issue ahead of midterm election, CNBC survey shows",
+   "url": "https://www.cnbc.com/2026/10/23/corruption-midterm-election-cnbc-poll-trump.html",
+   "source": "CNBC",
+   "date": "2026-10-23",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Brent crude oil tops $116, a six-month high, as tensions swell in the Middle East",
+   "url": "https://www.cnbc.com/2026/10/23/oil-price-brent-wti-iran-war-saudi-arabia.html",
+   "source": "CNBC",
+   "date": "2026-10-23",
+   "topic": "energy"
+  },
+  {
+   "title": "Restaurant earnings will test whether owning more brands pays off",
+   "url": "https://www.cnbc.com/2026/10/23/darden-brinker-qsr-stocks-restaurant-earnings.html",
+   "source": "CNBC",
+   "date": "2026-10-23",
+   "topic": "earnings"
+  },
+  {
+   "title": "With earnings in rearview mirror, SpaceX-Tesla merger chatter takes center stage",
+   "url": "https://www.cnbc.com/2026/10/23/spacex-tesla-merger-chatter-takes-center-stage-after-earnings.html",
+   "source": "CNBC",
+   "date": "2026-10-23",
+   "topic": "earnings"
+  },
+  {
+   "title": "10-year Treasury yield drops back to 5% this week as investors seek cover from AI worries",
+   "url": "https://www.cnbc.com/2026/10/23/bonds-yields-us-treasurys.html",
+   "source": "CNBC",
+   "date": "2026-10-23",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "AI agents could disrupt bank deposits. Why Wall Street may be overreacting",
+   "url": "https://www.cnbc.com/investingclub/2026/10/23/ai-agents-could-disrupt-bank-deposits-why-wall-street-may-be-overreacting.html",
+   "source": "CNBC",
+   "date": "2026-10-23",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "Higher interest rates have made family offices pickier about investing in real estate",
+   "url": "https://www.cnbc.com/2026/10/23/high-interest-rates-raise-the-bar-for-real-estate-deals.html",
+   "source": "CNBC",
+   "date": "2026-10-23",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "This hot AI-fueled stock has been in a rut. It just beat earnings expectations by 36%.",
+   "url": "https://www.marketwatch.com/story/this-hot-ai-fueled-stock-has-been-in-a-rut-it-just-beat-earnings-expectations-by-36-4a4188cb?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-10-23",
+   "topic": "earnings"
+  },
+  {
+   "title": "We have a $300,000 mortgage with a 2.75% interest rate. I want to pay it off. My husband says I\u2019m crazy. Who\u2019s right?",
+   "url": "https://www.marketwatch.com/story/we-have-a-300-000-mortgage-with-a-2-75-interest-rate-i-want-to-pay-it-off-my-husband-says-im-crazy-whos-right-4ed15226?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-10-23",
+   "topic": "fed_rates"
+  },
   {
    "title": "Trump's approval rating on economy hits all-time low as midterm looms: CNBC survey",
    "url": "https://www.cnbc.com/2026/10/22/trump-economic-approval-rating-midterms-poll.html",
@@ -130,6 +207,13 @@
    "topic": "geopolitics"
   },
   {
+   "title": "Meta\u2019s deal to keep Zuckerberg in California adds fuel to wealth tax debate ahead of election",
+   "url": "https://www.cnbc.com/2026/10/22/meta-mark-zuckerberg-california-billionaire-tax.html",
+   "source": "CNBC",
+   "date": "2026-10-22",
+   "topic": "elections_politics"
+  },
+  {
    "title": "SpaceX stock jumps 8% after earnings beat and Musk hints at Tesla tie-up",
    "url": "https://www.cnbc.com/2026/10/21/spacex-spcx-stock-musk-merger-tesla.html",
    "source": "CNBC",
@@ -177,69 +261,6 @@
    "source": "MarketWatch",
    "date": "2026-10-21",
    "topic": "banking_credit"
-  },
-  {
-   "title": "Investors look to earnings to reset the bull market. The key level to watch on the S&P 500",
-   "url": "https://www.cnbc.com/2026/10/20/santoli-key-sp-500-level-to-watch.html",
-   "source": "CNBC",
-   "date": "2026-10-20",
-   "topic": "earnings"
-  },
-  {
-   "title": "What options traders expect from SpaceX earnings after the bell",
-   "url": "https://www.cnbc.com/2026/10/20/spacex-reports-after-the-bell-heres-what-options-traders-expect-.html",
-   "source": "CNBC",
-   "date": "2026-10-20",
-   "topic": "earnings"
-  },
-  {
-   "title": "France to deploy military as it braces for fresh unrest this weekend",
-   "url": "https://www.cnbc.com/2026/10/20/france-protests-curfews-macron-gulf-trip.html",
-   "source": "CNBC",
-   "date": "2026-10-20",
-   "topic": "geopolitics"
-  },
-  {
-   "title": "Oil prices fall as traders hope for diplomatic progress in Middle East",
-   "url": "https://www.cnbc.com/2026/10/20/oil-price-wti-brent-crude.html",
-   "source": "CNBC",
-   "date": "2026-10-20",
-   "topic": "energy"
-  },
-  {
-   "title": "General Motors beats Wall Street's Q3 earnings expectations, narrows full-year guidance",
-   "url": "https://www.cnbc.com/2026/10/20/general-motors-gm-earnings-q3-2026.html",
-   "source": "CNBC",
-   "date": "2026-10-20",
-   "topic": "earnings"
-  },
-  {
-   "title": "\u2018I\u2019m naturally skeptical\u2019: I receive 10 calls a day offering me $15,000 loans at 8% interest. Is this a scam?",
-   "url": "https://www.marketwatch.com/story/im-naturally-skeptical-i-receive-10-calls-a-day-offering-me-15-000-loans-at-8-interest-is-this-a-scam-825c3431?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-10-20",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "Iran, Taunting Trump Over Gas Prices, Braces for Aftermath of Midterm Elections",
-   "url": "https://www.nytimes.com/2026/10/20/us/politics/iran-trump-midterm-elections.html",
-   "source": "New York Times",
-   "date": "2026-10-20",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Netflix posts third-quarter earnings beat, but shares fall on advertising and revenue guidance",
-   "url": "https://www.cnbc.com/2026/10/20/netflix-nflx-earnings-q3-2026.html",
-   "source": "CNBC",
-   "date": "2026-10-20",
-   "topic": "earnings"
-  },
-  {
-   "title": "Mike Bloomberg spent $80M to boost Democrats in midterms: NYT",
-   "url": "https://www.cnbc.com/2026/10/20/mike-bloomberg-democrats-house-trump.html",
-   "source": "CNBC",
-   "date": "2026-10-20",
-   "topic": "elections_politics"
   }
  ],
  "cycle": [
@@ -249,7 +270,7 @@
    "years": 19,
    "stocks_median": 0.09061946902654872,
    "stocks_down_years": 7,
-   "bonds_median": 0.030572961047956926,
+   "bonds_median": 0.03057376271671075,
    "bond_years": 16,
    "current": false
   },
@@ -259,7 +280,7 @@
    "years": 19,
    "stocks_median": 0.010620399579390094,
    "stocks_down_years": 8,
-   "bonds_median": 0.059985564970996386,
+   "bonds_median": 0.0599855649709955,
    "bond_years": 15,
    "current": true
   },
