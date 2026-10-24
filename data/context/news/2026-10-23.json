@@ -75,5 +75,33 @@
   "source": "MarketWatch",
   "date": "2026-10-23",
   "topic": "fed_rates"
+ },
+ {
+  "title": "Trump dropping some Canada tariffs but 'replacing' them with other products",
+  "url": "https://www.cnbc.com/2026/10/23/trump-tariffs-canada-susan-collins.html",
+  "source": "CNBC",
+  "date": "2026-10-23",
+  "topic": "trade_tariffs"
+ },
+ {
+  "title": "Moody's holds steady on France's credit rating as country grapples with turmoil and higher yields",
+  "url": "https://www.cnbc.com/2026/10/23/moodys-holds-steady-on-frances-credit-rating-as-country-grapples-with-turmoil-and-higher-yields.html",
+  "source": "CNBC",
+  "date": "2026-10-23",
+  "topic": "banking_credit"
+ },
+ {
+  "title": "Qatar deal to buy U.S. natural gas shows how Iran war has redrawn global energy markets",
+  "url": "https://www.cnbc.com/2026/10/23/cheniere-qatar-energy-lng-natural-gas-iran-war-strait-hormuz.html",
+  "source": "CNBC",
+  "date": "2026-10-23",
+  "topic": "geopolitics"
+ },
+ {
+  "title": "Trump's approval rating on economy hits all-time low as midterm looms: CNBC survey",
+  "url": "https://www.cnbc.com/2026/10/22/trump-economic-approval-rating-midterms-poll.html",
+  "source": "CNBC Economy",
+  "date": "2026-10-23",
+  "topic": "elections_politics"
  }
 ]

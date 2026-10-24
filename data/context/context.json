@@ -35,9 +35,30 @@
    "retail_sales"
   ],
   "warnings": [],
-  "as_of": "2026-10-23"
+  "as_of": "2026-10-24"
  },
  "news": [
+  {
+   "title": "Turmoil hits AI buildout as neoclouds face pressure, credit risks mount and Solidigm pulls IPO",
+   "url": "https://www.cnbc.com/2026/10/23/ai-turmoil-neoclouds-struggle-credit-risks-jump-solidigm-pulls-ipo.html",
+   "source": "CNBC",
+   "date": "2026-10-24",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "America by the numbers: How voters feel about the economy, inflation, AI and Trump",
+   "url": "https://www.cnbc.com/2026/10/23/america-by-the-numbers-how-voters-feel-about-the-economy-inflation-ai-and-trump.html",
+   "source": "CNBC",
+   "date": "2026-10-24",
+   "topic": "inflation"
+  },
+  {
+   "title": "\u2018Non-answers\u2019 aren\u2019t working. This is what investors really need from the Fed.",
+   "url": "https://www.marketwatch.com/story/non-answers-arent-working-this-is-what-investors-really-need-from-the-fed-673a9dce?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-10-24",
+   "topic": "fed_rates"
+  },
   {
    "title": "DOJ sues to block Alaska from certifying Senate race winner if Republican narrowly loses",
    "url": "https://www.cnbc.com/2026/10/23/alaska-senate-election-doj-lawsuit-sullivan.html",
@@ -114,6 +135,34 @@
    "source": "MarketWatch",
    "date": "2026-10-23",
    "topic": "fed_rates"
+  },
+  {
+   "title": "Trump dropping some Canada tariffs but 'replacing' them with other products",
+   "url": "https://www.cnbc.com/2026/10/23/trump-tariffs-canada-susan-collins.html",
+   "source": "CNBC",
+   "date": "2026-10-23",
+   "topic": "trade_tariffs"
+  },
+  {
+   "title": "Moody's holds steady on France's credit rating as country grapples with turmoil and higher yields",
+   "url": "https://www.cnbc.com/2026/10/23/moodys-holds-steady-on-frances-credit-rating-as-country-grapples-with-turmoil-and-higher-yields.html",
+   "source": "CNBC",
+   "date": "2026-10-23",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "Qatar deal to buy U.S. natural gas shows how Iran war has redrawn global energy markets",
+   "url": "https://www.cnbc.com/2026/10/23/cheniere-qatar-energy-lng-natural-gas-iran-war-strait-hormuz.html",
+   "source": "CNBC",
+   "date": "2026-10-23",
+   "topic": "geopolitics"
+  },
+  {
+   "title": "Trump's approval rating on economy hits all-time low as midterm looms: CNBC survey",
+   "url": "https://www.cnbc.com/2026/10/22/trump-economic-approval-rating-midterms-poll.html",
+   "source": "CNBC Economy",
+   "date": "2026-10-23",
+   "topic": "elections_politics"
   },
   {
    "title": "Trump's approval rating on economy hits all-time low as midterm looms: CNBC survey",
@@ -212,55 +261,6 @@
    "source": "CNBC",
    "date": "2026-10-22",
    "topic": "elections_politics"
-  },
-  {
-   "title": "SpaceX stock jumps 8% after earnings beat and Musk hints at Tesla tie-up",
-   "url": "https://www.cnbc.com/2026/10/21/spacex-spcx-stock-musk-merger-tesla.html",
-   "source": "CNBC",
-   "date": "2026-10-21",
-   "topic": "earnings"
-  },
-  {
-   "title": "Housing is flashing warning signs just as the Fed weighs more interest rate hikes",
-   "url": "https://www.cnbc.com/2026/10/20/housing-mortgage-rates-real-estate-federal-reserve.html",
-   "source": "CNBC",
-   "date": "2026-10-21",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "House committee says Webull messages point to China access to U.S. customer data",
-   "url": "https://www.cnbc.com/2026/10/21/webull-us-customer-data-china-access.html",
-   "source": "CNBC",
-   "date": "2026-10-21",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Oil prices little changed as traders assess Middle East developments",
-   "url": "https://www.cnbc.com/2026/10/21/oil-price-today-wti-brent-rise-on-middle-east-worries.html",
-   "source": "CNBC",
-   "date": "2026-10-21",
-   "topic": "energy"
-  },
-  {
-   "title": "UK inflation jumps to 3.5% \u2014 cementing rate hike expectations",
-   "url": "https://www.cnbc.com/2026/10/21/inflation-uk-cpi-interest-rates.html",
-   "source": "CNBC",
-   "date": "2026-10-21",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "Australian data center operator NextDC's shares plunge 40% after it slashes earnings forecast",
-   "url": "https://www.cnbc.com/2026/10/21/australia-data-center-operator-nexdc-datacenter.html",
-   "source": "CNBC",
-   "date": "2026-10-21",
-   "topic": "earnings"
-  },
-  {
-   "title": "I receive 10 calls a day promising me $15,000 loans at 8% interest. Are these legitimate offers?",
-   "url": "https://www.marketwatch.com/story/im-naturally-skeptical-i-receive-10-calls-a-day-offering-me-15-000-loans-at-8-interest-is-this-a-scam-825c3431?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-10-21",
-   "topic": "banking_credit"
   }
  ],
  "cycle": [
@@ -270,7 +270,7 @@
    "years": 19,
    "stocks_median": 0.09061946902654872,
    "stocks_down_years": 7,
-   "bonds_median": 0.03057376271671075,
+   "bonds_median": 0.03057376271671053,
    "bond_years": 16,
    "current": false
   },
@@ -280,7 +280,7 @@
    "years": 19,
    "stocks_median": 0.010620399579390094,
    "stocks_down_years": 8,
-   "bonds_median": 0.0599855649709955,
+   "bonds_median": 0.05998556497099661,
    "bond_years": 15,
    "current": true
   },
@@ -300,7 +300,7 @@
    "years": 19,
    "stocks_median": 0.11779554059739161,
    "stocks_down_years": 3,
-   "bonds_median": 0.03821340764368264,
+   "bonds_median": 0.03821340764368275,
    "bond_years": 16,
    "current": false
   }
