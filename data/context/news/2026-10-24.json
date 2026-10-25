@@ -19,5 +19,19 @@
   "source": "MarketWatch",
   "date": "2026-10-24",
   "topic": "fed_rates"
+ },
+ {
+  "title": "American embassies tighten security as Iran threat warnings intensify ahead of U.S. midterm elections",
+  "url": "https://www.cnbc.com/2026/10/24/iran-threats-us-embassies-middle-east.html",
+  "source": "CNBC",
+  "date": "2026-10-24",
+  "topic": "elections_politics"
+ },
+ {
+  "title": "Trade tariffs cause whiplash at Port Milwaukee",
+  "url": "https://www.npr.org/2026/10/24/nx-s1-6011193/trade-tariffs-cause-whiplash-at-port-milwaukee",
+  "source": "NPR",
+  "date": "2026-10-24",
+  "topic": "trade_tariffs"
  }
 ]
