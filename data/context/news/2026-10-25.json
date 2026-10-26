@@ -26,5 +26,19 @@
   "source": "MarketWatch",
   "date": "2026-10-25",
   "topic": "fed_rates"
+ },
+ {
+  "title": "Audi defends plans for a $4 billion Georgia plant amid VW restructuring, tariffs",
+  "url": "https://www.cnbc.com/2026/10/25/audi-georgia-us-plant-tariffs-volkswagen.html",
+  "source": "CNBC",
+  "date": "2026-10-25",
+  "topic": "trade_tariffs"
+ },
+ {
+  "title": "Ukraine disputes Elon Musk\u2019s claim that its military violated Starlink terms during drone operations",
+  "url": "https://www.cnbc.com/2026/10/25/ukraine-musk-starlink-terms-dispute.html",
+  "source": "CNBC",
+  "date": "2026-10-25",
+  "topic": "geopolitics"
  }
 ]

@@ -35,9 +35,65 @@
    "retail_sales"
   ],
   "warnings": [],
-  "as_of": "2026-10-25"
+  "as_of": "2026-10-26"
  },
  "news": [
+  {
+   "title": "Alaska Senate: Peltola seeks quick dismissal of DOJ election lawsuit before midterm",
+   "url": "https://www.cnbc.com/2026/10/26/alaska-senate-peltola-doj-lawsuit-election-sullivan.html",
+   "source": "CNBC",
+   "date": "2026-10-26",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Federal Reserve is likely to hold interest rates steady in October. Here's what that means for consumers",
+   "url": "https://www.cnbc.com/2026/10/26/fed-decision-expectations-october-meeting.html",
+   "source": "CNBC",
+   "date": "2026-10-26",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "Caregiving for adult relatives can cost thousands. AARP survey finds support could matter to midterm voters",
+   "url": "https://www.cnbc.com/2026/10/26/family-caregiving-costs-2026-midterm-elections.html",
+   "source": "CNBC",
+   "date": "2026-10-26",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Brazilian stocks rocked as Lula wins presidential election, Bolsonaro reportedly refuses to concede",
+   "url": "https://www.cnbc.com/2026/10/26/brazil-lula-win-presidential-election-runoff-vote.html",
+   "source": "CNBC",
+   "date": "2026-10-26",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Brent oil tops $117 as Saudi defense minister travels to Iran for talks to de-escalate conflict",
+   "url": "https://www.cnbc.com/2026/10/26/oil-prices-today-wti-brent.html",
+   "source": "CNBC",
+   "date": "2026-10-26",
+   "topic": "geopolitics"
+  },
+  {
+   "title": "How war, security and coalition math are shaping the Israeli election",
+   "url": "https://www.cnbc.com/2026/10/26/israel-election-netanyahu-iran-gaza-palestine.html",
+   "source": "CNBC",
+   "date": "2026-10-26",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Blanche defends Trump-ordered lawsuit over Alaska Senate election certification",
+   "url": "https://www.cnbc.com/2026/10/25/blanche-doj-alaska-senate-certification-lawsuit.html",
+   "source": "CNBC",
+   "date": "2026-10-26",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Some Republicans are opposing Trump on tariffs. Maine\u2019s Susan Collins just got him to back down on Canadian levies.",
+   "url": "https://www.marketwatch.com/story/some-republicans-are-opposing-trump-on-tariffs-maines-susan-collins-just-got-him-to-back-down-on-canadian-levies-02b202ae?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-10-26",
+   "topic": "trade_tariffs"
+  },
   {
    "title": "Saudi Arabia says it intercepted missiles and drones from Iran-backed Houthis",
    "url": "https://www.cnbc.com/2026/10/25/saudi-arabia-houthi-missile-drone-interceptions.html",
@@ -65,6 +121,20 @@
    "source": "MarketWatch",
    "date": "2026-10-25",
    "topic": "fed_rates"
+  },
+  {
+   "title": "Audi defends plans for a $4 billion Georgia plant amid VW restructuring, tariffs",
+   "url": "https://www.cnbc.com/2026/10/25/audi-georgia-us-plant-tariffs-volkswagen.html",
+   "source": "CNBC",
+   "date": "2026-10-25",
+   "topic": "trade_tariffs"
+  },
+  {
+   "title": "Ukraine disputes Elon Musk\u2019s claim that its military violated Starlink terms during drone operations",
+   "url": "https://www.cnbc.com/2026/10/25/ukraine-musk-starlink-terms-dispute.html",
+   "source": "CNBC",
+   "date": "2026-10-25",
+   "topic": "geopolitics"
   },
   {
    "title": "Turmoil hits AI buildout as neoclouds face pressure, credit risks mount and Solidigm pulls IPO",
@@ -100,111 +170,6 @@
    "source": "NPR",
    "date": "2026-10-24",
    "topic": "trade_tariffs"
-  },
-  {
-   "title": "DOJ sues to block Alaska from certifying Senate race winner if Republican narrowly loses",
-   "url": "https://www.cnbc.com/2026/10/23/alaska-senate-election-doj-lawsuit-sullivan.html",
-   "source": "CNBC",
-   "date": "2026-10-23",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Texas Senate race: New Talarico ad rips Elon Musk 'dark money' push",
-   "url": "https://www.cnbc.com/2026/10/23/james-talarico-campaign-ad-elon-musk-texas-senate-election.html",
-   "source": "CNBC",
-   "date": "2026-10-23",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Corruption is voters' top issue ahead of midterm election, CNBC survey shows",
-   "url": "https://www.cnbc.com/2026/10/23/corruption-midterm-election-cnbc-poll-trump.html",
-   "source": "CNBC",
-   "date": "2026-10-23",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Brent crude oil tops $116, a six-month high, as tensions swell in the Middle East",
-   "url": "https://www.cnbc.com/2026/10/23/oil-price-brent-wti-iran-war-saudi-arabia.html",
-   "source": "CNBC",
-   "date": "2026-10-23",
-   "topic": "energy"
-  },
-  {
-   "title": "Restaurant earnings will test whether owning more brands pays off",
-   "url": "https://www.cnbc.com/2026/10/23/darden-brinker-qsr-stocks-restaurant-earnings.html",
-   "source": "CNBC",
-   "date": "2026-10-23",
-   "topic": "earnings"
-  },
-  {
-   "title": "With earnings in rearview mirror, SpaceX-Tesla merger chatter takes center stage",
-   "url": "https://www.cnbc.com/2026/10/23/spacex-tesla-merger-chatter-takes-center-stage-after-earnings.html",
-   "source": "CNBC",
-   "date": "2026-10-23",
-   "topic": "earnings"
-  },
-  {
-   "title": "10-year Treasury yield drops back to 5% this week as investors seek cover from AI worries",
-   "url": "https://www.cnbc.com/2026/10/23/bonds-yields-us-treasurys.html",
-   "source": "CNBC",
-   "date": "2026-10-23",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "AI agents could disrupt bank deposits. Why Wall Street may be overreacting",
-   "url": "https://www.cnbc.com/investingclub/2026/10/23/ai-agents-could-disrupt-bank-deposits-why-wall-street-may-be-overreacting.html",
-   "source": "CNBC",
-   "date": "2026-10-23",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "Higher interest rates have made family offices pickier about investing in real estate",
-   "url": "https://www.cnbc.com/2026/10/23/high-interest-rates-raise-the-bar-for-real-estate-deals.html",
-   "source": "CNBC",
-   "date": "2026-10-23",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "This hot AI-fueled stock has been in a rut. It just beat earnings expectations by 36%.",
-   "url": "https://www.marketwatch.com/story/this-hot-ai-fueled-stock-has-been-in-a-rut-it-just-beat-earnings-expectations-by-36-4a4188cb?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-10-23",
-   "topic": "earnings"
-  },
-  {
-   "title": "We have a $300,000 mortgage with a 2.75% interest rate. I want to pay it off. My husband says I\u2019m crazy. Who\u2019s right?",
-   "url": "https://www.marketwatch.com/story/we-have-a-300-000-mortgage-with-a-2-75-interest-rate-i-want-to-pay-it-off-my-husband-says-im-crazy-whos-right-4ed15226?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-10-23",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "Trump dropping some Canada tariffs but 'replacing' them with other products",
-   "url": "https://www.cnbc.com/2026/10/23/trump-tariffs-canada-susan-collins.html",
-   "source": "CNBC",
-   "date": "2026-10-23",
-   "topic": "trade_tariffs"
-  },
-  {
-   "title": "Moody's holds steady on France's credit rating as country grapples with turmoil and higher yields",
-   "url": "https://www.cnbc.com/2026/10/23/moodys-holds-steady-on-frances-credit-rating-as-country-grapples-with-turmoil-and-higher-yields.html",
-   "source": "CNBC",
-   "date": "2026-10-23",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "Qatar deal to buy U.S. natural gas shows how Iran war has redrawn global energy markets",
-   "url": "https://www.cnbc.com/2026/10/23/cheniere-qatar-energy-lng-natural-gas-iran-war-strait-hormuz.html",
-   "source": "CNBC",
-   "date": "2026-10-23",
-   "topic": "geopolitics"
-  },
-  {
-   "title": "Trump's approval rating on economy hits all-time low as midterm looms: CNBC survey",
-   "url": "https://www.cnbc.com/2026/10/22/trump-economic-approval-rating-midterms-poll.html",
-   "source": "CNBC Economy",
-   "date": "2026-10-23",
-   "topic": "elections_politics"
   }
  ],
  "cycle": [
@@ -214,7 +179,7 @@
    "years": 19,
    "stocks_median": 0.09061946902654872,
    "stocks_down_years": 7,
-   "bonds_median": 0.030572937244680465,
+   "bonds_median": 0.030572961047956926,
    "bond_years": 16,
    "current": false
   },
@@ -224,7 +189,7 @@
    "years": 19,
    "stocks_median": 0.010620399579390094,
    "stocks_down_years": 8,
-   "bonds_median": 0.05998556497099705,
+   "bonds_median": 0.059985564970996164,
    "bond_years": 15,
    "current": true
   },
@@ -244,7 +209,7 @@
    "years": 19,
    "stocks_median": 0.11779554059739161,
    "stocks_down_years": 3,
-   "bonds_median": 0.03821340764368286,
+   "bonds_median": 0.038213407643683195,
    "bond_years": 16,
    "current": false
   }
