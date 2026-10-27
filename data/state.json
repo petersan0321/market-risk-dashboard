@@ -1,7 +1,7 @@
 {
- "as_of": "2026-10-26",
+ "as_of": "2026-10-27",
  "overall": {
-  "score": 56.1,
+  "score": 55.6,
   "band": "Normal"
  },
  "categories": {
@@ -45,7 +45,7 @@
   "sloos_tightening": "green",
   "cape": "red",
   "equity_risk_premium": "green",
-  "vix": "amber",
+  "vix": "green",
   "vix_term": "amber",
   "breadth_rsp_spy": "green",
   "spx_vs_200dma": "green",

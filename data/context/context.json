@@ -35,9 +35,107 @@
    "retail_sales"
   ],
   "warnings": [],
-  "as_of": "2026-10-26"
+  "as_of": "2026-10-27"
  },
  "news": [
+  {
+   "title": "Fed expected to hold rates steady, but Warsh may point way to more hikes",
+   "url": "https://www.cnbc.com/2026/10/27/federal-reserve-rates-kevin-warsh.html",
+   "source": "CNBC",
+   "date": "2026-10-27",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "Honda warns 50% Canada auto tariffs would be catastrophic for auto industry",
+   "url": "https://www.cnbc.com/2026/10/27/honda-warns-50percent-canada-auto-tariffs-would-be-catastrophic.html",
+   "source": "CNBC",
+   "date": "2026-10-27",
+   "topic": "trade_tariffs"
+  },
+  {
+   "title": "Coca-Cola hikes earnings outlook, even as it sees lackluster demand in North America",
+   "url": "https://www.cnbc.com/2026/10/27/coca-cola-ko-q3-2026-earnings.html",
+   "source": "CNBC",
+   "date": "2026-10-27",
+   "topic": "earnings"
+  },
+  {
+   "title": "Silicon Valley AI political groups turn on each other in the 2026 election",
+   "url": "https://www.cnbc.com/2026/10/27/ai-political-spending-silicon-valley-election.html",
+   "source": "CNBC",
+   "date": "2026-10-27",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Melania Trump-brokered local ceasefire begins as Russia continues attacks on Ukraine",
+   "url": "https://www.cnbc.com/2026/10/27/russia-ukraine-zelenskyy-trump-putin-ceasefire.html",
+   "source": "CNBC",
+   "date": "2026-10-27",
+   "topic": "geopolitics"
+  },
+  {
+   "title": "UPS beats quarterly expectations, raises full-year guidance again",
+   "url": "https://www.cnbc.com/2026/10/27/ups-ups-q3-2026-earnings.html",
+   "source": "CNBC",
+   "date": "2026-10-27",
+   "topic": "earnings"
+  },
+  {
+   "title": "World Bank's Banga: Availability of capital 'not really an issue' as AI demand drives up borrowing costs",
+   "url": "https://www.cnbc.com/2026/10/27/world-bank-president-ajay-banga.html",
+   "source": "CNBC",
+   "date": "2026-10-27",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "Israel election puts Netanyahu\u2019s wartime leadership on the line as Trump urges voters to return him to power",
+   "url": "https://www.cnbc.com/2026/10/26/israel-election-netanyahu-iran-gaza-palestine.html",
+   "source": "CNBC",
+   "date": "2026-10-27",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Porsche profit rebounds as luxury carmaker reduces exposure to China",
+   "url": "https://www.cnbc.com/2026/10/27/porsche-china-profit-recovery.html",
+   "source": "CNBC",
+   "date": "2026-10-27",
+   "topic": "earnings"
+  },
+  {
+   "title": "Judge fast-tracks DOJ's Alaska Senate lawsuit as Peltola seeks dismissal before Election Day",
+   "url": "https://www.cnbc.com/2026/10/26/alaska-senate-peltola-doj-lawsuit-election-sullivan.html",
+   "source": "CNBC",
+   "date": "2026-10-27",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Oil prices fall after Iran supreme leader and top security official discuss conditions to end war",
+   "url": "https://www.cnbc.com/2026/10/27/oil-today-iran-us-crude-wti-brent-trump.html",
+   "source": "CNBC",
+   "date": "2026-10-27",
+   "topic": "geopolitics"
+  },
+  {
+   "title": "Fed rate hikes are coming, but not this week: CNBC survey",
+   "url": "https://www.cnbc.com/2026/10/27/federal-reserve-rate-hike-timing-expectations.html",
+   "source": "CNBC Economy",
+   "date": "2026-10-27",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "The U.S. economy is gathering steam. This is the chief reason why.",
+   "url": "https://www.marketwatch.com/story/u-s-economy-is-gathering-steam-this-is-the-chief-reason-why-9772978f?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-10-27",
+   "topic": "jobs_economy"
+  },
+  {
+   "title": "Microsoft earnings will look funky \u2014 but an elusive number is finally arriving",
+   "url": "https://www.marketwatch.com/story/microsoft-earnings-will-look-funky-but-an-elusive-number-is-finally-arriving-73236a94?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-10-27",
+   "topic": "earnings"
+  },
   {
    "title": "Alaska Senate: Peltola seeks quick dismissal of DOJ election lawsuit before midterm",
    "url": "https://www.cnbc.com/2026/10/26/alaska-senate-peltola-doj-lawsuit-election-sullivan.html",
@@ -95,6 +193,13 @@
    "topic": "trade_tariffs"
   },
   {
+   "title": "Analysis: Why a $2 trillion deficit and 5% Treasury yields are becoming America's biggest economic challenge",
+   "url": "https://www.cnbc.com/2026/10/15/treasury-yields-deficit-national-debt-ai.html",
+   "source": "CNBC Economy",
+   "date": "2026-10-26",
+   "topic": "fed_rates"
+  },
+  {
    "title": "Saudi Arabia says it intercepted missiles and drones from Iran-backed Houthis",
    "url": "https://www.cnbc.com/2026/10/25/saudi-arabia-houthi-missile-drone-interceptions.html",
    "source": "CNBC",
@@ -135,41 +240,6 @@
    "source": "CNBC",
    "date": "2026-10-25",
    "topic": "geopolitics"
-  },
-  {
-   "title": "Turmoil hits AI buildout as neoclouds face pressure, credit risks mount and Solidigm pulls IPO",
-   "url": "https://www.cnbc.com/2026/10/23/ai-turmoil-neoclouds-struggle-credit-risks-jump-solidigm-pulls-ipo.html",
-   "source": "CNBC",
-   "date": "2026-10-24",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "America by the numbers: How voters feel about the economy, inflation, AI and Trump",
-   "url": "https://www.cnbc.com/2026/10/23/america-by-the-numbers-how-voters-feel-about-the-economy-inflation-ai-and-trump.html",
-   "source": "CNBC",
-   "date": "2026-10-24",
-   "topic": "inflation"
-  },
-  {
-   "title": "\u2018Non-answers\u2019 aren\u2019t working. This is what investors really need from the Fed.",
-   "url": "https://www.marketwatch.com/story/non-answers-arent-working-this-is-what-investors-really-need-from-the-fed-673a9dce?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-10-24",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "American embassies tighten security as Iran threat warnings intensify ahead of U.S. midterm elections",
-   "url": "https://www.cnbc.com/2026/10/24/iran-threats-us-embassies-middle-east.html",
-   "source": "CNBC",
-   "date": "2026-10-24",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Trade tariffs cause whiplash at Port Milwaukee",
-   "url": "https://www.npr.org/2026/10/24/nx-s1-6011193/trade-tariffs-cause-whiplash-at-port-milwaukee",
-   "source": "NPR",
-   "date": "2026-10-24",
-   "topic": "trade_tariffs"
   }
  ],
  "cycle": [
@@ -179,7 +249,7 @@
    "years": 19,
    "stocks_median": 0.09061946902654872,
    "stocks_down_years": 7,
-   "bonds_median": 0.030572961047956926,
+   "bonds_median": 0.03057293724467991,
    "bond_years": 16,
    "current": false
   },
@@ -189,7 +259,7 @@
    "years": 19,
    "stocks_median": 0.010620399579390094,
    "stocks_down_years": 8,
-   "bonds_median": 0.059985564970996164,
+   "bonds_median": 0.05998556497099572,
    "bond_years": 15,
    "current": true
   },
@@ -209,7 +279,7 @@
    "years": 19,
    "stocks_median": 0.11779554059739161,
    "stocks_down_years": 3,
-   "bonds_median": 0.038213407643683195,
+   "bonds_median": 0.03821340764368297,
    "bond_years": 16,
    "current": false
   }
