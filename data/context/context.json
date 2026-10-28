@@ -35,9 +35,142 @@
    "retail_sales"
   ],
   "warnings": [],
-  "as_of": "2026-10-27"
+  "as_of": "2026-10-28"
  },
  "news": [
+  {
+   "title": "Trump is using tariffs as a 'tool for grift,' Raskin says in demand for donor records",
+   "url": "https://www.cnbc.com/2026/10/28/trump-tariffs-corruption-raskin.html",
+   "source": "CNBC",
+   "date": "2026-10-28",
+   "topic": "trade_tariffs"
+  },
+  {
+   "title": "Microsoft earnings will land after the close",
+   "url": "https://www.cnbc.com/2026/10/28/microsoft-msft-q1-earnings-report-2027.html",
+   "source": "CNBC",
+   "date": "2026-10-28",
+   "topic": "earnings"
+  },
+  {
+   "title": "Alphabet set to report Q3 earnings after the bell as shaky AI trade looks for signs of strength",
+   "url": "https://www.cnbc.com/2026/10/28/alphabet-googl-earnings-q3-2026.html",
+   "source": "CNBC",
+   "date": "2026-10-28",
+   "topic": "earnings"
+  },
+  {
+   "title": "Ford Motor is set to report earnings after the bell. Here's what Wall Street expects",
+   "url": "https://www.cnbc.com/2026/10/28/ford-motor-f-earnings-q3-2026.html",
+   "source": "CNBC",
+   "date": "2026-10-28",
+   "topic": "earnings"
+  },
+  {
+   "title": "FEC campaign finance system offline days before midterms after hackers reportedly target site",
+   "url": "https://www.cnbc.com/2026/10/28/fec-hack-outage-campaign-finance-filings.html",
+   "source": "CNBC",
+   "date": "2026-10-28",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "America's largest budget airline reports 71% jump in airfare",
+   "url": "https://www.cnbc.com/2026/10/28/frontier-airlines-airfare-plane-tickets.html",
+   "source": "CNBC",
+   "date": "2026-10-28",
+   "topic": "fiscal_debt"
+  },
+  {
+   "title": "The UK cuts energy bills, taxes banks and boosts defense in high-stakes budget",
+   "url": "https://www.cnbc.com/2026/10/28/uk-autumn-budget-cost-living-defense-ai.html",
+   "source": "CNBC",
+   "date": "2026-10-28",
+   "topic": "fiscal_debt"
+  },
+  {
+   "title": "Trump says Iran war will end 'when I want it to' as costs reportedly balloon to $47 billion",
+   "url": "https://www.cnbc.com/2026/10/28/us-iran-war-trump-hormuz-costs-centcom.html",
+   "source": "CNBC",
+   "date": "2026-10-28",
+   "topic": "geopolitics"
+  },
+  {
+   "title": "Israeli bonds, shekel fall as election leaves Netanyahu and others short of majorities",
+   "url": "https://www.cnbc.com/2026/10/28/israel-election-netanyahu-trump-gaza-.html",
+   "source": "CNBC",
+   "date": "2026-10-28",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Mortgage rates fell for the second straight week, but more borrowers still sought savings in riskier loans",
+   "url": "https://www.cnbc.com/2026/10/28/mortgage-rates-fell-for-the-second-straight-week.html",
+   "source": "CNBC",
+   "date": "2026-10-28",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "Robinhood shares fall as crypto slump weighs on profits, offsetting gains in new businesses",
+   "url": "https://www.cnbc.com/2026/10/27/robinhood-hood-q3-2026-earnings.html",
+   "source": "CNBC",
+   "date": "2026-10-28",
+   "topic": "earnings"
+  },
+  {
+   "title": "Traders are betting big against this restaurant giant into earnings",
+   "url": "https://www.cnbc.com/2026/10/28/traders-are-betting-big-against-chipotle-into-earnings.html",
+   "source": "CNBC",
+   "date": "2026-10-28",
+   "topic": "earnings"
+  },
+  {
+   "title": "A Democratic win in midterms could put prediction markets and the CFTC in the hot seat",
+   "url": "https://www.cnbc.com/2026/10/28/democrats-prediction-markets-cftc-midterms.html",
+   "source": "CNBC",
+   "date": "2026-10-28",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Musk's PAC lawyer runs in Texas House district that is home to billionaire's business interests",
+   "url": "https://www.cnbc.com/2026/10/28/elon-musk-chris-gober-rourk-texas-10th-congress-election.html",
+   "source": "CNBC",
+   "date": "2026-10-28",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Trump jokes $5,000 would buy 'a hamburger and maybe a small dessert' at Mar-a-Lago as affordability looms over midterm",
+   "url": "https://www.cnbc.com/2026/10/28/trump-jokes-5000-cash-would-buy-hamburger-and-dessert-at-mar-a-lago.html",
+   "source": "CNBC",
+   "date": "2026-10-28",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Heating your home with oil could cost $750 more this winter. Read this before you pay the price.",
+   "url": "https://www.marketwatch.com/story/heating-your-home-with-oil-could-cost-750-more-this-winter-read-this-before-you-pay-the-price-e39f0d52?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-10-28",
+   "topic": "energy"
+  },
+  {
+   "title": "Fed expected to hold interest rates steady but a hike is anticipated by year's end",
+   "url": "https://www.npr.org/2026/10/28/nx-s1-6017978/fed-expected-to-hold-interest-rates-steady-but-a-hike-is-anticipated-by-years-end",
+   "source": "NPR",
+   "date": "2026-10-28",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "How the Fed\u2019s Interest Rate Decision Affects Credit Cards, Loans and More",
+   "url": "https://www.nytimes.com/2026/10/28/business/economy/fed-interest-rates-credit-cards-loans.html",
+   "source": "New York Times",
+   "date": "2026-10-28",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "Trump\u2019s Push to Fire Fed Governor Lisa Cook Looms Over Warsh",
+   "url": "https://www.nytimes.com/2026/10/28/business/economy/trump-lisa-cook-warsh.html",
+   "source": "New York Times",
+   "date": "2026-10-28",
+   "topic": "fed_rates"
+  },
   {
    "title": "Fed expected to hold rates steady, but Warsh may point way to more hikes",
    "url": "https://www.cnbc.com/2026/10/27/federal-reserve-rates-kevin-warsh.html",
@@ -198,48 +331,6 @@
    "source": "CNBC Economy",
    "date": "2026-10-26",
    "topic": "fed_rates"
-  },
-  {
-   "title": "Saudi Arabia says it intercepted missiles and drones from Iran-backed Houthis",
-   "url": "https://www.cnbc.com/2026/10/25/saudi-arabia-houthi-missile-drone-interceptions.html",
-   "source": "CNBC",
-   "date": "2026-10-25",
-   "topic": "geopolitics"
-  },
-  {
-   "title": "More than a third of S&P 500 companies are about to report earnings as market confidence cracks",
-   "url": "https://www.marketwatch.com/story/more-than-a-third-of-s-p-500-companies-are-about-to-report-earnings-as-market-confidence-cracks-03b7a8f1?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-10-25",
-   "topic": "earnings"
-  },
-  {
-   "title": "Worried about this stock-market selloff? Relief may be coming after the midterms \u2014 no matter who wins.",
-   "url": "https://www.marketwatch.com/story/worried-about-this-stock-market-selloff-relief-may-be-coming-after-the-midterms-no-matter-who-wins-39322c07?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-10-25",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "\u2018Nonanswers\u2019 aren\u2019t working. This is what investors really need from the Fed.",
-   "url": "https://www.marketwatch.com/story/non-answers-arent-working-this-is-what-investors-really-need-from-the-fed-673a9dce?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-10-25",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "Audi defends plans for a $4 billion Georgia plant amid VW restructuring, tariffs",
-   "url": "https://www.cnbc.com/2026/10/25/audi-georgia-us-plant-tariffs-volkswagen.html",
-   "source": "CNBC",
-   "date": "2026-10-25",
-   "topic": "trade_tariffs"
-  },
-  {
-   "title": "Ukraine disputes Elon Musk\u2019s claim that its military violated Starlink terms during drone operations",
-   "url": "https://www.cnbc.com/2026/10/25/ukraine-musk-starlink-terms-dispute.html",
-   "source": "CNBC",
-   "date": "2026-10-25",
-   "topic": "geopolitics"
   }
  ],
  "cycle": [
@@ -249,7 +340,7 @@
    "years": 19,
    "stocks_median": 0.09061946902654872,
    "stocks_down_years": 7,
-   "bonds_median": 0.03057293724467991,
+   "bonds_median": 0.030572937244680243,
    "bond_years": 16,
    "current": false
   },
@@ -259,7 +350,7 @@
    "years": 19,
    "stocks_median": 0.010620399579390094,
    "stocks_down_years": 8,
-   "bonds_median": 0.05998556497099572,
+   "bonds_median": 0.05998698172496231,
    "bond_years": 15,
    "current": true
   },
@@ -279,7 +370,7 @@
    "years": 19,
    "stocks_median": 0.11779554059739161,
    "stocks_down_years": 3,
-   "bonds_median": 0.03821340764368297,
+   "bonds_median": 0.03821340764368275,
    "bond_years": 16,
    "current": false
   }
