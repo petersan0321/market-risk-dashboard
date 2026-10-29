@@ -1,11 +1,6 @@
 {
  "items": [
   {
-   "date": "2026-10-28",
-   "type": "fomc",
-   "note": "Decision day (meeting October 27-28)"
-  },
-  {
    "date": "2026-11-03",
    "type": "election_midterm",
    "note": "House and a third of the Senate"
@@ -34,5 +29,5 @@
   "retail_sales"
  ],
  "warnings": [],
- "as_of": "2026-10-28"
+ "as_of": "2026-10-29"
 }

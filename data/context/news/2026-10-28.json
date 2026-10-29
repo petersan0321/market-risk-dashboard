@@ -131,5 +131,19 @@
   "source": "New York Times",
   "date": "2026-10-28",
   "topic": "fed_rates"
+ },
+ {
+  "title": "Federal Reserve issues FOMC statement",
+  "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261028a.htm",
+  "source": "Federal Reserve",
+  "date": "2026-10-28",
+  "topic": "fed_rates"
+ },
+ {
+  "title": "Here are five key takeaways from the Fed rate decision and Warsh news conference",
+  "url": "https://www.cnbc.com/2026/10/28/fed-rate-decision-warsh-takeaways.html",
+  "source": "CNBC Economy",
+  "date": "2026-10-28",
+  "topic": "fed_rates"
  }
 ]

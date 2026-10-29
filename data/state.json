@@ -1,7 +1,7 @@
 {
- "as_of": "2026-10-28",
+ "as_of": "2026-10-29",
  "overall": {
-  "score": 55.2,
+  "score": 55.0,
   "band": "Normal"
  },
  "categories": {
@@ -25,7 +25,7 @@
   "fed_balance_sheet": "amber",
   "move_index": "amber",
   "cpi_yoy": "amber",
-  "core_pce_6m": "green",
+  "core_pce_6m": "amber",
   "breakeven_10y": "amber",
   "wages_yoy": "green",
   "oil_yoy": "red",
