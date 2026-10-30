@@ -27,12 +27,90 @@
    "jobs",
    "pce",
    "gdp",
-   "retail_sales"
+   "retail_sales",
+   "treasury_auction"
   ],
   "warnings": [],
-  "as_of": "2026-10-29"
+  "as_of": "2026-10-30"
  },
  "news": [
+  {
+   "title": "Chevron and Exxon hit all-time highs as refining profits soar in reaction to Iran and Ukraine wars",
+   "url": "https://www.cnbc.com/2026/10/30/chevron-exxon-cvx-xom-earnings-q3-2026.html",
+   "source": "CNBC",
+   "date": "2026-10-30",
+   "topic": "earnings"
+  },
+  {
+   "title": "St. Louis Fed's Musalem: Another rate hike needed 'soon'",
+   "url": "https://www.cnbc.com/2026/10/30/musalem-fed-monetary-policy-tightening.html",
+   "source": "CNBC",
+   "date": "2026-10-30",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "Alaska Senate: Judge fast tracks new bids to dismiss DOJ lawsuit over 2nd Sullivan candidacy",
+   "url": "https://www.cnbc.com/2026/10/30/alaska-senate-election-doj-lawsuit-sullivan-peltola.html",
+   "source": "CNBC",
+   "date": "2026-10-30",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Class action lawsuit blames Trump officials for student loan forgiveness delays",
+   "url": "https://www.cnbc.com/2026/10/30/lawsuit-blames-trump-officials-for-student-loan-forgiveness-delays.html",
+   "source": "CNBC",
+   "date": "2026-10-30",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "Wall Street braces for Democratic gains as 2026 midterm election nears",
+   "url": "https://www.cnbc.com/2026/10/30/2026-midterm-election-wall-street-prepares-for-democratic-gains.html",
+   "source": "CNBC",
+   "date": "2026-10-30",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Musk and Zuckerberg echo Trump's push to rebrand AI as 'super intelligence' on earnings calls. Others do not",
+   "url": "https://www.cnbc.com/2026/10/30/trump-tech-allies-swap-ai-for-super-intelligence-in-earnings-calls.html",
+   "source": "CNBC",
+   "date": "2026-10-30",
+   "topic": "earnings"
+  },
+  {
+   "title": "Swiss central bank posts bumper $23 billion profit thanks to gold, foreign assets",
+   "url": "https://www.cnbc.com/2026/10/30/swiss-national-bank-q3-profit-gold-foreign-asset.html",
+   "source": "CNBC",
+   "date": "2026-10-30",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "Russian strikes plunge Ukrainian city into blackout as Zelenskyy warns of more missile attacks",
+   "url": "https://www.cnbc.com/2026/10/30/russia-ukraine-putin-zelenskyy-energy-strikes.html",
+   "source": "CNBC",
+   "date": "2026-10-30",
+   "topic": "geopolitics"
+  },
+  {
+   "title": "Iran claims four tankers struck mines in Hormuz as strike fears grow after U.S. midterms",
+   "url": "https://www.cnbc.com/2026/10/30/iran-trump-hormuz-oil-middle-east-.html",
+   "source": "CNBC",
+   "date": "2026-10-30",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Reddit shares sink on weak sales guidance and plans login requirement test as Google search traffic shrinks",
+   "url": "https://www.cnbc.com/2026/10/29/reddit-rddt-q3-2026.html",
+   "source": "CNBC",
+   "date": "2026-10-30",
+   "topic": "earnings"
+  },
+  {
+   "title": "BP\u2019s third-quarter profit nearly quadruples to $8.5 billion as refining margins surge",
+   "url": "https://www.cnbc.com/2026/10/30/bp-earnings-oil-q3.html",
+   "source": "CNBC",
+   "date": "2026-10-30",
+   "topic": "earnings"
+  },
   {
    "title": "Third-quarter U.S. GDP increases a better-than-expected 3.4% as September inflation accelerates",
    "url": "https://www.cnbc.com/2026/10/29/pce-inflation-report-september-2026-.html",
@@ -158,6 +236,13 @@
    "source": "New York Times",
    "date": "2026-10-29",
    "topic": "fed_rates"
+  },
+  {
+   "title": "The numbers say the U.S. economy is strong. These Americans aren't feeling it",
+   "url": "https://www.npr.org/2026/10/29/nx-s1-6022198/the-numbers-say-the-u-s-economy-is-strong-these-americans-arent-feeling-it",
+   "source": "NPR",
+   "date": "2026-10-29",
+   "topic": "jobs_economy"
   },
   {
    "title": "Trump is using tariffs as a 'tool for grift,' Raskin says in demand for donor records",
@@ -305,104 +390,6 @@
    "source": "CNBC Economy",
    "date": "2026-10-28",
    "topic": "fed_rates"
-  },
-  {
-   "title": "Fed expected to hold rates steady, but Warsh may point way to more hikes",
-   "url": "https://www.cnbc.com/2026/10/27/federal-reserve-rates-kevin-warsh.html",
-   "source": "CNBC",
-   "date": "2026-10-27",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "Honda warns 50% Canada auto tariffs would be catastrophic for auto industry",
-   "url": "https://www.cnbc.com/2026/10/27/honda-warns-50percent-canada-auto-tariffs-would-be-catastrophic.html",
-   "source": "CNBC",
-   "date": "2026-10-27",
-   "topic": "trade_tariffs"
-  },
-  {
-   "title": "Coca-Cola hikes earnings outlook, even as it sees lackluster demand in North America",
-   "url": "https://www.cnbc.com/2026/10/27/coca-cola-ko-q3-2026-earnings.html",
-   "source": "CNBC",
-   "date": "2026-10-27",
-   "topic": "earnings"
-  },
-  {
-   "title": "Silicon Valley AI political groups turn on each other in the 2026 election",
-   "url": "https://www.cnbc.com/2026/10/27/ai-political-spending-silicon-valley-election.html",
-   "source": "CNBC",
-   "date": "2026-10-27",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Melania Trump-brokered local ceasefire begins as Russia continues attacks on Ukraine",
-   "url": "https://www.cnbc.com/2026/10/27/russia-ukraine-zelenskyy-trump-putin-ceasefire.html",
-   "source": "CNBC",
-   "date": "2026-10-27",
-   "topic": "geopolitics"
-  },
-  {
-   "title": "UPS beats quarterly expectations, raises full-year guidance again",
-   "url": "https://www.cnbc.com/2026/10/27/ups-ups-q3-2026-earnings.html",
-   "source": "CNBC",
-   "date": "2026-10-27",
-   "topic": "earnings"
-  },
-  {
-   "title": "World Bank's Banga: Availability of capital 'not really an issue' as AI demand drives up borrowing costs",
-   "url": "https://www.cnbc.com/2026/10/27/world-bank-president-ajay-banga.html",
-   "source": "CNBC",
-   "date": "2026-10-27",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "Israel election puts Netanyahu\u2019s wartime leadership on the line as Trump urges voters to return him to power",
-   "url": "https://www.cnbc.com/2026/10/26/israel-election-netanyahu-iran-gaza-palestine.html",
-   "source": "CNBC",
-   "date": "2026-10-27",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Porsche profit rebounds as luxury carmaker reduces exposure to China",
-   "url": "https://www.cnbc.com/2026/10/27/porsche-china-profit-recovery.html",
-   "source": "CNBC",
-   "date": "2026-10-27",
-   "topic": "earnings"
-  },
-  {
-   "title": "Judge fast-tracks DOJ's Alaska Senate lawsuit as Peltola seeks dismissal before Election Day",
-   "url": "https://www.cnbc.com/2026/10/26/alaska-senate-peltola-doj-lawsuit-election-sullivan.html",
-   "source": "CNBC",
-   "date": "2026-10-27",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Oil prices fall after Iran supreme leader and top security official discuss conditions to end war",
-   "url": "https://www.cnbc.com/2026/10/27/oil-today-iran-us-crude-wti-brent-trump.html",
-   "source": "CNBC",
-   "date": "2026-10-27",
-   "topic": "geopolitics"
-  },
-  {
-   "title": "Fed rate hikes are coming, but not this week: CNBC survey",
-   "url": "https://www.cnbc.com/2026/10/27/federal-reserve-rate-hike-timing-expectations.html",
-   "source": "CNBC Economy",
-   "date": "2026-10-27",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "The U.S. economy is gathering steam. This is the chief reason why.",
-   "url": "https://www.marketwatch.com/story/u-s-economy-is-gathering-steam-this-is-the-chief-reason-why-9772978f?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-10-27",
-   "topic": "jobs_economy"
-  },
-  {
-   "title": "Microsoft earnings will look funky \u2014 but an elusive number is finally arriving",
-   "url": "https://www.marketwatch.com/story/microsoft-earnings-will-look-funky-but-an-elusive-number-is-finally-arriving-73236a94?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-10-27",
-   "topic": "earnings"
   }
  ],
  "cycle": [
@@ -412,7 +399,7 @@
    "years": 19,
    "stocks_median": 0.09061946902654872,
    "stocks_down_years": 7,
-   "bonds_median": 0.03057376271670964,
+   "bonds_median": 0.030572937244680354,
    "bond_years": 16,
    "current": false
   },
@@ -422,7 +409,7 @@
    "years": 19,
    "stocks_median": 0.010620399579390094,
    "stocks_down_years": 8,
-   "bonds_median": 0.05998698172496231,
+   "bonds_median": 0.05998698172496142,
    "bond_years": 15,
    "current": true
   },
@@ -442,7 +429,7 @@
    "years": 19,
    "stocks_median": 0.11779554059739161,
    "stocks_down_years": 3,
-   "bonds_median": 0.03821446284272123,
+   "bonds_median": 0.03821340764368242,
    "bond_years": 16,
    "current": false
   }
