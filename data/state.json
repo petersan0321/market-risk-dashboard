@@ -1,7 +1,7 @@
 {
  "as_of": "2026-10-30",
  "overall": {
-  "score": 54.5,
+  "score": 54.4,
   "band": "Normal"
  },
  "categories": {
@@ -17,7 +17,7 @@
  },
  "indicators": {
   "fed_funds_chg": "green",
-  "ust10y_chg": "red",
+  "ust10y_chg": "amber",
   "curve_10y2y": "amber",
   "curve_10y3m": "amber",
   "real_yield_10y": "red",
