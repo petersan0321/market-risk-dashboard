@@ -31,9 +31,44 @@
    "treasury_auction"
   ],
   "warnings": [],
-  "as_of": "2026-10-31"
+  "as_of": "2026-11-01"
  },
  "news": [
+  {
+   "title": "These Senate races may help determine the fate of Social Security",
+   "url": "https://www.cnbc.com/2026/11/01/social-security-senate-races.html",
+   "source": "CNBC",
+   "date": "2026-11-01",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Everything changed for the oil, AI and bond trades over the past month",
+   "url": "https://www.cnbc.com/2026/11/01/oil-bond-yields-ai-market.html",
+   "source": "CNBC",
+   "date": "2026-11-01",
+   "topic": "energy"
+  },
+  {
+   "title": "The midterm election could reshape the muni bond market. Here\u2019s what investors need to know",
+   "url": "https://www.cnbc.com/2026/11/01/election-municipal-bonds.html",
+   "source": "CNBC",
+   "date": "2026-11-01",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Companies promised AI gains \u2014 here's how the payoff showed up in earnings",
+   "url": "https://www.cnbc.com/2026/11/01/ai-investments-company-earnings.html",
+   "source": "CNBC",
+   "date": "2026-11-01",
+   "topic": "earnings"
+  },
+  {
+   "title": "Apple\u2019s new earnings era begins at a critical time for Big Tech",
+   "url": "https://www.marketwatch.com/story/apples-new-earnings-era-begins-at-a-critical-time-for-big-tech-2236a44e?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-11-01",
+   "topic": "earnings"
+  },
   {
    "title": "Trump promised to slash energy costs \u2014 but gasoline, diesel and jet fuel all soared instead",
    "url": "https://www.cnbc.com/2026/10/31/trump-gas-diesel-price-midterm-election.html",
@@ -66,6 +101,20 @@
    "title": "Your stock portfolio increasingly hinges on the bond market \u2014 and the midterm elections",
    "url": "https://www.marketwatch.com/story/your-stock-portfolio-increasingly-hinges-on-the-bond-market-and-the-midterm-elections-dc1abadb?mod=mw_rss_topstories",
    "source": "MarketWatch",
+   "date": "2026-10-31",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Trump called out Big Oil profits. Here\u2019s how much their refining earnings have surged since",
+   "url": "https://www.cnbc.com/2026/10/31/trump-big-oil-refining-profits.html",
+   "source": "CNBC",
+   "date": "2026-10-31",
+   "topic": "energy"
+  },
+  {
+   "title": "Mixed economic forecast weighs heavy ahead of midterms",
+   "url": "https://www.npr.org/2026/10/31/nx-s1-6022285/mixed-economic-forecast-weighs-heavy-ahead-of-midterms",
+   "source": "NPR",
    "date": "2026-10-31",
    "topic": "elections_politics"
   },
@@ -173,139 +222,6 @@
    "source": "CNBC",
    "date": "2026-10-30",
    "topic": "energy"
-  },
-  {
-   "title": "Third-quarter U.S. GDP increases a better-than-expected 3.4% as September inflation accelerates",
-   "url": "https://www.cnbc.com/2026/10/29/pce-inflation-report-september-2026-.html",
-   "source": "CNBC",
-   "date": "2026-10-29",
-   "topic": "inflation"
-  },
-  {
-   "title": "Alphabet earnings miss reflects first real sign that AI is taking a bite out of search",
-   "url": "https://www.cnbc.com/2026/10/29/alphabet-google-search-ai-earnings.html",
-   "source": "CNBC",
-   "date": "2026-10-29",
-   "topic": "earnings"
-  },
-  {
-   "title": "ServiceNow shares plunge 25% after earnings revive AI disruption fears",
-   "url": "https://www.cnbc.com/2026/10/29/servicenow-now-earnings-q3-2026.html",
-   "source": "CNBC",
-   "date": "2026-10-29",
-   "topic": "earnings"
-  },
-  {
-   "title": "Norwegian shares surge 13% on earnings beat, guidance raise",
-   "url": "https://www.cnbc.com/2026/10/29/norwegian-earnings-guidance-shares.html",
-   "source": "CNBC",
-   "date": "2026-10-29",
-   "topic": "earnings"
-  },
-  {
-   "title": "It's a 'socialist' bank \u2014 and North Dakota Republicans love it",
-   "url": "https://www.cnbc.com/2026/10/29/bank-north-dakota-socialism-election.html",
-   "source": "CNBC",
-   "date": "2026-10-29",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "Amazon to report Q3 earnings after the bell with AI spend under scrutiny",
-   "url": "https://www.cnbc.com/2026/10/29/amazon-amzn-q3-earnings-report-2026.html",
-   "source": "CNBC",
-   "date": "2026-10-29",
-   "topic": "earnings"
-  },
-  {
-   "title": "Eli Lilly hikes sales outlook, as CEO says there's room for 'dramatic' obesity market expansion",
-   "url": "https://www.cnbc.com/2026/10/29/eli-lilly-lly-earnings-q3-2026.html",
-   "source": "CNBC",
-   "date": "2026-10-29",
-   "topic": "earnings"
-  },
-  {
-   "title": "Hegseth reportedly fires U.S. top military planner as Trump downplays Iran peace talks",
-   "url": "https://www.cnbc.com/2026/10/29/us-iran-war-trump-hormuz.html",
-   "source": "CNBC",
-   "date": "2026-10-29",
-   "topic": "geopolitics"
-  },
-  {
-   "title": "The politics of President Lagarde's European Central Bank early exit \u2014 and who could replace her",
-   "url": "https://www.cnbc.com/2026/10/29/lagarde-ecb-stand-down.html",
-   "source": "CNBC",
-   "date": "2026-10-29",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "European Central Bank keeps key interest rate on hold at 2.5%",
-   "url": "https://www.cnbc.com/2026/10/29/european-central-bank-interest-rates.html",
-   "source": "CNBC",
-   "date": "2026-10-29",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "Warren urges DOJ criminal probe of Bank of America over anti-money-laundering violations",
-   "url": "https://www.cnbc.com/2026/10/29/warren-bank-of-america-criminal-probe.html",
-   "source": "CNBC",
-   "date": "2026-10-29",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "This credit card is the \u2018best weapon\u2019 to fight debt while interest rates keep climbing",
-   "url": "https://www.marketwatch.com/story/this-credit-card-is-the-best-weapon-to-fight-debt-while-interest-rates-keep-climbing-8378fcf2?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-10-29",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "Our church has a $1.5 million bequest earning 3.75% in a bank account. Is inflation eroding it?",
-   "url": "https://www.marketwatch.com/story/there-may-be-better-investment-options-my-church-received-1-5-million-from-a-parishioner-is-3-75-interest-enough-5164d790?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-10-29",
-   "topic": "inflation"
-  },
-  {
-   "title": "With days to go before the midterms, data shows the U.S. economy is doing well",
-   "url": "https://www.npr.org/2026/10/29/nx-s1-6021008/economy-gdp-inflation-midterms-voters-affordability",
-   "source": "NPR",
-   "date": "2026-10-29",
-   "topic": "jobs_economy"
-  },
-  {
-   "title": "Two reports give insight on the economy ahead of Election Day",
-   "url": "https://www.npr.org/2026/10/29/nx-s1-6020539/two-reports-give-insight-on-the-economy-ahead-of-election-day",
-   "source": "NPR",
-   "date": "2026-10-29",
-   "topic": "jobs_economy"
-  },
-  {
-   "title": "Inflation Accelerated in October, PCE Index Shows",
-   "url": "https://www.nytimes.com/2026/10/29/business/economy/pce-inflation-economy.html",
-   "source": "New York Times",
-   "date": "2026-10-29",
-   "topic": "inflation"
-  },
-  {
-   "title": "U.S. GDP Increased 3.4% in Third Quarter",
-   "url": "https://www.nytimes.com/2026/10/29/business/economy/us-economy-gdp.html",
-   "source": "New York Times",
-   "date": "2026-10-29",
-   "topic": "jobs_economy"
-  },
-  {
-   "title": "The Fed Risks Falling Behind in its Inflation Fight",
-   "url": "https://www.nytimes.com/2026/10/29/business/economy/federal-reserve-interest-rates.html",
-   "source": "New York Times",
-   "date": "2026-10-29",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "The numbers say the U.S. economy is strong. These Americans aren't feeling it",
-   "url": "https://www.npr.org/2026/10/29/nx-s1-6022198/the-numbers-say-the-u-s-economy-is-strong-these-americans-arent-feeling-it",
-   "source": "NPR",
-   "date": "2026-10-29",
-   "topic": "jobs_economy"
   }
  ],
  "cycle": [
@@ -325,7 +241,7 @@
    "years": 19,
    "stocks_median": 0.010620399579390094,
    "stocks_down_years": 8,
-   "bonds_median": 0.05998556497099683,
+   "bonds_median": 0.05998556497099572,
    "bond_years": 15,
    "current": true
   },
@@ -345,7 +261,7 @@
    "years": 19,
    "stocks_median": 0.11779554059739161,
    "stocks_down_years": 3,
-   "bonds_median": 0.038213407643683195,
+   "bonds_median": 0.038214462842720565,
    "bond_years": 16,
    "current": false
   }
