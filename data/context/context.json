@@ -31,9 +31,121 @@
    "treasury_auction"
   ],
   "warnings": [],
-  "as_of": "2026-11-01"
+  "as_of": "2026-11-02"
  },
  "news": [
+  {
+   "title": "Anthropic reports $17 billion in Q3 revenue, purchase commitments of $895.4 billion in revised S-1",
+   "url": "https://www.cnbc.com/2026/11/02/anthropic-ant-s-1-quarter-financials.html",
+   "source": "CNBC",
+   "date": "2026-11-02",
+   "topic": "earnings"
+  },
+  {
+   "title": "Stock market after midterm elections: What S&P 500 history shows",
+   "url": "https://www.cnbc.com/2026/11/02/stock-market-after-midterm-elections-sp-500-history.html",
+   "source": "CNBC",
+   "date": "2026-11-02",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Trump focuses on Reflecting Pool in final public speech before midterms",
+   "url": "https://www.cnbc.com/2026/11/02/trump-midterm-election-speech-reflecting-pool.html",
+   "source": "CNBC",
+   "date": "2026-11-02",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Options traders are getting anxious on Palantir and Apple ahead of earnings",
+   "url": "https://www.cnbc.com/2026/11/02/options-traders-are-getting-anxious-on-palantir-and-apple-ahead-of-earnings.html",
+   "source": "CNBC",
+   "date": "2026-11-02",
+   "topic": "earnings"
+  },
+  {
+   "title": "Crude oil prices sell off more than 7% on Iran peace talk hopes ahead of U.S. midterms",
+   "url": "https://www.cnbc.com/2026/11/02/oil-prices-fall-as-iran-us-pursue-diplomacy.html",
+   "source": "CNBC",
+   "date": "2026-11-02",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Prediction market traders now see nearly 75% chance of Democrats winning the Senate",
+   "url": "https://www.cnbc.com/2026/11/02/prediction-market-traders-now-see-nearly-75percent-chance-of-democrats-winning-the-senate.html",
+   "source": "CNBC",
+   "date": "2026-11-02",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Defense, healthcare, crypto and AI: How the midterm election could affect stocks",
+   "url": "https://www.cnbc.com/2026/11/02/midterm-election-stocks-defense-healthcare-crypto-ai.html",
+   "source": "CNBC",
+   "date": "2026-11-02",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "2 of our banks are at the heart of this week's biggest tech deals",
+   "url": "https://www.cnbc.com/investingclub/2026/11/02/2-of-our-banks-are-at-the-heart-of-this-weeks-biggest-tech-deals.html",
+   "source": "CNBC",
+   "date": "2026-11-02",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "Fed will vote on rates less often. What that could mean for borrowers",
+   "url": "https://www.cnbc.com/2026/11/02/fed-rate-votes-consumer-borrowing-costs.html",
+   "source": "CNBC",
+   "date": "2026-11-02",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "Canada-India $5.5 billion bank takeover attracts opposition from workers, politicians",
+   "url": "https://www.cnbc.com/2026/11/02/canada-india-bank-takeover-protest-workers.html",
+   "source": "CNBC",
+   "date": "2026-11-02",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "Rubio says Trump wants to end Iran war 'peacefully' even as both sides prepare for strikes",
+   "url": "https://www.cnbc.com/2026/11/02/us-iran-war-trump-hormuz-rubio.html",
+   "source": "CNBC",
+   "date": "2026-11-02",
+   "topic": "geopolitics"
+  },
+  {
+   "title": "CrowdStrike lands an upgrade, and Jim Cramer's advice on Apple ahead of earnings",
+   "url": "https://www.cnbc.com/investingclub/2026/11/02/crowdstrike-lands-an-upgrade-and-jim-cramers-advice-on-apple-ahead-of-earnings.html",
+   "source": "CNBC",
+   "date": "2026-11-02",
+   "topic": "earnings"
+  },
+  {
+   "title": "Apollo launches $11 billion private credit platform, backed by Abu Dhabi",
+   "url": "https://www.cnbc.com/2026/11/02/apollo-private-credit-abu-dhabi.html",
+   "source": "CNBC",
+   "date": "2026-11-02",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "South Korea targets 'world's highest performance' sovereign AI model in record new budget",
+   "url": "https://www.cnbc.com/2026/11/02/south-korea-ai-spending-budget.html",
+   "source": "CNBC",
+   "date": "2026-11-02",
+   "topic": "fiscal_debt"
+  },
+  {
+   "title": "How soon gas prices could go down now that oil is tumbling",
+   "url": "https://www.marketwatch.com/story/how-soon-gas-prices-could-go-down-now-that-oil-is-tumbling-a1140dc2?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-11-02",
+   "topic": "energy"
+  },
+  {
+   "title": "Trump\u2019s Tariffs Are On the Ballot in Michigan",
+   "url": "https://www.nytimes.com/2026/11/02/business/economy/trump-tariffs-midterms-michigan.html",
+   "source": "New York Times",
+   "date": "2026-11-02",
+   "topic": "trade_tariffs"
+  },
   {
    "title": "These Senate races may help determine the fate of Social Security",
    "url": "https://www.cnbc.com/2026/11/01/social-security-senate-races.html",
@@ -68,6 +180,20 @@
    "source": "MarketWatch",
    "date": "2026-11-01",
    "topic": "earnings"
+  },
+  {
+   "title": "Democratic Rep. Stevens endorses Republican Rogers over rival El-Sayed in Michigan Senate election",
+   "url": "https://www.cnbc.com/2026/11/01/michigan-senate-stevens-rogers-endorsement-el-sayed.html",
+   "source": "CNBC",
+   "date": "2026-11-01",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Alaska Sen. Sullivan says he'll accept election results, slams Peltola campaign\u2019s reported recruitment of 2nd Sullivan",
+   "url": "https://www.cnbc.com/2026/11/01/alaska-senate-election-dan-sullivan-peltola.html",
+   "source": "CNBC",
+   "date": "2026-11-01",
+   "topic": "elections_politics"
   },
   {
    "title": "Trump promised to slash energy costs \u2014 but gasoline, diesel and jet fuel all soared instead",
@@ -117,111 +243,6 @@
    "source": "NPR",
    "date": "2026-10-31",
    "topic": "elections_politics"
-  },
-  {
-   "title": "Chevron and Exxon hit all-time highs as refining profits soar in reaction to Iran and Ukraine wars",
-   "url": "https://www.cnbc.com/2026/10/30/chevron-exxon-cvx-xom-earnings-q3-2026.html",
-   "source": "CNBC",
-   "date": "2026-10-30",
-   "topic": "earnings"
-  },
-  {
-   "title": "St. Louis Fed's Musalem: Another rate hike needed 'soon'",
-   "url": "https://www.cnbc.com/2026/10/30/musalem-fed-monetary-policy-tightening.html",
-   "source": "CNBC",
-   "date": "2026-10-30",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "Alaska Senate: Judge fast tracks new bids to dismiss DOJ lawsuit over 2nd Sullivan candidacy",
-   "url": "https://www.cnbc.com/2026/10/30/alaska-senate-election-doj-lawsuit-sullivan-peltola.html",
-   "source": "CNBC",
-   "date": "2026-10-30",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Class action lawsuit blames Trump officials for student loan forgiveness delays",
-   "url": "https://www.cnbc.com/2026/10/30/lawsuit-blames-trump-officials-for-student-loan-forgiveness-delays.html",
-   "source": "CNBC",
-   "date": "2026-10-30",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "Wall Street braces for Democratic gains as 2026 midterm election nears",
-   "url": "https://www.cnbc.com/2026/10/30/2026-midterm-election-wall-street-prepares-for-democratic-gains.html",
-   "source": "CNBC",
-   "date": "2026-10-30",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Musk and Zuckerberg echo Trump's push to rebrand AI as 'super intelligence' on earnings calls. Others do not",
-   "url": "https://www.cnbc.com/2026/10/30/trump-tech-allies-swap-ai-for-super-intelligence-in-earnings-calls.html",
-   "source": "CNBC",
-   "date": "2026-10-30",
-   "topic": "earnings"
-  },
-  {
-   "title": "Swiss central bank posts bumper $23 billion profit thanks to gold, foreign assets",
-   "url": "https://www.cnbc.com/2026/10/30/swiss-national-bank-q3-profit-gold-foreign-asset.html",
-   "source": "CNBC",
-   "date": "2026-10-30",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "Russian strikes plunge Ukrainian city into blackout as Zelenskyy warns of more missile attacks",
-   "url": "https://www.cnbc.com/2026/10/30/russia-ukraine-putin-zelenskyy-energy-strikes.html",
-   "source": "CNBC",
-   "date": "2026-10-30",
-   "topic": "geopolitics"
-  },
-  {
-   "title": "Iran claims four tankers struck mines in Hormuz as strike fears grow after U.S. midterms",
-   "url": "https://www.cnbc.com/2026/10/30/iran-trump-hormuz-oil-middle-east-.html",
-   "source": "CNBC",
-   "date": "2026-10-30",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Reddit shares sink on weak sales guidance and plans login requirement test as Google search traffic shrinks",
-   "url": "https://www.cnbc.com/2026/10/29/reddit-rddt-q3-2026.html",
-   "source": "CNBC",
-   "date": "2026-10-30",
-   "topic": "earnings"
-  },
-  {
-   "title": "BP\u2019s third-quarter profit nearly quadruples to $8.5 billion as refining margins surge",
-   "url": "https://www.cnbc.com/2026/10/30/bp-earnings-oil-q3.html",
-   "source": "CNBC",
-   "date": "2026-10-30",
-   "topic": "earnings"
-  },
-  {
-   "title": "Meta outlook revised downward by S&P on cash flow and capex concerns",
-   "url": "https://www.cnbc.com/2026/10/30/meta-outlook-to-revised-to-negative-by-sp-after-cash-flow-negative.html",
-   "source": "CNBC",
-   "date": "2026-10-30",
-   "topic": "earnings"
-  },
-  {
-   "title": "Reid Hoffman gives millions to Dems in late spending spree as Epstein fight spills into election",
-   "url": "https://www.cnbc.com/2026/10/30/reid-hoffman-democrats-epstein-midterms-2026.html",
-   "source": "CNBC",
-   "date": "2026-10-30",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Cramer\u2019s week ahead: Expect more volatility as tech earnings, midterms loom",
-   "url": "https://www.cnbc.com/2026/10/30/jim-cramer-week-ahead-apple-amd-jobs-report.html",
-   "source": "CNBC",
-   "date": "2026-10-30",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Tankers defy sharp escalation of Iranian attacks to keep crude oil flowing through Strait of Hormuz",
-   "url": "https://www.cnbc.com/2026/10/30/tanker-attack-strait-hormuz-iran-war-oil.html",
-   "source": "CNBC",
-   "date": "2026-10-30",
-   "topic": "energy"
   }
  ],
  "cycle": [
@@ -231,7 +252,7 @@
    "years": 19,
    "stocks_median": 0.09061946902654872,
    "stocks_down_years": 7,
-   "bonds_median": 0.03057293724468002,
+   "bonds_median": 0.030572961047956704,
    "bond_years": 16,
    "current": false
   },
@@ -241,7 +262,7 @@
    "years": 19,
    "stocks_median": 0.010620399579390094,
    "stocks_down_years": 8,
-   "bonds_median": 0.05998556497099572,
+   "bonds_median": 0.05998698172496253,
    "bond_years": 15,
    "current": true
   },
@@ -261,7 +282,7 @@
    "years": 19,
    "stocks_median": 0.11779554059739161,
    "stocks_down_years": 3,
-   "bonds_median": 0.038214462842720565,
+   "bonds_median": 0.03821340764368275,
    "bond_years": 16,
    "current": false
   }
