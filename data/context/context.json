@@ -31,9 +31,121 @@
    "treasury_auction"
   ],
   "warnings": [],
-  "as_of": "2026-11-02"
+  "as_of": "2026-11-03"
  },
  "news": [
+  {
+   "title": "Disney plans several thousand layoffs, asks some managers to cut costs by up to 20%",
+   "url": "https://www.cnbc.com/2026/11/03/disney-layoffs-cost-cuts.html",
+   "source": "CNBC",
+   "date": "2026-11-03",
+   "topic": "jobs_economy"
+  },
+  {
+   "title": "Crude oil prices fall for second day as market hopes for diplomatic resolution to Iran war",
+   "url": "https://www.cnbc.com/2026/11/03/oil-prices-climb-after-us-reportedly-strikes-irans-qeshm-island.html",
+   "source": "CNBC",
+   "date": "2026-11-03",
+   "topic": "geopolitics"
+  },
+  {
+   "title": "Midterm elections could jolt stocks if Democrats sweep Congress",
+   "url": "https://www.cnbc.com/2026/11/03/midterm-election-stock-market.html",
+   "source": "CNBC",
+   "date": "2026-11-03",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Apple stock sinks as global memory crisis hurts profits, giving Ternus his first big test",
+   "url": "https://www.cnbc.com/2026/11/03/apple-earnings-john-ternus-faces-first-test-amid-high-memory-costs.html",
+   "source": "CNBC",
+   "date": "2026-11-03",
+   "topic": "earnings"
+  },
+  {
+   "title": "What the 2026 midterm elections could mean for Trump's final two years",
+   "url": "https://www.cnbc.com/2026/11/03/midterm-elections-congress-trump-democrats-republicans.html",
+   "source": "CNBC",
+   "date": "2026-11-03",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Job openings posted big September gain in positive sign for labor market ahead of payrolls report",
+   "url": "https://www.cnbc.com/2026/11/03/job-openings-posted-big-september-gain-in-positive-sign-for-labor-market-ahead-of-payrolls-report.html",
+   "source": "CNBC",
+   "date": "2026-11-03",
+   "topic": "jobs_economy"
+  },
+  {
+   "title": "Russia confirms new Ukraine peace talks as Melania Trump prepares to host ceasefire meeting",
+   "url": "https://www.cnbc.com/2026/11/03/russia-ukraine-peace-talks-abu-dhabi-trump-putin-xi.html",
+   "source": "CNBC",
+   "date": "2026-11-03",
+   "topic": "geopolitics"
+  },
+  {
+   "title": "Pfizer hikes full-year outlook as newer products grow, taps company veteran as new CFO",
+   "url": "https://www.cnbc.com/2026/11/03/pfizer-pfe-earnings-q3-2026.html",
+   "source": "CNBC",
+   "date": "2026-11-03",
+   "topic": "earnings"
+  },
+  {
+   "title": "Ferrari raises 2026 guidance after Q3 earnings beat",
+   "url": "https://www.cnbc.com/2026/11/03/ferrari-race-earnings-q3-2026.html",
+   "source": "CNBC",
+   "date": "2026-11-03",
+   "topic": "earnings"
+  },
+  {
+   "title": "Shopify falls 7% after Q3 revenue and merchandise volume miss estimates",
+   "url": "https://www.cnbc.com/2026/11/03/shopify-q3-2026-earnings-gmv.html",
+   "source": "CNBC",
+   "date": "2026-11-03",
+   "topic": "earnings"
+  },
+  {
+   "title": "Versant earnings beat expectations as digital platforms drive growth",
+   "url": "https://www.cnbc.com/2026/11/03/versant-vsnt-q3-2026-earnings.html",
+   "source": "CNBC",
+   "date": "2026-11-03",
+   "topic": "earnings"
+  },
+  {
+   "title": "Trump midterm election lawsuits, state pushback come to a head Tuesday",
+   "url": "https://www.cnbc.com/2026/11/03/trump-doj-election-lawsuits-monitors-2026-midterms.html",
+   "source": "CNBC",
+   "date": "2026-11-03",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Trump is going to get 'trounced' in the midterms \u2014 and knows it, Anthony Scaramucci tells CNBC",
+   "url": "https://www.cnbc.com/2026/11/03/scaramucci-trump-midterms-election.html",
+   "source": "CNBC",
+   "date": "2026-11-03",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Australia hikes rates to 18-year high to fight inflation",
+   "url": "https://www.cnbc.com/2026/11/03/australia-hikes-rates-18-year-high-finflation.html",
+   "source": "CNBC Economy",
+   "date": "2026-11-03",
+   "topic": "inflation"
+  },
+  {
+   "title": "Stock market after midterm elections: What S&P 500 history shows",
+   "url": "https://www.cnbc.com/2026/11/02/stock-market-after-midterm-elections-sp-500-history.html",
+   "source": "CNBC Finance",
+   "date": "2026-11-03",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "U.S. jobs market perks up, but it\u2019s still not a great time to get hired",
+   "url": "https://www.marketwatch.com/story/u-s-jobs-market-perks-up-but-its-still-not-a-great-time-to-get-hired-bc39f44f?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-11-03",
+   "topic": "jobs_economy"
+  },
   {
    "title": "Anthropic reports $17 billion in Q3 revenue, purchase commitments of $895.4 billion in revised S-1",
    "url": "https://www.cnbc.com/2026/11/02/anthropic-ant-s-1-quarter-financials.html",
@@ -194,55 +306,6 @@
    "source": "CNBC",
    "date": "2026-11-01",
    "topic": "elections_politics"
-  },
-  {
-   "title": "Trump promised to slash energy costs \u2014 but gasoline, diesel and jet fuel all soared instead",
-   "url": "https://www.cnbc.com/2026/10/31/trump-gas-diesel-price-midterm-election.html",
-   "source": "CNBC",
-   "date": "2026-10-31",
-   "topic": "energy"
-  },
-  {
-   "title": "\u2018Pop-up\u2019 super PACs pour $637 million into 2026 midterm races",
-   "url": "https://www.cnbc.com/2026/10/31/2026-midterm-election-super-pacs-donor-disclosure.html",
-   "source": "CNBC",
-   "date": "2026-10-31",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Crypto industry pours more than $200 million into 2026 midterms to pressure Congress on favorable rules",
-   "url": "https://www.cnbc.com/2026/10/31/crypto-industry-spends-more-than-200-million-to-sway-the-midterms.html",
-   "source": "CNBC",
-   "date": "2026-10-31",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "How to start an art collection on any budget",
-   "url": "https://www.cnbc.com/2026/10/31/how-to-invest-in-art-collecting.html",
-   "source": "CNBC",
-   "date": "2026-10-31",
-   "topic": "fiscal_debt"
-  },
-  {
-   "title": "Your stock portfolio increasingly hinges on the bond market \u2014 and the midterm elections",
-   "url": "https://www.marketwatch.com/story/your-stock-portfolio-increasingly-hinges-on-the-bond-market-and-the-midterm-elections-dc1abadb?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-10-31",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Trump called out Big Oil profits. Here\u2019s how much their refining earnings have surged since",
-   "url": "https://www.cnbc.com/2026/10/31/trump-big-oil-refining-profits.html",
-   "source": "CNBC",
-   "date": "2026-10-31",
-   "topic": "energy"
-  },
-  {
-   "title": "Mixed economic forecast weighs heavy ahead of midterms",
-   "url": "https://www.npr.org/2026/10/31/nx-s1-6022285/mixed-economic-forecast-weighs-heavy-ahead-of-midterms",
-   "source": "NPR",
-   "date": "2026-10-31",
-   "topic": "elections_politics"
   }
  ],
  "cycle": [
@@ -252,7 +315,7 @@
    "years": 19,
    "stocks_median": 0.09061946902654872,
    "stocks_down_years": 7,
-   "bonds_median": 0.030572961047956704,
+   "bonds_median": 0.030572937244680243,
    "bond_years": 16,
    "current": false
   },
@@ -262,7 +325,7 @@
    "years": 19,
    "stocks_median": 0.010620399579390094,
    "stocks_down_years": 8,
-   "bonds_median": 0.05998698172496253,
+   "bonds_median": 0.059985564970996386,
    "bond_years": 15,
    "current": true
   },
@@ -282,7 +345,7 @@
    "years": 19,
    "stocks_median": 0.11779554059739161,
    "stocks_down_years": 3,
-   "bonds_median": 0.03821340764368275,
+   "bonds_median": 0.03821340764368297,
    "bond_years": 16,
    "current": false
   }
