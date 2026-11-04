@@ -2,11 +2,6 @@
  "calendar": {
   "items": [
    {
-    "date": "2026-11-03",
-    "type": "election_midterm",
-    "note": "House and a third of the Senate"
-   },
-   {
     "date": "2026-12-09",
     "type": "fomc",
     "note": "Decision day with new projections (meeting December 8-9)"
@@ -31,9 +26,114 @@
    "treasury_auction"
   ],
   "warnings": [],
-  "as_of": "2026-11-03"
+  "as_of": "2026-11-04"
  },
  "news": [
+  {
+   "title": "5 midterm election takeaways: Tech billionaires suffer as Democrats drub Republicans",
+   "url": "https://www.cnbc.com/2026/11/04/midterm-election-blue-wave-trump-billionaires.html",
+   "source": "CNBC",
+   "date": "2026-11-04",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "McDonald's stock rises as earnings beat, U.S. restaurants show improvement",
+   "url": "https://www.cnbc.com/2026/11/04/mcdonalds-is-about-to-report-earnings-heres-what-to-expect.html",
+   "source": "CNBC",
+   "date": "2026-11-04",
+   "topic": "earnings"
+  },
+  {
+   "title": "What Trump losing power over Congress means for Iran, Ukraine and foreign policy",
+   "url": "https://www.cnbc.com/2026/11/04/democrats-congress-trump-foreign-policy.html",
+   "source": "CNBC",
+   "date": "2026-11-04",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Americans have said 'NO TO WAR,' Iran speaker says as Democrats take Congress",
+   "url": "https://www.cnbc.com/2026/11/04/us-midterm-elections-iran-war-speaker.html",
+   "source": "CNBC",
+   "date": "2026-11-04",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Elon Musk\u2019s record election bet backfired. The backlash may reach beyond one billionaire",
+   "url": "https://www.cnbc.com/2026/11/04/elon-musk-midterms-ai-data-centers.html",
+   "source": "CNBC",
+   "date": "2026-11-04",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Uber beats on revenue, CEO tells CNBC the company is 'investing significantly' to add drivers",
+   "url": "https://www.cnbc.com/2026/11/04/uber-stock-q3-2026-earnings.html",
+   "source": "CNBC",
+   "date": "2026-11-04",
+   "topic": "earnings"
+  },
+  {
+   "title": "Blood banks targeted in latest European fridge cyberattacks",
+   "url": "https://www.cnbc.com/2026/11/04/blood-bank-fridges-cyberattacks.html",
+   "source": "CNBC",
+   "date": "2026-11-04",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "Private companies added 86,000 jobs in October, slightly higher than expected, ADP says",
+   "url": "https://www.cnbc.com/2026/11/04/private-companies-added-86000-jobs-in-october-slightly-higher-than-expected-adp-says.html",
+   "source": "CNBC",
+   "date": "2026-11-04",
+   "topic": "jobs_economy"
+  },
+  {
+   "title": "Jim Cramer says this bank stock is a buy after its post-election pullback",
+   "url": "https://www.cnbc.com/investingclub/2026/11/04/cramer-says-this-bank-stock-is-a-buy-after-its-post-election-pullback.html",
+   "source": "CNBC",
+   "date": "2026-11-04",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "Novo shares jump as Wegovy pill sales impress, drugmaker hikes outlook",
+   "url": "https://www.cnbc.com/2026/11/04/novo-q3-earnings-wegovy-sales.html",
+   "source": "CNBC",
+   "date": "2026-11-04",
+   "topic": "earnings"
+  },
+  {
+   "title": "U.S. midterm elections in pictures: Democrats' sweeping victories deliver rebuke to Trump",
+   "url": "https://www.cnbc.com/2026/11/04/us-midterm-elections-in-pictures-democrats-republicans-trump.html",
+   "source": "CNBC",
+   "date": "2026-11-04",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "10-year Treasury yield slides as traders mull over Democrats' midterm victories, oil prices drop",
+   "url": "https://www.cnbc.com/2026/11/03/treasury-yields-fall-as-democrats-win-big-in-us-midterm-elections.html",
+   "source": "CNBC",
+   "date": "2026-11-04",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "Euro zone inflation hits 4% for first time in three years as interest rate hike looms",
+   "url": "https://www.cnbc.com/2026/11/04/euro-zone-cpi-inflation-october-ecb-rate-hike.html",
+   "source": "CNBC Economy",
+   "date": "2026-11-04",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "The U.S. economy is barreling ahead \u2014 but there\u2019s one big problem",
+   "url": "https://www.marketwatch.com/story/the-u-s-economy-is-barreling-ahead-but-theres-one-big-problem-6d62e3b3?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-11-04",
+   "topic": "jobs_economy"
+  },
+  {
+   "title": "Datadog\u2019s stock extends steep declines in the wake of earnings",
+   "url": "https://www.marketwatch.com/story/datadogs-stock-extends-steep-declines-in-the-wake-of-earnings-af412874?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-11-04",
+   "topic": "earnings"
+  },
   {
    "title": "Disney plans several thousand layoffs, asks some managers to cut costs by up to 20%",
    "url": "https://www.cnbc.com/2026/11/03/disney-layoffs-cost-cuts.html",
@@ -147,6 +247,13 @@
    "topic": "jobs_economy"
   },
   {
+   "title": "Strand bookstore to pay nearly $1.5 million over Covid loan tied to Sen. Wyden's wife",
+   "url": "https://www.cnbc.com/2026/11/03/strand-bookstore-ppp-loan-ron-wyden-wife-settlement.html",
+   "source": "CNBC",
+   "date": "2026-11-03",
+   "topic": "banking_credit"
+  },
+  {
    "title": "Anthropic reports $17 billion in Q3 revenue, purchase commitments of $895.4 billion in revised S-1",
    "url": "https://www.cnbc.com/2026/11/02/anthropic-ant-s-1-quarter-financials.html",
    "source": "CNBC",
@@ -257,55 +364,6 @@
    "source": "New York Times",
    "date": "2026-11-02",
    "topic": "trade_tariffs"
-  },
-  {
-   "title": "These Senate races may help determine the fate of Social Security",
-   "url": "https://www.cnbc.com/2026/11/01/social-security-senate-races.html",
-   "source": "CNBC",
-   "date": "2026-11-01",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Everything changed for the oil, AI and bond trades over the past month",
-   "url": "https://www.cnbc.com/2026/11/01/oil-bond-yields-ai-market.html",
-   "source": "CNBC",
-   "date": "2026-11-01",
-   "topic": "energy"
-  },
-  {
-   "title": "The midterm election could reshape the muni bond market. Here\u2019s what investors need to know",
-   "url": "https://www.cnbc.com/2026/11/01/election-municipal-bonds.html",
-   "source": "CNBC",
-   "date": "2026-11-01",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Companies promised AI gains \u2014 here's how the payoff showed up in earnings",
-   "url": "https://www.cnbc.com/2026/11/01/ai-investments-company-earnings.html",
-   "source": "CNBC",
-   "date": "2026-11-01",
-   "topic": "earnings"
-  },
-  {
-   "title": "Apple\u2019s new earnings era begins at a critical time for Big Tech",
-   "url": "https://www.marketwatch.com/story/apples-new-earnings-era-begins-at-a-critical-time-for-big-tech-2236a44e?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-11-01",
-   "topic": "earnings"
-  },
-  {
-   "title": "Democratic Rep. Stevens endorses Republican Rogers over rival El-Sayed in Michigan Senate election",
-   "url": "https://www.cnbc.com/2026/11/01/michigan-senate-stevens-rogers-endorsement-el-sayed.html",
-   "source": "CNBC",
-   "date": "2026-11-01",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Alaska Sen. Sullivan says he'll accept election results, slams Peltola campaign\u2019s reported recruitment of 2nd Sullivan",
-   "url": "https://www.cnbc.com/2026/11/01/alaska-senate-election-dan-sullivan-peltola.html",
-   "source": "CNBC",
-   "date": "2026-11-01",
-   "topic": "elections_politics"
   }
  ],
  "cycle": [
@@ -315,7 +373,7 @@
    "years": 19,
    "stocks_median": 0.09061946902654872,
    "stocks_down_years": 7,
-   "bonds_median": 0.030572937244680243,
+   "bonds_median": 0.03057321734434315,
    "bond_years": 16,
    "current": false
   },
@@ -325,7 +383,7 @@
    "years": 19,
    "stocks_median": 0.010620399579390094,
    "stocks_down_years": 8,
-   "bonds_median": 0.059985564970996386,
+   "bonds_median": 0.05998678798985457,
    "bond_years": 15,
    "current": true
   },
@@ -345,7 +403,7 @@
    "years": 19,
    "stocks_median": 0.11779554059739161,
    "stocks_down_years": 3,
-   "bonds_median": 0.03821340764368297,
+   "bonds_median": 0.0382144793695437,
    "bond_years": 16,
    "current": false
   }
