@@ -26,9 +26,198 @@
    "treasury_auction"
   ],
   "warnings": [],
-  "as_of": "2026-11-04"
+  "as_of": "2026-11-06"
  },
  "news": [
+  {
+   "title": "U.S. economy added 165,000 jobs in October, way more than expected; unemployment rate slips to 4.1%",
+   "url": "https://www.cnbc.com/2026/11/06/jobs-report-october-2026.html",
+   "source": "CNBC",
+   "date": "2026-11-06",
+   "topic": "jobs_economy"
+  },
+  {
+   "title": "OpenAI will keep investing in AI data centers despite election results, CFO tells CNBC",
+   "url": "https://www.cnbc.com/2026/11/06/open-ai-data-centers-election.html",
+   "source": "CNBC",
+   "date": "2026-11-06",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "The AI \u2018credit card\u2019 is getting costlier as CoreWeave bond yield tops 16%",
+   "url": "https://www.cnbc.com/2026/11/06/coreweave-bond-yield-tops-16percent-as-ai-credit-stress-rises.html",
+   "source": "CNBC",
+   "date": "2026-11-06",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "Democratic sweep gives markets a reason to rethink path of interest rates",
+   "url": "https://www.cnbc.com/2026/11/06/oil-prices-interest-rates-midterms.html",
+   "source": "CNBC",
+   "date": "2026-11-06",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "Mississippi Senate: Colom, Hyde-Smith gird for ballot legal fight in razor-thin race",
+   "url": "https://www.cnbc.com/2026/11/05/mississippi-senate-election-scott-colom-hyde-smith.html",
+   "source": "CNBC",
+   "date": "2026-11-06",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Moderna raises 2026 outlook as CEO says newer vaccines are gaining traction",
+   "url": "https://www.cnbc.com/2026/11/06/moderna-mrna-earnings-q3-2026.html",
+   "source": "CNBC",
+   "date": "2026-11-06",
+   "topic": "earnings"
+  },
+  {
+   "title": "Anthropic IPO announcement odds drop on Kalshi following midterms and AI sell-off",
+   "url": "https://www.cnbc.com/2026/11/06/anthropic-ipo-kalshi-post-midterms-ai-sell-off.html",
+   "source": "CNBC",
+   "date": "2026-11-06",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "AI debt concerns grow as ING reportedly seeks buyers for $500 million of data center loans",
+   "url": "https://www.cnbc.com/2026/11/06/ing-ai-data-center-loans-debt.html",
+   "source": "CNBC",
+   "date": "2026-11-06",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "AI stocks hammered by midterm shock as data center buildout becomes a 'war of attrition'",
+   "url": "https://www.cnbc.com/2026/11/06/ai-data-center-midterms-selloff.html",
+   "source": "CNBC",
+   "date": "2026-11-06",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Oil prices set for sharp weekly fall after midterm elections as investors weigh Iran conflict risk",
+   "url": "https://www.cnbc.com/2026/11/06/oil-price-today-brent-wti.html",
+   "source": "CNBC",
+   "date": "2026-11-06",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Layoffs with dignity? Why these tech companies are offering free laptops and LinkedIn Premium.",
+   "url": "https://www.marketwatch.com/story/layoffs-with-dignity-why-these-tech-firms-are-offering-free-laptops-and-linkedin-premium-28750d39?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-11-06",
+   "topic": "jobs_economy"
+  },
+  {
+   "title": "These three stars need to align before investors rush back into stocks, Bank of America strategist says",
+   "url": "https://www.marketwatch.com/story/these-three-stars-need-to-align-before-investors-rush-back-into-stocks-bank-of-america-strategist-says-52879caa?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-11-06",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "Hiring jumps: The economy added 165,000 jobs last month",
+   "url": "https://www.npr.org/2026/11/06/nx-s1-6030867/jobs-labor-market-economy-wages-inflation",
+   "source": "NPR",
+   "date": "2026-11-06",
+   "topic": "jobs_economy"
+  },
+  {
+   "title": "The U.S. economy added far more jobs in October than expected",
+   "url": "https://www.npr.org/2026/11/06/nx-s1-6030632/the-u-s-economy-added-far-more-jobs-in-october-than-expected",
+   "source": "NPR",
+   "date": "2026-11-06",
+   "topic": "jobs_economy"
+  },
+  {
+   "title": "Economist on the midterm results and the U.S. economy",
+   "url": "https://www.npr.org/2026/11/06/nx-s1-6030881/economist-on-the-midterm-results-and-the-u-s-economy",
+   "source": "NPR",
+   "date": "2026-11-06",
+   "topic": "jobs_economy"
+  },
+  {
+   "title": "Stable Labor Market Keeps Fed on Track to Raise Rates Gradually",
+   "url": "https://www.nytimes.com/2026/11/06/business/economy/stable-labor-market-to-keep-fed-on-track-to-raise-rates-gradually.html",
+   "source": "New York Times",
+   "date": "2026-11-06",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "Neocloud IREN says $4 billion in annualized revenue being delayed due to customer request",
+   "url": "https://www.cnbc.com/2026/11/05/iren-earnings-report-q1-2027-.html",
+   "source": "CNBC",
+   "date": "2026-11-05",
+   "topic": "earnings"
+  },
+  {
+   "title": "Nvidia's Huang is asked to brief Congress on reported Chinese spy relationship",
+   "url": "https://www.cnbc.com/2026/11/05/nvidia-jensen-huang-china-spy-congress.html",
+   "source": "CNBC",
+   "date": "2026-11-05",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "The October jobs report is out Friday. Here's everything to expect",
+   "url": "https://www.cnbc.com/2026/11/05/october-jobs-report-preview.html",
+   "source": "CNBC Economy",
+   "date": "2026-11-05",
+   "topic": "jobs_economy"
+  },
+  {
+   "title": "Here's what the Democratic election rout could mean for the U.S. economy",
+   "url": "https://www.cnbc.com/2026/11/05/emocratic-midterm-economy.html",
+   "source": "CNBC Economy",
+   "date": "2026-11-05",
+   "topic": "jobs_economy"
+  },
+  {
+   "title": "Bank of England hikes interest rate for the first time since Iran war, warns inflation will near 5%",
+   "url": "https://www.cnbc.com/2026/11/05/interest-rates-inflation-uk.html",
+   "source": "CNBC Economy",
+   "date": "2026-11-05",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "Voters say the economy drove them to the polls \u2014 and blame Trump for their troubles",
+   "url": "https://www.cnbc.com/2026/11/04/2026-midterms-trump-economy-iran-war.html",
+   "source": "CNBC Economy",
+   "date": "2026-11-05",
+   "topic": "jobs_economy"
+  },
+  {
+   "title": "Top Democrats call to rein in AI buildout after midterms sweep: 'National data center moratorium now'",
+   "url": "https://www.cnbc.com/2026/11/05/democrats-data-center-restrictions-midterms.html",
+   "source": "CNBC Finance",
+   "date": "2026-11-05",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Barkin sees interest rate hikes ahead, but at a gradual pace",
+   "url": "https://www.cnbc.com/2026/11/05/barkin-sees-interest-rate-hikes-ahead-but-at-a-gradual-pace.html",
+   "source": "CNBC Finance",
+   "date": "2026-11-05",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "What the Democratic midterms sweep changes for U.S.-China relations",
+   "url": "https://www.cnbc.com/2026/11/05/what-the-democrat-midterms-sweep-changes-for-us-china-tech-rivalry.html",
+   "source": "CNBC Finance",
+   "date": "2026-11-05",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "With stubbornly high interest rates, some are reconsidering adjustable-rate mortgages",
+   "url": "https://www.npr.org/2026/11/05/nx-s1-6026480/with-stubbornly-high-interest-rates-some-are-reconsidering-adjustable-rate-mortgages",
+   "source": "NPR",
+   "date": "2026-11-05",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "Voters are fed up with high prices. Here's what the new Congress could do to help",
+   "url": "https://www.npr.org/2026/11/05/nx-s1-6029335/voters-are-fed-up-with-high-prices-heres-what-the-new-congress-could-do-to-help",
+   "source": "NPR",
+   "date": "2026-11-05",
+   "topic": "fed_rates"
+  },
   {
    "title": "5 midterm election takeaways: Tech billionaires suffer as Democrats drub Republicans",
    "url": "https://www.cnbc.com/2026/11/04/midterm-election-blue-wave-trump-billionaires.html",
@@ -133,237 +322,6 @@
    "source": "MarketWatch",
    "date": "2026-11-04",
    "topic": "earnings"
-  },
-  {
-   "title": "Disney plans several thousand layoffs, asks some managers to cut costs by up to 20%",
-   "url": "https://www.cnbc.com/2026/11/03/disney-layoffs-cost-cuts.html",
-   "source": "CNBC",
-   "date": "2026-11-03",
-   "topic": "jobs_economy"
-  },
-  {
-   "title": "Crude oil prices fall for second day as market hopes for diplomatic resolution to Iran war",
-   "url": "https://www.cnbc.com/2026/11/03/oil-prices-climb-after-us-reportedly-strikes-irans-qeshm-island.html",
-   "source": "CNBC",
-   "date": "2026-11-03",
-   "topic": "geopolitics"
-  },
-  {
-   "title": "Midterm elections could jolt stocks if Democrats sweep Congress",
-   "url": "https://www.cnbc.com/2026/11/03/midterm-election-stock-market.html",
-   "source": "CNBC",
-   "date": "2026-11-03",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Apple stock sinks as global memory crisis hurts profits, giving Ternus his first big test",
-   "url": "https://www.cnbc.com/2026/11/03/apple-earnings-john-ternus-faces-first-test-amid-high-memory-costs.html",
-   "source": "CNBC",
-   "date": "2026-11-03",
-   "topic": "earnings"
-  },
-  {
-   "title": "What the 2026 midterm elections could mean for Trump's final two years",
-   "url": "https://www.cnbc.com/2026/11/03/midterm-elections-congress-trump-democrats-republicans.html",
-   "source": "CNBC",
-   "date": "2026-11-03",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Job openings posted big September gain in positive sign for labor market ahead of payrolls report",
-   "url": "https://www.cnbc.com/2026/11/03/job-openings-posted-big-september-gain-in-positive-sign-for-labor-market-ahead-of-payrolls-report.html",
-   "source": "CNBC",
-   "date": "2026-11-03",
-   "topic": "jobs_economy"
-  },
-  {
-   "title": "Russia confirms new Ukraine peace talks as Melania Trump prepares to host ceasefire meeting",
-   "url": "https://www.cnbc.com/2026/11/03/russia-ukraine-peace-talks-abu-dhabi-trump-putin-xi.html",
-   "source": "CNBC",
-   "date": "2026-11-03",
-   "topic": "geopolitics"
-  },
-  {
-   "title": "Pfizer hikes full-year outlook as newer products grow, taps company veteran as new CFO",
-   "url": "https://www.cnbc.com/2026/11/03/pfizer-pfe-earnings-q3-2026.html",
-   "source": "CNBC",
-   "date": "2026-11-03",
-   "topic": "earnings"
-  },
-  {
-   "title": "Ferrari raises 2026 guidance after Q3 earnings beat",
-   "url": "https://www.cnbc.com/2026/11/03/ferrari-race-earnings-q3-2026.html",
-   "source": "CNBC",
-   "date": "2026-11-03",
-   "topic": "earnings"
-  },
-  {
-   "title": "Shopify falls 7% after Q3 revenue and merchandise volume miss estimates",
-   "url": "https://www.cnbc.com/2026/11/03/shopify-q3-2026-earnings-gmv.html",
-   "source": "CNBC",
-   "date": "2026-11-03",
-   "topic": "earnings"
-  },
-  {
-   "title": "Versant earnings beat expectations as digital platforms drive growth",
-   "url": "https://www.cnbc.com/2026/11/03/versant-vsnt-q3-2026-earnings.html",
-   "source": "CNBC",
-   "date": "2026-11-03",
-   "topic": "earnings"
-  },
-  {
-   "title": "Trump midterm election lawsuits, state pushback come to a head Tuesday",
-   "url": "https://www.cnbc.com/2026/11/03/trump-doj-election-lawsuits-monitors-2026-midterms.html",
-   "source": "CNBC",
-   "date": "2026-11-03",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Trump is going to get 'trounced' in the midterms \u2014 and knows it, Anthony Scaramucci tells CNBC",
-   "url": "https://www.cnbc.com/2026/11/03/scaramucci-trump-midterms-election.html",
-   "source": "CNBC",
-   "date": "2026-11-03",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Australia hikes rates to 18-year high to fight inflation",
-   "url": "https://www.cnbc.com/2026/11/03/australia-hikes-rates-18-year-high-finflation.html",
-   "source": "CNBC Economy",
-   "date": "2026-11-03",
-   "topic": "inflation"
-  },
-  {
-   "title": "Stock market after midterm elections: What S&P 500 history shows",
-   "url": "https://www.cnbc.com/2026/11/02/stock-market-after-midterm-elections-sp-500-history.html",
-   "source": "CNBC Finance",
-   "date": "2026-11-03",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "U.S. jobs market perks up, but it\u2019s still not a great time to get hired",
-   "url": "https://www.marketwatch.com/story/u-s-jobs-market-perks-up-but-its-still-not-a-great-time-to-get-hired-bc39f44f?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-11-03",
-   "topic": "jobs_economy"
-  },
-  {
-   "title": "Strand bookstore to pay nearly $1.5 million over Covid loan tied to Sen. Wyden's wife",
-   "url": "https://www.cnbc.com/2026/11/03/strand-bookstore-ppp-loan-ron-wyden-wife-settlement.html",
-   "source": "CNBC",
-   "date": "2026-11-03",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "Anthropic reports $17 billion in Q3 revenue, purchase commitments of $895.4 billion in revised S-1",
-   "url": "https://www.cnbc.com/2026/11/02/anthropic-ant-s-1-quarter-financials.html",
-   "source": "CNBC",
-   "date": "2026-11-02",
-   "topic": "earnings"
-  },
-  {
-   "title": "Stock market after midterm elections: What S&P 500 history shows",
-   "url": "https://www.cnbc.com/2026/11/02/stock-market-after-midterm-elections-sp-500-history.html",
-   "source": "CNBC",
-   "date": "2026-11-02",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Trump focuses on Reflecting Pool in final public speech before midterms",
-   "url": "https://www.cnbc.com/2026/11/02/trump-midterm-election-speech-reflecting-pool.html",
-   "source": "CNBC",
-   "date": "2026-11-02",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Options traders are getting anxious on Palantir and Apple ahead of earnings",
-   "url": "https://www.cnbc.com/2026/11/02/options-traders-are-getting-anxious-on-palantir-and-apple-ahead-of-earnings.html",
-   "source": "CNBC",
-   "date": "2026-11-02",
-   "topic": "earnings"
-  },
-  {
-   "title": "Crude oil prices sell off more than 7% on Iran peace talk hopes ahead of U.S. midterms",
-   "url": "https://www.cnbc.com/2026/11/02/oil-prices-fall-as-iran-us-pursue-diplomacy.html",
-   "source": "CNBC",
-   "date": "2026-11-02",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Prediction market traders now see nearly 75% chance of Democrats winning the Senate",
-   "url": "https://www.cnbc.com/2026/11/02/prediction-market-traders-now-see-nearly-75percent-chance-of-democrats-winning-the-senate.html",
-   "source": "CNBC",
-   "date": "2026-11-02",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Defense, healthcare, crypto and AI: How the midterm election could affect stocks",
-   "url": "https://www.cnbc.com/2026/11/02/midterm-election-stocks-defense-healthcare-crypto-ai.html",
-   "source": "CNBC",
-   "date": "2026-11-02",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "2 of our banks are at the heart of this week's biggest tech deals",
-   "url": "https://www.cnbc.com/investingclub/2026/11/02/2-of-our-banks-are-at-the-heart-of-this-weeks-biggest-tech-deals.html",
-   "source": "CNBC",
-   "date": "2026-11-02",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "Fed will vote on rates less often. What that could mean for borrowers",
-   "url": "https://www.cnbc.com/2026/11/02/fed-rate-votes-consumer-borrowing-costs.html",
-   "source": "CNBC",
-   "date": "2026-11-02",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "Canada-India $5.5 billion bank takeover attracts opposition from workers, politicians",
-   "url": "https://www.cnbc.com/2026/11/02/canada-india-bank-takeover-protest-workers.html",
-   "source": "CNBC",
-   "date": "2026-11-02",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "Rubio says Trump wants to end Iran war 'peacefully' even as both sides prepare for strikes",
-   "url": "https://www.cnbc.com/2026/11/02/us-iran-war-trump-hormuz-rubio.html",
-   "source": "CNBC",
-   "date": "2026-11-02",
-   "topic": "geopolitics"
-  },
-  {
-   "title": "CrowdStrike lands an upgrade, and Jim Cramer's advice on Apple ahead of earnings",
-   "url": "https://www.cnbc.com/investingclub/2026/11/02/crowdstrike-lands-an-upgrade-and-jim-cramers-advice-on-apple-ahead-of-earnings.html",
-   "source": "CNBC",
-   "date": "2026-11-02",
-   "topic": "earnings"
-  },
-  {
-   "title": "Apollo launches $11 billion private credit platform, backed by Abu Dhabi",
-   "url": "https://www.cnbc.com/2026/11/02/apollo-private-credit-abu-dhabi.html",
-   "source": "CNBC",
-   "date": "2026-11-02",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "South Korea targets 'world's highest performance' sovereign AI model in record new budget",
-   "url": "https://www.cnbc.com/2026/11/02/south-korea-ai-spending-budget.html",
-   "source": "CNBC",
-   "date": "2026-11-02",
-   "topic": "fiscal_debt"
-  },
-  {
-   "title": "How soon gas prices could go down now that oil is tumbling",
-   "url": "https://www.marketwatch.com/story/how-soon-gas-prices-could-go-down-now-that-oil-is-tumbling-a1140dc2?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-11-02",
-   "topic": "energy"
-  },
-  {
-   "title": "Trump\u2019s Tariffs Are On the Ballot in Michigan",
-   "url": "https://www.nytimes.com/2026/11/02/business/economy/trump-tariffs-midterms-michigan.html",
-   "source": "New York Times",
-   "date": "2026-11-02",
-   "topic": "trade_tariffs"
   }
  ],
  "cycle": [
@@ -373,7 +331,7 @@
    "years": 19,
    "stocks_median": 0.09061946902654872,
    "stocks_down_years": 7,
-   "bonds_median": 0.03057321734434315,
+   "bonds_median": 0.03057321734434304,
    "bond_years": 16,
    "current": false
   },
@@ -383,7 +341,7 @@
    "years": 19,
    "stocks_median": 0.010620399579390094,
    "stocks_down_years": 8,
-   "bonds_median": 0.05998678798985457,
+   "bonds_median": 0.05998537624212008,
    "bond_years": 15,
    "current": true
   },
@@ -403,7 +361,7 @@
    "years": 19,
    "stocks_median": 0.11779554059739161,
    "stocks_down_years": 3,
-   "bonds_median": 0.0382144793695437,
+   "bonds_median": 0.03821342789936166,
    "bond_years": 16,
    "current": false
   }

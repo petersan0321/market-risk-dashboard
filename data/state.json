@@ -1,7 +1,7 @@
 {
- "as_of": "2026-11-04",
+ "as_of": "2026-11-06",
  "overall": {
-  "score": 55.6,
+  "score": 57.1,
   "band": "Normal"
  },
  "categories": {
@@ -11,7 +11,7 @@
   "labour": "green",
   "credit": "green",
   "valuation": "amber",
-  "volatility": "green",
+  "volatility": "amber",
   "global": "green",
   "policy": "amber"
  },
@@ -26,7 +26,7 @@
   "move_index": "amber",
   "cpi_yoy": "amber",
   "core_pce_6m": "amber",
-  "breakeven_10y": "amber",
+  "breakeven_10y": "green",
   "wages_yoy": "green",
   "oil_yoy": "red",
   "cfnai_ma3": "green",
@@ -45,10 +45,10 @@
   "sloos_tightening": "green",
   "cape": "red",
   "equity_risk_premium": "green",
-  "vix": "amber",
-  "vix_term": "amber",
+  "vix": "red",
+  "vix_term": "red",
   "breadth_rsp_spy": "green",
-  "spx_vs_200dma": "green",
+  "spx_vs_200dma": "amber",
   "spx_drawdown": "green",
   "dollar_yoy": "amber",
   "copper_gold": "green",
@@ -67,7 +67,9 @@
   "sahm_rule": [],
   "baa_spread": [],
   "vix": [],
-  "vix_term": []
+  "vix_term": [
+   "Near-term fear above longer-term fear"
+  ]
  },
  "regime": "reflation"
 }
