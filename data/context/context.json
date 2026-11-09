@@ -26,9 +26,121 @@
    "treasury_auction"
   ],
   "warnings": [],
-  "as_of": "2026-11-08"
+  "as_of": "2026-11-09"
  },
  "news": [
+  {
+   "title": "PepsiCo to cut about 1,000 jobs as North American business struggles",
+   "url": "https://www.cnbc.com/2026/11/09/pepsico-north-america-job-cuts.html",
+   "source": "CNBC",
+   "date": "2026-11-09",
+   "topic": "jobs_economy"
+  },
+  {
+   "title": "A key report for where inflation stood in October comes out Tuesday. Here's what to expect",
+   "url": "https://www.cnbc.com/2026/11/09/october-cpi-report-2026-inflation.html",
+   "source": "CNBC",
+   "date": "2026-11-09",
+   "topic": "inflation"
+  },
+  {
+   "title": "Lucid misses Wall Street\u2019s earnings expectations, expands loan from Saudi Arabia fund",
+   "url": "https://www.cnbc.com/2026/11/09/lucid-group-lcid-earnings-q3-2026.html",
+   "source": "CNBC",
+   "date": "2026-11-09",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "Children\u2019s Place files for bankruptcy protection, seeks buyer",
+   "url": "https://www.cnbc.com/2026/11/09/childrens-place-chapter-11-sale.html",
+   "source": "CNBC",
+   "date": "2026-11-09",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "Trump questions midterm election results, revives voting-machine conspiracy",
+   "url": "https://www.cnbc.com/2026/11/09/trump-election-results-democrats.html",
+   "source": "CNBC",
+   "date": "2026-11-09",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Trump administration proposes stricter work-search rules for unemployment benefits",
+   "url": "https://www.cnbc.com/2026/11/09/trump-unemployment-work-search-rule.html",
+   "source": "CNBC",
+   "date": "2026-11-09",
+   "topic": "jobs_economy"
+  },
+  {
+   "title": "Elizabeth Warren set to take over the Senate banking committee. Here's what she plans to do",
+   "url": "https://www.cnbc.com/2026/11/09/elizabeth-warren-senate-banking-agenda.html",
+   "source": "CNBC",
+   "date": "2026-11-09",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Millions of dollars poured into prediction markets on election night, trading on Democratic control of Congress and Texas governor's race",
+   "url": "https://www.cnbc.com/2026/11/09/millions-of-dollars-poured-into-prediction-markets-on-election-night.html",
+   "source": "CNBC",
+   "date": "2026-11-09",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Congress returns with government funding, Pete Hegseth and the debt limit on the agenda",
+   "url": "https://www.cnbc.com/2026/11/09/congress-government-funding-debt-limit-elections.html",
+   "source": "CNBC",
+   "date": "2026-11-09",
+   "topic": "fiscal_debt"
+  },
+  {
+   "title": "CoreWeave confronts 'doom cycle' narrative as neocloud credit risk overshadows growth",
+   "url": "https://www.cnbc.com/2026/11/09/coreweave-debt-credit-risk-neoclouds.html",
+   "source": "CNBC",
+   "date": "2026-11-09",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "China wholesale inflation hits highest in more than four years as consumer measure slows",
+   "url": "https://www.cnbc.com/2026/11/09/china-wholesale-inflation-rises-consumer.html",
+   "source": "CNBC Economy",
+   "date": "2026-11-09",
+   "topic": "inflation"
+  },
+  {
+   "title": "Hot U.S. inflation hasn\u2019t cooled off. Rising consumer prices to keep Fed rate hike on track.",
+   "url": "https://www.marketwatch.com/story/hot-u-s-inflation-hasnt-cooled-off-rising-consumer-prices-to-keep-fed-rate-hike-on-track-926c44b0?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-11-09",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "The stock-market rally keeps spreading beyond Big Tech. October inflation data could put it to the test.",
+   "url": "https://www.marketwatch.com/story/the-stock-market-rally-keeps-spreading-beyond-big-tech-october-inflation-data-could-put-it-to-the-test-c1b87dcd?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-11-09",
+   "topic": "inflation"
+  },
+  {
+   "title": "Gas prices are finally below $4 a gallon, but Thanksgiving fuel costs will still be the highest since 2000",
+   "url": "https://www.marketwatch.com/story/gas-prices-are-finally-below-4-a-gallon-but-thanksgiving-fuel-costs-will-still-be-the-highest-since-2000-94a7865b?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-11-09",
+   "topic": "energy"
+  },
+  {
+   "title": "Economist discusses taxing the ultra wealthy and their impact on the economy",
+   "url": "https://www.npr.org/2026/11/09/nx-s1-6032701/economist-discusses-taxing-the-ultra-wealthy-and-their-impact-on-the-economy",
+   "source": "NPR",
+   "date": "2026-11-09",
+   "topic": "jobs_economy"
+  },
+  {
+   "title": "Could the Voter Backlash Against A.I. Actually Help the Economy?",
+   "url": "https://www.nytimes.com/2026/11/09/business/economy/ai-bubble-democrats-midterms-economy.html",
+   "source": "New York Times",
+   "date": "2026-11-09",
+   "topic": "jobs_economy"
+  },
   {
    "title": "How Democrats will try to end Trump's tariffs",
    "url": "https://www.cnbc.com/2026/11/08/trump-tariffs-democrats-congress-canada.html",
@@ -98,125 +210,6 @@
    "source": "MarketWatch",
    "date": "2026-11-07",
    "topic": "geopolitics"
-  },
-  {
-   "title": "U.S. economy added 165,000 jobs in October, way more than expected; unemployment rate slips to 4.1%",
-   "url": "https://www.cnbc.com/2026/11/06/jobs-report-october-2026.html",
-   "source": "CNBC",
-   "date": "2026-11-06",
-   "topic": "jobs_economy"
-  },
-  {
-   "title": "OpenAI will keep investing in AI data centers despite election results, CFO tells CNBC",
-   "url": "https://www.cnbc.com/2026/11/06/open-ai-data-centers-election.html",
-   "source": "CNBC",
-   "date": "2026-11-06",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "The AI \u2018credit card\u2019 is getting costlier as CoreWeave bond yield tops 16%",
-   "url": "https://www.cnbc.com/2026/11/06/coreweave-bond-yield-tops-16percent-as-ai-credit-stress-rises.html",
-   "source": "CNBC",
-   "date": "2026-11-06",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "Democratic sweep gives markets a reason to rethink path of interest rates",
-   "url": "https://www.cnbc.com/2026/11/06/oil-prices-interest-rates-midterms.html",
-   "source": "CNBC",
-   "date": "2026-11-06",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "Mississippi Senate: Colom, Hyde-Smith gird for ballot legal fight in razor-thin race",
-   "url": "https://www.cnbc.com/2026/11/05/mississippi-senate-election-scott-colom-hyde-smith.html",
-   "source": "CNBC",
-   "date": "2026-11-06",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Moderna raises 2026 outlook as CEO says newer vaccines are gaining traction",
-   "url": "https://www.cnbc.com/2026/11/06/moderna-mrna-earnings-q3-2026.html",
-   "source": "CNBC",
-   "date": "2026-11-06",
-   "topic": "earnings"
-  },
-  {
-   "title": "Anthropic IPO announcement odds drop on Kalshi following midterms and AI sell-off",
-   "url": "https://www.cnbc.com/2026/11/06/anthropic-ipo-kalshi-post-midterms-ai-sell-off.html",
-   "source": "CNBC",
-   "date": "2026-11-06",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "AI debt concerns grow as ING reportedly seeks buyers for $500 million of data center loans",
-   "url": "https://www.cnbc.com/2026/11/06/ing-ai-data-center-loans-debt.html",
-   "source": "CNBC",
-   "date": "2026-11-06",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "AI stocks hammered by midterm shock as data center buildout becomes a 'war of attrition'",
-   "url": "https://www.cnbc.com/2026/11/06/ai-data-center-midterms-selloff.html",
-   "source": "CNBC",
-   "date": "2026-11-06",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Oil prices set for sharp weekly fall after midterm elections as investors weigh Iran conflict risk",
-   "url": "https://www.cnbc.com/2026/11/06/oil-price-today-brent-wti.html",
-   "source": "CNBC",
-   "date": "2026-11-06",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Layoffs with dignity? Why these tech companies are offering free laptops and LinkedIn Premium.",
-   "url": "https://www.marketwatch.com/story/layoffs-with-dignity-why-these-tech-firms-are-offering-free-laptops-and-linkedin-premium-28750d39?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-11-06",
-   "topic": "jobs_economy"
-  },
-  {
-   "title": "These three stars need to align before investors rush back into stocks, Bank of America strategist says",
-   "url": "https://www.marketwatch.com/story/these-three-stars-need-to-align-before-investors-rush-back-into-stocks-bank-of-america-strategist-says-52879caa?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-11-06",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "Hiring jumps: The economy added 165,000 jobs last month",
-   "url": "https://www.npr.org/2026/11/06/nx-s1-6030867/jobs-labor-market-economy-wages-inflation",
-   "source": "NPR",
-   "date": "2026-11-06",
-   "topic": "jobs_economy"
-  },
-  {
-   "title": "The U.S. economy added far more jobs in October than expected",
-   "url": "https://www.npr.org/2026/11/06/nx-s1-6030632/the-u-s-economy-added-far-more-jobs-in-october-than-expected",
-   "source": "NPR",
-   "date": "2026-11-06",
-   "topic": "jobs_economy"
-  },
-  {
-   "title": "Economist on the midterm results and the U.S. economy",
-   "url": "https://www.npr.org/2026/11/06/nx-s1-6030881/economist-on-the-midterm-results-and-the-u-s-economy",
-   "source": "NPR",
-   "date": "2026-11-06",
-   "topic": "jobs_economy"
-  },
-  {
-   "title": "Stable Labor Market Keeps Fed on Track to Raise Rates Gradually",
-   "url": "https://www.nytimes.com/2026/11/06/business/economy/stable-labor-market-to-keep-fed-on-track-to-raise-rates-gradually.html",
-   "source": "New York Times",
-   "date": "2026-11-06",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "Americans are on a 'treadmill of high inflation' and more rate hikes are likely, Fed's Daly says",
-   "url": "https://www.cnbc.com/2026/11/06/fed-daly-interest-rates-inflation.html",
-   "source": "CNBC Finance",
-   "date": "2026-11-06",
-   "topic": "fed_rates"
   }
  ],
  "cycle": [
@@ -226,7 +219,7 @@
    "years": 19,
    "stocks_median": 0.09061946902654872,
    "stocks_down_years": 7,
-   "bonds_median": 0.03057376271671064,
+   "bonds_median": 0.030572937244680132,
    "bond_years": 16,
    "current": false
   },
@@ -236,7 +229,7 @@
    "years": 19,
    "stocks_median": 0.010620399579390094,
    "stocks_down_years": 8,
-   "bonds_median": 0.059986981724962085,
+   "bonds_median": 0.059985564970997274,
    "bond_years": 15,
    "current": true
   },
