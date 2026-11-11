@@ -26,9 +26,72 @@
    "treasury_auction"
   ],
   "warnings": [],
-  "as_of": "2026-11-10"
+  "as_of": "2026-11-11"
  },
  "news": [
+  {
+   "title": "Nvidia shares rebound as Jensen Huang faces scrutiny ahead of earnings",
+   "url": "https://www.cnbc.com/2026/11/11/nvidia-stock-jensen-huang-affair-china.html",
+   "source": "CNBC",
+   "date": "2026-11-11",
+   "topic": "earnings"
+  },
+  {
+   "title": "Fed's Goolsbee calls inflation report 'borderline disturbing' as central bank weighs more hikes",
+   "url": "https://www.cnbc.com/2026/11/11/goolsbee-october-inflation-fed-rates-disturbing-distressing.html",
+   "source": "CNBC",
+   "date": "2026-11-11",
+   "topic": "inflation"
+  },
+  {
+   "title": "Bessent moved to military base amid 'growing threats' from Iran",
+   "url": "https://www.cnbc.com/2026/11/11/us-iran-war-trump-hormuz-bessent-threats.html",
+   "source": "CNBC",
+   "date": "2026-11-11",
+   "topic": "geopolitics"
+  },
+  {
+   "title": "Mississippi Senate: Scott Colom leads Hyde-Smith by more than 3,000 votes",
+   "url": "https://www.cnbc.com/2026/11/10/mississippi-senate-scott-colom-hyde-smith.html",
+   "source": "CNBC",
+   "date": "2026-11-11",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "JetBlue unveils new first class seats to bring back profits",
+   "url": "https://www.cnbc.com/2026/11/11/jetblue-ceo-premium.html",
+   "source": "CNBC",
+   "date": "2026-11-11",
+   "topic": "earnings"
+  },
+  {
+   "title": "General strikes to paralyze Spain as protestors clash with police ahead of election campaign",
+   "url": "https://www.cnbc.com/2026/11/11/spain-protests-general-strikes-election.html",
+   "source": "CNBC",
+   "date": "2026-11-11",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Rep. Jim Jordan, Sen. John Thune elected GOP leaders in Congress",
+   "url": "https://www.cnbc.com/2026/11/10/jim-jordan-congress-republicans-midterm.html",
+   "source": "CNBC",
+   "date": "2026-11-11",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "From living in his car to a 756 credit score: How one veteran rebuilt his finances",
+   "url": "https://www.marketwatch.com/story/from-living-in-his-car-to-a-756-credit-score-how-one-veteran-rebuilt-his-finances-026c3336?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-11-11",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "Lebanon Faces Economic \u2018Catastrophe\u2019 After War and Years of Mismanagement",
+   "url": "https://www.nytimes.com/2026/11/11/world/middleeast/lebanon-economy-crisis-corruption-war.html",
+   "source": "New York Times",
+   "date": "2026-11-11",
+   "topic": "geopolitics"
+  },
   {
    "title": "Here's the inflation breakdown for October 2026 \u2014 in one chart",
    "url": "https://www.cnbc.com/2026/11/10/october-2026-cpi-inflation-breakdown.html",
@@ -156,6 +219,13 @@
    "topic": "fed_rates"
   },
   {
+   "title": "White House vows to press ahead with tariffs despite midterm backlash over rising prices",
+   "url": "https://www.cnbc.com/2026/11/10/trump-tariffs-midterms-gary-cohn-inflation.html",
+   "source": "CNBC",
+   "date": "2026-11-10",
+   "topic": "trade_tariffs"
+  },
+  {
    "title": "PepsiCo to cut about 1,000 jobs as North American business struggles",
    "url": "https://www.cnbc.com/2026/11/09/pepsico-north-america-job-cuts.html",
    "source": "CNBC",
@@ -273,20 +343,6 @@
    "source": "CNBC",
    "date": "2026-11-09",
    "topic": "jobs_economy"
-  },
-  {
-   "title": "How Democrats will try to end Trump's tariffs",
-   "url": "https://www.cnbc.com/2026/11/08/trump-tariffs-democrats-congress-canada.html",
-   "source": "CNBC",
-   "date": "2026-11-08",
-   "topic": "trade_tariffs"
-  },
-  {
-   "title": "Corporate America\u2019s profit numbers are just barely beating Wall Street\u2019s expectations",
-   "url": "https://www.marketwatch.com/story/corporate-americas-profit-numbers-are-just-barely-beating-wall-streets-expectations-eaa67fe2?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-11-08",
-   "topic": "earnings"
   }
  ],
  "cycle": [
@@ -296,7 +352,7 @@
    "years": 19,
    "stocks_median": 0.09061946902654872,
    "stocks_down_years": 7,
-   "bonds_median": 0.03057293724468002,
+   "bonds_median": 0.03057376271670953,
    "bond_years": 16,
    "current": false
   },
@@ -306,7 +362,7 @@
    "years": 19,
    "stocks_median": 0.010620399579390094,
    "stocks_down_years": 8,
-   "bonds_median": 0.05998556497099661,
+   "bonds_median": 0.05998556497099772,
    "bond_years": 15,
    "current": true
   },
@@ -326,7 +382,7 @@
    "years": 19,
    "stocks_median": 0.11779554059739161,
    "stocks_down_years": 3,
-   "bonds_median": 0.03821340764368275,
+   "bonds_median": 0.03821446284272123,
    "bond_years": 16,
    "current": false
   }
