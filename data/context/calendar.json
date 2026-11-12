@@ -21,9 +21,8 @@
   "jobs",
   "pce",
   "gdp",
-  "retail_sales",
-  "treasury_auction"
+  "retail_sales"
  ],
  "warnings": [],
- "as_of": "2026-11-11"
+ "as_of": "2026-11-12"
 }

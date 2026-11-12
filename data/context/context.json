@@ -22,13 +22,68 @@
    "jobs",
    "pce",
    "gdp",
-   "retail_sales",
-   "treasury_auction"
+   "retail_sales"
   ],
   "warnings": [],
-  "as_of": "2026-11-11"
+  "as_of": "2026-11-12"
  },
  "news": [
+  {
+   "title": "In a policy switch, the Fed says its October 2027 meeting will not see a vote on interest rates",
+   "url": "https://www.cnbc.com/2026/11/12/in-policy-switch-fed-says-its-october-2027-meeting-will-not-see-a-vote-on-interest-rates.html",
+   "source": "CNBC",
+   "date": "2026-11-12",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "Analysis: Nvidia\u2019s leadership crisis tests the chipmaker\u2019s role as the \u2018central bank of AI\u2019",
+   "url": "https://www.cnbc.com/2026/11/11/nvidia-jensen-huang-ai-financial-system-risk.html",
+   "source": "CNBC",
+   "date": "2026-11-12",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "Nebius falls 16% as company expects increased 2026 capex spend, issues weak outlook",
+   "url": "https://www.cnbc.com/2026/11/12/nebius-q3-earnings-report-2026.html",
+   "source": "CNBC",
+   "date": "2026-11-12",
+   "topic": "earnings"
+  },
+  {
+   "title": "Oil prices rise after Trump says no Iran deal needed: 'We've got their Strait'",
+   "url": "https://www.cnbc.com/2026/11/12/oil-prices-jump-after-trump-says-no-iran-deal-needed-weve-got-their-strait.html",
+   "source": "CNBC",
+   "date": "2026-11-12",
+   "topic": "inflation"
+  },
+  {
+   "title": "As credit card balances hit a record high, medical bills can become 'shadow debt,' expert says",
+   "url": "https://www.cnbc.com/2026/11/12/medical-bills-credit-card-debt.html",
+   "source": "CNBC",
+   "date": "2026-11-12",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "Scott Colom wins Mississippi Senate election over incumbent Republican Hyde-Smith",
+   "url": "https://www.cnbc.com/2026/11/11/democrat-scott-colom-projected-to-win-mississippi-senate-election-over-incumbent-hyde-smith.html",
+   "source": "CNBC",
+   "date": "2026-11-12",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Canada\u2019s ambassador warns Trump tariffs are driving up costs, threatening U.S. investment",
+   "url": "https://www.cnbc.com/2026/11/11/canada-ambassador-trump-tariffs-investments.html",
+   "source": "CNBC",
+   "date": "2026-11-12",
+   "topic": "trade_tariffs"
+  },
+  {
+   "title": "Jensen Huang Was the Face of the A.I. Boom Powering the U.S. Economy",
+   "url": "https://www.nytimes.com/2026/11/12/business/economy/jensen-huang-economy-nvidia-ai.html",
+   "source": "New York Times",
+   "date": "2026-11-12",
+   "topic": "jobs_economy"
+  },
   {
    "title": "Nvidia shares rebound as Jensen Huang faces scrutiny ahead of earnings",
    "url": "https://www.cnbc.com/2026/11/11/nvidia-stock-jensen-huang-affair-china.html",
@@ -91,6 +146,27 @@
    "source": "New York Times",
    "date": "2026-11-11",
    "topic": "geopolitics"
+  },
+  {
+   "title": "Social Security could pay full benefits until 2059 if taxable payroll kept pace with GDP: AARP report",
+   "url": "https://www.cnbc.com/2026/11/11/social-security-benefits-taxable-payroll-gdp.html",
+   "source": "CNBC",
+   "date": "2026-11-11",
+   "topic": "jobs_economy"
+  },
+  {
+   "title": "Why is gasoline suddenly under $4 a gallon?",
+   "url": "https://www.npr.org/2026/11/11/nx-s1-6037588/gasoline-price-below-4-dollars-gallon",
+   "source": "NPR",
+   "date": "2026-11-11",
+   "topic": "energy"
+  },
+  {
+   "title": "Could the Voter Backlash Against A.I. Actually Help the Economy?",
+   "url": "https://www.nytimes.com/2026/11/09/business/economy/ai-bubble-democrats-midterms-economy.html",
+   "source": "New York Times",
+   "date": "2026-11-11",
+   "topic": "jobs_economy"
   },
   {
    "title": "Here's the inflation breakdown for October 2026 \u2014 in one chart",
@@ -224,125 +300,6 @@
    "source": "CNBC",
    "date": "2026-11-10",
    "topic": "trade_tariffs"
-  },
-  {
-   "title": "PepsiCo to cut about 1,000 jobs as North American business struggles",
-   "url": "https://www.cnbc.com/2026/11/09/pepsico-north-america-job-cuts.html",
-   "source": "CNBC",
-   "date": "2026-11-09",
-   "topic": "jobs_economy"
-  },
-  {
-   "title": "A key report for where inflation stood in October comes out Tuesday. Here's what to expect",
-   "url": "https://www.cnbc.com/2026/11/09/october-cpi-report-2026-inflation.html",
-   "source": "CNBC",
-   "date": "2026-11-09",
-   "topic": "inflation"
-  },
-  {
-   "title": "Lucid misses Wall Street\u2019s earnings expectations, expands loan from Saudi Arabia fund",
-   "url": "https://www.cnbc.com/2026/11/09/lucid-group-lcid-earnings-q3-2026.html",
-   "source": "CNBC",
-   "date": "2026-11-09",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "Children\u2019s Place files for bankruptcy protection, seeks buyer",
-   "url": "https://www.cnbc.com/2026/11/09/childrens-place-chapter-11-sale.html",
-   "source": "CNBC",
-   "date": "2026-11-09",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "Trump questions midterm election results, revives voting-machine conspiracy",
-   "url": "https://www.cnbc.com/2026/11/09/trump-election-results-democrats.html",
-   "source": "CNBC",
-   "date": "2026-11-09",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Trump administration proposes stricter work-search rules for unemployment benefits",
-   "url": "https://www.cnbc.com/2026/11/09/trump-unemployment-work-search-rule.html",
-   "source": "CNBC",
-   "date": "2026-11-09",
-   "topic": "jobs_economy"
-  },
-  {
-   "title": "Elizabeth Warren set to take over the Senate banking committee. Here's what she plans to do",
-   "url": "https://www.cnbc.com/2026/11/09/elizabeth-warren-senate-banking-agenda.html",
-   "source": "CNBC",
-   "date": "2026-11-09",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Millions of dollars poured into prediction markets on election night, trading on Democratic control of Congress and Texas governor's race",
-   "url": "https://www.cnbc.com/2026/11/09/millions-of-dollars-poured-into-prediction-markets-on-election-night.html",
-   "source": "CNBC",
-   "date": "2026-11-09",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Congress returns with government funding, Pete Hegseth and the debt limit on the agenda",
-   "url": "https://www.cnbc.com/2026/11/09/congress-government-funding-debt-limit-elections.html",
-   "source": "CNBC",
-   "date": "2026-11-09",
-   "topic": "fiscal_debt"
-  },
-  {
-   "title": "CoreWeave confronts 'doom cycle' narrative as neocloud credit risk overshadows growth",
-   "url": "https://www.cnbc.com/2026/11/09/coreweave-debt-credit-risk-neoclouds.html",
-   "source": "CNBC",
-   "date": "2026-11-09",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "China wholesale inflation hits highest in more than four years as consumer measure slows",
-   "url": "https://www.cnbc.com/2026/11/09/china-wholesale-inflation-rises-consumer.html",
-   "source": "CNBC Economy",
-   "date": "2026-11-09",
-   "topic": "inflation"
-  },
-  {
-   "title": "Hot U.S. inflation hasn\u2019t cooled off. Rising consumer prices to keep Fed rate hike on track.",
-   "url": "https://www.marketwatch.com/story/hot-u-s-inflation-hasnt-cooled-off-rising-consumer-prices-to-keep-fed-rate-hike-on-track-926c44b0?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-11-09",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "The stock-market rally keeps spreading beyond Big Tech. October inflation data could put it to the test.",
-   "url": "https://www.marketwatch.com/story/the-stock-market-rally-keeps-spreading-beyond-big-tech-october-inflation-data-could-put-it-to-the-test-c1b87dcd?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-11-09",
-   "topic": "inflation"
-  },
-  {
-   "title": "Gas prices are finally below $4 a gallon, but Thanksgiving fuel costs will still be the highest since 2000",
-   "url": "https://www.marketwatch.com/story/gas-prices-are-finally-below-4-a-gallon-but-thanksgiving-fuel-costs-will-still-be-the-highest-since-2000-94a7865b?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-11-09",
-   "topic": "energy"
-  },
-  {
-   "title": "Economist discusses taxing the ultra wealthy and their impact on the economy",
-   "url": "https://www.npr.org/2026/11/09/nx-s1-6032701/economist-discusses-taxing-the-ultra-wealthy-and-their-impact-on-the-economy",
-   "source": "NPR",
-   "date": "2026-11-09",
-   "topic": "jobs_economy"
-  },
-  {
-   "title": "Could the Voter Backlash Against A.I. Actually Help the Economy?",
-   "url": "https://www.nytimes.com/2026/11/09/business/economy/ai-bubble-democrats-midterms-economy.html",
-   "source": "New York Times",
-   "date": "2026-11-09",
-   "topic": "jobs_economy"
-  },
-  {
-   "title": "3 unexpected reasons the October jobs report was so strong",
-   "url": "https://www.cnbc.com/2026/11/09/october-jobs-report-hiring-by-sector.html",
-   "source": "CNBC",
-   "date": "2026-11-09",
-   "topic": "jobs_economy"
   }
  ],
  "cycle": [
@@ -352,7 +309,7 @@
    "years": 19,
    "stocks_median": 0.09061946902654872,
    "stocks_down_years": 7,
-   "bonds_median": 0.03057376271670953,
+   "bonds_median": 0.03057272681480616,
    "bond_years": 16,
    "current": false
   },
@@ -362,7 +319,7 @@
    "years": 19,
    "stocks_median": 0.010620399579390094,
    "stocks_down_years": 8,
-   "bonds_median": 0.05998556497099772,
+   "bonds_median": 0.059985996426674904,
    "bond_years": 15,
    "current": true
   },
@@ -382,7 +339,7 @@
    "years": 19,
    "stocks_median": 0.11779554059739161,
    "stocks_down_years": 3,
-   "bonds_median": 0.03821446284272123,
+   "bonds_median": 0.03821448480299672,
    "bond_years": 16,
    "current": false
   }

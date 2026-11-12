@@ -61,5 +61,26 @@
   "source": "New York Times",
   "date": "2026-11-11",
   "topic": "geopolitics"
+ },
+ {
+  "title": "Social Security could pay full benefits until 2059 if taxable payroll kept pace with GDP: AARP report",
+  "url": "https://www.cnbc.com/2026/11/11/social-security-benefits-taxable-payroll-gdp.html",
+  "source": "CNBC",
+  "date": "2026-11-11",
+  "topic": "jobs_economy"
+ },
+ {
+  "title": "Why is gasoline suddenly under $4 a gallon?",
+  "url": "https://www.npr.org/2026/11/11/nx-s1-6037588/gasoline-price-below-4-dollars-gallon",
+  "source": "NPR",
+  "date": "2026-11-11",
+  "topic": "energy"
+ },
+ {
+  "title": "Could the Voter Backlash Against A.I. Actually Help the Economy?",
+  "url": "https://www.nytimes.com/2026/11/09/business/economy/ai-bubble-democrats-midterms-economy.html",
+  "source": "New York Times",
+  "date": "2026-11-11",
+  "topic": "jobs_economy"
  }
 ]
