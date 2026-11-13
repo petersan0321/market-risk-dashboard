@@ -25,9 +25,79 @@
    "retail_sales"
   ],
   "warnings": [],
-  "as_of": "2026-11-12"
+  "as_of": "2026-11-13"
  },
  "news": [
+  {
+   "title": "Chicago Fed's Goolsbee says central bank 'has definitely got work to do' on inflation",
+   "url": "https://www.cnbc.com/2026/11/13/chicago-feds-goolsbee-says-central-bank-has-definitely-got-work-to-do-on-inflation.html",
+   "source": "CNBC",
+   "date": "2026-11-13",
+   "topic": "inflation"
+  },
+  {
+   "title": "Microsoft apologizes for massive outage that took down Outlook and other 365 services",
+   "url": "https://www.cnbc.com/2026/11/12/microsoft-outage-outlook-aws-google.html",
+   "source": "CNBC",
+   "date": "2026-11-13",
+   "topic": "earnings"
+  },
+  {
+   "title": "Trump says he wants to \u2018get Cuba done\u2019 before leaving office, would consider military force",
+   "url": "https://www.cnbc.com/2026/11/13/trump-cuba-us-military-force-iran.html",
+   "source": "CNBC",
+   "date": "2026-11-13",
+   "topic": "geopolitics"
+  },
+  {
+   "title": "\u2018We will sue them\u2019: Canada threatens Stellantis as Trump trade war reshapes Jeep production plans",
+   "url": "https://www.cnbc.com/2026/11/13/canada-stellantis-auto-trump-tariffs-jeep.html",
+   "source": "CNBC",
+   "date": "2026-11-13",
+   "topic": "trade_tariffs"
+  },
+  {
+   "title": "10-year Treasury yield moves to 5.17% as traders weigh producer price report",
+   "url": "https://www.cnbc.com/2026/11/13/treasury-yields-fed-rates.html",
+   "source": "CNBC",
+   "date": "2026-11-13",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "Russian crude production rebounds after Trump diesel deal, IEA says as oil markets return to surplus",
+   "url": "https://www.cnbc.com/2026/11/13/russia-oil-exports-iea-diesel-deal.html",
+   "source": "CNBC",
+   "date": "2026-11-13",
+   "topic": "energy"
+  },
+  {
+   "title": "Cisco beats on earnings, says AI infrastructure revenue will double this fiscal year",
+   "url": "https://www.cnbc.com/2026/11/12/cisco-csco-q1-2027-earnings.html",
+   "source": "CNBC",
+   "date": "2026-11-13",
+   "topic": "earnings"
+  },
+  {
+   "title": "How the Jensen Huang affair changes the outlook for U.S.-China relations",
+   "url": "https://www.cnbc.com/2026/11/13/jensen-huang-nvidia-us-china-relations.html",
+   "source": "CNBC",
+   "date": "2026-11-13",
+   "topic": "earnings"
+  },
+  {
+   "title": "Oil prices rise after Trump says no Iran deal needed: 'We've got their Strait'",
+   "url": "https://www.cnbc.com/2026/11/12/oil-prices-jump-after-trump-says-no-iran-deal-needed-weve-got-their-strait.html",
+   "source": "CNBC Finance",
+   "date": "2026-11-13",
+   "topic": "inflation"
+  },
+  {
+   "title": "From living in his car to a 756 credit score: How one veteran rebuilt his finances",
+   "url": "https://www.marketwatch.com/story/from-living-in-his-car-to-a-756-credit-score-how-one-veteran-rebuilt-his-finances-026c3336?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-11-13",
+   "topic": "banking_credit"
+  },
   {
    "title": "In a policy switch, the Fed says its October 2027 meeting will not see a vote on interest rates",
    "url": "https://www.cnbc.com/2026/11/12/in-policy-switch-fed-says-its-october-2027-meeting-will-not-see-a-vote-on-interest-rates.html",
@@ -83,6 +153,27 @@
    "source": "New York Times",
    "date": "2026-11-12",
    "topic": "jobs_economy"
+  },
+  {
+   "title": "Federal Reserve Board announces pricing, effective January 1, 2027, for payment services the Federal Reserve Banks provide to banks and credit unions, and changes to streamline and adjust their check services",
+   "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20261112a.htm",
+   "source": "Federal Reserve",
+   "date": "2026-11-12",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "Federal Reserve announces revised tentative schedule of Federal Open Market Committee meetings in 2027",
+   "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261112a.htm",
+   "source": "Federal Reserve",
+   "date": "2026-11-12",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "Fed Will Not Hold Policy Vote at October 2027 Meeting",
+   "url": "https://www.nytimes.com/2026/11/12/business/economy/fed-warsh-october.html",
+   "source": "New York Times",
+   "date": "2026-11-12",
+   "topic": "fed_rates"
   },
   {
    "title": "Nvidia shares rebound as Jensen Huang faces scrutiny ahead of earnings",
@@ -167,139 +258,6 @@
    "source": "New York Times",
    "date": "2026-11-11",
    "topic": "jobs_economy"
-  },
-  {
-   "title": "Here's the inflation breakdown for October 2026 \u2014 in one chart",
-   "url": "https://www.cnbc.com/2026/11/10/october-2026-cpi-inflation-breakdown.html",
-   "source": "CNBC",
-   "date": "2026-11-10",
-   "topic": "inflation"
-  },
-  {
-   "title": "10-year Treasury yield races back to 5% as inflation data, Waller comments drive rate hike expectations",
-   "url": "https://www.cnbc.com/2026/11/10/us-bonds-treasurys-yields.html",
-   "source": "CNBC",
-   "date": "2026-11-10",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "U.S. gas prices fall below $4 for the first time since July",
-   "url": "https://www.cnbc.com/2026/11/10/us-gas-prices-below-four-dollars.html",
-   "source": "CNBC",
-   "date": "2026-11-10",
-   "topic": "energy"
-  },
-  {
-   "title": "Credit card debt climbs to a record $1.29 trillion, New York Fed research finds",
-   "url": "https://www.cnbc.com/2026/11/10/credit-card-debt-record.html",
-   "source": "CNBC",
-   "date": "2026-11-10",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "Pete Hegseth decries impeachment push, defends Iran war handling",
-   "url": "https://www.cnbc.com/2026/11/10/pete-hegseth-impeachment-massie-iran.html",
-   "source": "CNBC",
-   "date": "2026-11-10",
-   "topic": "geopolitics"
-  },
-  {
-   "title": "House Oversight calls on DOJ to interview key Epstein witnesses, says govt. \u2018failed\u2019 survivors",
-   "url": "https://www.cnbc.com/2026/11/10/jeffrey-epstein-house-oversight-doj.html",
-   "source": "CNBC",
-   "date": "2026-11-10",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "CoreWeave earnings put debt-fueled AI build-out under scrutiny",
-   "url": "https://www.cnbc.com/2026/11/10/coreweave-earnings-preview-debt-capex.html",
-   "source": "CNBC",
-   "date": "2026-11-10",
-   "topic": "earnings"
-  },
-  {
-   "title": "Trump's 2028 successors are already fighting over who to blame for GOP midterm wipeout",
-   "url": "https://www.cnbc.com/2026/11/10/trump-vance-rubio-republican-desantis-midterms.html",
-   "source": "CNBC",
-   "date": "2026-11-10",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Does anyone feel safe from layoffs right now?",
-   "url": "https://www.cnbc.com/make-it/2026/11/10/layoff-announcements-are-slowing-this-year-workers-are-still-worried.html",
-   "source": "CNBC",
-   "date": "2026-11-10",
-   "topic": "jobs_economy"
-  },
-  {
-   "title": "Polymarket says annualized revenue has topped $1.8 billion",
-   "url": "https://www.cnbc.com/2026/11/10/polymarket-annualized-revenue-us-growth.html",
-   "source": "CNBC",
-   "date": "2026-11-10",
-   "topic": "earnings"
-  },
-  {
-   "title": "Trump says Iran war to end 'fairly soon,' plays down prospects of new strikes",
-   "url": "https://www.cnbc.com/2026/11/10/trump-iran-war-hormuz-.html",
-   "source": "CNBC",
-   "date": "2026-11-10",
-   "topic": "geopolitics"
-  },
-  {
-   "title": "Consumer prices rose 0.4% in October, more than expected, complicating Fed's inflation fight",
-   "url": "https://www.cnbc.com/2026/11/10/cpi-inflation-report-october-2026.html",
-   "source": "CNBC Economy",
-   "date": "2026-11-10",
-   "topic": "inflation"
-  },
-  {
-   "title": "Fed Governor Waller sees December hike likely, opens door to possible half-point increase",
-   "url": "https://www.cnbc.com/2026/11/10/fed-governor-waller-sees-december-hike-likely.html",
-   "source": "CNBC Finance",
-   "date": "2026-11-10",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "Stocks fall as the 10-year Treasury yield reclaims 5%",
-   "url": "https://www.marketwatch.com/story/why-stocks-are-falling-and-10-year-yields-are-climbing-back-near-5-after-tuesdays-inflation-report-389b8392?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-11-10",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "Gas prices dip below $4 but inflation remains stubbornly high",
-   "url": "https://www.npr.org/2026/11/10/nx-s1-6034518/inflation-consumer-prices-economy-gas-prices",
-   "source": "NPR",
-   "date": "2026-11-10",
-   "topic": "inflation"
-  },
-  {
-   "title": "INFLATION REPORT",
-   "url": "https://www.npr.org/2026/11/10/nx-s1-6034517/inflation-report",
-   "source": "NPR",
-   "date": "2026-11-10",
-   "topic": "inflation"
-  },
-  {
-   "title": "Here\u2019s why last year\u2019s government shutdown will haunt October\u2019s inflation data.",
-   "url": "https://www.nytimes.com/live/2026/11/10/business/inflation-cpi-report-october/heres-why-last-years-government-shutdown-will-haunt-octobers-inflation-data",
-   "source": "New York Times",
-   "date": "2026-11-10",
-   "topic": "inflation"
-  },
-  {
-   "title": "Elevated Inflation Keeps Pressure on Fed to Raise Rates",
-   "url": "https://www.nytimes.com/2026/11/10/business/economy/inflation-economy-cpi.html",
-   "source": "New York Times",
-   "date": "2026-11-10",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "White House vows to press ahead with tariffs despite midterm backlash over rising prices",
-   "url": "https://www.cnbc.com/2026/11/10/trump-tariffs-midterms-gary-cohn-inflation.html",
-   "source": "CNBC",
-   "date": "2026-11-10",
-   "topic": "trade_tariffs"
   }
  ],
  "cycle": [
@@ -309,7 +267,7 @@
    "years": 19,
    "stocks_median": 0.09061946902654872,
    "stocks_down_years": 7,
-   "bonds_median": 0.03057272681480616,
+   "bonds_median": 0.03057435975183498,
    "bond_years": 16,
    "current": false
   },
@@ -319,7 +277,7 @@
    "years": 19,
    "stocks_median": 0.010620399579390094,
    "stocks_down_years": 8,
-   "bonds_median": 0.059985996426674904,
+   "bonds_median": 0.05998599642667468,
    "bond_years": 15,
    "current": true
   },
@@ -339,7 +297,7 @@
    "years": 19,
    "stocks_median": 0.11779554059739161,
    "stocks_down_years": 3,
-   "bonds_median": 0.03821448480299672,
+   "bonds_median": 0.03821448480299594,
    "bond_years": 16,
    "current": false
   }

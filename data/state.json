@@ -1,7 +1,7 @@
 {
- "as_of": "2026-11-12",
+ "as_of": "2026-11-13",
  "overall": {
-  "score": 53.5,
+  "score": 54.3,
   "band": "Normal"
  },
  "categories": {
@@ -22,7 +22,7 @@
   "curve_10y3m": "amber",
   "real_yield_10y": "red",
   "term_premium": "amber",
-  "fed_balance_sheet": "amber",
+  "fed_balance_sheet": "green",
   "move_index": "amber",
   "cpi_yoy": "amber",
   "core_pce_6m": "amber",

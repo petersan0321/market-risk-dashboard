@@ -54,5 +54,26 @@
   "source": "New York Times",
   "date": "2026-11-12",
   "topic": "jobs_economy"
+ },
+ {
+  "title": "Federal Reserve Board announces pricing, effective January 1, 2027, for payment services the Federal Reserve Banks provide to banks and credit unions, and changes to streamline and adjust their check services",
+  "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20261112a.htm",
+  "source": "Federal Reserve",
+  "date": "2026-11-12",
+  "topic": "fed_rates"
+ },
+ {
+  "title": "Federal Reserve announces revised tentative schedule of Federal Open Market Committee meetings in 2027",
+  "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261112a.htm",
+  "source": "Federal Reserve",
+  "date": "2026-11-12",
+  "topic": "fed_rates"
+ },
+ {
+  "title": "Fed Will Not Hold Policy Vote at October 2027 Meeting",
+  "url": "https://www.nytimes.com/2026/11/12/business/economy/fed-warsh-october.html",
+  "source": "New York Times",
+  "date": "2026-11-12",
+  "topic": "fed_rates"
  }
 ]
