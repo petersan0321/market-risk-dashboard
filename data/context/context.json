@@ -25,9 +25,44 @@
    "retail_sales"
   ],
   "warnings": [],
-  "as_of": "2026-11-13"
+  "as_of": "2026-11-14"
  },
  "news": [
+  {
+   "title": "How Nvidia turmoil and a Democratic Congress could reshape the AI trade, according to ETF experts",
+   "url": "https://www.cnbc.com/2026/11/14/nvidia-ai-trade-data-centers-congress.html",
+   "source": "CNBC",
+   "date": "2026-11-14",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Heating oil prices are up 59% from last winter. The spike is 'crushing folks,' Maine nonprofit says",
+   "url": "https://www.cnbc.com/2026/11/14/heating-oil-price-spike-household-budgets.html",
+   "source": "CNBC",
+   "date": "2026-11-14",
+   "topic": "energy"
+  },
+  {
+   "title": "Microsoft apologizes for massive outage that took down Outlook and other 365 services",
+   "url": "https://www.cnbc.com/2026/11/12/microsoft-outage-outlook-aws-google.html",
+   "source": "CNBC",
+   "date": "2026-11-14",
+   "topic": "earnings"
+  },
+  {
+   "title": "Ecuador wants to monetize its biodiversity \u2014 while still drilling for oil",
+   "url": "https://www.cnbc.com/2026/11/14/ecuador-biodiversity-green-finance-oil.html",
+   "source": "CNBC",
+   "date": "2026-11-14",
+   "topic": "energy"
+  },
+  {
+   "title": "Washington can start delivering on affordability by rejecting Trump\u2019s tariffs",
+   "url": "https://www.marketwatch.com/story/washington-can-start-delivering-on-affordability-by-rejecting-trumps-tariffs-8f2c76fd?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-11-14",
+   "topic": "trade_tariffs"
+  },
   {
    "title": "Chicago Fed's Goolsbee says central bank 'has definitely got work to do' on inflation",
    "url": "https://www.cnbc.com/2026/11/13/chicago-feds-goolsbee-says-central-bank-has-definitely-got-work-to-do-on-inflation.html",
@@ -97,6 +132,20 @@
    "source": "MarketWatch",
    "date": "2026-11-13",
    "topic": "banking_credit"
+  },
+  {
+   "title": "AI risks are the biggest threat to the financial system, Fed survey finds",
+   "url": "https://www.cnbc.com/2026/11/13/ai-risks-financial-system-federal-reserve.html",
+   "source": "CNBC",
+   "date": "2026-11-13",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "Hassett denies report he's leaving White House: 'Not true'",
+   "url": "https://www.cnbc.com/2026/11/13/kevin-hassett-white-house-nec.html",
+   "source": "CNBC",
+   "date": "2026-11-13",
+   "topic": "elections_politics"
   },
   {
    "title": "In a policy switch, the Fed says its October 2027 meeting will not see a vote on interest rates",
@@ -174,90 +223,6 @@
    "source": "New York Times",
    "date": "2026-11-12",
    "topic": "fed_rates"
-  },
-  {
-   "title": "Nvidia shares rebound as Jensen Huang faces scrutiny ahead of earnings",
-   "url": "https://www.cnbc.com/2026/11/11/nvidia-stock-jensen-huang-affair-china.html",
-   "source": "CNBC",
-   "date": "2026-11-11",
-   "topic": "earnings"
-  },
-  {
-   "title": "Fed's Goolsbee calls inflation report 'borderline disturbing' as central bank weighs more hikes",
-   "url": "https://www.cnbc.com/2026/11/11/goolsbee-october-inflation-fed-rates-disturbing-distressing.html",
-   "source": "CNBC",
-   "date": "2026-11-11",
-   "topic": "inflation"
-  },
-  {
-   "title": "Bessent moved to military base amid 'growing threats' from Iran",
-   "url": "https://www.cnbc.com/2026/11/11/us-iran-war-trump-hormuz-bessent-threats.html",
-   "source": "CNBC",
-   "date": "2026-11-11",
-   "topic": "geopolitics"
-  },
-  {
-   "title": "Mississippi Senate: Scott Colom leads Hyde-Smith by more than 3,000 votes",
-   "url": "https://www.cnbc.com/2026/11/10/mississippi-senate-scott-colom-hyde-smith.html",
-   "source": "CNBC",
-   "date": "2026-11-11",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "JetBlue unveils new first class seats to bring back profits",
-   "url": "https://www.cnbc.com/2026/11/11/jetblue-ceo-premium.html",
-   "source": "CNBC",
-   "date": "2026-11-11",
-   "topic": "earnings"
-  },
-  {
-   "title": "General strikes to paralyze Spain as protestors clash with police ahead of election campaign",
-   "url": "https://www.cnbc.com/2026/11/11/spain-protests-general-strikes-election.html",
-   "source": "CNBC",
-   "date": "2026-11-11",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Rep. Jim Jordan, Sen. John Thune elected GOP leaders in Congress",
-   "url": "https://www.cnbc.com/2026/11/10/jim-jordan-congress-republicans-midterm.html",
-   "source": "CNBC",
-   "date": "2026-11-11",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "From living in his car to a 756 credit score: How one veteran rebuilt his finances",
-   "url": "https://www.marketwatch.com/story/from-living-in-his-car-to-a-756-credit-score-how-one-veteran-rebuilt-his-finances-026c3336?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-11-11",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "Lebanon Faces Economic \u2018Catastrophe\u2019 After War and Years of Mismanagement",
-   "url": "https://www.nytimes.com/2026/11/11/world/middleeast/lebanon-economy-crisis-corruption-war.html",
-   "source": "New York Times",
-   "date": "2026-11-11",
-   "topic": "geopolitics"
-  },
-  {
-   "title": "Social Security could pay full benefits until 2059 if taxable payroll kept pace with GDP: AARP report",
-   "url": "https://www.cnbc.com/2026/11/11/social-security-benefits-taxable-payroll-gdp.html",
-   "source": "CNBC",
-   "date": "2026-11-11",
-   "topic": "jobs_economy"
-  },
-  {
-   "title": "Why is gasoline suddenly under $4 a gallon?",
-   "url": "https://www.npr.org/2026/11/11/nx-s1-6037588/gasoline-price-below-4-dollars-gallon",
-   "source": "NPR",
-   "date": "2026-11-11",
-   "topic": "energy"
-  },
-  {
-   "title": "Could the Voter Backlash Against A.I. Actually Help the Economy?",
-   "url": "https://www.nytimes.com/2026/11/09/business/economy/ai-bubble-democrats-midterms-economy.html",
-   "source": "New York Times",
-   "date": "2026-11-11",
-   "topic": "jobs_economy"
   }
  ],
  "cycle": [
@@ -267,7 +232,7 @@
    "years": 19,
    "stocks_median": 0.09061946902654872,
    "stocks_down_years": 7,
-   "bonds_median": 0.03057435975183498,
+   "bonds_median": 0.03057272681480605,
    "bond_years": 16,
    "current": false
   },
@@ -277,7 +242,7 @@
    "years": 19,
    "stocks_median": 0.010620399579390094,
    "stocks_down_years": 8,
-   "bonds_median": 0.05998599642667468,
+   "bonds_median": 0.05998599642667557,
    "bond_years": 15,
    "current": true
   },
@@ -297,7 +262,7 @@
    "years": 19,
    "stocks_median": 0.11779554059739161,
    "stocks_down_years": 3,
-   "bonds_median": 0.03821448480299594,
+   "bonds_median": 0.03821448480299605,
    "bond_years": 16,
    "current": false
   }

@@ -1,7 +1,7 @@
 {
  "as_of": "2026-11-13",
  "overall": {
-  "score": 54.3,
+  "score": 54.4,
   "band": "Normal"
  },
  "categories": {
@@ -59,7 +59,7 @@
   "geopolitical_risk": null,
   "deficit_gdp": "amber",
   "auction_demand": "green",
-  "fed_path": "green"
+  "fed_path": "amber"
  },
  "rules": {
   "curve_10y2y": [],
