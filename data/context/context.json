@@ -25,9 +25,37 @@
    "retail_sales"
   ],
   "warnings": [],
-  "as_of": "2026-11-14"
+  "as_of": "2026-11-15"
  },
  "news": [
+  {
+   "title": "Rivian, Lucid, Scout CEOs aren\u2019t counting on Democrats to restore EV federal support after midterm wins",
+   "url": "https://www.cnbc.com/2026/11/15/rivian-lucid-scout-arent-counting-on-dems-to-restore-ev-incentives.html",
+   "source": "CNBC",
+   "date": "2026-11-15",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Nvidia is gearing up for one of Wall Street\u2019s most anticipated earnings calls in years",
+   "url": "https://www.marketwatch.com/story/nvidia-is-gearing-up-for-one-of-wall-streets-most-anticipated-earnings-calls-in-years-91855b1e?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-11-15",
+   "topic": "earnings"
+  },
+  {
+   "title": "The U.S. is turning more socialist under Trump 2.0, one analyst says. What could change with a Democratic-run Congress?",
+   "url": "https://www.marketwatch.com/story/the-u-s-is-turning-more-socialist-under-trump-2-0-one-analyst-says-what-could-change-with-a-democratic-run-congress-95d7ff17?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-11-15",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Gold and silver are supposed to protect against inflation. So why are both metals tumbling instead?",
+   "url": "https://www.marketwatch.com/story/gold-and-silver-are-supposed-to-protect-against-inflation-so-why-are-both-metals-tumbling-instead-1735eca7?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-11-15",
+   "topic": "inflation"
+  },
   {
    "title": "How Nvidia turmoil and a Democratic Congress could reshape the AI trade, according to ETF experts",
    "url": "https://www.cnbc.com/2026/11/14/nvidia-ai-trade-data-centers-congress.html",
@@ -146,83 +174,6 @@
    "source": "CNBC",
    "date": "2026-11-13",
    "topic": "elections_politics"
-  },
-  {
-   "title": "In a policy switch, the Fed says its October 2027 meeting will not see a vote on interest rates",
-   "url": "https://www.cnbc.com/2026/11/12/in-policy-switch-fed-says-its-october-2027-meeting-will-not-see-a-vote-on-interest-rates.html",
-   "source": "CNBC",
-   "date": "2026-11-12",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "Analysis: Nvidia\u2019s leadership crisis tests the chipmaker\u2019s role as the \u2018central bank of AI\u2019",
-   "url": "https://www.cnbc.com/2026/11/11/nvidia-jensen-huang-ai-financial-system-risk.html",
-   "source": "CNBC",
-   "date": "2026-11-12",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "Nebius falls 16% as company expects increased 2026 capex spend, issues weak outlook",
-   "url": "https://www.cnbc.com/2026/11/12/nebius-q3-earnings-report-2026.html",
-   "source": "CNBC",
-   "date": "2026-11-12",
-   "topic": "earnings"
-  },
-  {
-   "title": "Oil prices rise after Trump says no Iran deal needed: 'We've got their Strait'",
-   "url": "https://www.cnbc.com/2026/11/12/oil-prices-jump-after-trump-says-no-iran-deal-needed-weve-got-their-strait.html",
-   "source": "CNBC",
-   "date": "2026-11-12",
-   "topic": "inflation"
-  },
-  {
-   "title": "As credit card balances hit a record high, medical bills can become 'shadow debt,' expert says",
-   "url": "https://www.cnbc.com/2026/11/12/medical-bills-credit-card-debt.html",
-   "source": "CNBC",
-   "date": "2026-11-12",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "Scott Colom wins Mississippi Senate election over incumbent Republican Hyde-Smith",
-   "url": "https://www.cnbc.com/2026/11/11/democrat-scott-colom-projected-to-win-mississippi-senate-election-over-incumbent-hyde-smith.html",
-   "source": "CNBC",
-   "date": "2026-11-12",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Canada\u2019s ambassador warns Trump tariffs are driving up costs, threatening U.S. investment",
-   "url": "https://www.cnbc.com/2026/11/11/canada-ambassador-trump-tariffs-investments.html",
-   "source": "CNBC",
-   "date": "2026-11-12",
-   "topic": "trade_tariffs"
-  },
-  {
-   "title": "Jensen Huang Was the Face of the A.I. Boom Powering the U.S. Economy",
-   "url": "https://www.nytimes.com/2026/11/12/business/economy/jensen-huang-economy-nvidia-ai.html",
-   "source": "New York Times",
-   "date": "2026-11-12",
-   "topic": "jobs_economy"
-  },
-  {
-   "title": "Federal Reserve Board announces pricing, effective January 1, 2027, for payment services the Federal Reserve Banks provide to banks and credit unions, and changes to streamline and adjust their check services",
-   "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20261112a.htm",
-   "source": "Federal Reserve",
-   "date": "2026-11-12",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "Federal Reserve announces revised tentative schedule of Federal Open Market Committee meetings in 2027",
-   "url": "https://www.federalreserve.gov/newsevents/pressreleases/monetary20261112a.htm",
-   "source": "Federal Reserve",
-   "date": "2026-11-12",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "Fed Will Not Hold Policy Vote at October 2027 Meeting",
-   "url": "https://www.nytimes.com/2026/11/12/business/economy/fed-warsh-october.html",
-   "source": "New York Times",
-   "date": "2026-11-12",
-   "topic": "fed_rates"
   }
  ],
  "cycle": [
@@ -232,7 +183,7 @@
    "years": 19,
    "stocks_median": 0.09061946902654872,
    "stocks_down_years": 7,
-   "bonds_median": 0.03057272681480605,
+   "bonds_median": 0.030572726814806384,
    "bond_years": 16,
    "current": false
   },
@@ -242,7 +193,7 @@
    "years": 19,
    "stocks_median": 0.010620399579390094,
    "stocks_down_years": 8,
-   "bonds_median": 0.05998599642667557,
+   "bonds_median": 0.05998599642667579,
    "bond_years": 15,
    "current": true
   },
@@ -262,7 +213,7 @@
    "years": 19,
    "stocks_median": 0.11779554059739161,
    "stocks_down_years": 3,
-   "bonds_median": 0.03821448480299605,
+   "bonds_median": 0.038214484802996496,
    "bond_years": 16,
    "current": false
   }
