@@ -1,7 +1,7 @@
 {
- "as_of": "2026-11-13",
+ "as_of": "2026-11-16",
  "overall": {
-  "score": 54.4,
+  "score": 55.5,
   "band": "Normal"
  },
  "categories": {
@@ -21,7 +21,7 @@
   "curve_10y2y": "amber",
   "curve_10y3m": "amber",
   "real_yield_10y": "red",
-  "term_premium": "amber",
+  "term_premium": null,
   "fed_balance_sheet": "green",
   "move_index": "amber",
   "cpi_yoy": "amber",
@@ -44,7 +44,7 @@
   "nfci": "green",
   "sloos_tightening": "green",
   "cape": "red",
-  "equity_risk_premium": "green",
+  "equity_risk_premium": "amber",
   "vix": "green",
   "vix_term": "amber",
   "breadth_rsp_spy": "green",
@@ -56,7 +56,7 @@
   "epu_daily": "red",
   "epu_trade": "red",
   "epu_monetary": "red",
-  "geopolitical_risk": null,
+  "geopolitical_risk": "red",
   "deficit_gdp": "amber",
   "auction_demand": "green",
   "fed_path": "amber"
