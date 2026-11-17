@@ -1,7 +1,7 @@
 {
- "as_of": "2026-11-16",
+ "as_of": "2026-11-17",
  "overall": {
-  "score": 55.5,
+  "score": 56.6,
   "band": "Normal"
  },
  "categories": {
@@ -45,10 +45,10 @@
   "sloos_tightening": "green",
   "cape": "red",
   "equity_risk_premium": "amber",
-  "vix": "green",
-  "vix_term": "amber",
+  "vix": "amber",
+  "vix_term": "red",
   "breadth_rsp_spy": "green",
-  "spx_vs_200dma": "green",
+  "spx_vs_200dma": "amber",
   "spx_drawdown": "green",
   "dollar_yoy": "amber",
   "copper_gold": "green",

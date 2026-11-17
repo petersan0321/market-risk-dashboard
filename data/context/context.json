@@ -15,6 +15,11 @@
     "date": "2027-01-27",
     "type": "fomc",
     "note": "Decision day (meeting January 26-27, tentative)"
+   },
+   {
+    "date": "2027-03-17",
+    "type": "fomc",
+    "note": "Decision day with new projections (meeting March 16-17, tentative)"
    }
   ],
   "unavailable": [
@@ -25,9 +30,86 @@
    "retail_sales"
   ],
   "warnings": [],
-  "as_of": "2026-11-16"
+  "as_of": "2026-11-17"
  },
  "news": [
+  {
+   "title": "Trump\u2019s accounts traded up to $97.5 million in Nvidia as Huang gained White House access",
+   "url": "https://www.cnbc.com/2026/11/16/trump-nvidia-stock-trades-jensen-huang.html",
+   "source": "CNBC",
+   "date": "2026-11-17",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Home Depot names Richard McPhail as new CEO, beats earnings expectations",
+   "url": "https://www.cnbc.com/2026/11/17/home-depot-hd-q3-earnings-2026.html",
+   "source": "CNBC",
+   "date": "2026-11-17",
+   "topic": "earnings"
+  },
+  {
+   "title": "Nvidia stock falls ahead of earnings as company reels from Huang resignation",
+   "url": "https://www.cnbc.com/2026/11/17/nvidia-stock-earnings-jensen-huang-resignation.html",
+   "source": "CNBC",
+   "date": "2026-11-17",
+   "topic": "earnings"
+  },
+  {
+   "title": "Lisa Cook lawyer signals Fed governor won't attend Trump committee's hearing",
+   "url": "https://www.cnbc.com/2026/11/17/lisa-cook-trump-fed-committee-hearing.html",
+   "source": "CNBC",
+   "date": "2026-11-17",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "Chase Home Lending CEO says he plans to 'go on offense' against non-bank lenders",
+   "url": "https://www.cnbc.com/2026/11/17/chase-home-lending-ceo-says-hes-going-on-offense.html",
+   "source": "CNBC",
+   "date": "2026-11-17",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "St. Louis Fed's Musalem says four more rate hikes may be needed in coming months",
+   "url": "https://www.cnbc.com/2026/11/17/alberto-musalem-fed-interest-rates.html",
+   "source": "CNBC",
+   "date": "2026-11-17",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "Republicans outspent Democrats for first time in over a decade in record 2026 midterm election political ad blitz",
+   "url": "https://www.cnbc.com/2026/11/17/2026-election-political-ad-spending.html",
+   "source": "CNBC",
+   "date": "2026-11-17",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Trump has arrived in Asia. Here\u2019s what he said about Iran and Deutsche Bank",
+   "url": "https://www.cnbc.com/2026/11/17/trump-iran-asia-trip-china.html",
+   "source": "CNBC",
+   "date": "2026-11-17",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "Investors look to Nvidia's earnings and Anthropic's IPO to refresh the tech rally",
+   "url": "https://www.cnbc.com/2026/11/17/nvidia-earnings-anthropic-ipo-tech-rally.html",
+   "source": "CNBC",
+   "date": "2026-11-17",
+   "topic": "earnings"
+  },
+  {
+   "title": "Deutsche Bank shares sink as whistleblowers reveal Epstein payments, Trump tax leak, Russia bets",
+   "url": "https://www.cnbc.com/2026/11/17/deutsche-bank-leak-epstein-trump.html",
+   "source": "CNBC",
+   "date": "2026-11-17",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "Fed Governor Cook Won\u2019t Attend White House Hearing Without Changes",
+   "url": "https://www.nytimes.com/2026/11/17/business/economy/fed-governor-lisa-cook-trump-white-house-hearing.html",
+   "source": "New York Times",
+   "date": "2026-11-17",
+   "topic": "fed_rates"
+  },
   {
    "title": "Nvidia's Colette Kress confronts key questions in first earnings report since Jensen Huang\u2019s exit",
    "url": "https://www.cnbc.com/2026/11/16/nvidia-earnings-jensen-huang-resignation.html",
@@ -71,6 +153,20 @@
    "topic": "fed_rates"
   },
   {
+   "title": "Berkshire Hathaway raised its stake in Delta in the third quarter. It also trimmed a key bank holding",
+   "url": "https://www.cnbc.com/2026/11/16/berkshire-hathaway-raised-its-stake-in-delta-air-in-the-third-quarter.html",
+   "source": "CNBC Finance",
+   "date": "2026-11-16",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "JPMorgan Chase says temporary software bug is affecting consumer banking",
+   "url": "https://www.cnbc.com/2026/11/16/jpmorgan-chase-technical-issue.html",
+   "source": "CNBC Finance",
+   "date": "2026-11-16",
+   "topic": "banking_credit"
+  },
+  {
    "title": "Rivian, Lucid, Scout CEOs aren\u2019t counting on Democrats to restore EV federal support after midterm wins",
    "url": "https://www.cnbc.com/2026/11/15/rivian-lucid-scout-arent-counting-on-dems-to-restore-ev-incentives.html",
    "source": "CNBC",
@@ -97,41 +193,6 @@
    "source": "MarketWatch",
    "date": "2026-11-15",
    "topic": "inflation"
-  },
-  {
-   "title": "How Nvidia turmoil and a Democratic Congress could reshape the AI trade, according to ETF experts",
-   "url": "https://www.cnbc.com/2026/11/14/nvidia-ai-trade-data-centers-congress.html",
-   "source": "CNBC",
-   "date": "2026-11-14",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Heating oil prices are up 59% from last winter. The spike is 'crushing folks,' Maine nonprofit says",
-   "url": "https://www.cnbc.com/2026/11/14/heating-oil-price-spike-household-budgets.html",
-   "source": "CNBC",
-   "date": "2026-11-14",
-   "topic": "energy"
-  },
-  {
-   "title": "Microsoft apologizes for massive outage that took down Outlook and other 365 services",
-   "url": "https://www.cnbc.com/2026/11/12/microsoft-outage-outlook-aws-google.html",
-   "source": "CNBC",
-   "date": "2026-11-14",
-   "topic": "earnings"
-  },
-  {
-   "title": "Ecuador wants to monetize its biodiversity \u2014 while still drilling for oil",
-   "url": "https://www.cnbc.com/2026/11/14/ecuador-biodiversity-green-finance-oil.html",
-   "source": "CNBC",
-   "date": "2026-11-14",
-   "topic": "energy"
-  },
-  {
-   "title": "Washington can start delivering on affordability by rejecting Trump\u2019s tariffs",
-   "url": "https://www.marketwatch.com/story/washington-can-start-delivering-on-affordability-by-rejecting-trumps-tariffs-8f2c76fd?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-11-14",
-   "topic": "trade_tariffs"
   }
  ],
  "cycle": [
@@ -141,7 +202,7 @@
    "years": 19,
    "stocks_median": 0.09061946902654872,
    "stocks_down_years": 7,
-   "bonds_median": 0.030572726814806273,
+   "bonds_median": 0.030574359751835423,
    "bond_years": 16,
    "current": false
   },
@@ -151,7 +212,7 @@
    "years": 19,
    "stocks_median": 0.010620399579390094,
    "stocks_down_years": 8,
-   "bonds_median": 0.05998591596525915,
+   "bonds_median": 0.059985996426674015,
    "bond_years": 15,
    "current": true
   },
@@ -171,7 +232,7 @@
    "years": 19,
    "stocks_median": 0.11779554059739161,
    "stocks_down_years": 3,
-   "bonds_median": 0.038214484802996496,
+   "bonds_median": 0.038214484802996385,
    "bond_years": 16,
    "current": false
   }

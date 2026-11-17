@@ -14,6 +14,11 @@
    "date": "2027-01-27",
    "type": "fomc",
    "note": "Decision day (meeting January 26-27, tentative)"
+  },
+  {
+   "date": "2027-03-17",
+   "type": "fomc",
+   "note": "Decision day with new projections (meeting March 16-17, tentative)"
   }
  ],
  "unavailable": [
@@ -24,5 +29,5 @@
   "retail_sales"
  ],
  "warnings": [],
- "as_of": "2026-11-16"
+ "as_of": "2026-11-17"
 }

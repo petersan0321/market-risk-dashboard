@@ -40,5 +40,19 @@
   "source": "New York Times",
   "date": "2026-11-16",
   "topic": "fed_rates"
+ },
+ {
+  "title": "Berkshire Hathaway raised its stake in Delta in the third quarter. It also trimmed a key bank holding",
+  "url": "https://www.cnbc.com/2026/11/16/berkshire-hathaway-raised-its-stake-in-delta-air-in-the-third-quarter.html",
+  "source": "CNBC Finance",
+  "date": "2026-11-16",
+  "topic": "banking_credit"
+ },
+ {
+  "title": "JPMorgan Chase says temporary software bug is affecting consumer banking",
+  "url": "https://www.cnbc.com/2026/11/16/jpmorgan-chase-technical-issue.html",
+  "source": "CNBC Finance",
+  "date": "2026-11-16",
+  "topic": "banking_credit"
  }
 ]
