@@ -30,9 +30,114 @@
    "retail_sales"
   ],
   "warnings": [],
-  "as_of": "2026-11-17"
+  "as_of": "2026-11-18"
  },
  "news": [
+  {
+   "title": "Fed\u2019s Waller says central bank may need to \u2018shock people\u2019 with half-point rate hike",
+   "url": "https://www.cnbc.com/2026/11/18/federal-reserve-governor-christopher-waller.html",
+   "source": "CNBC",
+   "date": "2026-11-18",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "Fed officials expect more rate hikes, worry about AI impact on inflation, minutes show",
+   "url": "https://www.cnbc.com/2026/11/18/fed-minutes-october-2026.html",
+   "source": "CNBC",
+   "date": "2026-11-18",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "Nvidia's earnings report had something for the bulls, bears and everyone in between",
+   "url": "https://www.cnbc.com/investingclub/2026/11/18/nvidias-earnings-report-had-something-for-the-bulls-bears-and-everyone-in-between.html",
+   "source": "CNBC",
+   "date": "2026-11-18",
+   "topic": "earnings"
+  },
+  {
+   "title": "Jeffries wins Democratic House speaker race, on track to make history in January",
+   "url": "https://www.cnbc.com/2026/11/18/jeffries-house-speaker-congress.html",
+   "source": "CNBC",
+   "date": "2026-11-18",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Target shares rise 7% as retailer posts best sales growth in five years, hikes guidance",
+   "url": "https://www.cnbc.com/2026/11/18/target-tgt-q3-2026-earnings.html",
+   "source": "CNBC",
+   "date": "2026-11-18",
+   "topic": "earnings"
+  },
+  {
+   "title": "Nvidia sinks after earnings, dragging down neoclouds CoreWeave, Iren",
+   "url": "https://www.cnbc.com/2026/11/18/nvidia-stock-earnings.html",
+   "source": "CNBC",
+   "date": "2026-11-18",
+   "topic": "earnings"
+  },
+  {
+   "title": "Jensen Huang has agreed to appear before Senate banking committee, Chairman Scott says",
+   "url": "https://www.cnbc.com/2026/11/18/jensen-huang-nvidia-tim-scott-congress.html",
+   "source": "CNBC",
+   "date": "2026-11-18",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Democrat Mary Peltola wins Alaska Senate election",
+   "url": "https://www.cnbc.com/2026/11/18/alaska-senate-mary-peltola-wins-election.html",
+   "source": "CNBC",
+   "date": "2026-11-18",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Paris Hilton, Alexandria Ocasio-Cortez press House to pass Defiance Act to fight AI deepfake pornography",
+   "url": "https://www.cnbc.com/2026/11/18/paris-hilton-aoc-defiance-act-ai-porn-deep-fake-congress.html",
+   "source": "CNBC",
+   "date": "2026-11-18",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "U.S. soldier taken into military custody over suspected spying for Russia",
+   "url": "https://www.cnbc.com/2026/11/18/us-soldier-military-custody-spy-russia.html",
+   "source": "CNBC",
+   "date": "2026-11-18",
+   "topic": "geopolitics"
+  },
+  {
+   "title": "Mortgage demand turns lower, as interest rates shoot back up to the highest level in three weeks",
+   "url": "https://www.cnbc.com/2026/11/18/mortgage-demand-turns-lower-as-interest-rates-shoot-back-up-to-the-highest-level-in-three-weeks.html",
+   "source": "CNBC",
+   "date": "2026-11-18",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "Lowe's posts strong online sales, raises outlook despite slow housing market",
+   "url": "https://www.cnbc.com/2026/11/18/lowes-low-q3-2026-earnings.html",
+   "source": "CNBC",
+   "date": "2026-11-18",
+   "topic": "earnings"
+  },
+  {
+   "title": "Record diesel prices drive UK inflation to 1-year high of 3.6%",
+   "url": "https://www.cnbc.com/2026/11/18/uk-inflation-cpi-fuel-prices.html",
+   "source": "CNBC Economy",
+   "date": "2026-11-18",
+   "topic": "inflation"
+  },
+  {
+   "title": "Fed minutes show growing unease about the outlook for inflation",
+   "url": "https://www.marketwatch.com/story/fed-minutes-show-growing-unease-about-the-outlook-for-inflation-59e3c13d?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-11-18",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "The U.S. Could Hit Its Debt Limit by February",
+   "url": "https://www.nytimes.com/2026/11/18/business/economy/us-debt-limit.html",
+   "source": "New York Times",
+   "date": "2026-11-18",
+   "topic": "fiscal_debt"
+  },
   {
    "title": "Trump\u2019s accounts traded up to $97.5 million in Nvidia as Huang gained White House access",
    "url": "https://www.cnbc.com/2026/11/16/trump-nvidia-stock-trades-jensen-huang.html",
@@ -111,6 +216,13 @@
    "topic": "fed_rates"
   },
   {
+   "title": "Stocks Down Just Ahead of Nvidia\u2019s Earnings Report",
+   "url": "https://www.nytimes.com/2026/11/17/business/economy/stock-market-nvidia-earnings.html",
+   "source": "New York Times",
+   "date": "2026-11-17",
+   "topic": "earnings"
+  },
+  {
    "title": "Nvidia's Colette Kress confronts key questions in first earnings report since Jensen Huang\u2019s exit",
    "url": "https://www.cnbc.com/2026/11/16/nvidia-earnings-jensen-huang-resignation.html",
    "source": "CNBC",
@@ -165,34 +277,6 @@
    "source": "CNBC Finance",
    "date": "2026-11-16",
    "topic": "banking_credit"
-  },
-  {
-   "title": "Rivian, Lucid, Scout CEOs aren\u2019t counting on Democrats to restore EV federal support after midterm wins",
-   "url": "https://www.cnbc.com/2026/11/15/rivian-lucid-scout-arent-counting-on-dems-to-restore-ev-incentives.html",
-   "source": "CNBC",
-   "date": "2026-11-15",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Nvidia is gearing up for one of Wall Street\u2019s most anticipated earnings calls in years",
-   "url": "https://www.marketwatch.com/story/nvidia-is-gearing-up-for-one-of-wall-streets-most-anticipated-earnings-calls-in-years-91855b1e?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-11-15",
-   "topic": "earnings"
-  },
-  {
-   "title": "The U.S. is turning more socialist under Trump 2.0, one analyst says. What could change with a Democratic-run Congress?",
-   "url": "https://www.marketwatch.com/story/the-u-s-is-turning-more-socialist-under-trump-2-0-one-analyst-says-what-could-change-with-a-democratic-run-congress-95d7ff17?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-11-15",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Gold and silver are supposed to protect against inflation. So why are both metals tumbling instead?",
-   "url": "https://www.marketwatch.com/story/gold-and-silver-are-supposed-to-protect-against-inflation-so-why-are-both-metals-tumbling-instead-1735eca7?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-11-15",
-   "topic": "inflation"
   }
  ],
  "cycle": [
@@ -202,7 +286,7 @@
    "years": 19,
    "stocks_median": 0.09061946902654872,
    "stocks_down_years": 7,
-   "bonds_median": 0.030574359751835423,
+   "bonds_median": 0.030572726814806606,
    "bond_years": 16,
    "current": false
   },
@@ -212,7 +296,7 @@
    "years": 19,
    "stocks_median": 0.010620399579390094,
    "stocks_down_years": 8,
-   "bonds_median": 0.059985996426674015,
+   "bonds_median": 0.05998599642667424,
    "bond_years": 15,
    "current": true
   },
