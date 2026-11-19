@@ -30,9 +30,86 @@
    "retail_sales"
   ],
   "warnings": [],
-  "as_of": "2026-11-18"
+  "as_of": "2026-11-19"
  },
  "news": [
+  {
+   "title": "Palo Alto stock jumps on earnings beat and company's big bet on securing open-weight models",
+   "url": "https://www.cnbc.com/2026/11/19/palo-alto-networks-earnings-applied-compute.html",
+   "source": "CNBC",
+   "date": "2026-11-19",
+   "topic": "earnings"
+  },
+  {
+   "title": "Kash Patel skips House hearing after Mar-a-Lago gala with $50,000 access",
+   "url": "https://www.cnbc.com/2026/11/18/kash-patel-hearing-mar-a-lago-gala.html",
+   "source": "CNBC",
+   "date": "2026-11-19",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Trump bought Nvidia, Palantir, SpaceX in September as federal deals, White House ties grew",
+   "url": "https://www.cnbc.com/2026/11/19/trump-nvidia-spacex-palantir-stock-trades-september.html",
+   "source": "CNBC",
+   "date": "2026-11-19",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Walmart hikes outlook as CEO tells CNBC retailer aims to keep prices low despite soaring fuel costs",
+   "url": "https://www.cnbc.com/2026/11/19/walmart-wmt-q3-2026-earnings.html",
+   "source": "CNBC",
+   "date": "2026-11-19",
+   "topic": "earnings"
+  },
+  {
+   "title": "Amid recent banking outages, should you start carrying cash again? Top advisors weigh in",
+   "url": "https://www.cnbc.com/2026/11/19/banking-outages-emergency-cash.html",
+   "source": "CNBC",
+   "date": "2026-11-19",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "Trump, Xi, Putin said they plan to boost oil production, revamp UN after trilateral talks",
+   "url": "https://www.cnbc.com/2026/11/19/trump-xi-putin-trilateral-meeting-china.html",
+   "source": "CNBC",
+   "date": "2026-11-19",
+   "topic": "energy"
+  },
+  {
+   "title": "Microsoft CEO Satya Nadella calls Outlook outage a 'perfect storm.' Here's what went wrong",
+   "url": "https://www.cnbc.com/2026/11/18/microsoft-put-the-ai-threat-to-software-behind-it-then-came-the-outage.html",
+   "source": "CNBC",
+   "date": "2026-11-19",
+   "topic": "earnings"
+  },
+  {
+   "title": "Trump praises \u2018great relationship\u2019 with Putin after meeting, as Ukraine war takes center stage",
+   "url": "https://www.cnbc.com/2026/11/19/trump-xi-putin-china-apec-.html",
+   "source": "CNBC",
+   "date": "2026-11-19",
+   "topic": "geopolitics"
+  },
+  {
+   "title": "Palo Alto inks $4.5 billion deal for AI startup Applied Compute, shares pop 7% on earnings",
+   "url": "https://www.cnbc.com/2026/11/18/palo-alto-networks-panw-q1-2027-earnings-.html",
+   "source": "CNBC",
+   "date": "2026-11-19",
+   "topic": "earnings"
+  },
+  {
+   "title": "The surprising reason the U.S. economy is speeding up \u2014 and might have more room to run",
+   "url": "https://www.marketwatch.com/story/the-surprising-reason-the-u-s-economy-is-speeding-up-and-might-have-more-room-to-run-9016c8db?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-11-19",
+   "topic": "jobs_economy"
+  },
+  {
+   "title": "Elon Musk becomes the latest tech billionaire to make a peace offering to Democrats after the midterms",
+   "url": "https://www.marketwatch.com/story/elon-musk-becomes-the-latest-tech-billionaire-to-make-a-peace-offering-to-democrats-after-the-midterms-05df0c0e?mod=mw_rss_topstories",
+   "source": "MarketWatch",
+   "date": "2026-11-19",
+   "topic": "elections_politics"
+  },
   {
    "title": "Fed\u2019s Waller says central bank may need to \u2018shock people\u2019 with half-point rate hike",
    "url": "https://www.cnbc.com/2026/11/18/federal-reserve-governor-christopher-waller.html",
@@ -221,62 +298,6 @@
    "source": "New York Times",
    "date": "2026-11-17",
    "topic": "earnings"
-  },
-  {
-   "title": "Nvidia's Colette Kress confronts key questions in first earnings report since Jensen Huang\u2019s exit",
-   "url": "https://www.cnbc.com/2026/11/16/nvidia-earnings-jensen-huang-resignation.html",
-   "source": "CNBC",
-   "date": "2026-11-16",
-   "topic": "earnings"
-  },
-  {
-   "title": "Fed Chairman Kevin Warsh stresses importance of AI to economy, but says it could \u2018disappoint\u2019",
-   "url": "https://www.cnbc.com/2026/11/16/fed-ai-task-force-kevin-warsh.html",
-   "source": "CNBC",
-   "date": "2026-11-16",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "U.S. crude oil declines to $85 a barrel on recovering Middle East exports",
-   "url": "https://www.cnbc.com/2026/11/16/us-crude-oil-declines-to-87-a-barrel-on-recovering-middle-east-exports.html",
-   "source": "CNBC",
-   "date": "2026-11-16",
-   "topic": "energy"
-  },
-  {
-   "title": "China\u2019s slowdown deepens in October as industrial output, retail sales, investment miss estimates",
-   "url": "https://www.cnbc.com/2026/11/16/china-retail-sales-october-industrial-output-investment.html",
-   "source": "CNBC Finance",
-   "date": "2026-11-16",
-   "topic": "jobs_economy"
-  },
-  {
-   "title": "How Nvidia turmoil and a Democratic Congress could reshape the AI trade, according to ETF experts",
-   "url": "https://www.cnbc.com/2026/11/14/nvidia-ai-trade-data-centers-congress.html",
-   "source": "CNBC Finance",
-   "date": "2026-11-16",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Fed Chairman Highlights Economic Uncertainty of A.I. Boom",
-   "url": "https://www.nytimes.com/2026/11/16/business/economy/warsh-ai-economy.html",
-   "source": "New York Times",
-   "date": "2026-11-16",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "Berkshire Hathaway raised its stake in Delta in the third quarter. It also trimmed a key bank holding",
-   "url": "https://www.cnbc.com/2026/11/16/berkshire-hathaway-raised-its-stake-in-delta-air-in-the-third-quarter.html",
-   "source": "CNBC Finance",
-   "date": "2026-11-16",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "JPMorgan Chase says temporary software bug is affecting consumer banking",
-   "url": "https://www.cnbc.com/2026/11/16/jpmorgan-chase-technical-issue.html",
-   "source": "CNBC Finance",
-   "date": "2026-11-16",
-   "topic": "banking_credit"
   }
  ],
  "cycle": [
@@ -286,7 +307,7 @@
    "years": 19,
    "stocks_median": 0.09061946902654872,
    "stocks_down_years": 7,
-   "bonds_median": 0.030572726814806606,
+   "bonds_median": 0.030573531338158322,
    "bond_years": 16,
    "current": false
   },
@@ -296,7 +317,7 @@
    "years": 19,
    "stocks_median": 0.010620399579390094,
    "stocks_down_years": 8,
-   "bonds_median": 0.05998599642667424,
+   "bonds_median": 0.05998457462861717,
    "bond_years": 15,
    "current": true
   },
@@ -316,7 +337,7 @@
    "years": 19,
    "stocks_median": 0.11779554059739161,
    "stocks_down_years": 3,
-   "bonds_median": 0.038214484802996385,
+   "bonds_median": 0.03821448480299672,
    "bond_years": 16,
    "current": false
   }
