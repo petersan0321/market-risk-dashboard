@@ -30,9 +30,58 @@
    "retail_sales"
   ],
   "warnings": [],
-  "as_of": "2026-11-19"
+  "as_of": "2026-11-20"
  },
  "news": [
+  {
+   "title": "Warsh wants Fed officials to talk less. Instead, they\u2019re talking more",
+   "url": "https://www.cnbc.com/2026/11/20/warsh-fed-forward-guidance-rate-hikes.html",
+   "source": "CNBC",
+   "date": "2026-11-20",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "Prediction markets outlook for stocks in 2026 dims amid AI sell-off",
+   "url": "https://www.cnbc.com/2026/11/20/sp-500-8000-kalshi-odds-ai-selloff.html",
+   "source": "CNBC",
+   "date": "2026-11-20",
+   "topic": "earnings"
+  },
+  {
+   "title": "Home Depot vs. Lowe's: Which stock has the edge after earnings and our support?",
+   "url": "https://www.cnbc.com/2026/11/20/home-depot-vs-lowes-which-stock-has-the-edge-after-earnings-and-our-support.html",
+   "source": "CNBC",
+   "date": "2026-11-20",
+   "topic": "earnings"
+  },
+  {
+   "title": "White House replaces cyber director Sean Cairncross amid widespread tech outages",
+   "url": "https://www.cnbc.com/2026/11/20/sean-cairncross-white-house-cyber-director.html",
+   "source": "CNBC",
+   "date": "2026-11-20",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Senate passes BAAJA permitting reform bill backed by AI, energy sectors",
+   "url": "https://www.cnbc.com/2026/11/20/baaja-bill-senate-passes-permitting-reform.html",
+   "source": "CNBC",
+   "date": "2026-11-20",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Japan core inflation soars to highest this year as energy subsidy expiry pushes up consumer prices",
+   "url": "https://www.cnbc.com/2026/11/20/japan-inflation-cpi-october.html",
+   "source": "CNBC Economy",
+   "date": "2026-11-20",
+   "topic": "inflation"
+  },
+  {
+   "title": "Nvidia Asked to Sell Chips to Companies Tied to Chinese Military and Megaspeed",
+   "url": "https://www.nytimes.com/2026/11/19/business/economy/nvidia-chips-commerce-china-huang.html",
+   "source": "New York Times",
+   "date": "2026-11-20",
+   "topic": "geopolitics"
+  },
   {
    "title": "Palo Alto stock jumps on earnings beat and company's big bet on securing open-weight models",
    "url": "https://www.cnbc.com/2026/11/19/palo-alto-networks-earnings-applied-compute.html",
@@ -109,6 +158,13 @@
    "source": "MarketWatch",
    "date": "2026-11-19",
    "topic": "elections_politics"
+  },
+  {
+   "title": "Peterson: Nvidia\u2019s leadership crisis tests the chipmaker\u2019s role as the \u2018central bank of AI\u2019",
+   "url": "https://www.cnbc.com/2026/11/11/nvidia-jensen-huang-ai-financial-system-risk.html",
+   "source": "CNBC Economy",
+   "date": "2026-11-19",
+   "topic": "banking_credit"
   },
   {
    "title": "Fed\u2019s Waller says central bank may need to \u2018shock people\u2019 with half-point rate hike",
@@ -214,90 +270,6 @@
    "source": "New York Times",
    "date": "2026-11-18",
    "topic": "fiscal_debt"
-  },
-  {
-   "title": "Trump\u2019s accounts traded up to $97.5 million in Nvidia as Huang gained White House access",
-   "url": "https://www.cnbc.com/2026/11/16/trump-nvidia-stock-trades-jensen-huang.html",
-   "source": "CNBC",
-   "date": "2026-11-17",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Home Depot names Richard McPhail as new CEO, beats earnings expectations",
-   "url": "https://www.cnbc.com/2026/11/17/home-depot-hd-q3-earnings-2026.html",
-   "source": "CNBC",
-   "date": "2026-11-17",
-   "topic": "earnings"
-  },
-  {
-   "title": "Nvidia stock falls ahead of earnings as company reels from Huang resignation",
-   "url": "https://www.cnbc.com/2026/11/17/nvidia-stock-earnings-jensen-huang-resignation.html",
-   "source": "CNBC",
-   "date": "2026-11-17",
-   "topic": "earnings"
-  },
-  {
-   "title": "Lisa Cook lawyer signals Fed governor won't attend Trump committee's hearing",
-   "url": "https://www.cnbc.com/2026/11/17/lisa-cook-trump-fed-committee-hearing.html",
-   "source": "CNBC",
-   "date": "2026-11-17",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "Chase Home Lending CEO says he plans to 'go on offense' against non-bank lenders",
-   "url": "https://www.cnbc.com/2026/11/17/chase-home-lending-ceo-says-hes-going-on-offense.html",
-   "source": "CNBC",
-   "date": "2026-11-17",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "St. Louis Fed's Musalem says four more rate hikes may be needed in coming months",
-   "url": "https://www.cnbc.com/2026/11/17/alberto-musalem-fed-interest-rates.html",
-   "source": "CNBC",
-   "date": "2026-11-17",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "Republicans outspent Democrats for first time in over a decade in record 2026 midterm election political ad blitz",
-   "url": "https://www.cnbc.com/2026/11/17/2026-election-political-ad-spending.html",
-   "source": "CNBC",
-   "date": "2026-11-17",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Trump has arrived in Asia. Here\u2019s what he said about Iran and Deutsche Bank",
-   "url": "https://www.cnbc.com/2026/11/17/trump-iran-asia-trip-china.html",
-   "source": "CNBC",
-   "date": "2026-11-17",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "Investors look to Nvidia's earnings and Anthropic's IPO to refresh the tech rally",
-   "url": "https://www.cnbc.com/2026/11/17/nvidia-earnings-anthropic-ipo-tech-rally.html",
-   "source": "CNBC",
-   "date": "2026-11-17",
-   "topic": "earnings"
-  },
-  {
-   "title": "Deutsche Bank shares sink as whistleblowers reveal Epstein payments, Trump tax leak, Russia bets",
-   "url": "https://www.cnbc.com/2026/11/17/deutsche-bank-leak-epstein-trump.html",
-   "source": "CNBC",
-   "date": "2026-11-17",
-   "topic": "banking_credit"
-  },
-  {
-   "title": "Fed Governor Cook Won\u2019t Attend White House Hearing Without Changes",
-   "url": "https://www.nytimes.com/2026/11/17/business/economy/fed-governor-lisa-cook-trump-white-house-hearing.html",
-   "source": "New York Times",
-   "date": "2026-11-17",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "Stocks Down Just Ahead of Nvidia\u2019s Earnings Report",
-   "url": "https://www.nytimes.com/2026/11/17/business/economy/stock-market-nvidia-earnings.html",
-   "source": "New York Times",
-   "date": "2026-11-17",
-   "topic": "earnings"
   }
  ],
  "cycle": [
@@ -307,7 +279,7 @@
    "years": 19,
    "stocks_median": 0.09061946902654872,
    "stocks_down_years": 7,
-   "bonds_median": 0.030573531338158322,
+   "bonds_median": 0.03057270292714731,
    "bond_years": 16,
    "current": false
   },
@@ -317,7 +289,7 @@
    "years": 19,
    "stocks_median": 0.010620399579390094,
    "stocks_down_years": 8,
-   "bonds_median": 0.05998457462861717,
+   "bonds_median": 0.05998599642667468,
    "bond_years": 15,
    "current": true
   },
@@ -337,7 +309,7 @@
    "years": 19,
    "stocks_median": 0.11779554059739161,
    "stocks_down_years": 3,
-   "bonds_median": 0.03821448480299672,
+   "bonds_median": 0.038213464448974,
    "bond_years": 16,
    "current": false
   }
