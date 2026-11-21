@@ -47,5 +47,19 @@
   "source": "New York Times",
   "date": "2026-11-20",
   "topic": "geopolitics"
+ },
+ {
+  "title": "Federal Reserve announces College Fed Challenge winners",
+  "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20261120b.htm",
+  "source": "Federal Reserve",
+  "date": "2026-11-20",
+  "topic": "fed_rates"
+ },
+ {
+  "title": "Jensen Huang to testify publicly before Senate banking panel, Chairman Scott says",
+  "url": "https://www.cnbc.com/2026/11/20/jensen-huang-nvidia-senate-testimony.html",
+  "source": "CNBC",
+  "date": "2026-11-20",
+  "topic": "elections_politics"
  }
 ]
