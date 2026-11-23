@@ -30,9 +30,37 @@
    "retail_sales"
   ],
   "warnings": [],
-  "as_of": "2026-11-22"
+  "as_of": "2026-11-23"
  },
  "news": [
+  {
+   "title": "Congress shreds Nvidia's 'outrageous' decision to bring back Huang: 'Failure of character'",
+   "url": "https://www.cnbc.com/2026/11/23/nvidia-jensen-huang-congress-trump.html",
+   "source": "CNBC",
+   "date": "2026-11-23",
+   "topic": "elections_politics"
+  },
+  {
+   "title": "Fed's John Williams indicates higher interest rates likely 'over time' to address inflation",
+   "url": "https://www.cnbc.com/2026/11/23/john-williams-fed-inflation-rate-hikes.html",
+   "source": "CNBC",
+   "date": "2026-11-23",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "Stuck: How a frozen housing market is hitting buyers, sellers and the economy",
+   "url": "https://www.cnbc.com/2026/11/23/housing-market-real-estate-economy.html",
+   "source": "CNBC",
+   "date": "2026-11-23",
+   "topic": "jobs_economy"
+  },
+  {
+   "title": "From Wall Street to Main Street, how artificial intelligence is affecting the economy",
+   "url": "https://www.npr.org/2026/11/23/nx-s1-6048690/from-wall-street-to-main-street-how-artificial-intelligence-is-affecting-the-economy",
+   "source": "NPR",
+   "date": "2026-11-23",
+   "topic": "jobs_economy"
+  },
   {
    "title": "He expected a small-business loan. He got a 7-year nightmare",
    "url": "https://www.npr.org/2026/11/22/nx-s1-5752261/small-business-loan-merchant-cash-advance",
@@ -53,69 +81,6 @@
    "source": "MarketWatch",
    "date": "2026-11-21",
    "topic": "energy"
-  },
-  {
-   "title": "Warsh wants Fed officials to talk less. Instead, they\u2019re talking more",
-   "url": "https://www.cnbc.com/2026/11/20/warsh-fed-forward-guidance-rate-hikes.html",
-   "source": "CNBC",
-   "date": "2026-11-20",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "Prediction markets outlook for stocks in 2026 dims amid AI sell-off",
-   "url": "https://www.cnbc.com/2026/11/20/sp-500-8000-kalshi-odds-ai-selloff.html",
-   "source": "CNBC",
-   "date": "2026-11-20",
-   "topic": "earnings"
-  },
-  {
-   "title": "Home Depot vs. Lowe's: Which stock has the edge after earnings and our support?",
-   "url": "https://www.cnbc.com/2026/11/20/home-depot-vs-lowes-which-stock-has-the-edge-after-earnings-and-our-support.html",
-   "source": "CNBC",
-   "date": "2026-11-20",
-   "topic": "earnings"
-  },
-  {
-   "title": "White House replaces cyber director Sean Cairncross amid widespread tech outages",
-   "url": "https://www.cnbc.com/2026/11/20/sean-cairncross-white-house-cyber-director.html",
-   "source": "CNBC",
-   "date": "2026-11-20",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Senate passes BAAJA permitting reform bill backed by AI, energy sectors",
-   "url": "https://www.cnbc.com/2026/11/20/baaja-bill-senate-passes-permitting-reform.html",
-   "source": "CNBC",
-   "date": "2026-11-20",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Japan core inflation soars to highest this year as energy subsidy expiry pushes up consumer prices",
-   "url": "https://www.cnbc.com/2026/11/20/japan-inflation-cpi-october.html",
-   "source": "CNBC Economy",
-   "date": "2026-11-20",
-   "topic": "inflation"
-  },
-  {
-   "title": "Nvidia Asked to Sell Chips to Companies Tied to Chinese Military and Megaspeed",
-   "url": "https://www.nytimes.com/2026/11/19/business/economy/nvidia-chips-commerce-china-huang.html",
-   "source": "New York Times",
-   "date": "2026-11-20",
-   "topic": "geopolitics"
-  },
-  {
-   "title": "Federal Reserve announces College Fed Challenge winners",
-   "url": "https://www.federalreserve.gov/newsevents/pressreleases/other20261120b.htm",
-   "source": "Federal Reserve",
-   "date": "2026-11-20",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "Jensen Huang to testify publicly before Senate banking panel, Chairman Scott says",
-   "url": "https://www.cnbc.com/2026/11/20/jensen-huang-nvidia-senate-testimony.html",
-   "source": "CNBC",
-   "date": "2026-11-20",
-   "topic": "elections_politics"
   }
  ],
  "cycle": [
@@ -125,7 +90,7 @@
    "years": 19,
    "stocks_median": 0.09061946902654872,
    "stocks_down_years": 7,
-   "bonds_median": 0.030573531338159432,
+   "bonds_median": 0.030573531338158766,
    "bond_years": 16,
    "current": false
   },
@@ -135,7 +100,7 @@
    "years": 19,
    "stocks_median": 0.010620399579390094,
    "stocks_down_years": 8,
-   "bonds_median": 0.059984574628617615,
+   "bonds_median": 0.05998599642667468,
    "bond_years": 15,
    "current": true
   },
@@ -155,7 +120,7 @@
    "years": 19,
    "stocks_median": 0.11779554059739161,
    "stocks_down_years": 3,
-   "bonds_median": 0.038213464448974666,
+   "bonds_median": 0.03821448480299616,
    "bond_years": 16,
    "current": false
   }

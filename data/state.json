@@ -1,7 +1,7 @@
 {
- "as_of": "2026-11-20",
+ "as_of": "2026-11-23",
  "overall": {
-  "score": 57.2,
+  "score": 57.4,
   "band": "Normal"
  },
  "categories": {
@@ -21,7 +21,7 @@
   "curve_10y2y": "amber",
   "curve_10y3m": "amber",
   "real_yield_10y": "red",
-  "term_premium": "amber",
+  "term_premium": null,
   "fed_balance_sheet": "green",
   "move_index": "amber",
   "cpi_yoy": "amber",
@@ -29,7 +29,7 @@
   "breakeven_10y": "green",
   "wages_yoy": "green",
   "oil_yoy": "red",
-  "cfnai_ma3": "green",
+  "cfnai_ma3": "amber",
   "permits_yoy": "amber",
   "retail_sales_yoy": "green",
   "indpro_yoy": "amber",
@@ -59,7 +59,7 @@
   "geopolitical_risk": "red",
   "deficit_gdp": "amber",
   "auction_demand": "green",
-  "fed_path": "amber"
+  "fed_path": "green"
  },
  "rules": {
   "curve_10y2y": [],
