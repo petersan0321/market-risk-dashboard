@@ -30,9 +30,79 @@
    "retail_sales"
   ],
   "warnings": [],
-  "as_of": "2026-11-23"
+  "as_of": "2026-11-24"
  },
  "news": [
+  {
+   "title": "Consumer confidence shoots up after Democrats' midterm victories \u2014 though inflation worries persist",
+   "url": "https://www.cnbc.com/2026/11/24/consumer-confidence-november-election-midterm.html",
+   "source": "CNBC",
+   "date": "2026-11-24",
+   "topic": "inflation"
+  },
+  {
+   "title": "Kushner-backed OakNorth secures U.S. bank charter as global digital banks push into America",
+   "url": "https://www.cnbc.com/2026/11/24/oaknorth-us-bank-charter.html",
+   "source": "CNBC",
+   "date": "2026-11-24",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "Commercial real estate activity falls 14% in October, as interest rates rise",
+   "url": "https://www.cnbc.com/2026/11/24/commercial-real-estate-activity-falls-14percent-in-october.html",
+   "source": "CNBC",
+   "date": "2026-11-24",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "Russia accuses NATO member Estonia of hostile actions \u2018on the verge of unleashing open war\u2019",
+   "url": "https://www.cnbc.com/2026/11/24/russia-estonia-ukraine-war-nato-finland.html",
+   "source": "CNBC",
+   "date": "2026-11-24",
+   "topic": "geopolitics"
+  },
+  {
+   "title": "Fed's John Williams indicates higher interest rates likely 'over time' to address inflation",
+   "url": "https://www.cnbc.com/2026/11/23/john-williams-fed-inflation-rate-hikes.html",
+   "source": "CNBC",
+   "date": "2026-11-24",
+   "topic": "fed_rates"
+  },
+  {
+   "title": "Some U.S. food banks see demand top pandemic levels",
+   "url": "https://www.cnbc.com/2026/11/24/us-food-banks-demand-snap.html",
+   "source": "CNBC",
+   "date": "2026-11-24",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "Iran says three tankers hit mines in Hormuz despite U.S. escort, as Treasury widens sanctions",
+   "url": "https://www.cnbc.com/2026/11/24/iran-trump-hormuz-crude-.html",
+   "source": "CNBC",
+   "date": "2026-11-24",
+   "topic": "geopolitics"
+  },
+  {
+   "title": "Why France is at risk of recession \u2014 and what could keep it out of one",
+   "url": "https://www.cnbc.com/2026/11/24/france-recession-risk-pmi.html",
+   "source": "CNBC Economy",
+   "date": "2026-11-24",
+   "topic": "jobs_economy"
+  },
+  {
+   "title": "Trump\u2019s Nvidia Push Shows Companies\u2019 Importance in Global Economic War",
+   "url": "https://www.nytimes.com/2026/11/24/business/economy/trump-nvidia-national-security-us-economics.html",
+   "source": "New York Times",
+   "date": "2026-11-24",
+   "topic": "geopolitics"
+  },
+  {
+   "title": "Nvidia Asked to Sell Chips to Companies Tied to Chinese Military and Megaspeed",
+   "url": "https://www.nytimes.com/2026/11/19/business/economy/nvidia-chips-commerce-china-huang.html",
+   "source": "New York Times",
+   "date": "2026-11-24",
+   "topic": "geopolitics"
+  },
   {
    "title": "Congress shreds Nvidia's 'outrageous' decision to bring back Huang: 'Failure of character'",
    "url": "https://www.cnbc.com/2026/11/23/nvidia-jensen-huang-congress-trump.html",
@@ -67,20 +137,6 @@
    "source": "NPR",
    "date": "2026-11-22",
    "topic": "banking_credit"
-  },
-  {
-   "title": "State and federal battle over prediction markets regulation heats up after midterms",
-   "url": "https://www.cnbc.com/2026/11/21/prediction-market-regulation-kalshi-cftc.html",
-   "source": "CNBC",
-   "date": "2026-11-21",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "One thing Thanksgiving travelers can be thankful for: Gas prices are down 75 cents from this year\u2019s peak",
-   "url": "https://www.marketwatch.com/story/one-thing-thanksgiving-travelers-can-be-thankful-for-gas-prices-are-down-75-cents-from-this-years-peak-efac1809?mod=mw_rss_topstories",
-   "source": "MarketWatch",
-   "date": "2026-11-21",
-   "topic": "energy"
   }
  ],
  "cycle": [
@@ -90,7 +146,7 @@
    "years": 19,
    "stocks_median": 0.09061946902654872,
    "stocks_down_years": 7,
-   "bonds_median": 0.030573531338158766,
+   "bonds_median": 0.03057272681480605,
    "bond_years": 16,
    "current": false
   },
@@ -100,7 +156,7 @@
    "years": 19,
    "stocks_median": 0.010620399579390094,
    "stocks_down_years": 8,
-   "bonds_median": 0.05998599642667468,
+   "bonds_median": 0.059985996426674904,
    "bond_years": 15,
    "current": true
   },
@@ -120,7 +176,7 @@
    "years": 19,
    "stocks_median": 0.11779554059739161,
    "stocks_down_years": 3,
-   "bonds_median": 0.03821448480299616,
+   "bonds_median": 0.03821240549437954,
    "bond_years": 16,
    "current": false
   }
