@@ -1,7 +1,7 @@
 {
- "as_of": "2026-11-25",
+ "as_of": "2026-11-26",
  "overall": {
-  "score": 56.8,
+  "score": 58.3,
   "band": "Normal"
  },
  "categories": {
@@ -40,7 +40,7 @@
   "payrolls_3m": "amber",
   "baa_spread": "green",
   "baa_aaa_spread": "green",
-  "stlfsi": "green",
+  "stlfsi": "amber",
   "nfci": "green",
   "sloos_tightening": "green",
   "cape": "red",

@@ -30,9 +30,79 @@
    "retail_sales"
   ],
   "warnings": [],
-  "as_of": "2026-11-25"
+  "as_of": "2026-11-26"
  },
  "news": [
+  {
+   "title": "Trump demands probe into \u2018record setting error\u2019 after third-quarter GDP data gets massive revision higher",
+   "url": "https://www.cnbc.com/2026/11/26/trump-gdp-revision-investigation.html",
+   "source": "CNBC",
+   "date": "2026-11-26",
+   "topic": "jobs_economy"
+  },
+  {
+   "title": "Semiconductor chips are the new oil. Here's why",
+   "url": "https://www.cnbc.com/2026/11/26/semiconductor-chips-are-the-new-oil-heres-why.html",
+   "source": "CNBC",
+   "date": "2026-11-26",
+   "topic": "energy"
+  },
+  {
+   "title": "Microdrama apps chase profits as Hollywood moves into short-form, vertical video",
+   "url": "https://www.cnbc.com/2026/11/26/micro-drama-apps-hollywood-vertical-video.html",
+   "source": "CNBC",
+   "date": "2026-11-26",
+   "topic": "earnings"
+  },
+  {
+   "title": "Spain\u2019s Pablo Hern\u00e1ndez de Cos set to lead European Central Bank",
+   "url": "https://www.cnbc.com/2026/11/26/pablo-hernandez-de-cos-ecb-president.html",
+   "source": "CNBC",
+   "date": "2026-11-26",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "Global stocks rally as investors shrug off U.S. tariffs and AI jitters to 'fish for bargains'",
+   "url": "https://www.cnbc.com/2026/11/26/stock-markets-today-.html",
+   "source": "CNBC",
+   "date": "2026-11-26",
+   "topic": "trade_tariffs"
+  },
+  {
+   "title": "Switzerland\u2019s biggest bank set for showdown with lawmakers as capital fight intensifies amid crisis planning",
+   "url": "https://www.cnbc.com/2026/11/26/ubs-swiss-capital-rules-finma-crisis-plan.html",
+   "source": "CNBC",
+   "date": "2026-11-26",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "Norse Atlantic suspends all flights, warns it may file for bankruptcy after share price collapse",
+   "url": "https://www.cnbc.com/2026/11/26/norse-airline-finance-business.html",
+   "source": "CNBC",
+   "date": "2026-11-26",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "S&P warns Nvidia credit rating could be cut over 'rising' management and governance risk",
+   "url": "https://www.cnbc.com/2026/11/26/nvidia-market-governance-risk.html",
+   "source": "CNBC",
+   "date": "2026-11-26",
+   "topic": "banking_credit"
+  },
+  {
+   "title": "How Trump\u2019s latest tariff moves hand India an edge over rival Asian exporters",
+   "url": "https://www.cnbc.com/2026/11/26/trump-us-tariff-india-trade.html",
+   "source": "CNBC",
+   "date": "2026-11-26",
+   "topic": "trade_tariffs"
+  },
+  {
+   "title": "Beware higher correlation but nab high U.S. credit yields, fund managers say",
+   "url": "https://www.cnbc.com/2026/11/26/mispricing-risk-fund-managers-ai-volatility.html",
+   "source": "CNBC Finance",
+   "date": "2026-11-26",
+   "topic": "banking_credit"
+  },
   {
    "title": "U.S. proposes new tariffs on 14 trading partners, including China and the EU",
    "url": "https://www.cnbc.com/2026/11/25/us-tariffs-trump-section-301.html",
@@ -111,6 +181,13 @@
    "topic": "fed_rates"
   },
   {
+   "title": "Inflation is still hot, fueled in part by the AI boom",
+   "url": "https://www.npr.org/2026/11/25/nx-s1-6053958/inflation-is-still-hot-fueled-in-part-by-the-ai-boom",
+   "source": "NPR",
+   "date": "2026-11-25",
+   "topic": "inflation"
+  },
+  {
    "title": "Consumer confidence shoots up after Democrats' midterm victories \u2014 though inflation worries persist",
    "url": "https://www.cnbc.com/2026/11/24/consumer-confidence-november-election-midterm.html",
    "source": "CNBC",
@@ -186,34 +263,6 @@
    "source": "CNBC",
    "date": "2026-11-24",
    "topic": "earnings"
-  },
-  {
-   "title": "Congress shreds Nvidia's 'outrageous' decision to bring back Huang: 'Failure of character'",
-   "url": "https://www.cnbc.com/2026/11/23/nvidia-jensen-huang-congress-trump.html",
-   "source": "CNBC",
-   "date": "2026-11-23",
-   "topic": "elections_politics"
-  },
-  {
-   "title": "Fed's John Williams indicates higher interest rates likely 'over time' to address inflation",
-   "url": "https://www.cnbc.com/2026/11/23/john-williams-fed-inflation-rate-hikes.html",
-   "source": "CNBC",
-   "date": "2026-11-23",
-   "topic": "fed_rates"
-  },
-  {
-   "title": "Stuck: How a frozen housing market is hitting buyers, sellers and the economy",
-   "url": "https://www.cnbc.com/2026/11/23/housing-market-real-estate-economy.html",
-   "source": "CNBC",
-   "date": "2026-11-23",
-   "topic": "jobs_economy"
-  },
-  {
-   "title": "From Wall Street to Main Street, how artificial intelligence is affecting the economy",
-   "url": "https://www.npr.org/2026/11/23/nx-s1-6048690/from-wall-street-to-main-street-how-artificial-intelligence-is-affecting-the-economy",
-   "source": "NPR",
-   "date": "2026-11-23",
-   "topic": "jobs_economy"
   }
  ],
  "cycle": [
@@ -223,7 +272,7 @@
    "years": 19,
    "stocks_median": 0.09061946902654872,
    "stocks_down_years": 7,
-   "bonds_median": 0.03057272681480583,
+   "bonds_median": 0.03057272681480594,
    "bond_years": 16,
    "current": false
   },
@@ -233,7 +282,7 @@
    "years": 19,
    "stocks_median": 0.010620399579390094,
    "stocks_down_years": 8,
-   "bonds_median": 0.05998599642667535,
+   "bonds_median": 0.059985996426675126,
    "bond_years": 15,
    "current": true
   },
@@ -253,7 +302,7 @@
    "years": 19,
    "stocks_median": 0.11779554059739161,
    "stocks_down_years": 3,
-   "bonds_median": 0.03821448480299616,
+   "bonds_median": 0.03821448480299683,
    "bond_years": 16,
    "current": false
   }

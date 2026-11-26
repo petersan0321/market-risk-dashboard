@@ -75,5 +75,12 @@
   "source": "New York Times",
   "date": "2026-11-25",
   "topic": "fed_rates"
+ },
+ {
+  "title": "Inflation is still hot, fueled in part by the AI boom",
+  "url": "https://www.npr.org/2026/11/25/nx-s1-6053958/inflation-is-still-hot-fueled-in-part-by-the-ai-boom",
+  "source": "NPR",
+  "date": "2026-11-25",
+  "topic": "inflation"
  }
 ]
